@@ -6,8 +6,6 @@ from reportlab.lib.enums import TA_LEFT
 from reportlab.lib.pagesizes import A4
 from reportlab.lib.styles import ParagraphStyle, getSampleStyleSheet
 from reportlab.lib.units import mm
-from reportlab.pdfbase.ttfonts import TTFont
-from reportlab.pdfbase import pdfmetrics
 from reportlab.platypus import LongTable, Paragraph, SimpleDocTemplate, Spacer, TableStyle
 
 rl_config.invariant = 1
@@ -31,17 +29,7 @@ PROVIDER_COLORS = {
 }
 
 
-def register_fonts():
-    regular = Path("/System/Library/Fonts/Supplemental/Arial.ttf")
-    bold = Path("/System/Library/Fonts/Supplemental/Arial Bold.ttf")
-    if regular.exists() and bold.exists():
-        pdfmetrics.registerFont(TTFont("PaperSans", str(regular)))
-        pdfmetrics.registerFont(TTFont("PaperSans-Bold", str(bold)))
-        return "PaperSans", "PaperSans-Bold"
-    return "Helvetica", "Helvetica-Bold"
-
-
-FONT, FONT_BOLD = register_fonts()
+FONT, FONT_BOLD = "Helvetica", "Helvetica-Bold"
 
 
 ROWS = [
