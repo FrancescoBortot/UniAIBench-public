@@ -1,0 +1,8 @@
+anthropic==0.104.1
+google-genai==2.12.1
+openai==2.38.0
+python-dotenv==1.2.1
+numpy==2.3.5
+pandas==2.2.3
+pypdf==6.10.0
+reportlab==4.4.9

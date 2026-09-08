@@ -1,0 +1,59 @@
+\begin{tikzpicture}[x=1mm,y=1mm,font=\scriptsize]
+  % Left: aggregate analytical-token composition.
+  \node[font=\scriptsize\bfseries,text=ink,anchor=west] at (-86,24)
+    {Normalized-panel analytical-token composition};
+  \node[font=\tiny,text=darkgray,anchor=west] at (-86,19.5)
+    {8.916 million tokens after model--item macro-averaging};
+
+  \def\barleft{-86}
+  \def\barwidth{77}
+  \pgfmathsetmacro{\a}{\barleft+0.06796*\barwidth}
+  \pgfmathsetmacro{\b}{\a+0.28412*\barwidth}
+  \pgfmathsetmacro{\c}{\b+0.59788*\barwidth}
+  \pgfmathsetmacro{\midab}{0.5*(\a+\b)}
+  \pgfmathsetmacro{\midbc}{0.5*(\b+\c)}
+  \pgfmathsetmacro{\midclast}{0.5*(\c+\barleft+\barwidth)}
+  \fill[navy] (\barleft,7) rectangle (\a,15);
+  \fill[blue] (\a,7) rectangle (\b,15);
+  \fill[cyan!85!black] (\b,7) rectangle (\c,15);
+  \fill[gold] (\c,7) rectangle (\barleft+\barwidth,15);
+  \draw[white,line width=0.5pt] (\barleft,7) rectangle (\barleft+\barwidth,15);
+  \node[font=\tiny,text=white,rotate=90] at (\barleft+2.6,11) {6.8\%};
+  \node[font=\tiny,text=white] at (\midab,11) {28.4\%};
+  \node[font=\tiny,text=white] at (\midbc,11) {59.8\%};
+  \node[font=\tiny,text=ink,rotate=90] at (\midclast,11) {5.0\%};
+
+  \foreach \col/\lab/\yy in {navy/Input/1.7,blue/Visible output/-2.7,
+    cyan!85!black/Separately reported reasoning/-7.1,gold/Fable output + thinking (unseparated)/-11.5}{
+    \fill[\col] (-85.8,\yy-1.2) rectangle (-82.9,\yy+1.2);
+    \node[font=\tiny,text=darkgray,anchor=west] at (-81.5,\yy) {\lab};
+  }
+
+  % Right: controlled DeepSeek thinking comparison.
+  \node[font=\scriptsize\bfseries,text=ink,anchor=west] at (3,24)
+    {DeepSeek V4 Flash: same weights, same 60 items};
+  \node[font=\tiny,text=darkgray,anchor=west] at (3,19.5)
+    {No thinking and high-reasoning configurations compared item by item};
+
+  \node[font=\tiny,text=darkgray,anchor=east] at (37,14.5) {No thinking};
+  \node[font=\tiny,text=darkgray,anchor=west] at (55,14.5) {Thinking};
+  \draw[-{Latex[length=2mm]},darkgray!70,line width=0.6pt] (40,14.5) -- (52,14.5);
+
+  \newcommand{\pairmetric}[5]{%
+    \node[font=\scriptsize\bfseries,text=ink,anchor=east] at (30,#1) {#2};
+    \node[rounded corners=1pt,fill=notegray,draw=rulegray,minimum width=19mm,
+      minimum height=5.8mm,font=\scriptsize\bfseries,text=ink] at (40,#1) {#3};
+    \draw[-{Latex[length=1.8mm]},accent,line width=0.8pt] (50,#1) -- (55,#1);
+    \node[rounded corners=1pt,fill=cyan!10,draw=cyan!65!black,minimum width=19mm,
+      minimum height=5.8mm,font=\scriptsize\bfseries,text=ink] at (65,#1) {#4};
+    \node[font=\tiny,text=accent,anchor=west] at (76.5,#1) {#5};
+  }
+  \pairmetric{7.5}{Score}{86.31}{97.24}{+10.93 pp}
+  \pairmetric{0}{Tokens}{0.443 M}{1.396 M}{+214.7\%}
+  \pairmetric{-7.5}{Cost}{\$0.1185}{\$0.3845}{+224.4\%}
+  \pairmetric{-15}{Median latency}{36.6 s}{188.0 s}{5.13-fold}
+  \pairmetric{-22.5}{Visible output}{403,071}{144,300}{-64.2\%}
+
+  \node[font=\tiny,text=darkgray,anchor=west] at (3,-28.5)
+    {Paired score difference: 95\% item-bootstrap CI [7.97, 14.10] pp; 48 wins, 10 ties, 2 losses.};
+\end{tikzpicture}

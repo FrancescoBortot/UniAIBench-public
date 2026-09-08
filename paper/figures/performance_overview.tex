@@ -1,0 +1,100 @@
+\begin{tikzpicture}[x=1mm,y=1mm,font=\scriptsize]
+  \def\scoreleft{-31}
+  \def\scorewidth{73.5}
+  \def\heatleft{58}
+  \def\cellw{4.00}
+  \newcount\rankrowcount
+  \rankrowcount=0
+
+  % Column guides for the forest plot.
+  \foreach \tick in {60,70,80,90,100}{
+    \pgfmathsetmacro{\xtick}{\scoreleft+(\tick-55)*\scorewidth/45}
+    \draw[rulegray!45,line width=0.25pt] (\xtick,3) -- (\xtick,-68);
+    \node[font=\tiny,text=darkgray,anchor=south] at (\xtick,3.5) {\tick};
+  }
+  \node[font=\scriptsize\bfseries,anchor=south west,text=ink] at (-87,7.5)
+    {Model configuration};
+  \node[font=\scriptsize\bfseries,anchor=south,text=ink] at (5.5,7.5)
+    {Mean score and 95\% item-bootstrap interval};
+  \node[font=\scriptsize\bfseries,anchor=south,text=ink] at (74,7.5)
+    {Criterion profile};
+
+  \foreach \lab [count=\j from 0] in {T1,T2,T3,T4,T5,T6,T7,T8*}{
+    \pgfmathsetmacro{\xh}{\heatleft+\j*\cellw+0.5*\cellw}
+    \node[font=\tiny,text=darkgray] at (\xh,4.4) {\lab};
+  }
+
+  \newcommand{\rankrow}[4]{%
+    \pgfmathsetmacro{\yy}{-5*\the\rankrowcount}
+    \ifnum\rankrowcount<6
+      \fill[cyan!4] (-88,\yy-2.25) rectangle (90,\yy+2.25);
+    \fi
+    \node[anchor=east,font=\scriptsize,text=ink] at (-34,\yy) {#1};
+    \pgfmathsetmacro{\xm}{\scoreleft+(#2-55)*\scorewidth/45}
+    \pgfmathsetmacro{\xl}{\scoreleft+(#3-55)*\scorewidth/45}
+    \pgfmathsetmacro{\xh}{\scoreleft+(#4-55)*\scorewidth/45}
+    \draw[ink!70,line width=0.65pt] (\xl,\yy) -- (\xh,\yy);
+    \draw[ink!70,line width=0.45pt] (\xl,\yy-1.05) -- (\xl,\yy+1.05);
+    \draw[ink!70,line width=0.45pt] (\xh,\yy-1.05) -- (\xh,\yy+1.05);
+    \filldraw[fill=accent,draw=white,line width=0.35pt] (\xm,\yy) circle (1.35);
+    \node[anchor=east,font=\tiny,text=ink] at (51,\yy) {#2};
+    \advance\rankrowcount by 1
+  }
+
+  \rankrow{GPT-5.6 Sol}{98.72}{97.04}{99.86}
+  \rankrow{Claude Fable 5}{97.99}{96.15}{99.38}
+  \rankrow{DeepSeek V4 Flash}{97.24}{94.66}{99.16}
+  \rankrow{Gemini 3.1 Pro Preview}{97.05}{95.11}{98.60}
+  \rankrow{Gemini 3.5 Flash}{96.95}{95.10}{98.51}
+  \rankrow{DeepSeek V4 Pro}{96.71}{94.76}{98.31}
+  \rankrow{Grok 4.5}{94.61}{91.66}{97.08}
+  \rankrow{OpenAI o3}{92.75}{89.74}{95.33}
+  \rankrow{DeepSeek V4 Flash (no thinking)}{86.31}{82.73}{89.68}
+  \rankrow{Gemma 4 31B IT}{85.58}{81.52}{89.34}
+  \rankrow{Grok 4.3}{85.24}{79.77}{90.11}
+  \rankrow{OpenAI GPT-4.1}{71.58}{66.46}{76.53}
+  \rankrow{Claude Sonnet 4.5}{70.91}{65.31}{76.41}
+  \rankrow{Claude Haiku 4.5}{64.77}{59.57}{69.80}
+
+  \newcount\heatrowcount
+  \heatrowcount=0
+  \newcommand{\heatrow}[8]{%
+    \pgfmathsetmacro{\yy}{-5*\the\heatrowcount}
+    \foreach \val [count=\j from 0] in {#1,#2,#3,#4,#5,#6,#7,#8}{
+      \pgfmathtruncatemacro{\shade}{max(7,min(93,round((\val-50)*1.86)))}
+      \pgfmathsetmacro{\xa}{\heatleft+\j*\cellw}
+      \pgfmathsetmacro{\xb}{\xa+\cellw}
+      \filldraw[fill=blue!\shade!white,draw=white,line width=0.25pt]
+        (\xa,\yy-2.05) rectangle (\xb,\yy+2.05);
+    }
+    \advance\heatrowcount by 1
+  }
+
+  \heatrow{98.1}{98.8}{99.1}{98.6}{98.8}{98.6}{99.4}{100.0}
+  \heatrow{98.0}{98.1}{97.6}{98.0}{98.4}{98.1}{98.1}{98.6}
+  \heatrow{97.0}{97.4}{97.5}{96.9}{96.3}{97.8}{97.7}{97.9}
+  \heatrow{97.0}{97.2}{97.2}{96.6}{96.8}{97.2}{97.3}{97.3}
+  \heatrow{97.4}{97.4}{96.6}{96.1}{96.8}{97.6}{96.8}{98.2}
+  \heatrow{96.5}{97.1}{97.1}{96.1}{96.2}{97.2}{96.1}{100.0}
+  \heatrow{94.7}{95.5}{94.8}{93.0}{94.2}{94.4}{95.6}{96.8}
+  \heatrow{92.8}{93.9}{94.0}{91.3}{90.9}{93.4}{93.5}{77.0}
+  \heatrow{88.5}{87.8}{87.5}{81.9}{83.6}{85.0}{88.0}{78.6}
+  \heatrow{87.3}{89.1}{85.5}{80.7}{83.3}{86.4}{87.4}{70.7}
+  \heatrow{87.8}{87.8}{83.6}{79.5}{87.5}{83.9}{88.5}{75.0}
+  \heatrow{76.8}{76.4}{70.6}{63.2}{73.0}{67.8}{73.2}{32.7}
+  \heatrow{76.6}{75.0}{68.1}{63.5}{73.7}{67.3}{73.8}{27.9}
+  \heatrow{70.2}{68.5}{61.9}{56.9}{67.3}{61.1}{69.8}{28.0}
+
+  % Separate T8 because its denominator differs from T1--T7.
+  \draw[gold!85!black,dashed,line width=0.55pt]
+    (\heatleft+7*\cellw,-67.2) rectangle (\heatleft+8*\cellw,2.2);
+
+  % Compact sequential legend.
+  \foreach \s [count=\j from 0] in {8,25,42,59,76,93}{
+    \fill[blue!\s!white] (-31+\j*5.2,-73.4) rectangle (-25.8+\j*5.2,-70.9);
+  }
+  \node[font=\tiny,anchor=east,text=darkgray] at (-32,-72.15) {lower};
+  \node[font=\tiny,anchor=west,text=darkgray] at (0.6,-72.15) {higher};
+  \node[font=\tiny,anchor=west,text=darkgray] at (17,-72.15)
+    {Top-six band shaded; T8* uses 14 applicable Analysis III items only.};
+\end{tikzpicture}

@@ -1,0 +1,43 @@
+scope,model,available_items,inventory_items,coverage_rate,common_items_used_primary,responses,repeated_cells
+overall,Claude Fable 5,60,60,1.0,60,78,9
+overall,Claude Haiku 4.5,60,60,1.0,60,60,0
+overall,Claude Sonnet 4.5,60,60,1.0,60,60,0
+overall,DeepSeek V4 Flash,60,60,1.0,60,60,0
+overall,DeepSeek V4 Flash (no thinking),60,60,1.0,60,60,0
+overall,DeepSeek V4 Pro,60,60,1.0,60,60,0
+overall,GPT-5.6 Sol,60,60,1.0,60,78,9
+overall,Gemini 3.1 Pro Preview,60,60,1.0,60,78,9
+overall,Gemini 3.5 Flash,60,60,1.0,60,90,15
+overall,Gemma 4 31B IT,60,60,1.0,60,60,0
+overall,Grok 4.3,60,60,1.0,60,60,0
+overall,Grok 4.5,60,60,1.0,60,60,0
+overall,OpenAI GPT-4.1,60,60,1.0,60,60,0
+overall,OpenAI o3,60,60,1.0,60,60,0
+analysis_3,Claude Fable 5,33,33,1.0,33,39,3
+analysis_3,Claude Haiku 4.5,33,33,1.0,33,33,0
+analysis_3,Claude Sonnet 4.5,33,33,1.0,33,33,0
+analysis_3,DeepSeek V4 Flash,33,33,1.0,33,33,0
+analysis_3,DeepSeek V4 Flash (no thinking),33,33,1.0,33,33,0
+analysis_3,DeepSeek V4 Pro,33,33,1.0,33,33,0
+analysis_3,GPT-5.6 Sol,33,33,1.0,33,39,3
+analysis_3,Gemini 3.1 Pro Preview,33,33,1.0,33,39,3
+analysis_3,Gemini 3.5 Flash,33,33,1.0,33,63,15
+analysis_3,Gemma 4 31B IT,33,33,1.0,33,33,0
+analysis_3,Grok 4.3,33,33,1.0,33,33,0
+analysis_3,Grok 4.5,33,33,1.0,33,33,0
+analysis_3,OpenAI GPT-4.1,33,33,1.0,33,33,0
+analysis_3,OpenAI o3,33,33,1.0,33,33,0
+physics_2,Claude Fable 5,27,27,1.0,27,39,6
+physics_2,Claude Haiku 4.5,27,27,1.0,27,27,0
+physics_2,Claude Sonnet 4.5,27,27,1.0,27,27,0
+physics_2,DeepSeek V4 Flash,27,27,1.0,27,27,0
+physics_2,DeepSeek V4 Flash (no thinking),27,27,1.0,27,27,0
+physics_2,DeepSeek V4 Pro,27,27,1.0,27,27,0
+physics_2,GPT-5.6 Sol,27,27,1.0,27,39,6
+physics_2,Gemini 3.1 Pro Preview,27,27,1.0,27,39,6
+physics_2,Gemini 3.5 Flash,27,27,1.0,27,27,0
+physics_2,Gemma 4 31B IT,27,27,1.0,27,27,0
+physics_2,Grok 4.3,27,27,1.0,27,27,0
+physics_2,Grok 4.5,27,27,1.0,27,27,0
+physics_2,OpenAI GPT-4.1,27,27,1.0,27,27,0
+physics_2,OpenAI o3,27,27,1.0,27,27,0

@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+message: "If you use UniAIBench, please cite the archived release and accompanying paper."
+title: "UniAIBench: Benchmarking AI Models on Advanced University-Level Analysis III and Physics II Problems"
+type: software
+authors:
+  - family-names: Bortot
+    given-names: Francesco
+repository-code: "https://github.com/FrancescoBortot/UniAIBench-public"
+url: "https://modelfit-research-preview.francescobortot007.chatgpt.site"
+version: 0.1.0
+date-released: 2026-09-08
+abstract: >-
+  A controlled and auditable benchmark of open-ended AI model solutions to
+  advanced university-level problems in Mathematical Analysis III and General
+  Physics II.
+keywords:
+  - artificial intelligence
+  - large language models
+  - benchmark
+  - mathematical reasoning
+  - physics reasoning
+  - evaluation

@@ -1,0 +1,64 @@
+\begin{tikzpicture}[
+  font=\scriptsize,
+  node distance=5mm,
+  stage/.style={
+    rounded corners=2pt,
+    draw=navy,
+    very thick,
+    fill=lightblue,
+    align=center,
+    minimum height=14mm,
+    text width=22mm,
+    inner sep=2mm
+  },
+  private/.style={
+    rounded corners=2pt,
+    draw=red,
+    very thick,
+    dashed,
+    fill=red!7,
+    align=center,
+    minimum height=11mm,
+    text width=25mm
+  },
+  reviewbox/.style={
+    rounded corners=2pt,
+    draw=red,
+    very thick,
+    fill=red!7,
+    align=center,
+    minimum height=11mm,
+    text width=25mm
+  },
+  arrow/.style={-{Latex[length=2.1mm]},thick,draw=darkgray},
+  review/.style={-{Latex[length=2.1mm]},thick,dashed,draw=red}
+]
+  \node[stage] (source) {\textbf{1}\\Source material};
+  \node[stage, right=of source] (plan) {\textbf{2}\\Dataset + prompt};
+  \node[stage, right=of plan] (generate) {\textbf{3}\\API generation};
+  \node[stage, right=of generate] (runs) {\textbf{4}\\Run artifacts};
+  \node[stage, right=of runs] (judge) {\textbf{5}\\Blind judging};
+  \node[stage, right=of judge] (validate) {\textbf{6}\\Validation};
+  \node[stage, right=of validate, draw=cyan!80!black,fill=cyan!9] (report)
+    {\textbf{7}\\Unblind + report};
+
+  \node[private, below=10mm of judge] (map)
+    {\textbf{Private map}\\IDs + hashes};
+  \node[reviewbox, below=10mm of validate] (human)
+    {\textbf{Human review}\\when required};
+
+  \draw[arrow] (source) -- (plan);
+  \draw[arrow] (plan) -- (generate);
+  \draw[arrow] (generate) -- (runs);
+  \draw[arrow] (runs) -- (judge);
+  \draw[arrow] (judge) -- (validate);
+  \draw[arrow] (validate) -- (report);
+
+  \draw[review] (validate.south) -- (human.north);
+  \draw[review] (human.east) -- ++(4mm,0)
+    -| ([xshift=-5mm]report.south);
+
+  \coordinate (maplane) at ($(map.south)+(0,-7mm)$);
+  \draw[arrow] (map.south) -- (maplane)
+    -| ([xshift=5mm]report.south);
+\end{tikzpicture}

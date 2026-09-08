@@ -1,0 +1,43 @@
+\begin{tikzpicture}[x=1mm,y=1mm,font=\scriptsize,
+  box/.style={rounded corners=1.8pt,draw=navy,very thick,fill=lightblue,
+    align=center,minimum height=14mm},
+  atom/.style={rounded corners=1.8pt,draw=cyan!80!black,very thick,fill=cyan!9,
+    align=center,minimum height=18mm},
+  detail/.style={rounded corners=1.2pt,draw=rulegray,fill=notegray,
+    align=center,minimum height=8mm,text width=27mm},
+  arr/.style={-{Latex[length=2mm]},thick,draw=darkgray}]
+
+  \node[box,text width=29mm] (source) at (-70,16)
+    {\textbf{Authorized source}\\item + official solution\\textualized figure if needed};
+  \node[box,text width=25mm] (rubric) at (-30,16)
+    {\textbf{60 frozen rubrics}\\approved before model answers};
+  \node[box,text width=23mm] (sub) at (6,16)
+    {\textbf{214 subproblems}\\weighted request units};
+  \node[atom,text width=28mm] (criteria) at (45,16)
+    {\textbf{1,600 atomic criteria}\\one primary T1--T8 dimension\\one causal penalty};
+  \node[box,text width=23mm] (score) at (78,16)
+    {\textbf{Normalized score}\\applicable points only};
+  \draw[arr] (source) -- (rubric);
+  \draw[arr] (rubric) -- (sub);
+  \draw[arr] (sub) -- (criteria);
+  \draw[arr] (criteria) -- (score);
+
+  \node[detail] (evidence) at (-60,-8)
+    {Full-credit evidence and anchors\\{1, .75, .50, .25, 0}};
+  \node[detail] (equiv) at (-29,-8)
+    {Accepted equivalences and\\alternative methods};
+  \node[detail] (prop) at (2,-8)
+    {Carried-forward credit after\\one causal error};
+  \node[detail] (phys) at (33,-8)
+    {Domains, assumptions, units,\\signs, tolerances, conventions};
+  \node[detail] (review) at (64,-8)
+    {Conflict, ambiguity, or stronger\\solution triggers human review};
+  \draw[arr] (criteria.south) -- ++(0,-3mm) -| (evidence.north);
+  \draw[arr] (criteria.south) -- ++(0,-3mm) -| (equiv.north);
+  \draw[arr] (criteria.south) -- ++(0,-3mm) -| (prop.north);
+  \draw[arr] (criteria.south) -- ++(0,-3mm) -| (phys.north);
+  \draw[arr] (criteria.south) -- ++(0,-3mm) -| (review.north);
+
+  \node[font=\tiny,text=darkgray,align=center] at (0,-18)
+    {No style or verbosity criterion; frozen authorities cannot be silently reinterpreted by a judge.};
+\end{tikzpicture}

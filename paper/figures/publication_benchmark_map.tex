@@ -1,0 +1,215 @@
+\begin{tikzpicture}[x=1mm,y=1mm,
+  font=\scriptsize,
+  main/.style={
+    rounded corners=2pt,
+    draw=navy,
+    very thick,
+    fill=lightblue,
+    align=center,
+    minimum height=13mm,
+    text width=36mm
+  },
+  protected/.style={
+    rounded corners=2pt,
+    draw=red,
+    very thick,
+    dashed,
+    fill=red!6,
+    align=center,
+    minimum height=13mm,
+    text width=36mm
+  },
+  agent/.style={
+    rounded corners=2pt,
+    draw=cyan!80!black,
+    very thick,
+    fill=cyan!9,
+    align=center,
+    minimum height=16mm,
+    text width=27mm
+  },
+  assignment/.style={
+    rounded corners=1.5pt,
+    draw=blue,
+    thick,
+    fill=blue!6,
+    align=center,
+    minimum height=6mm,
+    text width=24mm,
+    font=\tiny
+  },
+  artifact/.style={
+    rounded corners=2pt,
+    draw=blue,
+    thick,
+    fill=blue!6,
+    align=center,
+    minimum height=11mm,
+    text width=54mm
+  },
+  validate/.style={
+    rounded corners=2pt,
+    draw=gold!85!black,
+    very thick,
+    fill=gold!13,
+    align=center,
+    minimum height=13mm,
+    text width=46mm
+  },
+  human/.style={
+    rounded corners=2pt,
+    draw=red,
+    very thick,
+    fill=red!7,
+    align=center,
+    minimum height=15mm,
+    text width=44mm
+  },
+  release/.style={
+    rounded corners=2pt,
+    draw=cyan!80!black,
+    very thick,
+    fill=cyan!9,
+    align=center,
+    minimum height=13mm,
+    text width=39mm
+  },
+  result/.style={
+    rounded corners=2pt,
+    draw=navy,
+    thick,
+    fill=navy!5,
+    align=center,
+    minimum height=13mm,
+    text width=35mm
+  },
+  phase/.style={
+    rounded corners=1.5pt,
+    draw=darkgray,
+    fill=lightgray,
+    font=\scriptsize,
+    align=center,
+    minimum height=5.5mm,
+    text width=25mm
+  },
+  arrow/.style={-{Latex[length=2.2mm]},thick,draw=darkgray},
+  protectedarrow/.style={-{Latex[length=2.2mm]},thick,dashed,draw=red},
+  bus/.style={thick,draw=darkgray},
+  pics/codexmark/.style={code={
+    \foreach \ang in {0,60,...,300}{
+      \filldraw[fill=blue!68,draw=blue!90!black,line width=0.18mm]
+        (\ang:1.55mm) circle (1.35mm);
+    }
+    \fill[blue!72] (0,0) circle (1.45mm);
+    \draw[white,line width=0.48mm,line cap=round,line join=round]
+      (-0.95mm,0.62mm) -- (-0.20mm,0) -- (-0.95mm,-0.62mm);
+    \draw[white,line width=0.48mm,line cap=round]
+      (0.18mm,-0.68mm) -- (1.08mm,-0.68mm);
+  }}
+]
+  % Phase 1: solver generation and durable run artifacts.
+  \node[phase] at (-78,96) {1\quad GENERATION};
+  \node[main] (item) at (-55,82)
+    {\textbf{Exam item}\\text + textualized figure};
+  \node[main] (api) at (0,82)
+    {\textbf{Direct provider API}\\one exercise per call\\no web or tools};
+  \node[main] (run) at (55,82)
+    {\textbf{Versioned run}\\prompt + raw + normalized\\metadata + usage};
+  \draw[arrow] (item) -- (api);
+  \draw[arrow] (api) -- (run);
+
+  % Phase 2: blind preparation and parallel Codex judges.
+  \node[phase] at (-78,63) {2\quad BLIND INPUT};
+  \node[protected] (reference) at (-55,52)
+    {\textbf{Protected authority}\\official solution\\frozen item rubric};
+  \node[main,text width=54mm] (blind) at (0,52)
+    {\textbf{Verified blind batch}\\N packages, each with the complete specification\\and exactly one anonymous response};
+  \node[protected,text width=38mm] (map) at (59,52)
+    {\textbf{Private identity map}\\blind ID + source run + response hash\\withheld from judges};
+  \draw[arrow] (reference) -- (blind);
+  \draw[arrow] (run.south) -- ++(0,-7mm) -| (blind.north);
+  \draw[protectedarrow] (blind) -- (map);
+
+  \node[phase] at (-78,30) {3\quad PARALLEL JUDGING};
+  \node[assignment] (responseA) at (-42,38)
+    {Anonymous response A};
+  \node[assignment] (responseB) at (0,38)
+    {Anonymous response B};
+  \node[assignment] (responseN) at (42,38)
+    {Anonymous response N};
+  \node[font=\tiny,text=darkgray,align=center] at (0,31.5)
+    {N one-to-one assignments; each isolated judge receives one distinct response};
+  \node[agent] (agentA) at (-42,20)
+    {\textbf{Codex Sol}\\Judge A};
+  \node[agent] (agentB) at (0,20)
+    {\textbf{Codex Sol}\\Judge B};
+  \node[agent] (agentN) at (42,20)
+    {\textbf{Codex Sol}\\Judge N};
+  \pic at ([xshift=-5mm]agentA.west) {codexmark};
+  \pic at ([xshift=-5mm]agentB.west) {codexmark};
+  \pic at ([xshift=-5mm]agentN.west) {codexmark};
+
+  \coordinate (dispatch) at (0,43.2);
+  \draw[arrow] (blind.south) -- (dispatch);
+  \draw[bus] (-42,43.2) -- (42,43.2);
+  \draw[arrow] (-42,43.2) -- (responseA.north);
+  \draw[arrow] (0,43.2) -- (responseB.north);
+  \draw[arrow] (42,43.2) -- (responseN.north);
+  \draw[arrow] (responseA.south) -- (agentA.north);
+  \draw[arrow] (responseB.south) -- (agentB.north);
+  \draw[arrow] (responseN.south) -- (agentN.north);
+
+  \node[artifact] (json) at (0,-1)
+    {\textbf{N judgment JSON files}\\one per anonymous response: criterion scores + T1--T8\\evidence + judge confidence + review flags};
+  \draw[arrow] (agentA.south) -- ++(0,-5mm) -| (json.west);
+  \draw[arrow] (agentB) -- (json);
+  \draw[arrow] (agentN.south) -- ++(0,-5mm) -| (json.east);
+
+  % Phase 4: validation, adjudication, unblinding, and analysis.
+  \node[phase] at (-78,-18) {4\quad AUTHORITY};
+  \node[validate] (validator) at (0,-20)
+    {\textbf{Central validation}\\schema + arithmetic + criterion coverage\\IDs + paths + response hashes};
+  \draw[arrow] (json) -- (validator);
+
+  \node[human] (human) at (0,-49)
+    {\textbf{Human adjudication}\\versioned decision; confirm or revise\\the scoring basis and its scope};
+  \node[release,text width=42mm] (unblind) at (53,-43)
+    {\textbf{Unblind after validation}\\join blind ID to source run\\verify stored response hash};
+  \draw[arrow] (validator.south) -- node[right,font=\tiny] {flag / low confidence} (human.north);
+  \draw[arrow] (validator.south east) -- node[above right,font=\tiny] {valid} (unblind.north west);
+  \draw[arrow] (human.west) -- ++(-10mm,0) |- node[pos=0.28,left,font=\tiny,align=right] {if the basis changes:\\symmetric rejudge + revalidate} (validator.west);
+  \draw[protectedarrow] (map.east) -- ++(7mm,0) |- node[pos=0.72,right,font=\tiny] {withheld until this gate} (unblind.east);
+
+  \node[protected,text width=34mm,minimum height=11mm] (history) at (-38,-70)
+    {\textbf{Preserved history}\\superseded, never overwritten};
+  \node[release,text width=42mm] (index) at (53,-67)
+    {\textbf{Active-valid index}\\current authority only\\one-to-one source linkage};
+  \draw[protectedarrow] (human.south west) -- (history.north east);
+  \draw[arrow] (unblind) -- (index);
+
+  \node[phase] at (-78,-92) {5\quad RESULTS};
+  \node[result] (correct) at (-38,-96)
+    {\textbf{Correctness}\\overall score + T1--T8\\cross-subject contrasts};
+  \node[result] (resources) at (8,-96)
+    {\textbf{Resources}\\token composition\\dated API cost};
+  \node[result] (latency) at (54,-96)
+    {\textbf{Response time}\\median + tail latency\\quality--resource frontier};
+  \coordinate (resultbus) at (53,-83);
+  \draw[arrow] (index.south) -- (resultbus);
+  \draw[bus] (-38,-83) -- (54,-83);
+  \draw[arrow] (-38,-83) -- (correct.north);
+  \draw[arrow] (8,-83) -- (resources.north);
+  \draw[arrow] (54,-83) -- (latency.north);
+
+  \draw[draw=navy,fill=lightblue,rounded corners=0.7pt] (-71,-116.8) rectangle (-65,-112.8);
+  \node[font=\tiny,anchor=west] at (-63.5,-114.8) {operational artifact};
+  \draw[draw=red,dashed,fill=red!6,rounded corners=0.7pt] (-30,-116.8) rectangle (-24,-112.8);
+  \node[font=\tiny,anchor=west] at (-22.5,-114.8) {protected / private};
+  \draw[draw=gold!85!black,fill=gold!13,rounded corners=0.7pt] (9,-116.8) rectangle (15,-112.8);
+  \node[font=\tiny,anchor=west] at (16.5,-114.8) {validation gate};
+  \draw[draw=cyan!80!black,fill=cyan!9,rounded corners=0.7pt] (46,-116.8) rectangle (52,-112.8);
+  \node[font=\tiny,anchor=west] at (53.5,-114.8) {certified / released};
+
+  \node[font=\tiny,text=darkgray,align=center] at (0,-126)
+    {Only certified, current, active-valid judgments enter the matched analysis panel.};
+\end{tikzpicture}

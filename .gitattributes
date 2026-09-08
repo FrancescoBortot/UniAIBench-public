@@ -1,0 +1,11 @@
+*.pdf binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.webp binary
+
+analysis/data/** linguist-generated=true
+analysis/tables/** linguist-generated=true
+analysis/figures/** linguist-generated=true
+results/** linguist-generated=true
+

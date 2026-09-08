@@ -1,0 +1,87 @@
+\begin{tikzpicture}[x=1mm,y=1mm,font=\scriptsize]
+  \def\costx{-84}
+  \def\tokenx{-25}
+  \def\timex{34}
+  \def\ybase{-24}
+  \def\panelw{48}
+
+  % Shared panel backgrounds and score grid.
+  \foreach \xx/\title in {\costx/{Normalized panel cost},\tokenx/{Analytical tokens},\timex/{Median response time}}{
+    \fill[notegray] (\xx,\ybase) rectangle (\xx+\panelw,\ybase+50);
+    \draw[rulegray,line width=0.4pt] (\xx,\ybase) rectangle (\xx+\panelw,\ybase+50);
+    \node[font=\scriptsize\bfseries,text=ink] at (\xx+24,31) {\title};
+    \foreach \sc in {60,70,80,90,100}{
+      \pgfmathsetmacro{\yy}{\ybase+(\sc-60)*1.25}
+      \draw[white,line width=0.55pt] (\xx,\yy) -- (\xx+\panelw,\yy);
+    }
+  }
+  \node[font=\tiny,text=darkgray,rotate=90] at (-90,1) {Mean score (0--100)};
+  \foreach \sc in {60,70,80,90,100}{
+    \pgfmathsetmacro{\yy}{\ybase+(\sc-60)*1.25}
+    \node[font=\tiny,text=darkgray,anchor=east] at (-85,\yy) {\sc};
+  }
+
+  % X ticks. Cost uses a separate zero point and a log scale for non-zero values.
+  \foreach \x/\lab in {0/{0*},5/{0.1},22.36/{1},39.72/{10},48/{30}}{
+    \draw[rulegray] (\costx+\x,\ybase) -- (\costx+\x,\ybase-1.2);
+    \node[font=\tiny,text=darkgray,anchor=north] at (\costx+\x,\ybase-1.8) {\lab};
+  }
+  \node[font=\tiny,text=darkgray] at (\costx+24,-30.2) {USD after cell averaging; log for non-zero values};
+  \foreach \x/\lab in {0.77/{0.2},12.39/{0.5},24/{0.8},35.61/{1.1},47.23/{1.4}}{
+    \draw[rulegray] (\tokenx+\x,\ybase) -- (\tokenx+\x,\ybase-1.2);
+    \node[font=\tiny,text=darkgray,anchor=north] at (\tokenx+\x,\ybase-1.8) {\lab};
+  }
+  \node[font=\tiny,text=darkgray] at (\tokenx+24,-30.2) {million tokens};
+  \foreach \x/\lab in {0/{20},12/{40},24/{80},36/{160},48/{320}}{
+    \draw[rulegray] (\timex+\x,\ybase) -- (\timex+\x,\ybase-1.2);
+    \node[font=\tiny,text=darkgray,anchor=north] at (\timex+\x,\ybase-1.8) {\lab};
+  }
+  \node[font=\tiny,text=darkgray] at (\timex+24,-30.2) {seconds; logarithmic scale};
+
+  \newcommand{\resrow}[8]{%
+    \pgfmathsetmacro{\ym}{\ybase+(#3-60)*1.25}
+    \pgfmathsetmacro{\yl}{\ybase+(#4-60)*1.25}
+    \pgfmathsetmacro{\yh}{\ybase+(#5-60)*1.25}
+    \foreach \origin/\xx in {\costx/#6,\tokenx/#7,\timex/#8}{
+      \draw[#2!60,line width=0.35pt] (\origin+\xx,\yl) -- (\origin+\xx,\yh);
+      \node[circle,fill=#2,draw=white,line width=0.35pt,inner sep=0pt,
+            minimum size=3.7mm,font=\tiny,text=white]
+        at (\origin+\xx,\ym) {#1};
+    }
+  }
+
+  \resrow{1}{openaiC}{98.72}{97.04}{99.86}{47.43}{30.15}{47.28}
+  \resrow{2}{anthropicC}{97.99}{96.15}{99.38}{45.97}{12.67}{24.74}
+  \resrow{3}{deepseekC}{97.24}{94.66}{99.16}{15.15}{47.06}{38.79}
+  \resrow{4}{googleC}{97.05}{95.11}{98.60}{37.93}{19.73}{30.24}
+  \resrow{5}{googleC}{96.95}{95.10}{98.51}{38.49}{30.82}{19.36}
+  \resrow{6}{deepseekC}{96.71}{94.76}{98.31}{21.65}{34.31}{40.07}
+  \resrow{7}{xaiC}{94.61}{91.66}{97.08}{31.25}{15.34}{30.10}
+  \resrow{8}{openaiC}{92.75}{89.74}{95.33}{34.37}{17.96}{21.74}
+  \resrow{9}{deepseekC}{86.31}{82.73}{89.68}{6.28}{10.20}{10.48}
+  \resrow{10}{googleC}{85.58}{81.52}{89.34}{0.00}{1.13}{22.83}
+  \resrow{11}{xaiC}{85.24}{79.77}{90.11}{25.78}{18.43}{22.59}
+  \resrow{12}{openaiC}{71.58}{66.46}{76.53}{28.51}{5.09}{11.61}
+  \resrow{13}{anthropicC}{70.91}{65.31}{76.41}{29.18}{0.85}{10.82}
+  \resrow{14}{anthropicC}{64.77}{59.57}{69.80}{23.79}{3.83}{3.61}
+
+  % Observed two-dimensional Pareto fronts, drawn after points.
+  \draw[cyan!85!black,line width=0.75pt,opacity=0.72]
+    (\costx+0,7.98) -- (\costx+6.28,8.89) -- (\costx+15.15,22.55)
+    -- (\costx+45.97,23.49) -- (\costx+47.43,24.15);
+  \draw[cyan!85!black,line width=0.75pt,opacity=0.72]
+    (\tokenx+0.85,-10.36) -- (\tokenx+1.13,7.98) -- (\tokenx+10.20,8.89)
+    -- (\tokenx+12.67,23.49) -- (\tokenx+30.15,24.15);
+  \draw[cyan!85!black,line width=0.75pt,opacity=0.72]
+    (\timex+3.61,-18.04) -- (\timex+10.48,8.89) -- (\timex+19.36,22.19)
+    -- (\timex+24.74,23.49) -- (\timex+47.28,24.15);
+
+  % Legend and interpretation key.
+  \foreach \col/\lab/\x in {openaiC/OpenAI/-83,anthropicC/Anthropic/-57,
+    googleC/Google/-24,deepseekC/DeepSeek/4,xaiC/xAI/37}{
+    \filldraw[fill=\col,draw=white,line width=0.3pt] (\x,-36.5) circle (1.35);
+    \node[font=\tiny,anchor=west,text=darkgray] at (\x+2.4,-36.5) {\lab};
+  }
+  \draw[cyan!85!black,line width=1.05pt] (60,-36.5) -- (69,-36.5);
+  \node[font=\tiny,anchor=west,text=darkgray] at (71,-36.5) {observed Pareto front};
+\end{tikzpicture}

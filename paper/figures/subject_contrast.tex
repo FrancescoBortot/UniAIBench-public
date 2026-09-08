@@ -1,0 +1,56 @@
+\begin{tikzpicture}[x=1mm,y=1mm,font=\scriptsize]
+  \def\plotleft{-28}
+  \def\plotwidth{91}
+  \newcount\subjectrowcount
+  \subjectrowcount=0
+
+  \foreach \tick in {60,70,80,90,100}{
+    \pgfmathsetmacro{\xtick}{\plotleft+(\tick-55)*\plotwidth/45}
+    \draw[rulegray!48,line width=0.25pt] (\xtick,3) -- (\xtick,-68);
+    \node[font=\tiny,text=darkgray,anchor=south] at (\xtick,3.5) {\tick};
+  }
+  \node[font=\scriptsize\bfseries,anchor=south west,text=ink] at (-87,7.5)
+    {Model configuration};
+  \node[font=\scriptsize\bfseries,anchor=south,text=ink] at (17,7.5)
+    {Subject means};
+  \node[font=\scriptsize\bfseries,anchor=south east,text=ink] at (87,7.5)
+    {P2 - A3 (pp)};
+
+  \newcommand{\subjectrow}[4]{%
+    \pgfmathsetmacro{\yy}{-5*\the\subjectrowcount}
+    \ifnum\subjectrowcount<6
+      \fill[cyan!4] (-88,\yy-2.25) rectangle (88,\yy+2.25);
+    \fi
+    \node[anchor=east,font=\scriptsize,text=ink] at (-31,\yy) {#1};
+    \pgfmathsetmacro{\xa}{\plotleft+(#2-55)*\plotwidth/45}
+    \pgfmathsetmacro{\xp}{\plotleft+(#3-55)*\plotwidth/45}
+    \draw[darkgray!60,line width=0.75pt] (\xa,\yy) -- (\xp,\yy);
+    \filldraw[fill=navy,draw=white,line width=0.3pt] (\xa,\yy) circle (1.35);
+    \filldraw[fill=gold,draw=white,line width=0.3pt]
+      (\xp-1.2,\yy-1.2) rectangle (\xp+1.2,\yy+1.2);
+    \node[anchor=east,font=\tiny,text=ink] at (87,\yy) {#4};
+    \advance\subjectrowcount by 1
+  }
+
+  \subjectrow{GPT-5.6 Sol}{99.86}{97.33}{-2.53}
+  \subjectrow{Claude Fable 5}{98.44}{97.45}{-0.99}
+  \subjectrow{DeepSeek V4 Flash}{97.10}{97.41}{+0.31}
+  \subjectrow{Gemini 3.1 Pro Preview}{96.63}{97.56}{+0.93}
+  \subjectrow{Gemini 3.5 Flash}{97.29}{96.53}{-0.76}
+  \subjectrow{DeepSeek V4 Pro}{96.57}{96.89}{+0.32}
+  \subjectrow{Grok 4.5}{95.59}{93.42}{-2.17}
+  \subjectrow{OpenAI o3}{90.49}{95.52}{+5.03}
+  \subjectrow{DeepSeek V4 Flash (no thinking)}{84.73}{88.24}{+3.50}
+  \subjectrow{Gemma 4 31B IT}{82.80}{88.98}{+6.18}
+  \subjectrow{Grok 4.3}{80.40}{91.16}{+10.76}
+  \subjectrow{OpenAI GPT-4.1}{64.02}{80.82}{+16.79}
+  \subjectrow{Claude Sonnet 4.5}{60.71}{83.37}{+22.66}
+  \subjectrow{Claude Haiku 4.5}{57.59}{73.54}{+15.95}
+
+  \filldraw[fill=navy,draw=white,line width=0.3pt] (-17,-72.2) circle (1.35);
+  \node[font=\tiny,anchor=west,text=darkgray] at (-14.5,-72.2) {Analysis III (33 items)};
+  \filldraw[fill=gold,draw=white,line width=0.3pt]
+    (18.8,-73.4) rectangle (21.2,-71.0);
+  \node[font=\tiny,anchor=west,text=darkgray] at (23,-72.2) {Physics II (27 items)};
+  \node[font=\tiny,anchor=west,text=darkgray] at (52,-72.2) {Top-six band shaded.};
+\end{tikzpicture}

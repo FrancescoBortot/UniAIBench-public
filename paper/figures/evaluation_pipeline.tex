@@ -1,0 +1,93 @@
+\begin{tikzpicture}[
+  font=\scriptsize,
+  node distance=6mm,
+  io/.style={
+    rounded corners=2pt,
+    draw=navy,
+    very thick,
+    fill=navy!8,
+    align=center,
+    minimum height=13mm,
+    text width=21mm
+  },
+  check/.style={
+    rounded corners=2pt,
+    draw=blue,
+    very thick,
+    fill=blue!9,
+    align=center,
+    minimum height=13mm,
+    text width=23mm
+  },
+  score/.style={
+    rounded corners=2pt,
+    draw=gold!85!black,
+    very thick,
+    fill=gold!13,
+    align=center,
+    minimum height=13mm,
+    text width=24mm
+  },
+  semantic/.style={
+    rounded corners=2pt,
+    draw=cyan!80!black,
+    very thick,
+    fill=cyan!11,
+    align=center,
+    minimum height=13mm,
+    text width=24mm
+  },
+  human/.style={
+    rounded corners=2pt,
+    draw=red,
+    very thick,
+    fill=red!9,
+    align=center,
+    minimum height=13mm,
+    text width=24mm
+  },
+  decision/.style={
+    diamond,
+    aspect=2,
+    draw=darkgray,
+    very thick,
+    fill=lightgray,
+    align=center,
+    inner sep=1pt,
+    text width=18mm
+  },
+  arrow/.style={-{Latex[length=2.1mm]},thick,draw=darkgray}
+]
+  \node[io] (input) {\textbf{Blind}\\response};
+  \node[check, right=of input] (s1) {\textbf{1}\\Parse};
+  \node[check, right=of s1] (s2) {\textbf{2}\\Numbers};
+  \node[check, right=of s2] (s3) {\textbf{3}\\Units};
+  \node[check, right=of s3] (s4) {\textbf{4}\\Symbols};
+
+  \node[score, below=10mm of s4] (s5) {\textbf{5}\\Rubric};
+  \node[semantic, left=of s5] (s6) {\textbf{6}\\Semantic};
+  \node[decision, left=8mm of s6] (gate) {Review?};
+  \node[human, left=8mm of gate] (s7) {\textbf{7}\\Human review};
+  \node[io, left=of s7] (output) {\textbf{Validated}\\judgment};
+
+  \draw[arrow] (input) -- (s1);
+  \draw[arrow] (s1) -- (s2);
+  \draw[arrow] (s2) -- (s3);
+  \draw[arrow] (s3) -- (s4);
+  \draw[arrow] (s4) -- (s5);
+  \draw[arrow] (s5) -- (s6);
+  \draw[arrow] (s6) -- (gate);
+  \draw[arrow] (gate) -- node[above,font=\tiny] {yes} (s7);
+  \draw[arrow] (s7) -- (output);
+  \draw[arrow] (gate.south) -- ++(0,-5mm)
+    -| node[pos=0.18,right,font=\tiny] {no} (output.south);
+
+  \node[
+    draw=blue!50,
+    dashed,
+    rounded corners,
+    fit=(s1)(s2)(s3)(s4),
+    inner sep=2.5mm,
+    label={[font=\tiny,text=blue!80!black]above:Structured checks}
+  ] {};
+\end{tikzpicture}

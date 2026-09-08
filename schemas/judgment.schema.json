@@ -1,0 +1,141 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/FrancescoBortot/UniAIBench-public/raw/main/schemas/judgment.schema.json",
+  "title": "UniAIBench blind judgment",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "judgment_version",
+    "item_id",
+    "response_id",
+    "rubric_version",
+    "criterion_assessment",
+    "dimensions",
+    "technical_score",
+    "atomic_errors",
+    "extra_penalties",
+    "cap",
+    "result_status",
+    "technical_summary",
+    "judge_confidence",
+    "review_flags",
+    "requires_human_review",
+    "human_review_reason",
+    "run_validity"
+  ],
+  "properties": {
+    "$schema": {"type": "string"},
+    "judgment_version": {"type": "string", "minLength": 1},
+    "item_id": {"type": "string", "minLength": 1},
+    "response_id": {"type": "string", "minLength": 1},
+    "rubric_version": {"type": "string", "minLength": 1},
+    "criterion_assessment": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/criterionAssessment"}
+    },
+    "dimensions": {"$ref": "#/$defs/dimensions"},
+    "technical_score": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["raw_score", "applicable_max_score", "normalized_score_before_penalties", "extra_penalty_total", "score_after_penalties", "applied_cap", "final_score"],
+      "properties": {
+        "raw_score": {"type": "number", "minimum": 0},
+        "applicable_max_score": {"type": "number", "exclusiveMinimum": 0},
+        "normalized_score_before_penalties": {"type": "number", "minimum": 0, "maximum": 100},
+        "extra_penalty_total": {"type": "number", "minimum": 0},
+        "score_after_penalties": {"type": "number", "minimum": 0, "maximum": 100},
+        "applied_cap": {"type": ["number", "null"], "minimum": 0, "maximum": 100},
+        "final_score": {"type": "number", "minimum": 0, "maximum": 100}
+      }
+    },
+    "atomic_errors": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "category", "severity", "description", "evidence", "caused_by", "consequence", "affected_subproblems"],
+        "properties": {
+          "id": {"type": "string"},
+          "category": {"type": "string"},
+          "severity": {"enum": ["minor", "major", "fatal"]},
+          "description": {"type": "string"},
+          "evidence": {"type": "string"},
+          "caused_by": {"type": ["string", "null"]},
+          "consequence": {"type": "string"},
+          "affected_subproblems": {"type": "array", "items": {"type": "string"}}
+        }
+      }
+    },
+    "extra_penalties": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["points", "reason"],
+        "properties": {
+          "points": {"type": "number", "minimum": 0},
+          "reason": {"type": "string"}
+        }
+      }
+    },
+    "cap": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["applied", "value", "reason"],
+      "properties": {
+        "applied": {"type": "boolean"},
+        "value": {"type": ["number", "null"], "minimum": 0, "maximum": 100},
+        "reason": {"type": "string"}
+      }
+    },
+    "result_status": {"enum": ["complete", "incomplete", "invalid", "requires_human_review"]},
+    "technical_summary": {"type": "string"},
+    "judge_confidence": {"enum": ["low", "medium", "high"]},
+    "review_flags": {"type": "array", "items": {"type": "string"}},
+    "requires_human_review": {"type": "boolean"},
+    "human_review_reason": {"type": "string"},
+    "run_validity": {"enum": ["valid", "invalid", "uncertain"]}
+  },
+  "$defs": {
+    "criterionAssessment": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["criterion_id", "primary_dimension", "max_points", "credit_fraction", "awarded_points", "evidence", "justification"],
+      "properties": {
+        "criterion_id": {"type": "string"},
+        "primary_dimension": {"enum": ["T1", "T2", "T3", "T4", "T5", "T6", "T7", "T8"]},
+        "max_points": {"type": "number", "exclusiveMinimum": 0},
+        "credit_fraction": {"type": "number", "minimum": 0, "maximum": 1},
+        "awarded_points": {"type": "number", "minimum": 0},
+        "evidence": {"type": "string"},
+        "justification": {"type": "string"}
+      }
+    },
+    "dimensionScore": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["score", "max_score", "status"],
+      "properties": {
+        "score": {"type": "number", "minimum": 0},
+        "max_score": {"type": "number", "minimum": 0},
+        "status": {"enum": ["scored", "not_applicable"]},
+        "summary": {"type": "string"}
+      }
+    },
+    "dimensions": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["T1", "T2", "T3", "T4", "T5", "T6", "T7", "T8"],
+      "properties": {
+        "T1": {"$ref": "#/$defs/dimensionScore"},
+        "T2": {"$ref": "#/$defs/dimensionScore"},
+        "T3": {"$ref": "#/$defs/dimensionScore"},
+        "T4": {"$ref": "#/$defs/dimensionScore"},
+        "T5": {"$ref": "#/$defs/dimensionScore"},
+        "T6": {"$ref": "#/$defs/dimensionScore"},
+        "T7": {"$ref": "#/$defs/dimensionScore"},
+        "T8": {"$ref": "#/$defs/dimensionScore"}
+      }
+    }
+  }
+}

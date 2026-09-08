@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1300" height="725" viewBox="0 0 1300 725">
+<rect width="1300" height="725" fill="#FFFFFF"/>
+<text x="35.0" y="42.0" font-family="Arial, sans-serif" font-size="24" fill="#17324D" text-anchor="start" font-weight="bold">Costo totale dei 60 esercizi comuni</text>
+<text x="35.0" y="67.0" font-family="Arial, sans-serif" font-size="12" fill="#5B6872" text-anchor="start" font-weight="normal">Costo provider quando disponibile; altrimenti ricostruzione dalle tariffe per milione di token.</text>
+<line x1="330.0" y1="87" x2="330.0" y2="655" stroke="#D8E0E5" stroke-width="1"/>
+<text x="330.0" y="687.0" font-family="Arial, sans-serif" font-size="11" fill="#5B6872" text-anchor="middle" font-weight="normal">$0.00</text>
+<line x1="494.0" y1="87" x2="494.0" y2="655" stroke="#D8E0E5" stroke-width="1"/>
+<text x="494.0" y="687.0" font-family="Arial, sans-serif" font-size="11" fill="#5B6872" text-anchor="middle" font-weight="normal">$5.56</text>
+<line x1="658.0" y1="87" x2="658.0" y2="655" stroke="#D8E0E5" stroke-width="1"/>
+<text x="658.0" y="687.0" font-family="Arial, sans-serif" font-size="11" fill="#5B6872" text-anchor="middle" font-weight="normal">$11.12</text>
+<line x1="822.0" y1="87" x2="822.0" y2="655" stroke="#D8E0E5" stroke-width="1"/>
+<text x="822.0" y="687.0" font-family="Arial, sans-serif" font-size="11" fill="#5B6872" text-anchor="middle" font-weight="normal">$16.68</text>
+<line x1="986.0" y1="87" x2="986.0" y2="655" stroke="#D8E0E5" stroke-width="1"/>
+<text x="986.0" y="687.0" font-family="Arial, sans-serif" font-size="11" fill="#5B6872" text-anchor="middle" font-weight="normal">$22.24</text>
+<line x1="1150.0" y1="87" x2="1150.0" y2="655" stroke="#D8E0E5" stroke-width="1"/>
+<text x="1150.0" y="687.0" font-family="Arial, sans-serif" font-size="11" fill="#5B6872" text-anchor="middle" font-weight="normal">$27.81</text>
+<text x="318.0" y="116.0" font-family="Arial, sans-serif" font-size="12" fill="#17324D" text-anchor="end" font-weight="normal">GPT-5.6 Sol</text>
+<rect x="330" y="99" width="820.0" height="24" rx="2" fill="#087F72"/>
+<text x="1158.0" y="116.0" font-family="Arial, sans-serif" font-size="11" fill="#5B6872" text-anchor="start" font-weight="normal">$27.8053</text>
+<text x="318.0" y="156.0" font-family="Arial, sans-serif" font-size="12" fill="#17324D" text-anchor="end" font-weight="normal">Claude Fable 5</text>
+<rect x="330" y="139" width="675.9" height="24" rx="2" fill="#9A4D00"/>
+<text x="1013.9" y="156.0" font-family="Arial, sans-serif" font-size="11" fill="#5B6872" text-anchor="start" font-weight="normal">$22.9185</text>
+<text x="318.0" y="196.0" font-family="Arial, sans-serif" font-size="12" fill="#17324D" text-anchor="end" font-weight="normal">Gemini 3.5 Flash</text>
+<rect x="330" y="179" width="250.6" height="24" rx="2" fill="#175CD3"/>
+<text x="588.6" y="196.0" font-family="Arial, sans-serif" font-size="11" fill="#5B6872" text-anchor="start" font-weight="normal">$8.4965</text>
+<text x="318.0" y="236.0" font-family="Arial, sans-serif" font-size="12" fill="#17324D" text-anchor="end" font-weight="normal">Gemini 3.1 Pro Preview</text>
+<rect x="330" y="219" width="232.7" height="24" rx="2" fill="#175CD3"/>
+<text x="570.7" y="236.0" font-family="Arial, sans-serif" font-size="11" fill="#5B6872" text-anchor="start" font-weight="normal">$7.8895</text>
+<text x="318.0" y="276.0" font-family="Arial, sans-serif" font-size="12" fill="#17324D" text-anchor="end" font-weight="normal">OpenAI o3</text>
+<rect x="330" y="259" width="145.1" height="24" rx="2" fill="#087F72"/>
+<text x="483.1" y="276.0" font-family="Arial, sans-serif" font-size="11" fill="#5B6872" text-anchor="start" font-weight="normal">$4.9216</text>
+<text x="318.0" y="316.0" font-family="Arial, sans-serif" font-size="12" fill="#17324D" text-anchor="end" font-weight="normal">Grok 4.5</text>
+<rect x="330" y="299" width="95.9" height="24" rx="2" fill="#202124"/>
+<text x="433.9" y="316.0" font-family="Arial, sans-serif" font-size="11" fill="#5B6872" text-anchor="start" font-weight="normal">$3.2504</text>
+<text x="318.0" y="356.0" font-family="Arial, sans-serif" font-size="12" fill="#17324D" text-anchor="end" font-weight="normal">Claude Sonnet 4.5</text>
+<rect x="330" y="339" width="72.9" height="24" rx="2" fill="#9A4D00"/>
+<text x="410.9" y="356.0" font-family="Arial, sans-serif" font-size="11" fill="#5B6872" text-anchor="start" font-weight="normal">$2.4706</text>
+<text x="318.0" y="396.0" font-family="Arial, sans-serif" font-size="12" fill="#17324D" text-anchor="end" font-weight="normal">OpenAI GPT-4.1</text>
+<rect x="330" y="379" width="66.6" height="24" rx="2" fill="#087F72"/>
+<text x="404.6" y="396.0" font-family="Arial, sans-serif" font-size="11" fill="#5B6872" text-anchor="start" font-weight="normal">$2.2599</text>
+<text x="318.0" y="436.0" font-family="Arial, sans-serif" font-size="12" fill="#17324D" text-anchor="end" font-weight="normal">Grok 4.3</text>
+<rect x="330" y="419" width="46.4" height="24" rx="2" fill="#202124"/>
+<text x="384.4" y="436.0" font-family="Arial, sans-serif" font-size="11" fill="#5B6872" text-anchor="start" font-weight="normal">$1.5744</text>
+<text x="318.0" y="476.0" font-family="Arial, sans-serif" font-size="12" fill="#17324D" text-anchor="end" font-weight="normal">Claude Haiku 4.5</text>
+<rect x="330" y="459" width="35.6" height="24" rx="2" fill="#9A4D00"/>
+<text x="373.6" y="476.0" font-family="Arial, sans-serif" font-size="11" fill="#5B6872" text-anchor="start" font-weight="normal">$1.2084</text>
+<text x="318.0" y="516.0" font-family="Arial, sans-serif" font-size="12" fill="#17324D" text-anchor="end" font-weight="normal">DeepSeek V4 Pro</text>
+<rect x="330" y="499" width="26.8" height="24" rx="2" fill="#5B4BCE"/>
+<text x="364.8" y="516.0" font-family="Arial, sans-serif" font-size="11" fill="#5B6872" text-anchor="start" font-weight="normal">$0.9102</text>
+<text x="318.0" y="556.0" font-family="Arial, sans-serif" font-size="12" fill="#17324D" text-anchor="end" font-weight="normal">DeepSeek V4 Flash</text>
+<rect x="330" y="539" width="11.3" height="24" rx="2" fill="#5B4BCE"/>
+<text x="349.3" y="556.0" font-family="Arial, sans-serif" font-size="11" fill="#5B6872" text-anchor="start" font-weight="normal">$0.3845</text>
+<text x="318.0" y="596.0" font-family="Arial, sans-serif" font-size="12" fill="#17324D" text-anchor="end" font-weight="normal">DeepSeek V4 Flash (no thinking)</text>
+<rect x="330" y="579" width="3.5" height="24" rx="2" fill="#5B4BCE"/>
+<text x="341.5" y="596.0" font-family="Arial, sans-serif" font-size="11" fill="#5B6872" text-anchor="start" font-weight="normal">$0.1185</text>
+<text x="318.0" y="636.0" font-family="Arial, sans-serif" font-size="12" fill="#17324D" text-anchor="end" font-weight="normal">Gemma 4 31B IT</text>
+<rect x="330" y="619" width="0.0" height="24" rx="2" fill="#175CD3"/>
+<text x="338.0" y="636.0" font-family="Arial, sans-serif" font-size="11" fill="#5B6872" text-anchor="start" font-weight="normal">$0.0000</text>
+</svg>

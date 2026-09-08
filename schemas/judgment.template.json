@@ -1,0 +1,37 @@
+{
+  "$schema": "judgment.schema.json",
+  "judgment_version": "1.0",
+  "item_id": "<ITEM_ID>",
+  "response_id": "<ANONYMOUS_RESPONSE_ID>",
+  "rubric_version": "<FROZEN_RUBRIC_VERSION>",
+  "criterion_assessment": [],
+  "dimensions": {
+    "T1": {"score": 0, "max_score": 20, "status": "scored", "summary": ""},
+    "T2": {"score": 0, "max_score": 15, "status": "scored", "summary": ""},
+    "T3": {"score": 0, "max_score": 20, "status": "scored", "summary": ""},
+    "T4": {"score": 0, "max_score": 15, "status": "scored", "summary": ""},
+    "T5": {"score": 0, "max_score": 10, "status": "scored", "summary": ""},
+    "T6": {"score": 0, "max_score": 8, "status": "scored", "summary": ""},
+    "T7": {"score": 0, "max_score": 7, "status": "scored", "summary": ""},
+    "T8": {"score": 0, "max_score": 5, "status": "scored", "summary": ""}
+  },
+  "technical_score": {
+    "raw_score": 0,
+    "applicable_max_score": 100,
+    "normalized_score_before_penalties": 0,
+    "extra_penalty_total": 0,
+    "score_after_penalties": 0,
+    "applied_cap": null,
+    "final_score": 0
+  },
+  "atomic_errors": [],
+  "extra_penalties": [],
+  "cap": {"applied": false, "value": null, "reason": ""},
+  "result_status": "incomplete",
+  "technical_summary": "",
+  "judge_confidence": "low",
+  "review_flags": [],
+  "requires_human_review": false,
+  "human_review_reason": "",
+  "run_validity": "uncertain"
+}

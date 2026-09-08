@@ -1,0 +1,27 @@
+.env
+.venv/
+__pycache__/
+*.py[cod]
+.DS_Store
+.pytest_cache/
+node_modules/
+.next/
+.vinext/
+.wrangler/
+dist/
+build/
+tmp/
+
+# Private UniAIBench artifacts must never enter this repository.
+/DATASET*/
+/RUNS/
+/JUDGING/
+/RETRY_ARCHIVE/
+/SELF_REVIEW/
+/EXPERIMENTS/
+/Router/
+/website/
+/local_data/
+/local_outputs/
+raw_response.json
+identity_map.json
