@@ -9,6 +9,8 @@ import math
 from pathlib import Path
 from typing import Any
 
+from schema_validation import validate_json_schema
+
 
 DIMENSIONS = tuple(f"T{number}" for number in range(1, 9))
 
@@ -18,6 +20,9 @@ def fail(message: str) -> None:
 
 
 def validate(payload: dict[str, Any], template: bool = False) -> None:
+    schema_path = Path(__file__).resolve().parents[1] / "schemas" / "judgment.schema.json"
+    schema = json.loads(schema_path.read_text(encoding="utf-8"))
+    validate_json_schema(payload, schema)
     required = {
         "judgment_version", "item_id", "response_id", "rubric_version",
         "criterion_assessment", "dimensions", "technical_score",
@@ -53,6 +58,7 @@ def validate(payload: dict[str, Any], template: bool = False) -> None:
         fail("criterion assessments must be unique")
 
     awards_by_dimension = {dimension: 0.0 for dimension in DIMENSIONS}
+    maxima_by_dimension = {dimension: 0.0 for dimension in DIMENSIONS}
     for item in criteria:
         maximum = float(item["max_points"])
         fraction = float(item["credit_fraction"])
@@ -62,12 +68,17 @@ def validate(payload: dict[str, Any], template: bool = False) -> None:
         if not math.isclose(award, maximum * fraction, abs_tol=1e-6):
             fail(f"award arithmetic mismatch for {item['criterion_id']}")
         awards_by_dimension[item["primary_dimension"]] += award
+        maxima_by_dimension[item["primary_dimension"]] += maximum
 
     for dimension in DIMENSIONS:
         if not math.isclose(
             awards_by_dimension[dimension], float(dimensions[dimension]["score"]), abs_tol=1e-6
         ):
             fail(f"{dimension} does not equal its criterion awards")
+        if not math.isclose(
+            maxima_by_dimension[dimension], float(dimensions[dimension]["max_score"]), abs_tol=1e-6
+        ):
+            fail(f"{dimension} max_score does not equal its criterion maxima")
 
     technical = payload["technical_score"]
     raw = sum(awards_by_dimension.values())
@@ -90,6 +101,11 @@ def validate(payload: dict[str, Any], template: bool = False) -> None:
     if not math.isclose(after_penalties, float(technical["score_after_penalties"]), abs_tol=1e-5):
         fail("score_after_penalties arithmetic mismatch")
     cap = payload["cap"]
+    applied_cap = technical["applied_cap"]
+    if cap["applied"] and (cap["value"] is None or applied_cap != cap["value"]):
+        fail("technical_score.applied_cap must equal the applied cap value")
+    if not cap["applied"] and applied_cap is not None:
+        fail("technical_score.applied_cap must be null when no cap is applied")
     expected_final = min(after_penalties, float(cap["value"])) if cap["applied"] else after_penalties
     if not math.isclose(expected_final, float(technical["final_score"]), abs_tol=1e-5):
         fail("final_score does not reflect penalties and cap")

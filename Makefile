@@ -1,8 +1,9 @@
 PYTHON ?= python3
 
-.PHONY: check check-strict validate-rubric-template validate-judgment-template paper
+.PHONY: check check-strict validate-configs validate-rubric-template \
+	validate-judgment-template test check-analysis figures paper
 
-check: validate-rubric-template validate-judgment-template
+check: validate-configs validate-rubric-template validate-judgment-template test check-analysis
 	$(PYTHON) tools/validate_public_repository.py
 	$(PYTHON) benchmark_harness.py --help >/dev/null
 
@@ -15,6 +16,29 @@ validate-rubric-template:
 validate-judgment-template:
 	$(PYTHON) tools/validate_judgment.py schemas/judgment.template.json --template
 
-paper:
-	$(MAKE) -C paper publication
+validate-configs:
+	$(PYTHON) tools/validate_config.py configs/benchmark_config.template.json
+	$(PYTHON) tools/validate_config.py configs/google_benchmark_config.template.json
 
+test:
+	$(PYTHON) -m unittest discover -s tests -v
+
+check-analysis:
+	$(PYTHON) paper/scripts/build_item_difficulty_figure.py
+	git diff --exit-code -- paper/figures/item_difficulty.tex
+
+figures:
+	$(PYTHON) analysis/scripts/build_selected_charts.py
+	$(PYTHON) analysis/scripts/build_selected_token_cost_charts.py
+	$(PYTHON) analysis/scripts/build_token_cost_focus_charts.py
+	$(PYTHON) analysis/scripts/build_response_time_focus_charts.py
+	$(PYTHON) analysis/scripts/build_main_chart_collection.py
+	$(PYTHON) analysis/scripts/build_model_specifications_pdf.py
+	$(PYTHON) analysis/scripts/build_website_benchmark_data.py
+	cp analysis/grafici_selezionati/output/pdf/selected_correctness_charts.pdf paper/figures/
+	cp analysis/grafici_token_costi_focus/output/pdf/focused_token_cost_charts.pdf paper/figures/
+	cp analysis/grafici_tempo_risposta_focus/output/pdf/focused_response_time_charts.pdf paper/figures/
+
+paper: figures
+	$(PYTHON) paper/scripts/build_item_difficulty_figure.py
+	$(MAKE) -C paper publication

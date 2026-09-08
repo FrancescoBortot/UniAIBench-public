@@ -7,13 +7,14 @@ import argparse
 import csv
 import json
 import re
+import subprocess
 from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
 TEXT_SUFFIXES = {
     ".cff", ".csv", ".gitignore", ".gitattributes", ".json", ".md",
-    ".py", ".tex", ".txt", ".yaml", ".yml",
+    ".js", ".mjs", ".py", ".tex", ".ts", ".tsx", ".txt", ".yaml", ".yml",
 }
 FORBIDDEN_TOP_LEVEL = {
     "DATASET", "DATASET_ANALISI_3", "DATASET_FISICA_2", "DOCUMENTI",
@@ -30,6 +31,9 @@ REQUIRED = {
     "prompts/solver-prompt.md", "prompts/rubric-builder-prompt.md",
     "prompts/judge-prompt.md", "prompts/adjudicator-prompt.md",
     "configs/benchmark_config.template.json",
+    "schemas/benchmark-config.schema.json", "analysis/FIGURE_PROVENANCE.md",
+    "analysis/scripts/build_main_chart_collection.py",
+    "CONTRIBUTING.md",
 }
 
 
@@ -67,6 +71,24 @@ def check_secret_assignment(path: Path, text: str, errors: list[str]) -> None:
             errors.append(f"non-empty credential assignment in {relative(path)}")
 
 
+def git_paths(*arguments: str) -> list[str]:
+    process = subprocess.run(
+        ["git", *arguments], cwd=ROOT, text=True, capture_output=True, check=False
+    )
+    if process.returncode != 0:
+        return []
+    return [line.strip() for line in process.stdout.splitlines() if line.strip()]
+
+
+def private_path_reason(candidate: str) -> str | None:
+    parts = candidate.replace("\\", "/").split("/")
+    if any(part.upper() in FORBIDDEN_TOP_LEVEL for part in parts):
+        return "contains a private-artifact directory"
+    if any(part.lower() in {name.lower() for name in FORBIDDEN_FILENAMES} for part in parts):
+        return "contains a forbidden artifact filename"
+    return None
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--strict", action="store_true", help="also require the publication checklist to be complete")
@@ -80,6 +102,15 @@ def main() -> int:
         if not (ROOT / required).is_file():
             errors.append(f"required file missing: {required}")
 
+    for candidate in git_paths("ls-files"):
+        reason = private_path_reason(candidate)
+        if reason:
+            errors.append(f"tracked path {reason}: {candidate}")
+    for candidate in git_paths("log", "--all", "--format=", "--name-only"):
+        reason = private_path_reason(candidate)
+        if reason:
+            errors.append(f"Git history path {reason}: {candidate}")
+
     rubric_json = sorted((ROOT / "rubrics").rglob("*.json"))
     expected_template = ROOT / "rubrics/templates/rubric.template.json"
     if rubric_json != [expected_template]:
@@ -90,7 +121,10 @@ def main() -> int:
         errors.append("source exercise text files are present")
 
     local_home_marker = "/" + "Users" + "/"
-    token_prefixes = ("sk" + "-", "gh" + "p_", "gh" + "o_", "AIza" + "Sy")
+    token_prefixes = (
+        "sk" + "-", "gh" + "p_", "gh" + "o_", "AIza" + "Sy",
+        "AK" + "IA", "-----BEGIN " + "PRIVATE KEY-----",
+    )
     for path in text_files():
         if path.name in FORBIDDEN_FILENAMES:
             errors.append(f"forbidden file: {relative(path)}")

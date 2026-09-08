@@ -9,6 +9,8 @@ import math
 from pathlib import Path
 from typing import Any
 
+from schema_validation import validate_json_schema
+
 
 DIMENSIONS = tuple(f"T{number}" for number in range(1, 9))
 
@@ -28,6 +30,9 @@ def contains_placeholder(value: Any) -> bool:
 
 
 def validate(payload: dict[str, Any], template: bool = False) -> None:
+    schema_path = Path(__file__).resolve().parents[1] / "schemas" / "rubric.schema.json"
+    schema = json.loads(schema_path.read_text(encoding="utf-8"))
+    validate_json_schema(payload, schema)
     required = {
         "rubric_version", "judge_spec_version", "item_id", "subject",
         "domain_profile", "created_without_model_answers", "frozen",
@@ -71,6 +76,7 @@ def validate(payload: dict[str, Any], template: bool = False) -> None:
     if len(criterion_ids) != len(set(criterion_ids)):
         fail("criterion IDs must be unique")
     points_by_dimension = {dimension: 0.0 for dimension in DIMENSIONS}
+    points_by_subproblem = {subproblem_id: 0.0 for subproblem_id in subproblem_ids}
     for criterion in criteria:
         if criterion.get("subproblem_id") not in subproblem_ids:
             fail(f"unknown subproblem in criterion {criterion.get('criterion_id')}")
@@ -81,6 +87,7 @@ def validate(payload: dict[str, Any], template: bool = False) -> None:
         if points <= 0:
             fail(f"max_points must be positive in criterion {criterion.get('criterion_id')}")
         points_by_dimension[dimension] += points
+        points_by_subproblem[criterion["subproblem_id"]] += points
         for rule in criterion.get("partial_credit_rules", []):
             fraction = float(rule.get("credit_fraction", -1))
             if not 0 <= fraction <= 1:
@@ -93,6 +100,16 @@ def validate(payload: dict[str, Any], template: bool = False) -> None:
             fail(
                 f"{dimension} criteria total {points_by_dimension[dimension]}, "
                 f"expected {expected}"
+            )
+    applicable_total = sum(points_by_dimension.values())
+    if applicable_total <= 0:
+        fail("completed rubric has no applicable point budget")
+    for subproblem in subproblems:
+        observed_weight = points_by_subproblem[subproblem["id"]] / applicable_total
+        if not math.isclose(observed_weight, float(subproblem["weight"]), abs_tol=1e-8):
+            fail(
+                f"subproblem {subproblem['id']} weight {subproblem['weight']} does not match "
+                f"its criterion allocation ({observed_weight:.8f})"
             )
     approval = payload["human_approval"]
     if payload["frozen"] and not (

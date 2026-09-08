@@ -33,6 +33,13 @@ It intentionally does **not** distribute examination statements, official
 solutions, completed item-specific rubrics, model response texts, individual
 judgments, or private identity maps.
 
+| Included here | Kept in the private research archive |
+|---|---|
+| Methodology, prompts, schemas, blank rubric template, reference harness | Examination statements and official solutions |
+| Sanitized model--item score and resource panels | Completed rubrics and criterion-level judgments |
+| Aggregate tables, figure programs, paper source, and compiled paper | Model response text, provider payloads, and blind identity maps |
+| Website chart-data exporter and a link to the deployed site | Website source, Atlas records, retries, and internal experiments |
+
 ## Method in one view
 
 ```text
@@ -89,7 +96,7 @@ UniAIBench-public/
 |-- prompts/                 role-specific prompt templates
 |-- configs/                 generic benchmark configuration template
 |-- tools/                   offline rubric, judgment, and release validators
-|-- analysis/                aggregate public data, tables, and figures
+|-- analysis/                aggregate data, figures, and all chart programs
 |-- results/                 additional aggregate result views
 |-- paper/                   manuscript source and compiled PDF
 |-- benchmark_harness.py     multi-provider reference implementation
@@ -109,6 +116,30 @@ UniAIBench-public/
 
 For a complete adaptation sequence, see
 [Extending the method](docs/extending-the-method.md).
+
+Run all offline structural, schema, safety, and aggregate-data checks with:
+
+```bash
+make check
+```
+
+## Headline results
+
+The analysis snapshot is dated **14 August 2026**. The top six configurations
+in the matched 60-item panel were:
+
+| Rank | Configuration | Mean score | 95% item-bootstrap interval |
+|---:|---|---:|---:|
+| 1 | GPT-5.6 Sol | 98.72% | 97.04--99.86% |
+| 2 | Claude Fable 5 | 97.99% | 96.15--99.38% |
+| 3 | DeepSeek V4 Flash | 97.24% | 94.66--99.16% |
+| 4 | Gemini 3.1 Pro Preview | 97.05% | 95.11--98.60% |
+| 5 | Gemini 3.5 Flash | 96.95% | 95.10--98.51% |
+| 6 | DeepSeek V4 Pro | 96.71% | 94.76--98.31% |
+
+The overlapping intervals do not support treating this ordering as a sharply
+separated leaderboard. Subject stability, token use, cost, and response time
+remain necessary parts of the comparison.
 
 ## Choosing and using models
 
@@ -154,12 +185,15 @@ common exercises, forming 840 model--item cells from 924 retained responses.
   panels;
 - [`analysis/tables/`](analysis/tables/): aggregate rankings and T1--T8 profiles;
 - [`analysis/figures/`](analysis/figures/): publication figures;
+- [`analysis/scripts/`](analysis/scripts/): executable chart and website-data
+  generators, with an [output-to-source map](analysis/FIGURE_PROVENANCE.md);
 - [`results/`](results/): additional aggregate exam-level views;
 - [`paper/`](paper/): manuscript and current compiled PDF.
 
-The public repository supports methodological inspection and aggregate-result
-verification. It does not claim full regeneration of answers or judgments
-without the private source artifacts. See
+The repository supports method reproduction and exact regeneration of public
+chart data and figure families from the sanitized panels. It does not claim
+full regeneration of answers or judgments without the private source
+artifacts. See
 [Reproducibility boundaries](docs/reproducibility.md).
 
 ## Data and completed-rubric policy
@@ -179,6 +213,8 @@ reuse the benchmark methodology.
 
 Citation metadata are available in [`CITATION.cff`](CITATION.cff).
 
+Contributions should follow [`CONTRIBUTING.md`](CONTRIBUTING.md).
+
 - software is licensed under the MIT License;
 - original documentation, prompts, schemas, blank templates, aggregate data,
   figures, and paper are licensed under CC BY 4.0;
@@ -190,4 +226,3 @@ See [`LICENSE.md`](LICENSE.md) for the exact scope.
 ## Author
 
 Francesco Bortot
-

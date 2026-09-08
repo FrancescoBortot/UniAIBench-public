@@ -11,7 +11,8 @@ private UniAIBench research archive. It has an independent Git history.
 - reusable prompts for solver, rubric builder, judge, and adjudicator roles;
 - offline validators;
 - a generic multi-provider harness and configuration template;
-- aggregate result panels, tables, figures, and exam-level summaries;
+- aggregate result panels, tables, figures, exam-level summaries, and all
+  programs used to create the public paper and website chart families;
 - manuscript source and compiled paper;
 - citation metadata and explicit licence boundaries;
 - a link to the separate website.
@@ -27,4 +28,3 @@ private UniAIBench research archive. It has an independent Git history.
 - credentials, local paths, environments, dependencies, caches, and build
   products;
 - the private repository's Git history.
-

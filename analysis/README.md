@@ -10,6 +10,13 @@ model-answer text, individual judgment, or private identity map.
   metadata for those cells.
 - `tables/`: principal rankings, coverage, T1--T8 profiles, and resource tables.
 - `figures/`: publication-ready visual summaries.
+- `scripts/`: executable generators for the paper and website chart families.
+- `site_exports/`: ignored working output containing text-free TypeScript data
+  modules for the separate website codebase; regenerate it with `make figures`.
+
+See [`FIGURE_PROVENANCE.md`](FIGURE_PROVENANCE.md) for the exact mapping from
+each output family to its program and public input files. Run `make figures`
+from the repository root to rebuild the chart collections.
 
 The principal matched panel comprises 14 model configurations and 60 common
 items. Some cells summarize repeated runs; consult `n_responses` rather than

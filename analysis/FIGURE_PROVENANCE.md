@@ -1,0 +1,45 @@
+# Figure and website-chart provenance
+
+Every chart program needed by the public paper and website presentation is
+kept in this repository. The programs consume only the sanitized aggregate
+panels under `analysis/data/` and the derived tables under `analysis/tables/`.
+They do not require source exercises, official solutions, model answers,
+individual judgments, completed rubrics, or identity maps.
+
+## Rebuild commands
+
+```bash
+python3.11 -m venv .venv
+.venv/bin/python -m pip install -r requirements.txt
+make figures
+make paper
+```
+
+Generated working directories named `analysis/grafici_*` are ignored by Git.
+The canonical supplementary PDFs are copied to `paper/figures/` by
+`make figures`.
+
+## Output-to-source map
+
+| Published output or chart family | Source program | Public numerical inputs |
+|---|---|---|
+| Correctness rankings and T1--T8 profiles | `analysis/scripts/build_selected_charts.py` | ranking and profile CSVs in `analysis/tables/` |
+| Cost ranking, token composition, distributions, heatmap, and thinking contrast | `analysis/scripts/build_selected_token_cost_charts.py` | `model_item_resources.csv` and resource tables |
+| Focused cost charts | `analysis/scripts/build_token_cost_focus_charts.py` | outputs of the selected token/cost generator |
+| Response-time ranking, heatmap, drivers, and accuracy correlation | `analysis/scripts/build_response_time_focus_charts.py` and `build_speed_correctness_alternatives.py` | public resource panel and overall ranking table |
+| Canonical ten-chart collection used by the paper and website | `analysis/scripts/build_main_chart_collection.py` | the chart families above |
+| Model technical-specification appendix | `analysis/scripts/build_model_specifications_pdf.py` | versioned model specification records embedded in the program |
+| Website chart-data modules | `analysis/scripts/build_website_benchmark_data.py` | both public model--item panels and derived tables |
+| Paper item-difficulty strip | `paper/scripts/build_item_difficulty_figure.py` | `analysis/data/model_item_scores.csv` |
+
+The remaining paper diagrams are declarative TikZ programs stored directly as
+`paper/figures/*.tex`; LaTeX compiles them without a separate Python generator.
+They cover the benchmark map, rubric anatomy, performance overview, subject
+contrast, token ablation, and resource frontiers.
+
+## Boundary
+
+Upstream extraction from private responses and judgments is deliberately not
+published. This repository starts from sanitized model--item panels. It
+therefore supports exact public analysis and figure reconstruction within that
+boundary, not regeneration of model answers or blind judgments.

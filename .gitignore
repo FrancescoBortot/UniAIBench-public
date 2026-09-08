@@ -23,5 +23,8 @@ tmp/
 /website/
 /local_data/
 /local_outputs/
+/analysis/grafici_*/
+/analysis/site_exports/
+/paper/build/
 raw_response.json
 identity_map.json

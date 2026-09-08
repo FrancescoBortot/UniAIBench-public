@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
-"""Harness asincrono e riprendibile per il benchmark multi-provider."""
+"""Asynchronous, resumable multi-provider benchmark reference harness."""
 
 from __future__ import annotations
 
 import argparse
 import asyncio
 import hashlib
+import importlib.metadata
 import json
 import os
 import random
@@ -19,6 +20,8 @@ from typing import Any, Dict, List, Optional, Sequence, Tuple
 
 from dotenv import load_dotenv
 
+from tools.schema_validation import validate_json_schema
+
 
 ROOT = Path(__file__).resolve().parent
 SESSION_ORDER = {"primoapp": 1, "secondoapp": 2, "terzoapp": 3, "quartoapp": 4, "quintoapp": 5}
@@ -29,6 +32,22 @@ KEY_BY_PROVIDER = {
     "kimi": "MOONSHOT_API_KEY",
     "deepseek": "DEEPSEEK_API_KEY",
     "xai": "XAI_API_KEY",
+}
+DEFAULT_ENDPOINTS = {
+    "openai": "https://api.openai.com/v1/responses",
+    "anthropic": "https://api.anthropic.com/v1/messages",
+    "google": "Google Gen AI generateContent",
+    "kimi": "https://api.moonshot.ai/v1/chat/completions",
+    "deepseek": "https://api.deepseek.com/chat/completions",
+    "xai": "https://api.x.ai/v1/responses",
+}
+SDK_DISTRIBUTIONS = {
+    "openai": "openai",
+    "anthropic": "anthropic",
+    "google": "google-genai",
+    "kimi": "openai",
+    "deepseek": "openai",
+    "xai": "openai",
 }
 
 
@@ -45,6 +64,7 @@ class Job:
     thinking_level: Optional[str]
     thinking_mode: Optional[str]
     pricing_usd_per_million: Optional[Dict[str, float]]
+    endpoint: str
     year: int
     session: str
     exercise_number: int
@@ -110,6 +130,28 @@ def sha256_text(text: str) -> str:
     return hashlib.sha256(text.encode("utf-8")).hexdigest()
 
 
+def sha256_file(path: Path) -> str:
+    digest = hashlib.sha256()
+    with path.open("rb") as handle:
+        for chunk in iter(lambda: handle.read(1024 * 1024), b""):
+            digest.update(chunk)
+    return digest.hexdigest()
+
+
+def validate_config(config: Dict[str, Any]) -> None:
+    schema = read_json(ROOT / "schemas" / "benchmark-config.schema.json")
+    validate_json_schema(config, schema)
+
+
+def sdk_metadata(provider: str) -> Dict[str, Optional[str]]:
+    distribution = SDK_DISTRIBUTIONS[provider]
+    try:
+        version: Optional[str] = importlib.metadata.version(distribution)
+    except importlib.metadata.PackageNotFoundError:
+        version = None
+    return {"distribution": distribution, "version": version}
+
+
 def load_prompt_template(path: Path) -> str:
     document = path.read_text(encoding="utf-8")
     headings = ("## Prompt to send to the model", "## Prompt da inviare al modello")
@@ -133,8 +175,9 @@ def dataset_item_prefix(config: Dict[str, Any]) -> str:
     return prefix
 
 
-def session_directory(dataset_root: Path, year: int, session: str) -> Path:
-    expected = dataset_root / f"02_esercizi_{year}_{session}"
+def session_directory(config: Dict[str, Any], dataset_root: Path, year: int, session: str) -> Path:
+    template = str(config.get("session_directory_template", "02_esercizi_{year}_{session}"))
+    expected = dataset_root / template.format(year=year, session=session)
     if not expected.is_dir():
         raise FileNotFoundError(f"Cartella dell'appello non trovata: {expected}")
     return expected
@@ -155,12 +198,22 @@ def discover_exercises(config: Dict[str, Any]) -> List[Tuple[str, int, Path]]:
         selected_numbers = set(selected_numbers)
     exercises: List[Tuple[str, int, Path]] = []
     for session in config["sessions"]:
-        directory = session_directory(dataset_root, year, session)
-        files = sorted(directory.glob("esercizio_*.txt"), key=lambda p: int(p.stem.split("_")[-1]))
-        if len(files) != 3:
-            raise ValueError(f"Attesi 3 esercizi in {directory}, trovati {len(files)}")
+        directory = session_directory(config, dataset_root, year, session)
+        pattern = str(config.get("exercise_filename_glob", "esercizio_*.txt"))
+        expression = re.compile(str(config.get("exercise_filename_regex", r"(?:esercizio|exercise)_(\d+)\.txt")))
+        numbered: List[Tuple[int, Path]] = []
+        for path in directory.glob(pattern):
+            match = expression.fullmatch(path.name)
+            if match:
+                numbered.append((int(match.group(1)), path))
+        files = [path for _, path in sorted(numbered)]
+        expected_count = int(config.get("expected_exercises_per_session", 3))
+        if len(files) != expected_count:
+            raise ValueError(f"Expected {expected_count} exercises in {directory}, found {len(files)}")
         for path in files:
-            number = int(path.stem.split("_")[-1])
+            match = expression.fullmatch(path.name)
+            assert match is not None
+            number = int(match.group(1))
             if selected_numbers is None or number in selected_numbers:
                 exercises.append((session, number, path))
     if selected_numbers is not None:
@@ -220,6 +273,7 @@ def build_jobs(config: Dict[str, Any], providers: Optional[Sequence[str]] = None
                         thinking_level=model.get("thinking_level"),
                         thinking_mode=model.get("thinking_mode"),
                         pricing_usd_per_million=model.get("pricing_usd_per_million"),
+                        endpoint=str(model.get("endpoint", DEFAULT_ENDPOINTS[model["provider"]])),
                         year=year,
                         session=session,
                         exercise_number=number,
@@ -302,6 +356,26 @@ def render_prompt(template: str, values: Dict[str, str]) -> str:
         rendered = rendered.replace("{{" + key + "}}", value)
     rendered = re.sub(r"\{\{[^{}]+\}\}", "non disponibile", rendered)
     return rendered
+
+
+def snapshot_campaign(config: Dict[str, Any]) -> None:
+    """Persist the exact non-secret configuration and prompt before API calls."""
+
+    campaign_dir = ROOT / config["output_root"] / "_campaign"
+    public_config = {key: value for key, value in config.items() if not key.startswith("_runtime_")}
+    prompt_path = ROOT / config["prompt_file"]
+    write_json_atomic(campaign_dir / "config.json", public_config)
+    write_text_atomic(campaign_dir / "prompt-template.md", prompt_path.read_text(encoding="utf-8"))
+    write_json_atomic(
+        campaign_dir / "manifest.json",
+        {
+            "benchmark_id": config["benchmark_id"],
+            "access_date": config["access_date"],
+            "configuration_sha256": config["_runtime_config_sha256"],
+            "prompt_sha256": sha256_file(prompt_path),
+            "created_at": utc_now(),
+        },
+    )
 
 
 def require_keys(jobs: Sequence[Job]) -> None:
@@ -623,6 +697,11 @@ def billing_metadata(job: Job, result: ProviderResult) -> Dict[str, Any]:
 def failure_metadata(config: Dict[str, Any], job: Job, prompt_hash: str, started_at: str, error: str, attempts: int) -> Dict[str, Any]:
     return {
         "benchmark_id": config["benchmark_id"],
+        "configuration": {
+            "path": config["_runtime_config_path"],
+            "sha256": config["_runtime_config_sha256"],
+            "access_date": config["access_date"],
+        },
         "run_id": job.run_id,
         "dataset_item_id": job.dataset_item_id,
         "model": {
@@ -632,8 +711,14 @@ def failure_metadata(config: Dict[str, Any], job: Job, prompt_hash: str, started
             "output_slug": job.output_slug,
             "api_response_model_id": None,
             "mode": job.model_mode,
+            "endpoint": job.endpoint,
+            "sdk": sdk_metadata(job.provider),
         },
-        "prompt": {"prompt_id": config["prompt_id"], "prompt_hash": prompt_hash},
+        "prompt": {
+            "prompt_id": config["prompt_id"],
+            "prompt_hash": prompt_hash,
+            "language": config["prompt_language"],
+        },
         "generation": {
             "reasoning_effort": job.reasoning_effort,
             "thinking_level": job.thinking_level,
@@ -691,6 +776,11 @@ async def execute_job(
             execution_status = "failed" if validation_error else "completed"
             metadata = {
                 "benchmark_id": config["benchmark_id"],
+                "configuration": {
+                    "path": config["_runtime_config_path"],
+                    "sha256": config["_runtime_config_sha256"],
+                    "access_date": config["access_date"],
+                },
                 "run_id": job.run_id,
                 "dataset_item_id": job.dataset_item_id,
                 "exam": {
@@ -701,6 +791,7 @@ async def execute_job(
                     "subject": str(config.get("exam_metadata", {}).get("subject", "non disponibile")),
                     "source_file": str(job.exercise_file.relative_to(ROOT)),
                     "source_files": [str(path.relative_to(ROOT)) for path in source_files],
+                    "source_sha256": [sha256_file(path) for path in source_files],
                 },
                 "model": {
                     "display_name": job.display_name,
@@ -709,11 +800,13 @@ async def execute_job(
                     "output_slug": job.output_slug,
                     "api_response_model_id": result.response_model_id,
                     "mode": job.model_mode,
+                    "endpoint": job.endpoint,
+                    "sdk": sdk_metadata(job.provider),
                 },
                 "prompt": {
                     "prompt_id": config["prompt_id"],
                     "prompt_hash": prompt_hash,
-                    "language": "it",
+                    "language": config["prompt_language"],
                     "input_format": "text",
                 },
                 "generation": {
@@ -722,6 +815,9 @@ async def execute_job(
                     "thinking_mode": job.thinking_mode,
                     "max_output_tokens": job.max_output_tokens,
                     "run_number": job.run_number,
+                    "temperature": None,
+                    "top_p": None,
+                    "seed": None,
                 },
                 "timing": {
                     "started_at": started_at,
@@ -730,7 +826,10 @@ async def execute_job(
                 },
                 "tokens": result.tokens,
                 "billing": billing_metadata(job, result),
-                "tools": {"allowed": [], "web_allowed": False},
+                "tools": {
+                    "allowed": config.get("exam_metadata", {}).get("allowed_tools", []),
+                    "web_allowed": bool(config.get("exam_metadata", {}).get("web_allowed", False)),
+                },
                 "execution": {
                     "status": execution_status,
                     "attempt_count": attempt,
@@ -739,6 +838,8 @@ async def execute_job(
                     "finish_reason": result.finish_reason,
                     "error": validation_error,
                     "raw_response_file": "raw_response.json",
+                    "response_text_sha256": sha256_text(result.answer),
+                    "raw_response_sha256": sha256_file(destination / "raw_response.json"),
                 },
             }
             write_json_atomic(destination / "metadata.json", metadata)
@@ -853,6 +954,13 @@ def main() -> int:
     args = parse_args()
     config_path = (ROOT / args.config).resolve()
     config = read_json(config_path)
+    validate_config(config)
+    try:
+        recorded_config_path = str(config_path.relative_to(ROOT))
+    except ValueError:
+        recorded_config_path = config_path.name
+    config["_runtime_config_path"] = recorded_config_path
+    config["_runtime_config_sha256"] = sha256_file(config_path)
     jobs = build_jobs(config, args.provider)
     if args.limit is not None:
         if args.limit < 1:
@@ -873,6 +981,7 @@ def main() -> int:
             "provider_calls_authorized=false"
         )
     load_dotenv(ROOT / ".env")
+    snapshot_campaign(config)
     return asyncio.run(run_jobs(config, jobs, force=args.force))
 
 
