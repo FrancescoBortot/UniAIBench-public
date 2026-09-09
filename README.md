@@ -157,7 +157,10 @@ roles:
 Exact provider, model identifier, date, endpoint, reasoning mode, token limit,
 and sampling settings must be recorded. Human approval remains mandatory for
 rubric freezing and adjudication decisions. See
-[Model selection and operation](docs/model-selection.md).
+[Model selection and operation](docs/model-selection.md). The complete
+[evaluated-model catalog](docs/evaluated-models.md) records all 14 benchmark
+configurations, their technical specifications, reasoning modes, official
+links, and both current and frozen benchmark prices.
 
 ## Reference harness
 

@@ -10,12 +10,13 @@ Read the documents in this order:
    item-specific atomic rubrics.
 4. [`model-selection.md`](model-selection.md): assign models to solver, rubric,
    judge, and adjudication roles.
-5. [`blind-judging-protocol.md`](blind-judging-protocol.md): evaluate answers
+5. [`evaluated-models.md`](evaluated-models.md): exact benchmark model--mode
+   panel, technical specifications, official links, and dated API pricing.
+6. [`blind-judging-protocol.md`](blind-judging-protocol.md): evaluate answers
    without model identity leakage.
-6. [`human-adjudication.md`](human-adjudication.md): resolve contested or
+7. [`human-adjudication.md`](human-adjudication.md): resolve contested or
    invalid cases without rewriting history.
-7. [`reproducibility.md`](reproducibility.md): preserve configurations,
+8. [`reproducibility.md`](reproducibility.md): preserve configurations,
    evidence, hashes, and reporting boundaries.
-8. [`extending-the-method.md`](extending-the-method.md): adapt the framework to
+9. [`extending-the-method.md`](extending-the-method.md): adapt the framework to
    another discipline.
-
