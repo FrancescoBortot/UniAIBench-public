@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="640" viewBox="0 0 1280 640">
+  <defs>
+    <radialGradient id="orangeGlow" cx="78%" cy="26%" r="42%">
+      <stop offset="0" stop-color="#f45b0b" stop-opacity="0.13"/>
+      <stop offset="1" stop-color="#f45b0b" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="blueGlow" cx="64%" cy="16%" r="42%">
+      <stop offset="0" stop-color="#006eff" stop-opacity="0.09"/>
+      <stop offset="1" stop-color="#006eff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1280" height="640" fill="#f5f6f7"/>
+  <rect width="1280" height="640" fill="url(#orangeGlow)"/>
+  <rect width="1280" height="640" fill="url(#blueGlow)"/>
+
+  <image href="uniaibench-symbol.png" x="66" y="34" width="62" height="62"/>
+  <text x="145" y="78" fill="#080e16" font-family="Arial, Helvetica, sans-serif" font-size="39" font-weight="700" letter-spacing="-2.5">
+    <tspan>Uni</tspan><tspan fill="#086ff7" font-weight="800">AI</tspan><tspan fill="#fd6a05" font-weight="800">B</tspan><tspan>ench</tspan>
+  </text>
+  <text x="147" y="99" fill="#465a70" font-family="Arial, Helvetica, sans-serif" font-size="8" font-weight="700" letter-spacing="2.4">RESEARCH BENCHMARK</text>
+  <line x1="0" y1="124" x2="1280" y2="124" stroke="#111111" stroke-opacity="0.16"/>
+
+  <circle cx="72" cy="179" r="5" fill="#006eff"/>
+  <circle cx="72" cy="179" r="10" fill="none" stroke="#006eff" stroke-opacity="0.17" stroke-width="4"/>
+  <text x="94" y="184" fill="#75310e" font-family="Menlo, Consolas, monospace" font-size="12" font-weight="700" letter-spacing="2">UNIVERSITY BENCHMARK · MATHEMATICS AND PHYSICS</text>
+
+  <text x="66" y="274" fill="#111111" font-family="Arial, Helvetica, sans-serif" font-size="63" font-weight="600" letter-spacing="-3.8">AI models put to the test</text>
+  <text x="66" y="337" fill="#a93600" font-family="Georgia, Times New Roman, serif" font-size="54" font-style="italic" letter-spacing="-2">on advanced mathematics</text>
+  <text x="66" y="398" fill="#a93600" font-family="Georgia, Times New Roman, serif" font-size="54" font-style="italic" letter-spacing="-2">and physics.</text>
+
+  <line x1="854" y1="178" x2="1208" y2="178" stroke="#f45b0b" stroke-width="4"/>
+  <text x="854" y="220" fill="#4e5963" font-family="Arial, Helvetica, sans-serif" font-size="20">
+    <tspan x="854" dy="0">Fourteen model–mode configurations.</tspan>
+    <tspan x="854" dy="30">Sixty advanced university exercises.</tspan>
+    <tspan x="854" dy="30">Accuracy, time, cost, and token use.</tspan>
+  </text>
+  <rect x="854" y="329" width="354" height="64" rx="3" fill="#171717"/>
+  <text x="881" y="369" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700">EXPLORE UNIAIBENCH</text>
+  <text x="1174" y="369" fill="#ffad78" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="700">WEB ↗</text>
+
+  <line x1="66" y1="504" x2="1214" y2="504" stroke="#111111" stroke-opacity="0.26"/>
+  <g font-family="Menlo, Consolas, monospace">
+    <text x="66" y="548" fill="#111111" font-size="20" font-weight="700">14</text>
+    <text x="101" y="547" fill="#64717b" font-size="10" font-weight="700" letter-spacing="1.1">MODEL–MODE CONFIGURATIONS</text>
+
+    <text x="390" y="548" fill="#111111" font-size="20" font-weight="700">60</text>
+    <text x="426" y="547" fill="#64717b" font-size="10" font-weight="700" letter-spacing="1.1">ADVANCED EXERCISES</text>
+
+    <text x="694" y="548" fill="#111111" font-size="20" font-weight="700">2</text>
+    <text x="718" y="547" fill="#64717b" font-size="10" font-weight="700" letter-spacing="1.1">MATHEMATICS + PHYSICS</text>
+
+    <text x="995" y="548" fill="#111111" font-size="20" font-weight="700">4</text>
+    <text x="1019" y="547" fill="#64717b" font-size="10" font-weight="700" letter-spacing="1.1">DECISION METRICS</text>
+  </g>
+
+  <text x="66" y="604" fill="#111111" font-family="Menlo, Consolas, monospace" font-size="12" font-weight="700" letter-spacing="1.2">UNIAIBENCH.ORG</text>
+  <text x="1214" y="604" fill="#68737d" text-anchor="end" font-family="Menlo, Consolas, monospace" font-size="11" font-weight="700" letter-spacing="1">VERSION 1.0</text>
+</svg>

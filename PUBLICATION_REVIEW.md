@@ -28,7 +28,9 @@ make check-strict
 GitHub Actions additionally rebuilds public figures, compiles the paper, and
 validates `CITATION.cff`. A separate scheduled workflow checks external links.
 The repository includes a 1280 x 640 first-party social-preview image under
-`docs/assets/` for the GitHub presentation layer.
+`docs/assets/`, together with its editable SVG source and the official project
+symbol. Its typography, colours, copy, and composition follow the visual system
+used by `https://uniaibench.org` rather than an independent repository theme.
 
 ## AI-assisted semantic review
 
