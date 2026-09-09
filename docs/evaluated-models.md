@@ -1,17 +1,16 @@
 # Evaluated models and pricing
 
-This catalog mirrors the technical comparison published on the UniAIBench
-website. It identifies the **14 model--mode configurations** in the matched
-60-item panel and separates two different price concepts:
+This catalog is generated from the versioned
+[`analysis/data/model_catalog.json`](../analysis/data/model_catalog.json)
+record used by the paper appendix and website export. It identifies the
+**14 model--mode configurations** in the matched 60-item panel and separates two price concepts:
 
-- **latest verified API rate:** the standard first-party rate manually checked
-  on **31 August 2026**;
-- **benchmark rate:** the frozen rate used to estimate the study costs on
-  **14 August 2026**.
+- **latest verified API rate:** the standard first-party rate manually checked on **31 August 2026**;
+- **benchmark rate:** the frozen rate used to estimate study costs on **14 August 2026**.
 
-Prices are in USD per one million tokens and show input before output. They are
-not live prices. Cached input, batch, regional, tax, tool, and priority-processing
-charges are omitted unless the exception materially changes the comparison.
+Prices are in USD per one million tokens and show input before output. They
+are not live prices. Cached input, batch, regional, tax, tool, and
+priority-processing charges are omitted unless the exception materially changes the comparison.
 
 ## Identity and benchmark setup
 
@@ -26,14 +25,13 @@ charges are omitted unless the exception materially changes the comparison.
 | [Gemini 3.5 Flash](https://deepmind.google/models/model-cards/gemini-3-5-flash/) | Google | [`gemini-3.5-flash`](https://ai.google.dev/gemini-api/docs/models/gemini-3.5-flash) | 19 May 2026; GA | No | Native thinking; `high` |
 | [Gemini 3.1 Pro Preview](https://deepmind.google/models/gemini/pro/) | Google | [`gemini-3.1-pro-preview`](https://ai.google.dev/gemini-api/docs/models/gemini-3.1-pro-preview) | 19 Feb 2026; public preview | No | Native thinking; `high` |
 | [Gemma 4 31B IT](https://ai.google.dev/gemma/docs/core/model_card_4) | Google | [`gemma-4-31b-it`](https://ai.google.dev/gemma/docs/core/gemma_on_gemini_api) | 31 Mar 2026; API 2 Apr 2026 | Yes | Thinking available; disabled |
-| [DeepSeek V4 Flash](https://api-docs.deepseek.com/news/news260424/) | DeepSeek | [`deepseek-v4-flash`, thinking](https://api-docs.deepseek.com/api/create-chat-completion) | 24 Apr 2026; V4 preview | Yes | Thinking enabled; `high` |
-| [DeepSeek V4 Flash (no thinking)](https://api-docs.deepseek.com/news/news260424/) | DeepSeek | [`deepseek-v4-flash`, no thinking](https://api-docs.deepseek.com/guides/thinking_mode) | 24 Apr 2026; same weights | Yes | Thinking disabled |
+| [DeepSeek V4 Flash](https://api-docs.deepseek.com/news/news260424/) | DeepSeek | [`deepseek-v4-flash, thinking`](https://api-docs.deepseek.com/api/create-chat-completion) | 24 Apr 2026; V4 preview | Yes | Thinking enabled; `high` |
+| [DeepSeek V4 Flash (no thinking)](https://api-docs.deepseek.com/news/news260424/) | DeepSeek | [`deepseek-v4-flash, no thinking`](https://api-docs.deepseek.com/guides/thinking_mode) | 24 Apr 2026; same weights | Yes | Thinking disabled |
 | [DeepSeek V4 Pro](https://api-docs.deepseek.com/news/news260424/) | DeepSeek | [`deepseek-v4-pro`](https://api-docs.deepseek.com/api/create-chat-completion) | 24 Apr 2026; V4 preview | Yes | Thinking enabled; `high` |
 | [Grok 4.5](https://x.ai/news/grok-4-5) | xAI | [`grok-4.5`](https://docs.x.ai/developers/models/grok-4.5) | 16 Jul 2026; public launch | No | Configurable reasoning; `high` |
 | [Grok 4.3](https://x.ai/news/grok-amazon-bedrock) | xAI | [`grok-4.3`](https://docs.x.ai/developers/models/grok-4.3) | By 6 May 2026; earliest dated official use identified | No | Configurable reasoning; `high` |
 
-The two DeepSeek V4 Flash rows are distinct benchmark configurations of the
-same model weights.
+The two DeepSeek V4 Flash rows are distinct benchmark configurations of the same model weights.
 
 ## Technical specifications
 
@@ -73,10 +71,9 @@ same model weights.
 | Grok 4.5 | Input $2; cached input $0.30; output $6; over 200k: $4 / $12 | Input $2; output $6 | [xAI](https://docs.x.ai/developers/models/grok-4.5) |
 | Grok 4.3 | Input $1.25; cached input $0.20; output $2.50; over 200k: $2.50 / $5 | Input $1.25; output $2.50 | [xAI](https://docs.x.ai/developers/models/grok-4.3) |
 
-For DeepSeek, the current-rate pairs are cache-miss input / output and vary by
-time of day. Gemma's zero benchmark rate was explicitly configured for the
-campaign and is not a universal market price. Benchmark requests to Gemini 3.1
-Pro Preview used the standard context tier.
+For DeepSeek, the current-rate pairs are cache-miss input / output and vary by time of day.
+Gemma's zero benchmark rate was explicitly configured for the campaign and is not a universal market price.
+Benchmark requests to Gemini 3.1 Pro Preview used the standard context tier.
 
 The frozen rates used by the analysis are also available in
 [`analysis/tables/tariffe_token_costi.csv`](../analysis/tables/tariffe_token_costi.csv),

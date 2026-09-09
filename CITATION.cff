@@ -6,9 +6,9 @@ authors:
   - family-names: Bortot
     given-names: Francesco
 repository-code: "https://github.com/FrancescoBortot/UniAIBench-public"
-url: "https://modelfit-research-preview.francescobortot007.chatgpt.site"
-version: 0.1.0
-date-released: 2026-09-08
+url: "https://uniaibench.org"
+version: "1.0"
+date-released: 2026-09-09
 abstract: >-
   A controlled and auditable benchmark of open-ended AI model solutions to
   advanced university-level problems in Mathematical Analysis III and General

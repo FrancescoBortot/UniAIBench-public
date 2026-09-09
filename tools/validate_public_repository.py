@@ -26,6 +26,7 @@ FORBIDDEN_FILENAMES = {
 }
 REQUIRED = {
     "README.md", "DATA_PROVENANCE.md", "LICENSE.md", "CITATION.cff",
+    "PUBLICATION_CHECKLIST.md", "PUBLICATION_REVIEW.md",
     "rubrics/templates/rubric.template.json", "schemas/rubric.schema.json",
     "schemas/judgment.schema.json", "schemas/judgment.template.json",
     "prompts/solver-prompt.md", "prompts/rubric-builder-prompt.md",
@@ -33,7 +34,15 @@ REQUIRED = {
     "configs/benchmark_config.template.json",
     "schemas/benchmark-config.schema.json", "analysis/FIGURE_PROVENANCE.md",
     "analysis/scripts/build_main_chart_collection.py",
+    "analysis/scripts/build_model_catalog_docs.py",
+    "analysis/data/model_catalog.json", "tools/validate_model_catalog.py",
+    "docs/assets/social-preview.png",
     "CONTRIBUTING.md",
+}
+OFFICIAL_SITE = "https://uniaibench.org"
+RELEASE_VERSION = "1.0"
+REQUIRED_CHECKS = {
+    "ai-review", "rights", "scope", "licence", "metadata", "aggregate-data",
 }
 
 
@@ -89,6 +98,21 @@ def private_path_reason(candidate: str) -> str | None:
     return None
 
 
+def required_checklist_status(text: str) -> tuple[set[str], set[str]]:
+    pattern = re.compile(
+        r"^- \[(?P<status>[ xX])\] <!-- required:(?P<identifier>[a-z0-9-]+) -->",
+        re.MULTILINE,
+    )
+    found: set[str] = set()
+    incomplete: set[str] = set()
+    for match in pattern.finditer(text):
+        identifier = match.group("identifier")
+        found.add(identifier)
+        if match.group("status").lower() != "x":
+            incomplete.add(identifier)
+    return found, incomplete
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--strict", action="store_true", help="also require the publication checklist to be complete")
@@ -121,9 +145,12 @@ def main() -> int:
         errors.append("source exercise text files are present")
 
     local_home_marker = "/" + "Users" + "/"
-    token_prefixes = (
-        "sk" + "-", "gh" + "p_", "gh" + "o_", "AIza" + "Sy",
-        "AK" + "IA", "-----BEGIN " + "PRIVATE KEY-----",
+    token_patterns = (
+        re.compile(r"(?<![A-Za-z0-9])sk-[A-Za-z0-9_-]{16,}"),
+        re.compile(r"\bgh[po]_[A-Za-z0-9]{20,}"),
+        re.compile(r"\bAIzaSy[A-Za-z0-9_-]{20,}"),
+        re.compile(r"\bAKIA[A-Z0-9]{16}\b"),
+        re.compile("-----BEGIN " + "PRIVATE KEY-----"),
     )
     for path in text_files():
         if path.name in FORBIDDEN_FILENAMES:
@@ -135,7 +162,7 @@ def main() -> int:
             continue
         if local_home_marker in text:
             errors.append(f"absolute local user path in {relative(path)}")
-        if any(prefix in text for prefix in token_prefixes):
+        if any(pattern.search(text) for pattern in token_patterns):
             errors.append(f"possible credential token in {relative(path)}")
         check_secret_assignment(path, text, errors)
         if path.suffix.lower() == ".md":
@@ -156,8 +183,28 @@ def main() -> int:
 
     if args.strict:
         checklist = (ROOT / "PUBLICATION_CHECKLIST.md").read_text(encoding="utf-8")
-        if "- [ ]" in checklist:
-            errors.append("publication checklist is not complete")
+        found, incomplete = required_checklist_status(checklist)
+        missing = REQUIRED_CHECKS - found
+        unexpected = found - REQUIRED_CHECKS
+        if missing:
+            errors.append(f"required publication checks missing: {sorted(missing)}")
+        if unexpected:
+            errors.append(f"unknown required publication checks: {sorted(unexpected)}")
+        if incomplete:
+            errors.append(f"required publication checks incomplete: {sorted(incomplete)}")
+
+        review = (ROOT / "PUBLICATION_REVIEW.md").read_text(encoding="utf-8")
+        for marker in ("AI_REVIEW_STATUS: PASSED", "HUMAN_RIGHTS_STATUS: CONFIRMED"):
+            if marker not in review:
+                errors.append(f"publication review marker missing: {marker}")
+
+        readme = (ROOT / "README.md").read_text(encoding="utf-8")
+        citation = (ROOT / "CITATION.cff").read_text(encoding="utf-8")
+        if OFFICIAL_SITE not in readme or OFFICIAL_SITE not in citation:
+            errors.append(f"official website must be consistent: {OFFICIAL_SITE}")
+        version_pattern = rf'^version:\s*["\']?{re.escape(RELEASE_VERSION)}["\']?\s*$'
+        if re.search(version_pattern, citation, re.MULTILINE) is None:
+            errors.append(f"CITATION.cff version must be {RELEASE_VERSION}")
 
     if errors:
         for error in errors:

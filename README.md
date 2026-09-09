@@ -9,7 +9,7 @@ reporting. The current study covers Mathematical Analysis III and General
 Physics II, but the public framework is designed to be adapted to other
 disciplines.
 
-[Explore the UniAIBench website](https://modelfit-research-preview.francescobortot007.chatgpt.site)
+[Explore the UniAIBench website](https://uniaibench.org)
 or read the [current paper](paper/benchmark_publication.pdf).
 
 ## Why this repository exists
@@ -96,7 +96,7 @@ UniAIBench-public/
 |-- prompts/                 role-specific prompt templates
 |-- configs/                 generic benchmark configuration template
 |-- tools/                   offline rubric, judgment, and release validators
-|-- analysis/                aggregate data, figures, and all chart programs
+|-- analysis/                aggregate data, model catalog, figures, and chart programs
 |-- results/                 additional aggregate result views
 |-- paper/                   manuscript source and compiled PDF
 |-- benchmark_harness.py     multi-provider reference implementation

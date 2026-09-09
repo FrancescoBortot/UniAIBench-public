@@ -1,3 +1,4 @@
+import json
 from pathlib import Path
 
 from reportlab import rl_config
@@ -25,226 +26,26 @@ PROVIDER_COLORS = {
     "Anthropic": colors.HexColor("#A65300"),
     "Google": colors.HexColor("#2363C7"),
     "DeepSeek": colors.HexColor("#5B4BCE"),
-    "SpaceXAI": colors.HexColor("#202124"),
+    "xAI": colors.HexColor("#202124"),
 }
 
 
 FONT, FONT_BOLD = "Helvetica", "Helvetica-Bold"
 
 
-ROWS = [
-    {
-        "provider": "OpenAI",
-        "model": "GPT-5.6 Sol",
-        "id": "gpt-5.6-sol",
-        "release": "9 Jul 2026",
-        "release_note": "GA; preview 26 Jun 2026",
-        "parameters": "Not disclosed",
-        "weights": "No",
-        "architecture": "Closed frontier flagship; architecture undisclosed",
-        "reasoning": "Configurable effort: none to max; benchmark: xhigh",
-        "context": "1,050,000",
-        "output": "128,000",
-        "modalities": "Text, image to text",
-        "cutoff": "16 Feb 2026 knowledge",
-    },
-    {
-        "provider": "OpenAI",
-        "model": "OpenAI o3",
-        "id": "o3-2025-04-16",
-        "release": "16 Apr 2025",
-        "release_note": "dated snapshot",
-        "parameters": "Not disclosed",
-        "weights": "No",
-        "architecture": "Closed o-series reasoning model; architecture undisclosed",
-        "reasoning": "Native inference-time reasoning; benchmark: high",
-        "context": "200,000",
-        "output": "100,000",
-        "modalities": "Text, image to text",
-        "cutoff": "1 Jun 2024 knowledge",
-    },
-    {
-        "provider": "OpenAI",
-        "model": "GPT-4.1",
-        "id": "gpt-4.1-2025-04-14",
-        "release": "14 Apr 2025",
-        "release_note": "dated snapshot",
-        "parameters": "Not disclosed",
-        "weights": "No",
-        "architecture": "Closed general-purpose non-reasoning model",
-        "reasoning": "No native reasoning step; benchmark: none",
-        "context": "1,047,576",
-        "output": "32,768",
-        "modalities": "Text, image to text",
-        "cutoff": "1 Jun 2024 knowledge",
-    },
-    {
-        "provider": "Anthropic",
-        "model": "Claude Fable 5",
-        "id": "claude-fable-5",
-        "release": "9 Jun 2026",
-        "release_note": "GA; restored 1 Jul 2026",
-        "parameters": "Not disclosed",
-        "weights": "No",
-        "architecture": "Closed Mythos-class safeguarded model",
-        "reasoning": "Always-on adaptive thinking; benchmark: effort high",
-        "context": "1,000,000",
-        "output": "128,000",
-        "modalities": "Text, image to text",
-        "cutoff": "Jan 2026 reliable/training",
-    },
-    {
-        "provider": "Anthropic",
-        "model": "Claude Sonnet 4.5",
-        "id": "claude-sonnet-4-5-20250929",
-        "release": "29 Sep 2025",
-        "release_note": "dated snapshot",
-        "parameters": "Not disclosed",
-        "weights": "No",
-        "architecture": "Closed Sonnet-tier hybrid reasoning model",
-        "reasoning": "Optional manual extended thinking; benchmark: provider default",
-        "context": "200,000",
-        "output": "64,000",
-        "modalities": "Text, image to text",
-        "cutoff": "Not disclosed",
-    },
-    {
-        "provider": "Anthropic",
-        "model": "Claude Haiku 4.5",
-        "id": "claude-haiku-4-5-20251001",
-        "release": "15 Oct 2025",
-        "release_note": "API snapshot 1 Oct 2025",
-        "parameters": "Not disclosed",
-        "weights": "No",
-        "architecture": "Closed small and low-latency tier",
-        "reasoning": "Manual extended thinking, off by default; benchmark: not requested",
-        "context": "200,000",
-        "output": "64,000",
-        "modalities": "Text, image to text",
-        "cutoff": "Feb/Jul 2025 reliable/training",
-    },
-    {
-        "provider": "Google",
-        "model": "Gemini 3.5 Flash",
-        "id": "gemini-3.5-flash",
-        "release": "19 May 2026",
-        "release_note": "GA",
-        "parameters": "Not disclosed",
-        "weights": "No",
-        "architecture": "Closed multimodal Flash-tier model",
-        "reasoning": "Configurable native thinking; benchmark: high",
-        "context": "1,048,576",
-        "output": "65,536",
-        "modalities": "Text, image, video, audio, PDF to text",
-        "cutoff": "Jan 2025 knowledge",
-    },
-    {
-        "provider": "Google",
-        "model": "Gemini 3.1 Pro Preview",
-        "id": "gemini-3.1-pro-preview",
-        "release": "19 Feb 2026",
-        "release_note": "public preview",
-        "parameters": "Not disclosed",
-        "weights": "No",
-        "architecture": "Closed multimodal Pro-tier model",
-        "reasoning": "Configurable native thinking; benchmark: high",
-        "context": "1,048,576",
-        "output": "65,536",
-        "modalities": "Text, image, video, audio, PDF to text",
-        "cutoff": "Jan 2025 knowledge",
-    },
-    {
-        "provider": "Google",
-        "model": "Gemma 4 31B IT",
-        "id": "gemma-4-31b-it",
-        "release": "31 Mar 2026",
-        "release_note": "API 2 Apr 2026",
-        "parameters": "30.7B total; dense; 60 layers; about 550M vision encoder",
-        "weights": "Yes; Apache 2.0",
-        "architecture": "Dense decoder-only transformer; hybrid local/global attention",
-        "reasoning": "Configurable thinking tokens; benchmark: disabled",
-        "context": "256,000",
-        "output": "Not specified",
-        "modalities": "Text, image to text",
-        "cutoff": "Jan 2025 training",
-    },
-    {
-        "provider": "DeepSeek",
-        "model": "DeepSeek V4 Flash",
-        "id": "deepseek-v4-flash - thinking",
-        "release": "24 Apr 2026",
-        "release_note": "V4 preview",
-        "parameters": "284B total; 13B active per token",
-        "weights": "Yes",
-        "architecture": "Mixture-of-Experts; DeepSeek Sparse Attention",
-        "reasoning": "Dual thinking/non-thinking model; benchmark: thinking high",
-        "context": "1,000,000",
-        "output": "384,000",
-        "modalities": "Text to text",
-        "cutoff": "Not disclosed",
-    },
-    {
-        "provider": "DeepSeek",
-        "model": "DeepSeek V4 Flash",
-        "id": "deepseek-v4-flash - no thinking",
-        "release": "24 Apr 2026",
-        "release_note": "same weights as above",
-        "parameters": "284B total; 13B active per token",
-        "weights": "Yes",
-        "architecture": "Mixture-of-Experts; DeepSeek Sparse Attention",
-        "reasoning": "Dual thinking/non-thinking model; benchmark: disabled",
-        "context": "1,000,000",
-        "output": "384,000",
-        "modalities": "Text to text",
-        "cutoff": "Not disclosed",
-    },
-    {
-        "provider": "DeepSeek",
-        "model": "DeepSeek V4 Pro",
-        "id": "deepseek-v4-pro",
-        "release": "24 Apr 2026",
-        "release_note": "V4 preview",
-        "parameters": "1.6T total; 49B active per token",
-        "weights": "Yes",
-        "architecture": "Mixture-of-Experts; DeepSeek Sparse Attention",
-        "reasoning": "Dual thinking/non-thinking model; benchmark: thinking high",
-        "context": "1,000,000",
-        "output": "384,000",
-        "modalities": "Text to text",
-        "cutoff": "Not disclosed",
-    },
-    {
-        "provider": "SpaceXAI",
-        "model": "Grok 4.5",
-        "id": "grok-4.5",
-        "release": "16 Jul 2026",
-        "release_note": "public launch",
-        "parameters": "Not disclosed",
-        "weights": "No",
-        "architecture": "Closed frontier model; architecture undisclosed",
-        "reasoning": "Configurable low/medium/high; benchmark: high",
-        "context": "500,000",
-        "output": "Not specified",
-        "modalities": "Text, image to text",
-        "cutoff": "1 Feb 2026 knowledge",
-    },
-    {
-        "provider": "SpaceXAI",
-        "model": "Grok 4.3",
-        "id": "grok-4.3",
-        "release": "By 6 May 2026*",
-        "release_note": "first dated official use",
-        "parameters": "Not disclosed",
-        "weights": "No",
-        "architecture": "Closed general-purpose model; architecture undisclosed",
-        "reasoning": "Configurable none/low/medium/high; benchmark: high",
-        "context": "1,000,000",
-        "output": "Not specified",
-        "modalities": "Text, image to text",
-        "cutoff": "Not disclosed",
-    },
-]
+CATALOG = ROOT / "analysis" / "data" / "model_catalog.json"
 
+
+def load_catalog() -> dict[str, object]:
+    payload = json.loads(CATALOG.read_text(encoding="utf-8"))
+    rows = payload.get("models")
+    if not isinstance(rows, list) or len(rows) != 14:
+        raise ValueError("model_catalog.json must contain exactly 14 model configurations")
+    return payload
+
+
+CATALOG_DATA = load_catalog()
+ROWS = CATALOG_DATA["models"]
 
 def para(text, style):
     return Paragraph(text, style)
@@ -327,7 +128,8 @@ def build_pdf():
         para("Technical specifications of the evaluated models", title_style),
         para(
             "A priori comparison of the 14 benchmark configurations. No benchmark outcome is included. "
-            "Token limits and model status refer to first-party documentation available on 10 Aug 2026.",
+            "Token limits and model status refer to first-party documentation available on "
+            f"{CATALOG_DATA['technical_snapshot_date']}.",
             subtitle_style,
         ),
     ]
@@ -402,7 +204,7 @@ def build_pdf():
     story.append(Spacer(1, 4))
     story.append(
         para(
-            "* SpaceXAI provides no dedicated dated launch announcement for Grok 4.3; 6 May 2026 is the earliest "
+            "* xAI provides no dedicated dated launch announcement for Grok 4.3; 6 May 2026 is the earliest "
             "dated official production reference identified. 'Not disclosed' is used when the developer publishes no "
             "official value; no third-party parameter estimates are included. The two V4 Flash rows are separate "
             "benchmark configurations of the same model weights.",
@@ -413,7 +215,7 @@ def build_pdf():
         para(
             "Primary sources: OpenAI model documentation; Anthropic model overview and release notes; Gemini API "
             "model and deprecation documentation; Gemma 4 model card; DeepSeek V4 release and pricing documentation; "
-            "SpaceXAI model documentation.",
+            "xAI model documentation.",
             note_style,
         )
     )

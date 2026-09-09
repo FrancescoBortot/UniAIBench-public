@@ -28,8 +28,9 @@ The canonical supplementary PDFs are copied to `paper/figures/` by
 | Focused cost charts | `analysis/scripts/build_token_cost_focus_charts.py` | outputs of the selected token/cost generator |
 | Response-time ranking, heatmap, drivers, and accuracy correlation | `analysis/scripts/build_response_time_focus_charts.py` and `build_speed_correctness_alternatives.py` | public resource panel and overall ranking table |
 | Canonical ten-chart collection used by the paper and website | `analysis/scripts/build_main_chart_collection.py` | the chart families above |
-| Model technical-specification appendix | `analysis/scripts/build_model_specifications_pdf.py` | versioned model specification records embedded in the program |
-| Website chart-data modules | `analysis/scripts/build_website_benchmark_data.py` | both public model--item panels and derived tables |
+| Model catalog documentation | `analysis/scripts/build_model_catalog_docs.py` | `analysis/data/model_catalog.json` |
+| Model technical-specification appendix | `analysis/scripts/build_model_specifications_pdf.py` | `analysis/data/model_catalog.json` |
+| Website chart-data modules | `analysis/scripts/build_website_benchmark_data.py` | both public model--item panels, derived tables, and `model_catalog.json` |
 | Paper item-difficulty strip | `paper/scripts/build_item_difficulty_figure.py` | `analysis/data/model_item_scores.csv` |
 
 The remaining paper diagrams are declarative TikZ programs stored directly as
