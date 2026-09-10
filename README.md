@@ -178,7 +178,7 @@ UniAIBench-public/
 |-- analysis/
 |   |-- data/                sanitized score, resource, and model metadata
 |   |-- tables/              aggregate rankings and T1--T8 profiles
-|   |-- figures/             selected English figure used by this README
+|   |-- figures/site/        eight English figures matching the website views
 |   `-- scripts/             figure and website-data generators
 |-- results/                 secondary aggregate result views
 |-- paper/                   manuscript source, figures, and compiled PDF
@@ -313,7 +313,7 @@ The top six configurations by mean rubric score were:
 | 5 | Gemini 3.5 Flash | 96.95% | 95.10--98.51% |
 | 6 | DeepSeek V4 Pro | 96.71% | 94.76--98.31% |
 
-![Overall ranking by mean accuracy across the 60 common exercises, with 95% confidence intervals](analysis/figures/overall_ranking.svg)
+![Overall ranking by mean accuracy across the 60 common exercises, with 95% confidence intervals](analysis/figures/site/01_01_overall_ranking.svg)
 
 The overlapping intervals do not justify treating the displayed order as a
 set of sharply separated performance tiers. Subject stability, T1--T8 profiles,
@@ -329,8 +329,8 @@ The public evidence is organized as follows:
   panels, and canonical model metadata;
 - [`analysis/tables/`](analysis/tables/): principal rankings, coverage,
   T1--T8 profiles, and resource summaries;
-- [`analysis/figures/`](analysis/figures/): the current English ranking figure
-  selected for this README;
+- [`analysis/figures/site/`](analysis/figures/site/): eight current English SVG
+  figures corresponding to the evidence views published on the website;
 - [`analysis/scripts/`](analysis/scripts/): executable generators for all
   public paper and website chart families;
 - [`analysis/FIGURE_PROVENANCE.md`](analysis/FIGURE_PROVENANCE.md): exact

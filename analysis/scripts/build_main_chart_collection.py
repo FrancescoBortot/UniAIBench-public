@@ -27,6 +27,7 @@ OUTPUT_DIR = ANALYSIS_DIR / "grafici_principali_14x60"
 FIGURE_DIR = OUTPUT_DIR / "figures"
 PDF_DIR = OUTPUT_DIR / "output" / "pdf"
 OUTPUT_PDF = PDF_DIR / "grafici_principali_benchmark_14x60.pdf"
+PUBLIC_SITE_FIGURE_DIR = ANALYSIS_DIR / "figures" / "site"
 
 
 SELECTIONS = [
@@ -150,6 +151,7 @@ def replace_page_counter(page, number: int, total: int) -> None:
 def main() -> None:
     FIGURE_DIR.mkdir(parents=True, exist_ok=True)
     PDF_DIR.mkdir(parents=True, exist_ok=True)
+    PUBLIC_SITE_FIGURE_DIR.mkdir(parents=True, exist_ok=True)
 
     writer = PdfWriter()
     current_section = None
@@ -179,12 +181,19 @@ def main() -> None:
         slug = source_svg.stem
         target_svg = FIGURE_DIR / f"{selection['number']:02d}_{slug}.svg"
         shutil.copy2(source_svg, target_svg)
+        public_svg = None
+        if "website" in selection["used_by"]:
+            public_svg = PUBLIC_SITE_FIGURE_DIR / target_svg.name
+            shutil.copy2(source_svg, public_svg)
         manifest_pages.append(
             {
                 **selection,
                 "source_pdf": str(source_pdf.relative_to(ANALYSIS_DIR)),
                 "source_svg": str(source_svg.relative_to(ANALYSIS_DIR)),
                 "copied_svg": str(target_svg.relative_to(OUTPUT_DIR)),
+                "public_site_svg": (
+                    str(public_svg.relative_to(ANALYSIS_DIR)) if public_svg else None
+                ),
                 "source_pdf_sha256": sha256(source_pdf),
                 "copied_svg_sha256": sha256(target_svg),
             }

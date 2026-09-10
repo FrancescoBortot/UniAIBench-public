@@ -1,6 +1,6 @@
 PYTHON ?= .venv/bin/python
 
-.PHONY: check check-strict check-readme-figure validate-configs validate-rubric-template \
+.PHONY: check check-strict check-site-figures figure-families validate-configs validate-rubric-template \
 	validate-judgment-template validate-model-catalog test check-analysis \
 	check-model-docs figures paper
 
@@ -9,13 +9,18 @@ check: validate-configs validate-rubric-template validate-judgment-template \
 	$(PYTHON) tools/validate_public_repository.py
 	$(PYTHON) benchmark_harness.py --help >/dev/null
 
-check-strict: check check-readme-figure
+check-strict: check check-site-figures
 	$(PYTHON) tools/validate_public_repository.py --strict
 
-check-readme-figure:
+figure-families:
 	$(PYTHON) analysis/scripts/build_selected_charts.py
-	cp analysis/grafici_selezionati/figures_en/01_overall_ranking.svg analysis/figures/overall_ranking.svg
-	git diff --exit-code -- analysis/figures/overall_ranking.svg
+	$(PYTHON) analysis/scripts/build_selected_token_cost_charts.py
+	$(PYTHON) analysis/scripts/build_token_cost_focus_charts.py
+	$(PYTHON) analysis/scripts/build_response_time_focus_charts.py
+	$(PYTHON) analysis/scripts/build_main_chart_collection.py
+
+check-site-figures: figure-families
+	git diff --exit-code -- analysis/figures
 
 validate-rubric-template:
 	$(PYTHON) tools/validate_rubric.py rubrics/templates/rubric.template.json --template
@@ -40,16 +45,10 @@ check-analysis:
 check-model-docs:
 	$(PYTHON) analysis/scripts/build_model_catalog_docs.py --check
 
-figures:
+figures: figure-families
 	$(PYTHON) analysis/scripts/build_model_catalog_docs.py
-	$(PYTHON) analysis/scripts/build_selected_charts.py
-	$(PYTHON) analysis/scripts/build_selected_token_cost_charts.py
-	$(PYTHON) analysis/scripts/build_token_cost_focus_charts.py
-	$(PYTHON) analysis/scripts/build_response_time_focus_charts.py
-	$(PYTHON) analysis/scripts/build_main_chart_collection.py
 	$(PYTHON) analysis/scripts/build_model_specifications_pdf.py
 	$(PYTHON) analysis/scripts/build_website_benchmark_data.py
-	cp analysis/grafici_selezionati/figures_en/01_overall_ranking.svg analysis/figures/overall_ranking.svg
 	cp analysis/grafici_selezionati/output/pdf/selected_correctness_charts.pdf paper/figures/
 	cp analysis/grafici_token_costi_focus/output/pdf/focused_token_cost_charts.pdf paper/figures/
 	cp analysis/grafici_tempo_risposta_focus/output/pdf/focused_response_time_charts.pdf paper/figures/

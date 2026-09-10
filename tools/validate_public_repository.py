@@ -14,7 +14,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 TEXT_SUFFIXES = {
     ".cff", ".csv", ".gitignore", ".gitattributes", ".json", ".md",
-    ".js", ".mjs", ".py", ".tex", ".ts", ".tsx", ".txt", ".yaml", ".yml",
+    ".js", ".mjs", ".py", ".svg", ".tex", ".ts", ".tsx", ".txt", ".yaml", ".yml",
 }
 FORBIDDEN_TOP_LEVEL = {
     "DATASET", "DATASET_ANALISI_3", "DATASET_FISICA_2", "DOCUMENTI",
@@ -44,7 +44,16 @@ RELEASE_VERSION = "1.0"
 REQUIRED_CHECKS = {
     "ai-review", "rights", "scope", "licence", "metadata", "aggregate-data",
 }
-EXPECTED_ANALYSIS_FIGURES = {"overall_ranking.svg"}
+EXPECTED_ANALYSIS_FIGURES = {
+    "site/01_01_overall_ranking.svg",
+    "site/02_02_overall_t1_t8_profile.svg",
+    "site/05_01_cost_ranking.svg",
+    "site/06_02_token_composition.svg",
+    "site/07_01_response_time_ranking.svg",
+    "site/08_02_model_exercise_heatmap.svg",
+    "site/09_03_time_drivers.svg",
+    "site/10_04_response_time_accuracy_correlation.svg",
+}
 EXPECTED_PAPER_FIGURES = {
     "focused_response_time_charts.pdf",
     "focused_token_cost_charts.pdf",
@@ -156,11 +165,12 @@ def main() -> int:
 
     figures_dir = ROOT / "analysis/figures"
     actual_figures = {
-        path.name for path in figures_dir.iterdir() if path.is_file()
+        path.relative_to(figures_dir).as_posix()
+        for path in figures_dir.rglob("*") if path.is_file()
     } if figures_dir.is_dir() else set()
     if actual_figures != EXPECTED_ANALYSIS_FIGURES:
         errors.append(
-            "analysis/figures must contain only the current English README figure; "
+            "analysis/figures must contain only the current English website figure set; "
             f"expected {sorted(EXPECTED_ANALYSIS_FIGURES)}, found {sorted(actual_figures)}"
         )
 

@@ -21,11 +21,12 @@ The canonical supplementary PDFs are copied to `paper/figures/` by
 
 ## Tracked-output policy
 
-Only `analysis/figures/overall_ranking.svg` is retained as a standalone chart,
-because it is the English figure displayed in the repository README. Final
-figures actually used by the manuscript are retained under `paper/figures/`.
-Italian, superseded, intermediate, and unreferenced chart exports are generated
-on demand but are not versioned in the publication repository.
+Only the eight current English website views are retained as standalone SVGs
+under `analysis/figures/site/`; the overall ranking is also displayed in the
+repository README. Final figures actually used by the manuscript are retained
+under `paper/figures/`. Italian, superseded, intermediate, article-specific,
+and unreferenced chart exports are generated on demand but are not versioned in
+the publication repository.
 
 The tracked `paper/figures/` directory is intentionally limited to two groups:
 
@@ -41,11 +42,11 @@ silently.
 
 | Published output or chart family | Source program | Public numerical inputs |
 |---|---|---|
-| Correctness rankings and T1--T8 profiles, including the English README figure at `analysis/figures/overall_ranking.svg` | `analysis/scripts/build_selected_charts.py` | ranking and profile CSVs in `analysis/tables/` |
+| Correctness rankings and T1--T8 profiles, including the English README figure at `analysis/figures/site/01_01_overall_ranking.svg` | `analysis/scripts/build_selected_charts.py` | ranking and profile CSVs in `analysis/tables/` |
 | Cost ranking, token composition, distributions, heatmap, and thinking contrast | `analysis/scripts/build_selected_token_cost_charts.py` | `model_item_resources.csv` and resource tables |
 | Focused cost charts | `analysis/scripts/build_token_cost_focus_charts.py` | outputs of the selected token/cost generator |
 | Response-time ranking, heatmap, drivers, and accuracy correlation | `analysis/scripts/build_response_time_focus_charts.py` and `build_speed_correctness_alternatives.py` | public resource panel and overall ranking table |
-| Canonical ten-chart collection used by the paper and website | `analysis/scripts/build_main_chart_collection.py` | the chart families above |
+| Canonical ten-chart collection, including the eight tracked website SVGs | `analysis/scripts/build_main_chart_collection.py` | the chart families above |
 | Model catalog documentation | `analysis/scripts/build_model_catalog_docs.py` | `analysis/data/model_catalog.json` |
 | Model technical-specification appendix | `analysis/scripts/build_model_specifications_pdf.py` | `analysis/data/model_catalog.json` |
 | Website chart-data modules | `analysis/scripts/build_website_benchmark_data.py` | both public model--item panels, derived tables, and `model_catalog.json` |
