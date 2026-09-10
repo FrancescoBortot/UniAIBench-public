@@ -14,8 +14,8 @@ check-strict: check check-readme-figure
 
 check-readme-figure:
 	$(PYTHON) analysis/scripts/build_selected_charts.py
-	cp analysis/grafici_selezionati/figures_en/01_overall_ranking.png analysis/figures/overall_ranking.png
-	git diff --exit-code -- analysis/figures/overall_ranking.png
+	cp analysis/grafici_selezionati/figures_en/01_overall_ranking.svg analysis/figures/overall_ranking.svg
+	git diff --exit-code -- analysis/figures/overall_ranking.svg
 
 validate-rubric-template:
 	$(PYTHON) tools/validate_rubric.py rubrics/templates/rubric.template.json --template
@@ -49,7 +49,7 @@ figures:
 	$(PYTHON) analysis/scripts/build_main_chart_collection.py
 	$(PYTHON) analysis/scripts/build_model_specifications_pdf.py
 	$(PYTHON) analysis/scripts/build_website_benchmark_data.py
-	cp analysis/grafici_selezionati/figures_en/01_overall_ranking.png analysis/figures/overall_ranking.png
+	cp analysis/grafici_selezionati/figures_en/01_overall_ranking.svg analysis/figures/overall_ranking.svg
 	cp analysis/grafici_selezionati/output/pdf/selected_correctness_charts.pdf paper/figures/
 	cp analysis/grafici_token_costi_focus/output/pdf/focused_token_cost_charts.pdf paper/figures/
 	cp analysis/grafici_tempo_risposta_focus/output/pdf/focused_response_time_charts.pdf paper/figures/

@@ -44,7 +44,7 @@ RELEASE_VERSION = "1.0"
 REQUIRED_CHECKS = {
     "ai-review", "rights", "scope", "licence", "metadata", "aggregate-data",
 }
-EXPECTED_ANALYSIS_FIGURES = {"overall_ranking.png"}
+EXPECTED_ANALYSIS_FIGURES = {"overall_ranking.svg"}
 EXPECTED_PAPER_FIGURES = {
     "focused_response_time_charts.pdf",
     "focused_token_cost_charts.pdf",

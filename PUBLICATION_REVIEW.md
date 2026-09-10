@@ -31,10 +31,11 @@ The repository includes a 1280 x 640 first-party social-preview image under
 `docs/assets/`, together with its editable SVG source and the official project
 symbol. Its typography, colours, copy, and composition follow the visual system
 used by `https://uniaibench.org` rather than an independent repository theme.
-The standalone analysis-figure directory contains only the current English
-ranking graphic used by the README; superseded and unreferenced legacy exports
-are excluded, while every program needed for the paper and website chart
-families remains available.
+The standalone analysis-figure directory contains only the current English,
+vector ranking graphic used by the README. Using the generated SVG makes the
+release figure sharp at every display size and reproducible across platforms;
+superseded and unreferenced legacy exports are excluded, while every program
+needed for the paper and website chart families remains available.
 
 ## AI-assisted semantic review
 
