@@ -12,8 +12,7 @@ private UniAIBench research archive. It has an independent Git history.
 - offline validators;
 - a generic multi-provider harness and configuration template;
 - aggregate result panels, tables, eight selected English website figures,
-  exam-level summaries, and all programs used to create the public paper and
-  website chart families;
+  and all programs used to create the public paper and website chart families;
 - manuscript source and compiled paper;
 - citation metadata and explicit licence boundaries;
 - a link to the separate website.
@@ -25,6 +24,7 @@ private UniAIBench research archive. It has an independent Git history.
 - all model answer text and provider-native response payloads;
 - all individual judgments, blind inputs, identity maps, and adjudications;
 - retry archives, internal experiments, self-review campaigns, and Router work;
+- work-in-progress exam-level analyses;
 - the website source and generated Atlas;
 - credentials, local paths, environments, dependencies, caches, and build
   products;

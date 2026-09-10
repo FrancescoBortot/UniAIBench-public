@@ -180,7 +180,6 @@ UniAIBench-public/
 |   |-- tables/              aggregate rankings and T1--T8 profiles
 |   |-- figures/site/        eight English figures matching the website views
 |   `-- scripts/             figure and website-data generators
-|-- results/                 secondary aggregate result views
 |-- paper/                   manuscript source, figures, and compiled PDF
 |-- benchmark_harness.py     multi-provider reference implementation
 |-- DATA_PROVENANCE.md       source-material and redistribution boundary
@@ -335,7 +334,6 @@ The public evidence is organized as follows:
   public paper and website chart families;
 - [`analysis/FIGURE_PROVENANCE.md`](analysis/FIGURE_PROVENANCE.md): exact
   output-to-program and output-to-input mapping;
-- [`results/`](results/): secondary aggregate exam-level views;
 - [`paper/`](paper/): manuscript source and compiled PDF.
 
 Rebuild the public figures and generated model documentation with:

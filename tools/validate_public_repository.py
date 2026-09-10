@@ -19,7 +19,7 @@ TEXT_SUFFIXES = {
 FORBIDDEN_TOP_LEVEL = {
     "DATASET", "DATASET_ANALISI_3", "DATASET_FISICA_2", "DOCUMENTI",
     "EXPERIMENTS", "JUDGING", "REPORTS", "RETRY_ARCHIVE", "RUNS",
-    "SELF_REVIEW", "website",
+    "Router", "SELF_REVIEW", "results", "website",
 }
 FORBIDDEN_FILENAMES = {
     ".env", "identity_map.json", "raw_response.json", "response.txt",
