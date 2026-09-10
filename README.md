@@ -310,7 +310,7 @@ The top six configurations by mean rubric score were:
 | 5 | Gemini 3.5 Flash | 96.95% | 95.10--98.51% |
 | 6 | DeepSeek V4 Pro | 96.71% | 94.76--98.31% |
 
-![Overall ranking by mean accuracy across the 60 common exercises, with 95% confidence intervals](analysis/grafici_selezionati/figures_en/01_overall_ranking.png)
+![Overall ranking by mean accuracy across the 60 common exercises, with 95% confidence intervals](analysis/figures/overall_ranking.png)
 
 The overlapping intervals do not justify treating the displayed order as a
 set of sharply separated performance tiers. Subject stability, T1--T8 profiles,

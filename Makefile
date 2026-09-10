@@ -44,6 +44,7 @@ figures:
 	$(PYTHON) analysis/scripts/build_main_chart_collection.py
 	$(PYTHON) analysis/scripts/build_model_specifications_pdf.py
 	$(PYTHON) analysis/scripts/build_website_benchmark_data.py
+	cp analysis/grafici_selezionati/figures_en/01_overall_ranking.png analysis/figures/overall_ranking.png
 	cp analysis/grafici_selezionati/output/pdf/selected_correctness_charts.pdf paper/figures/
 	cp analysis/grafici_token_costi_focus/output/pdf/focused_token_cost_charts.pdf paper/figures/
 	cp analysis/grafici_tempo_risposta_focus/output/pdf/focused_response_time_charts.pdf paper/figures/

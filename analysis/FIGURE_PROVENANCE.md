@@ -23,7 +23,7 @@ The canonical supplementary PDFs are copied to `paper/figures/` by
 
 | Published output or chart family | Source program | Public numerical inputs |
 |---|---|---|
-| Correctness rankings and T1--T8 profiles | `analysis/scripts/build_selected_charts.py` | ranking and profile CSVs in `analysis/tables/` |
+| Correctness rankings and T1--T8 profiles, including the English README figure at `analysis/figures/overall_ranking.png` | `analysis/scripts/build_selected_charts.py` | ranking and profile CSVs in `analysis/tables/` |
 | Cost ranking, token composition, distributions, heatmap, and thinking contrast | `analysis/scripts/build_selected_token_cost_charts.py` | `model_item_resources.csv` and resource tables |
 | Focused cost charts | `analysis/scripts/build_token_cost_focus_charts.py` | outputs of the selected token/cost generator |
 | Response-time ranking, heatmap, drivers, and accuracy correlation | `analysis/scripts/build_response_time_focus_charts.py` and `build_speed_correctness_alternatives.py` | public resource panel and overall ranking table |
