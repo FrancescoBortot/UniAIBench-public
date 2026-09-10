@@ -178,7 +178,7 @@ UniAIBench-public/
 |-- analysis/
 |   |-- data/                sanitized score, resource, and model metadata
 |   |-- tables/              aggregate rankings and T1--T8 profiles
-|   |-- figures/             publication-ready visual summaries
+|   |-- figures/             selected English figure used by this README
 |   `-- scripts/             figure and website-data generators
 |-- results/                 secondary aggregate result views
 |-- paper/                   manuscript source, figures, and compiled PDF
@@ -208,6 +208,9 @@ Create an isolated Python environment from the repository root:
 python3.11 -m venv .venv
 .venv/bin/python -m pip install -r requirements.txt
 ```
+
+The `Makefile` uses `.venv/bin/python` by default, so the commands below run in
+the environment created above rather than an unrelated system installation.
 
 Run the complete offline validation gate:
 
@@ -326,7 +329,8 @@ The public evidence is organized as follows:
   panels, and canonical model metadata;
 - [`analysis/tables/`](analysis/tables/): principal rankings, coverage,
   T1--T8 profiles, and resource summaries;
-- [`analysis/figures/`](analysis/figures/): publication-ready figures;
+- [`analysis/figures/`](analysis/figures/): the current English ranking figure
+  selected for this README;
 - [`analysis/scripts/`](analysis/scripts/): executable generators for all
   public paper and website chart families;
 - [`analysis/FIGURE_PROVENANCE.md`](analysis/FIGURE_PROVENANCE.md): exact

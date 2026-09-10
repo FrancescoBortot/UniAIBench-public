@@ -18,15 +18,15 @@ jobs:
           cache: pip
       - run: sudo apt-get update && sudo apt-get install -y poppler-utils
       - run: python -m pip install -r requirements.txt
-      - run: make check
+      - run: make PYTHON=python check-strict
       - name: Validate CITATION.cff
         uses: citation-file-format/cffconvert-github-action@2.0.0
         with:
           args: "--validate"
       - run: python -m compileall -q benchmark_harness.py google_benchmark_harness.py tools analysis/scripts tests
-      - run: make figures
+      - run: make PYTHON=python figures
       - run: test -s analysis/site_exports/benchmarkData.ts && test -s analysis/site_exports/exerciseProfiles.ts && test -s analysis/site_exports/modelCatalog.ts
-      - run: git diff --exit-code -- paper/figures
+      - run: git diff --exit-code -- analysis/figures paper/figures docs/evaluated-models.md
       - name: Install Tectonic
         uses: wtfjoke/setup-tectonic@v4
         with:

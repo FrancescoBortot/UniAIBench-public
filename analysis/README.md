@@ -11,7 +11,10 @@ model-answer text, individual judgment, or private identity map.
 - `data/model_catalog.json`: canonical model identity, specification, reasoning,
   and dated pricing metadata used by documentation, paper, and website exports.
 - `tables/`: principal rankings, coverage, T1--T8 profiles, and resource tables.
-- `figures/`: publication-ready visual summaries.
+- `figures/overall_ranking.png`: the current English ranking figure selected
+  for the repository README. Other final paper figures remain under
+  `../paper/figures/`; intermediate and alternative chart outputs are rebuilt
+  on demand and are not versioned.
 - `scripts/`: executable generators for the paper and website chart families.
 - `site_exports/`: ignored working output containing text-free TypeScript data
   modules for the separate website codebase; regenerate it with `make figures`.

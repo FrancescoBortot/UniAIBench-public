@@ -1,6 +1,6 @@
-PYTHON ?= python3
+PYTHON ?= .venv/bin/python
 
-.PHONY: check check-strict validate-configs validate-rubric-template \
+.PHONY: check check-strict check-readme-figure validate-configs validate-rubric-template \
 	validate-judgment-template validate-model-catalog test check-analysis \
 	check-model-docs figures paper
 
@@ -9,8 +9,13 @@ check: validate-configs validate-rubric-template validate-judgment-template \
 	$(PYTHON) tools/validate_public_repository.py
 	$(PYTHON) benchmark_harness.py --help >/dev/null
 
-check-strict: check
+check-strict: check check-readme-figure
 	$(PYTHON) tools/validate_public_repository.py --strict
+
+check-readme-figure:
+	$(PYTHON) analysis/scripts/build_selected_charts.py
+	cp analysis/grafici_selezionati/figures_en/01_overall_ranking.png analysis/figures/overall_ranking.png
+	git diff --exit-code -- analysis/figures/overall_ranking.png
 
 validate-rubric-template:
 	$(PYTHON) tools/validate_rubric.py rubrics/templates/rubric.template.json --template

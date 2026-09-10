@@ -44,6 +44,20 @@ RELEASE_VERSION = "1.0"
 REQUIRED_CHECKS = {
     "ai-review", "rights", "scope", "licence", "metadata", "aggregate-data",
 }
+EXPECTED_ANALYSIS_FIGURES = {"overall_ranking.png"}
+EXPECTED_PAPER_FIGURES = {
+    "focused_response_time_charts.pdf",
+    "focused_token_cost_charts.pdf",
+    "item_difficulty.tex",
+    "model_technical_specifications.pdf",
+    "performance_overview.tex",
+    "publication_benchmark_map.tex",
+    "resource_frontiers.tex",
+    "rubric_anatomy.tex",
+    "selected_correctness_charts.pdf",
+    "subject_contrast.tex",
+    "token_ablation.tex",
+}
 
 
 def relative(path: Path) -> str:
@@ -139,6 +153,26 @@ def main() -> int:
     expected_template = ROOT / "rubrics/templates/rubric.template.json"
     if rubric_json != [expected_template]:
         errors.append("rubrics/ must contain only the single blank rubric template")
+
+    figures_dir = ROOT / "analysis/figures"
+    actual_figures = {
+        path.name for path in figures_dir.iterdir() if path.is_file()
+    } if figures_dir.is_dir() else set()
+    if actual_figures != EXPECTED_ANALYSIS_FIGURES:
+        errors.append(
+            "analysis/figures must contain only the current English README figure; "
+            f"expected {sorted(EXPECTED_ANALYSIS_FIGURES)}, found {sorted(actual_figures)}"
+        )
+
+    paper_figures_dir = ROOT / "paper/figures"
+    actual_paper_figures = {
+        path.name for path in paper_figures_dir.iterdir() if path.is_file()
+    } if paper_figures_dir.is_dir() else set()
+    if actual_paper_figures != EXPECTED_PAPER_FIGURES:
+        errors.append(
+            "paper/figures must contain only manuscript figures and current English supplements; "
+            f"expected {sorted(EXPECTED_PAPER_FIGURES)}, found {sorted(actual_paper_figures)}"
+        )
 
     exercise_files = list(ROOT.rglob("esercizio_*.txt")) + list(ROOT.rglob("exercise_[0-9]*.txt"))
     if exercise_files:

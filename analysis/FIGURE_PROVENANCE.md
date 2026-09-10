@@ -19,6 +19,24 @@ Generated working directories named `analysis/grafici_*` are ignored by Git.
 The canonical supplementary PDFs are copied to `paper/figures/` by
 `make figures`.
 
+## Tracked-output policy
+
+Only `analysis/figures/overall_ranking.png` is retained as a standalone chart,
+because it is the English figure displayed in the repository README. Final
+figures actually used by the manuscript are retained under `paper/figures/`.
+Italian, superseded, intermediate, and unreferenced chart exports are generated
+on demand but are not versioned in the publication repository.
+
+The tracked `paper/figures/` directory is intentionally limited to two groups:
+
+- the seven `.tex` figures directly included by `main_publication.tex`;
+- four current English supplementary PDFs covering correctness, token/cost,
+  response time, and model specifications.
+
+Unused legacy diagram sources are excluded. The publication validator enforces
+both tracked-output lists so that unrelated chart exports cannot be added
+silently.
+
 ## Output-to-source map
 
 | Published output or chart family | Source program | Public numerical inputs |
