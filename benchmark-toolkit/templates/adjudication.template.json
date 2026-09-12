@@ -1,0 +1,67 @@
+{
+  "$schema": "https://raw.githubusercontent.com/FrancescoBortot/UniAIBench-public/v1.0/benchmark-toolkit/schemas/adjudication.schema.json",
+  "schema_version": "1.0",
+  "adjudication_id": "replace-with-adjudication-id",
+  "adjudication_version": 1,
+  "decision_status": "draft",
+  "supersedes_adjudication_id": null,
+  "supersedes_adjudication_sha256": null,
+  "campaign_id": "replace-with-campaign-id",
+  "batch_id": "replace-with-batch-id",
+  "recorded_at": "1970-01-01T00:00:00Z",
+  "reviewer": {
+    "reviewer_id": "replace-with-reviewer-id",
+    "role": "human-reviewer",
+    "human_confirmed": false
+  },
+  "trigger": {
+    "type": "other",
+    "summary": "replace-with-trigger-summary",
+    "evidence": "replace-with-observable-evidence"
+  },
+  "source_artifacts": [
+    {
+      "artifact_type": "replace-with-artifact-type",
+      "artifact_id": "replace-with-artifact-id",
+      "path": "replace/with/source-artifact.json",
+      "sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+    }
+  ],
+  "classification": "response_only",
+  "decision": {
+    "outcome": "other",
+    "summary": "replace-with-decision-summary",
+    "technical_rationale": "replace-with-technical-rationale"
+  },
+  "impact": {
+    "reference": {
+      "changed": false,
+      "previous_version": null,
+      "replacement_version": null
+    },
+    "rubric": {
+      "changed": false,
+      "previous_version": null,
+      "replacement_version": null
+    },
+    "response_validity": {
+      "changed": false,
+      "new_status": null
+    },
+    "scores": {
+      "changed": false,
+      "requires_recomputation": false
+    }
+  },
+  "affected_response_ids": [
+    "replace-with-opaque-response-id"
+  ],
+  "reevaluation": {
+    "required": false,
+    "scope": "none",
+    "reason": "replace-with-reevaluation-reason",
+    "replacement_artifact_paths": []
+  },
+  "superseded_artifacts": [],
+  "notes": ""
+}

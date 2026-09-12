@@ -1,58 +1,94 @@
 PYTHON ?= .venv/bin/python
 
-.PHONY: check check-strict check-site-figures figure-families validate-configs validate-rubric-template \
-	validate-judgment-template validate-model-catalog test check-analysis \
-	check-model-docs figures paper
+TOOLKIT := benchmark-toolkit
+STUDY := uniaibench
+ANALYSIS := $(STUDY)/analysis
+PAPER := $(STUDY)/paper
 
-check: validate-configs validate-rubric-template validate-judgment-template \
-	validate-model-catalog test check-analysis check-model-docs
-	$(PYTHON) tools/validate_public_repository.py
-	$(PYTHON) benchmark_harness.py --help >/dev/null
+.PHONY: check check-strict check-toolkit check-uniaibench check-publication \
+	check-publication-strict check-boundaries check-site-figures figure-families \
+	validate-configs validate-rubric-template validate-judgment-template \
+	validate-study-release validate-model-catalog test test-toolkit test-uniaibench test-publication check-analysis \
+	check-model-docs tables check-tables figures paper
+
+check: check-boundaries check-toolkit check-uniaibench check-publication
 
 check-strict: check check-site-figures
 	$(PYTHON) tools/validate_public_repository.py --strict
 
+check-toolkit: validate-configs validate-rubric-template validate-judgment-template test-toolkit
+	$(PYTHON) $(TOOLKIT)/harness/benchmark_harness.py --help >/dev/null
+	$(PYTHON) $(TOOLKIT)/harness/google_benchmark_harness.py --help >/dev/null
+
+check-uniaibench: validate-study-release validate-model-catalog check-tables test-uniaibench check-analysis check-model-docs
+
+check-publication: test-publication
+	$(PYTHON) tools/validate_public_repository.py
+
+check-publication-strict: test-publication
+	$(PYTHON) tools/validate_public_repository.py --strict
+
+check-boundaries:
+	$(PYTHON) tools/check_dependency_direction.py
+
 figure-families:
-	$(PYTHON) analysis/scripts/build_selected_charts.py
-	$(PYTHON) analysis/scripts/build_selected_token_cost_charts.py
-	$(PYTHON) analysis/scripts/build_token_cost_focus_charts.py
-	$(PYTHON) analysis/scripts/build_response_time_focus_charts.py
-	$(PYTHON) analysis/scripts/build_main_chart_collection.py
+	$(PYTHON) $(ANALYSIS)/scripts/build_selected_charts.py
+	$(PYTHON) $(ANALYSIS)/scripts/build_selected_token_cost_charts.py
+	$(PYTHON) $(ANALYSIS)/scripts/build_token_cost_focus_charts.py
+	$(PYTHON) $(ANALYSIS)/scripts/build_response_time_focus_charts.py
+	$(PYTHON) $(ANALYSIS)/scripts/build_main_chart_collection.py
 
 check-site-figures: figure-families
-	git diff --exit-code -- analysis/figures
+	git diff --exit-code -- $(ANALYSIS)/figures
 
 validate-rubric-template:
-	$(PYTHON) tools/validate_rubric.py rubrics/templates/rubric.template.json --template
+	$(PYTHON) $(TOOLKIT)/tools/validate_rubric.py $(TOOLKIT)/templates/rubric.template.json --template
 
 validate-judgment-template:
-	$(PYTHON) tools/validate_judgment.py schemas/judgment.template.json --template
+	$(PYTHON) $(TOOLKIT)/tools/validate_judgment.py $(TOOLKIT)/templates/judgment.template.json --template
 
 validate-configs:
-	$(PYTHON) tools/validate_config.py configs/benchmark_config.template.json
-	$(PYTHON) tools/validate_config.py configs/google_benchmark_config.template.json
+	$(PYTHON) $(TOOLKIT)/tools/validate_config.py $(abspath $(TOOLKIT)/configs/benchmark_config.template.json)
+	$(PYTHON) $(TOOLKIT)/tools/validate_config.py $(abspath $(TOOLKIT)/configs/google_benchmark_config.template.json)
 
 validate-model-catalog:
-	$(PYTHON) tools/validate_model_catalog.py
+	$(PYTHON) $(ANALYSIS)/tools/validate_model_catalog.py
 
-test:
+validate-study-release:
+	$(PYTHON) $(ANALYSIS)/tools/validate_study_release.py
+
+test: test-toolkit test-publication
+
+test-toolkit:
+	$(PYTHON) -m unittest discover -s $(TOOLKIT)/tests -v
+
+test-uniaibench:
+	$(PYTHON) -m unittest discover -s $(ANALYSIS)/tests -v
+
+test-publication:
 	$(PYTHON) -m unittest discover -s tests -v
 
 check-analysis:
-	$(PYTHON) paper/scripts/build_item_difficulty_figure.py
-	git diff --exit-code -- paper/figures/item_difficulty.tex
+	$(PYTHON) $(PAPER)/scripts/build_item_difficulty_figure.py
+	git diff --exit-code -- $(PAPER)/figures/item_difficulty.tex
 
 check-model-docs:
-	$(PYTHON) analysis/scripts/build_model_catalog_docs.py --check
+	$(PYTHON) $(ANALYSIS)/scripts/build_model_catalog_docs.py --check
 
-figures: figure-families
-	$(PYTHON) analysis/scripts/build_model_catalog_docs.py
-	$(PYTHON) analysis/scripts/build_model_specifications_pdf.py
-	$(PYTHON) analysis/scripts/build_website_benchmark_data.py
-	cp analysis/grafici_selezionati/output/pdf/selected_correctness_charts.pdf paper/figures/
-	cp analysis/grafici_token_costi_focus/output/pdf/focused_token_cost_charts.pdf paper/figures/
-	cp analysis/grafici_tempo_risposta_focus/output/pdf/focused_response_time_charts.pdf paper/figures/
+tables:
+	$(PYTHON) $(ANALYSIS)/scripts/build_public_tables.py --write
+
+check-tables:
+	$(PYTHON) $(ANALYSIS)/scripts/build_public_tables.py --check
+
+figures: tables figure-families
+	$(PYTHON) $(ANALYSIS)/scripts/build_model_catalog_docs.py
+	$(PYTHON) $(ANALYSIS)/scripts/build_model_specifications_pdf.py
+	$(PYTHON) $(ANALYSIS)/scripts/build_website_benchmark_data.py
+	cp $(ANALYSIS)/grafici_selezionati/output/pdf/selected_correctness_charts.pdf $(PAPER)/figures/
+	cp $(ANALYSIS)/grafici_token_costi_focus/output/pdf/focused_token_cost_charts.pdf $(PAPER)/figures/
+	cp $(ANALYSIS)/grafici_tempo_risposta_focus/output/pdf/focused_response_time_charts.pdf $(PAPER)/figures/
 
 paper: figures
-	$(PYTHON) paper/scripts/build_item_difficulty_figure.py
-	$(MAKE) -C paper publication
+	$(PYTHON) $(PAPER)/scripts/build_item_difficulty_figure.py
+	$(MAKE) -C $(PAPER) publication

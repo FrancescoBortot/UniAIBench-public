@@ -1,0 +1,48 @@
+{
+  "schema_version": "1.0",
+  "target_models": [
+    "Claude Fable 5",
+    "Claude Haiku 4.5",
+    "Claude Sonnet 4.5",
+    "DeepSeek V4 Flash",
+    "DeepSeek V4 Flash (no thinking)",
+    "DeepSeek V4 Pro",
+    "GPT-5.6 Sol",
+    "Gemini 3.1 Pro Preview",
+    "Gemini 3.5 Flash",
+    "Gemma 4 31B IT",
+    "Grok 4.3",
+    "Grok 4.5",
+    "OpenAI GPT-4.1",
+    "OpenAI o3"
+  ],
+  "dimensions": ["T1", "T2", "T3", "T4", "T5", "T6", "T7", "T8"],
+  "expected_common_items": {
+    "overall": 60,
+    "analysis_3": 33,
+    "physics_2": 27
+  },
+  "ranking": {
+    "success_threshold_percent": 60.0,
+    "perfect_score_percent": 100.0,
+    "score_tolerance": 1e-8,
+    "confidence_level": 0.95,
+    "bootstrap_resamples": 20000,
+    "bootstrap_seed": 20260810
+  },
+  "token_cost": {
+    "bootstrap_resamples": 20000,
+    "bootstrap_seed": 20260810,
+    "provider_colors": {
+      "openai": "#087F72",
+      "anthropic": "#9A4D00",
+      "google": "#175CD3",
+      "deepseek": "#5B4BCE",
+      "xai": "#202124"
+    }
+  },
+  "upstream_attestations": {
+    "prompt_hash_consistent_within_each_item": true,
+    "note": "The private extraction stage verified one prompt hash per item before hashes were removed from the sanitized public panels. This release records that upstream result but cannot re-run it without the private metadata."
+  }
+}

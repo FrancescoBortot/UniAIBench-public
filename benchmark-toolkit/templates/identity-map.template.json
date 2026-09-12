@@ -1,0 +1,29 @@
+{
+  "$schema": "https://raw.githubusercontent.com/FrancescoBortot/UniAIBench-public/v1.0/benchmark-toolkit/schemas/identity-map.schema.json",
+  "schema_version": "1.0",
+  "campaign_id": "replace-with-campaign-id",
+  "batch_id": "replace-with-batch-id",
+  "created_at": "1970-01-01T00:00:00Z",
+  "source_manifest_path": "../../source-manifest.json",
+  "source_manifest_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+  "blind_batch_manifest_path": "../../blind-batches/replace-with-batch-id/blind-batch-manifest.json",
+  "blind_batch_manifest_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+  "entries": [
+    {
+      "anonymous_response_id": "replace-with-opaque-response-id",
+      "item_id": "replace-with-item-id",
+      "response_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "source_run_id": "replace-with-source-run-id",
+      "system_id": "replace-with-stable-system-id",
+      "repetition_id": "replace-with-repetition-id",
+      "source_response_path": "responses/replace-with-source-response.txt",
+      "source_response_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "blind_input_path": "responses/replace-with-opaque-response-id.txt",
+      "blind_input_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "planned_judgment_path": "judgments/replace-with-opaque-response-id.json",
+      "model_identity": {
+        "replace_with_private_metadata": true
+      }
+    }
+  ]
+}

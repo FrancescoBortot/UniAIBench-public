@@ -38,6 +38,9 @@ AI review is advisory. It cannot grant rights or authorize publication.
       the official `https://uniaibench.org` URL have been checked.
 - [x] <!-- required:aggregate-data --> Aggregate CSV files have been reviewed for
       personal or confidential fields.
+- [x] The `uniaibench/` study and
+      `benchmark-toolkit/` reuse layer are clearly separated, and the toolkit
+      has no dependency on study artifacts.
 
 The owner must still give a separate explicit instruction before changing the
 repository visibility from private to public.

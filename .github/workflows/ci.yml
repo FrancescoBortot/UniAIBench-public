@@ -8,7 +8,7 @@ on:
   pull_request:
 
 jobs:
-  validate:
+  toolkit:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
@@ -16,21 +16,59 @@ jobs:
         with:
           python-version: "3.11"
           cache: pip
-      - run: sudo apt-get update && sudo apt-get install -y poppler-utils
-      - run: python -m pip install -r requirements.txt
-      - run: make PYTHON=python check-strict
-      - name: Validate CITATION.cff
-        uses: citation-file-format/cffconvert-github-action@2.0.0
+          cache-dependency-path: benchmark-toolkit/requirements.txt
+      - run: python -m pip install -r benchmark-toolkit/requirements.txt
+      - run: make PYTHON=python check-toolkit
+      - run: python -m compileall -q benchmark-toolkit/harness benchmark-toolkit/tools benchmark-toolkit/tests
+
+  uniaibench-evidence:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
         with:
-          args: "--validate"
-      - run: python -m compileall -q benchmark_harness.py google_benchmark_harness.py tools analysis/scripts tests
+          python-version: "3.11"
+          cache: pip
+          cache-dependency-path: uniaibench/requirements.txt
+      - run: sudo apt-get update && sudo apt-get install -y poppler-utils
+      - run: python -m pip install -r uniaibench/requirements.txt
+      - run: make PYTHON=python check-uniaibench
+      - run: python -m compileall -q uniaibench/analysis/scripts uniaibench/analysis/tools uniaibench/paper/scripts
       - run: make PYTHON=python figures
-      - run: test -s analysis/site_exports/benchmarkData.ts && test -s analysis/site_exports/exerciseProfiles.ts && test -s analysis/site_exports/modelCatalog.ts
-      - run: git diff --exit-code -- analysis/figures paper/figures docs/evaluated-models.md
+      - run: test -s uniaibench/analysis/site_exports/benchmarkData.ts && test -s uniaibench/analysis/site_exports/exerciseProfiles.ts && test -s uniaibench/analysis/site_exports/modelCatalog.ts
+      - run: git diff --exit-code -- uniaibench/analysis/figures uniaibench/paper/figures uniaibench/profile/evaluated-models.md
+
+  paper:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - run: sudo apt-get update && sudo apt-get install -y poppler-utils
       - name: Install Tectonic
         uses: wtfjoke/setup-tectonic@v4
         with:
           tectonic-version: 0.15.0
+      - name: Capture released manuscript text
+        run: pdftotext -layout uniaibench/paper/benchmark_publication.pdf /tmp/uniaibench-released.txt
       - name: Compile paper from a clean checkout
-        run: make -C paper publication
-      - run: test -s paper/benchmark_publication.pdf && pdfinfo paper/benchmark_publication.pdf | grep -q '^Pages:'
+        run: make -C uniaibench/paper publication
+      - name: Compare rebuilt manuscript with the released PDF
+        run: |
+          test -s uniaibench/paper/benchmark_publication.pdf
+          pdfinfo uniaibench/paper/benchmark_publication.pdf | grep -q '^Pages: *11$'
+          pdftotext -layout uniaibench/paper/benchmark_publication.pdf /tmp/uniaibench-rebuilt.txt
+          diff -u /tmp/uniaibench-released.txt /tmp/uniaibench-rebuilt.txt
+
+  publication-safety:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.11"
+      - run: make PYTHON=python check-boundaries check-publication-strict
+      - name: Validate CITATION.cff
+        uses: citation-file-format/cffconvert-github-action@2.0.0
+        with:
+          args: "--validate"

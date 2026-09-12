@@ -1,0 +1,172 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/FrancescoBortot/UniAIBench-public/v1.0/benchmark-toolkit/schemas/blind-batch-manifest.schema.json",
+  "title": "Blind benchmark batch manifest",
+  "description": "Judge-visible inventory of anonymous responses and their frozen item artifacts. It must contain no source-run or model identity.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "campaign_id",
+    "batch_id",
+    "created_at",
+    "judging_contract",
+    "item_artifacts",
+    "responses"
+  ],
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "schema_version": {
+      "enum": [
+        "1.0"
+      ]
+    },
+    "campaign_id": {
+      "$ref": "#/$defs/nonEmptyString"
+    },
+    "batch_id": {
+      "$ref": "#/$defs/nonEmptyString"
+    },
+    "created_at": {
+      "type": "string",
+      "minLength": 1,
+      "format": "date-time"
+    },
+    "judging_contract": {
+      "$ref": "#/$defs/judgingContract"
+    },
+    "item_artifacts": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/itemArtifact"
+      }
+    },
+    "responses": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/blindResponse"
+      }
+    }
+  },
+  "$defs": {
+    "nonEmptyString": {
+      "type": "string",
+      "minLength": 1
+    },
+    "sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "relativePath": {
+      "type": "string",
+      "minLength": 1,
+      "description": "POSIX-style path resolved relative to the blind-batch manifest. Operational validation rejects absolute paths and traversal outside the batch directory."
+    },
+    "judgingContract": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "judge_spec_version",
+        "judge_prompt_path",
+        "judge_prompt_sha256",
+        "judgment_schema_path",
+        "judgment_schema_sha256",
+        "validator_path",
+        "validator_sha256",
+        "validator_support_path",
+        "validator_support_sha256",
+        "validator_version"
+      ],
+      "properties": {
+        "judge_spec_version": {"$ref": "#/$defs/nonEmptyString"},
+        "judge_prompt_path": {"$ref": "#/$defs/relativePath"},
+        "judge_prompt_sha256": {"$ref": "#/$defs/sha256"},
+        "judgment_schema_path": {"$ref": "#/$defs/relativePath"},
+        "judgment_schema_sha256": {"$ref": "#/$defs/sha256"},
+        "validator_path": {"$ref": "#/$defs/relativePath"},
+        "validator_sha256": {"$ref": "#/$defs/sha256"},
+        "validator_support_path": {"$ref": "#/$defs/relativePath"},
+        "validator_support_sha256": {"$ref": "#/$defs/sha256"},
+        "validator_version": {"$ref": "#/$defs/nonEmptyString"}
+      }
+    },
+    "itemArtifact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "item_id",
+        "item_path",
+        "item_sha256",
+        "rubric_path",
+        "rubric_sha256"
+      ],
+      "properties": {
+        "item_id": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "item_path": {
+          "$ref": "#/$defs/relativePath"
+        },
+        "item_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "rubric_path": {
+          "$ref": "#/$defs/relativePath"
+        },
+        "rubric_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "reference_path": {
+          "$ref": "#/$defs/relativePath"
+        },
+        "reference_sha256": {
+          "$ref": "#/$defs/sha256"
+        }
+      },
+      "dependentRequired": {
+        "reference_path": [
+          "reference_sha256"
+        ],
+        "reference_sha256": [
+          "reference_path"
+        ]
+      }
+    },
+    "blindResponse": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "anonymous_response_id",
+        "item_id",
+        "response_sha256",
+        "blind_input_path",
+        "blind_input_sha256",
+        "planned_judgment_path"
+      ],
+      "properties": {
+        "anonymous_response_id": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "item_id": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "response_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "blind_input_path": {
+          "$ref": "#/$defs/relativePath"
+        },
+        "blind_input_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "planned_judgment_path": {
+          "$ref": "#/$defs/relativePath"
+        }
+      }
+    }
+  }
+}

@@ -4,8 +4,11 @@ UniAIBench uses separate licences for software and research content.
 
 ## Software
 
-Python and other executable source code in this repository are licensed under
-the MIT License. The full text is available in
+Python and other executable source code in `benchmark-toolkit/`,
+`uniaibench/analysis/scripts/`, `uniaibench/analysis/tools/`,
+`uniaibench/paper/scripts/`, and the root `tools/` directory are licensed under
+the MIT License. This software scope also includes automated tests, Makefiles,
+CI workflows, and build or validation automation. The full text is available in
 [`LICENSES/CODE-MIT.txt`](LICENSES/CODE-MIT.txt).
 
 ## Research and documentation content
@@ -22,6 +25,9 @@ the author. In particular, the licence grants exclude non-distributed
 examination statements, official solutions, institutional material, provider
 names, model names, logos, and third-party trademarks.
 
+No examination statement, official solution, completed item-specific rubric,
+model-answer text, individual judgment, identity map, Router artifact,
+full-exam artifact, or website source is distributed by this repository.
+
 The project is independent and is not endorsed by the University of Padua or
 the model providers named in the research results.
-

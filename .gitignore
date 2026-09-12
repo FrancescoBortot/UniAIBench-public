@@ -24,8 +24,13 @@ tmp/
 /website/
 /local_data/
 /local_outputs/
-/analysis/grafici_*/
-/analysis/site_exports/
-/paper/build/
+/local_workflow/
+/benchmark-workspace/
+/benchmark-toolkit/local_data/
+/benchmark-toolkit/local_outputs/
+/benchmark-toolkit/local_workflow/
+/uniaibench/analysis/grafici_*/
+/uniaibench/analysis/site_exports/
+/uniaibench/paper/build/
 raw_response.json
 identity_map.json

@@ -1,0 +1,4 @@
+numpy==2.3.5
+pandas==2.2.3
+pypdf==6.10.0
+reportlab==4.4.9

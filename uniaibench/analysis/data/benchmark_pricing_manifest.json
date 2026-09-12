@@ -1,0 +1,168 @@
+{
+  "schema_version": 1,
+  "benchmark_snapshot_date": "2026-08-14",
+  "currency": "USD",
+  "price_unit": "per 1,000,000 tokens",
+  "scope": "Frozen input and output rates used for the UniAIBench v1.0 cost estimates.",
+  "source_boundary": {
+    "distributed": "This manifest publishes every applied rate, its public provider reference, and the provenance class used for the frozen value.",
+    "withheld": "Operational campaign configurations are not distributed because they contain study-specific execution details outside the public evidence boundary.",
+    "fingerprint_semantics": "A SHA-256 fingerprint identifies a withheld configuration snapshot without revealing its filename, path, or contents. It establishes which frozen source was used; it does not independently prove the correctness of that source."
+  },
+  "rates": [
+    {
+      "record_id": "gpt-5.6-sol",
+      "model_id": "gpt-5.6-sol",
+      "model": "GPT-5.6 Sol",
+      "input_usd_per_million": 5.0,
+      "output_usd_per_million": 30.0,
+      "rate_origin_kind": "official_provider_documentation",
+      "official_reference_url": "https://developers.openai.com/api/docs/models/gpt-5.6-sol",
+      "configuration_snapshot_sha256": null,
+      "note": "Standard rate below the long-context threshold; panel prompts are far below 272k tokens."
+    },
+    {
+      "record_id": "o3-2025-04-16",
+      "model_id": "o3-2025-04-16",
+      "model": "OpenAI o3",
+      "input_usd_per_million": 2.0,
+      "output_usd_per_million": 8.0,
+      "rate_origin_kind": "private_campaign_configuration_snapshot",
+      "official_reference_url": "https://developers.openai.com/api/docs/models/o3",
+      "configuration_snapshot_sha256": "e4f31febe7e7ad22fa126b61e9f3b8ca29d10cda877ef29d9933e33deb77af23",
+      "note": "Reasoning tokens are included in billable output tokens."
+    },
+    {
+      "record_id": "gpt-4.1-2025-04-14",
+      "model_id": "gpt-4.1-2025-04-14",
+      "model": "OpenAI GPT-4.1",
+      "input_usd_per_million": 2.0,
+      "output_usd_per_million": 8.0,
+      "rate_origin_kind": "private_campaign_configuration_snapshot",
+      "official_reference_url": "https://developers.openai.com/api/docs/models/gpt-4.1",
+      "configuration_snapshot_sha256": "e4f31febe7e7ad22fa126b61e9f3b8ca29d10cda877ef29d9933e33deb77af23",
+      "note": "The campaign configuration uses no native reasoning mode."
+    },
+    {
+      "record_id": "claude-fable-5",
+      "model_id": "claude-fable-5",
+      "model": "Claude Fable 5",
+      "input_usd_per_million": 10.0,
+      "output_usd_per_million": 50.0,
+      "rate_origin_kind": "official_provider_documentation",
+      "official_reference_url": "https://platform.claude.com/docs/en/about-claude/pricing",
+      "configuration_snapshot_sha256": null,
+      "note": "Standard Claude API rate; Anthropic output does not separate Fable 5 adaptive-thinking tokens."
+    },
+    {
+      "record_id": "claude-sonnet-4-5-20250929",
+      "model_id": "claude-sonnet-4-5-20250929",
+      "model": "Claude Sonnet 4.5",
+      "input_usd_per_million": 3.0,
+      "output_usd_per_million": 15.0,
+      "rate_origin_kind": "private_campaign_configuration_snapshot",
+      "official_reference_url": "https://platform.claude.com/docs/en/about-claude/pricing",
+      "configuration_snapshot_sha256": "e4f31febe7e7ad22fa126b61e9f3b8ca29d10cda877ef29d9933e33deb77af23",
+      "note": "Campaign-configured rate; no extended thinking was requested."
+    },
+    {
+      "record_id": "claude-haiku-4-5-20251001",
+      "model_id": "claude-haiku-4-5-20251001",
+      "model": "Claude Haiku 4.5",
+      "input_usd_per_million": 1.0,
+      "output_usd_per_million": 5.0,
+      "rate_origin_kind": "private_campaign_configuration_snapshot",
+      "official_reference_url": "https://platform.claude.com/docs/en/about-claude/pricing",
+      "configuration_snapshot_sha256": "e4f31febe7e7ad22fa126b61e9f3b8ca29d10cda877ef29d9933e33deb77af23",
+      "note": "Campaign-configured rate; no extended thinking was requested."
+    },
+    {
+      "record_id": "gemini-3.5-flash",
+      "model_id": "gemini-3.5-flash",
+      "model": "Gemini 3.5 Flash",
+      "input_usd_per_million": 1.5,
+      "output_usd_per_million": 9.0,
+      "rate_origin_kind": "private_campaign_configuration_snapshot",
+      "official_reference_url": "https://ai.google.dev/gemini-api/docs/pricing",
+      "configuration_snapshot_sha256": "e4f31febe7e7ad22fa126b61e9f3b8ca29d10cda877ef29d9933e33deb77af23",
+      "note": "The output price includes thinking tokens."
+    },
+    {
+      "record_id": "gemini-3.1-pro-preview",
+      "model_id": "gemini-3.1-pro-preview",
+      "model": "Gemini 3.1 Pro Preview",
+      "input_usd_per_million": 2.0,
+      "output_usd_per_million": 12.0,
+      "rate_origin_kind": "official_provider_documentation",
+      "official_reference_url": "https://ai.google.dev/gemini-api/docs/pricing",
+      "configuration_snapshot_sha256": null,
+      "note": "Standard rate for prompts up to 200k tokens; the output price includes thinking tokens."
+    },
+    {
+      "record_id": "gemma-4-31b-it",
+      "model_id": "gemma-4-31b-it",
+      "model": "Gemma 4 31B IT",
+      "input_usd_per_million": 0.0,
+      "output_usd_per_million": 0.0,
+      "rate_origin_kind": "private_campaign_configuration_snapshot",
+      "official_reference_url": "https://ai.google.dev/gemini-api/docs/pricing",
+      "configuration_snapshot_sha256": "e4f31febe7e7ad22fa126b61e9f3b8ca29d10cda877ef29d9933e33deb77af23",
+      "note": "The zero rate was explicitly configured for the campaign and is not a universal model cost."
+    },
+    {
+      "record_id": "deepseek-v4-flash-thinking",
+      "model_id": "deepseek-v4-flash - thinking",
+      "model": "DeepSeek V4 Flash",
+      "input_usd_per_million": 0.14,
+      "output_usd_per_million": 0.28,
+      "rate_origin_kind": "private_campaign_configuration_snapshot",
+      "official_reference_url": "https://api-docs.deepseek.com/quick_start/pricing/",
+      "configuration_snapshot_sha256": "72f55057c52ab2b6c046bfaf25c4b38760bba171fe667cc82cde02e342da559b",
+      "note": "Estimate based on the configured standard input rate; unavailable local cache discounts are not applied."
+    },
+    {
+      "record_id": "deepseek-v4-flash-no-thinking",
+      "model_id": "deepseek-v4-flash - no thinking",
+      "model": "DeepSeek V4 Flash (no thinking)",
+      "input_usd_per_million": 0.14,
+      "output_usd_per_million": 0.28,
+      "rate_origin_kind": "private_campaign_configuration_snapshot",
+      "official_reference_url": "https://api-docs.deepseek.com/quick_start/pricing/",
+      "configuration_snapshot_sha256": "72f55057c52ab2b6c046bfaf25c4b38760bba171fe667cc82cde02e342da559b",
+      "note": "Thinking disabled; estimate based on the configured standard input rate."
+    },
+    {
+      "record_id": "deepseek-v4-pro",
+      "model_id": "deepseek-v4-pro",
+      "model": "DeepSeek V4 Pro",
+      "input_usd_per_million": 0.435,
+      "output_usd_per_million": 0.87,
+      "rate_origin_kind": "private_campaign_configuration_snapshot",
+      "official_reference_url": "https://api-docs.deepseek.com/quick_start/pricing/",
+      "configuration_snapshot_sha256": "72f55057c52ab2b6c046bfaf25c4b38760bba171fe667cc82cde02e342da559b",
+      "note": "Estimate based on the configured standard input rate; unavailable local cache discounts are not applied."
+    },
+    {
+      "record_id": "grok-4.5",
+      "model_id": "grok-4.5",
+      "model": "Grok 4.5",
+      "input_usd_per_million": 2.0,
+      "output_usd_per_million": 6.0,
+      "rate_origin_kind": "private_campaign_configuration_snapshot",
+      "official_reference_url": "https://docs.x.ai/developers/models/grok-4.5",
+      "configuration_snapshot_sha256": "72f55057c52ab2b6c046bfaf25c4b38760bba171fe667cc82cde02e342da559b",
+      "note": "Selected total cost uses the provider-reported value; the rate is retained for cross-checking."
+    },
+    {
+      "record_id": "grok-4.3",
+      "model_id": "grok-4.3",
+      "model": "Grok 4.3",
+      "input_usd_per_million": 1.25,
+      "output_usd_per_million": 2.5,
+      "rate_origin_kind": "private_campaign_configuration_snapshot",
+      "official_reference_url": "https://docs.x.ai/developers/models/grok-4.3",
+      "configuration_snapshot_sha256": "72f55057c52ab2b6c046bfaf25c4b38760bba171fe667cc82cde02e342da559b",
+      "note": "Selected total cost uses the provider-reported value; the rate is retained for cross-checking."
+    }
+  ]
+}

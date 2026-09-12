@@ -1,0 +1,131 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/FrancescoBortot/UniAIBench-public/v1.0/benchmark-toolkit/schemas/identity-map.schema.json",
+  "title": "Private benchmark identity map",
+  "description": "Private one-to-one mapping between anonymous responses and their source runs. This artifact must never be supplied to judges.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "campaign_id",
+    "batch_id",
+    "created_at",
+    "source_manifest_path",
+    "source_manifest_sha256",
+    "blind_batch_manifest_path",
+    "blind_batch_manifest_sha256",
+    "entries"
+  ],
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "schema_version": {
+      "enum": [
+        "1.0"
+      ]
+    },
+    "campaign_id": {
+      "$ref": "#/$defs/nonEmptyString"
+    },
+    "batch_id": {
+      "$ref": "#/$defs/nonEmptyString"
+    },
+    "created_at": {
+      "type": "string",
+      "minLength": 1,
+      "format": "date-time"
+    },
+    "source_manifest_path": {
+      "$ref": "#/$defs/declaredPath"
+    },
+    "source_manifest_sha256": {
+      "$ref": "#/$defs/sha256"
+    },
+    "blind_batch_manifest_path": {
+      "$ref": "#/$defs/declaredPath"
+    },
+    "blind_batch_manifest_sha256": {
+      "$ref": "#/$defs/sha256"
+    },
+    "entries": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/identityEntry"
+      }
+    }
+  },
+  "$defs": {
+    "nonEmptyString": {
+      "type": "string",
+      "minLength": 1
+    },
+    "sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "declaredPath": {
+      "type": "string",
+      "minLength": 1
+    },
+    "identityEntry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "anonymous_response_id",
+        "item_id",
+        "response_sha256",
+        "source_run_id",
+        "system_id",
+        "repetition_id",
+        "source_response_path",
+        "source_response_sha256",
+        "blind_input_path",
+        "blind_input_sha256",
+        "planned_judgment_path",
+        "model_identity"
+      ],
+      "properties": {
+        "anonymous_response_id": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "item_id": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "response_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "source_run_id": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "system_id": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "repetition_id": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "source_response_path": {
+          "$ref": "#/$defs/declaredPath"
+        },
+        "source_response_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "blind_input_path": {
+          "$ref": "#/$defs/declaredPath"
+        },
+        "blind_input_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "planned_judgment_path": {
+          "$ref": "#/$defs/declaredPath"
+        },
+        "model_identity": {
+          "type": "object",
+          "description": "Private benchmark-defined system metadata. The object is intentionally extensible.",
+          "additionalProperties": true
+        }
+      }
+    }
+  }
+}

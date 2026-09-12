@@ -1,0 +1,40 @@
+{
+  "$schema": "https://raw.githubusercontent.com/FrancescoBortot/UniAIBench-public/v1.0/benchmark-toolkit/schemas/blind-batch-manifest.schema.json",
+  "schema_version": "1.0",
+  "campaign_id": "replace-with-campaign-id",
+  "batch_id": "replace-with-batch-id",
+  "created_at": "1970-01-01T00:00:00Z",
+  "judging_contract": {
+    "judge_spec_version": "replace-with-judge-spec-version",
+    "judge_prompt_path": "contract/judge-prompt.md",
+    "judge_prompt_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+    "judgment_schema_path": "contract/schemas/judgment.schema.json",
+    "judgment_schema_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+    "validator_path": "contract/tools/validate_judgment.py",
+    "validator_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+    "validator_support_path": "contract/tools/schema_validation.py",
+    "validator_support_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+    "validator_version": "replace-with-validator-version"
+  },
+  "item_artifacts": [
+    {
+      "item_id": "replace-with-item-id",
+      "item_path": "items/replace-with-item-id/item.txt",
+      "item_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "rubric_path": "items/replace-with-item-id/rubric.json",
+      "rubric_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "reference_path": "items/replace-with-item-id/reference.txt",
+      "reference_sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+    }
+  ],
+  "responses": [
+    {
+      "anonymous_response_id": "replace-with-opaque-response-id",
+      "item_id": "replace-with-item-id",
+      "response_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "blind_input_path": "responses/replace-with-opaque-response-id.txt",
+      "blind_input_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "planned_judgment_path": "judgments/replace-with-opaque-response-id.json"
+    }
+  ]
+}

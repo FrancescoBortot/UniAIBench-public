@@ -1,0 +1,56 @@
+{
+  "schema_version": "1.0",
+  "study_id": "uniaibench-v1.0",
+  "title": "UniAIBench: Benchmarking AI Models on Advanced University-Level Analysis III and Physics II Problems",
+  "release_version": "1.0",
+  "benchmark_snapshot_date": "2026-08-14",
+  "official_website": "https://uniaibench.org",
+  "toolkit": {
+    "path": "../benchmark-toolkit",
+    "version": "1.0",
+    "dependency_direction": "study_uses_toolkit_only"
+  },
+  "scope": {
+    "subjects": [
+      {
+        "name": "Mathematical Analysis III",
+        "item_count": 33
+      },
+      {
+        "name": "General Physics II",
+        "item_count": 27
+      }
+    ],
+    "model_mode_configurations": 14,
+    "common_items": 60,
+    "matched_model_item_cells": 840,
+    "retained_responses": 924
+  },
+  "public_evidence": {
+    "model_catalog": "analysis/data/model_catalog.json",
+    "benchmark_pricing_manifest": "analysis/data/benchmark_pricing_manifest.json",
+    "score_panel": "analysis/data/model_item_scores.csv",
+    "resource_panel": "analysis/data/model_item_resources.csv",
+    "analysis_configuration": "analysis/config/public_analysis.json",
+    "derived_tables": "analysis/tables",
+    "table_generator": "analysis/scripts/build_public_tables.py",
+    "selected_figures": "analysis/figures/site",
+    "figure_generators": "analysis/scripts",
+    "paper_source": "paper/main_publication.tex",
+    "paper_pdf": "paper/benchmark_publication.pdf"
+  },
+  "not_distributed": [
+    "examination statements",
+    "official solutions",
+    "completed item-specific rubrics",
+    "model-answer text",
+    "provider-native response payloads",
+    "individual judgments",
+    "blind inputs",
+    "identity maps",
+    "adjudication records",
+    "Router experiments",
+    "full-exam experiments",
+    "website source and Atlas records"
+  ]
+}

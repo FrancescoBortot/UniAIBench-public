@@ -1,0 +1,15 @@
+model,input_usd_per_million,output_usd_per_million,source_kind,source,note
+Claude Fable 5,10.0,50.0,public_pricing_manifest_record,uniaibench/analysis/data/benchmark_pricing_manifest.json#claude-fable-5,Standard Claude API rate; Anthropic output does not separate Fable 5 adaptive-thinking tokens.
+Claude Haiku 4.5,1.0,5.0,public_pricing_manifest_record,uniaibench/analysis/data/benchmark_pricing_manifest.json#claude-haiku-4-5-20251001,Campaign-configured rate; no extended thinking was requested.
+Claude Sonnet 4.5,3.0,15.0,public_pricing_manifest_record,uniaibench/analysis/data/benchmark_pricing_manifest.json#claude-sonnet-4-5-20250929,Campaign-configured rate; no extended thinking was requested.
+DeepSeek V4 Flash,0.14,0.28,public_pricing_manifest_record,uniaibench/analysis/data/benchmark_pricing_manifest.json#deepseek-v4-flash-thinking,Estimate based on the configured standard input rate; unavailable local cache discounts are not applied.
+DeepSeek V4 Flash (no thinking),0.14,0.28,public_pricing_manifest_record,uniaibench/analysis/data/benchmark_pricing_manifest.json#deepseek-v4-flash-no-thinking,Thinking disabled; estimate based on the configured standard input rate.
+DeepSeek V4 Pro,0.435,0.87,public_pricing_manifest_record,uniaibench/analysis/data/benchmark_pricing_manifest.json#deepseek-v4-pro,Estimate based on the configured standard input rate; unavailable local cache discounts are not applied.
+GPT-5.6 Sol,5.0,30.0,public_pricing_manifest_record,uniaibench/analysis/data/benchmark_pricing_manifest.json#gpt-5.6-sol,Standard rate below the long-context threshold; panel prompts are far below 272k tokens.
+Gemini 3.1 Pro Preview,2.0,12.0,public_pricing_manifest_record,uniaibench/analysis/data/benchmark_pricing_manifest.json#gemini-3.1-pro-preview,Standard rate for prompts up to 200k tokens; the output price includes thinking tokens.
+Gemini 3.5 Flash,1.5,9.0,public_pricing_manifest_record,uniaibench/analysis/data/benchmark_pricing_manifest.json#gemini-3.5-flash,The output price includes thinking tokens.
+Gemma 4 31B IT,0.0,0.0,public_pricing_manifest_record,uniaibench/analysis/data/benchmark_pricing_manifest.json#gemma-4-31b-it,The zero rate was explicitly configured for the campaign and is not a universal model cost.
+Grok 4.3,1.25,2.5,public_pricing_manifest_record,uniaibench/analysis/data/benchmark_pricing_manifest.json#grok-4.3,Selected total cost uses the provider-reported value; the rate is retained for cross-checking.
+Grok 4.5,2.0,6.0,public_pricing_manifest_record,uniaibench/analysis/data/benchmark_pricing_manifest.json#grok-4.5,Selected total cost uses the provider-reported value; the rate is retained for cross-checking.
+OpenAI GPT-4.1,2.0,8.0,public_pricing_manifest_record,uniaibench/analysis/data/benchmark_pricing_manifest.json#gpt-4.1-2025-04-14,The campaign configuration uses no native reasoning mode.
+OpenAI o3,2.0,8.0,public_pricing_manifest_record,uniaibench/analysis/data/benchmark_pricing_manifest.json#o3-2025-04-16,Reasoning tokens are included in billable output tokens.

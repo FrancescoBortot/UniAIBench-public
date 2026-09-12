@@ -21,7 +21,31 @@ study of advanced mathematical and physical reasoning, examined together with
 token use, estimated API cost, and end-to-end response time.
 
 [Explore the interactive benchmark](https://uniaibench.org) or read the
-[current paper](paper/benchmark_publication.pdf).
+[current paper](uniaibench/paper/benchmark_publication.pdf).
+
+## Two connected parts, with different purposes
+
+The repository deliberately separates the published study from the reusable
+method. This is the main navigation rule:
+
+| If you want to... | Start here | What you will find |
+|---|---|---|
+| Understand or audit the UniAIBench v1.0 study | [`uniaibench/`](uniaibench/) | Study scope, dated evidence, model catalog, tables, figures, provenance, and paper |
+| Build a benchmark of your own | [`benchmark-toolkit/`](benchmark-toolkit/) | Generic harness, workflow tools, prompts, schemas, blank templates, and implementation guides |
+
+The dependency is intentionally one-way:
+
+```text
+benchmark-toolkit/          reusable and study-independent
+        ^
+        |  instantiated by
+        |
+uniaibench/                 one concrete, dated research study
+```
+
+Nothing in `benchmark-toolkit/` imports, reads, or assumes UniAIBench study
+artifacts. UniAIBench can therefore demonstrate the method without turning
+study-specific choices into hidden requirements for third-party users.
 
 ## What can you do with this repository?
 
@@ -116,9 +140,9 @@ tools. During blind evaluation, the judge receives one anonymous answer and the
 frozen evaluation contract, but not the private model-identity map.
 
 The complete protocol is described in
-[Benchmark design](docs/benchmark-design.md),
-[Blind judging](docs/blind-judging-protocol.md), and
-[Human adjudication](docs/human-adjudication.md).
+[Benchmark design](benchmark-toolkit/guides/benchmark-design.md),
+[Blind judging](benchmark-toolkit/guides/blind-judging-protocol.md), and
+[Human adjudication](benchmark-toolkit/guides/human-adjudication.md).
 
 ## How answers are scored: T1--T8
 
@@ -142,9 +166,9 @@ The final score is the sum of the awarded atomic criteria, which prevents the
 same strength or error from being counted twice. Domain-specific rubrics may
 change the individual criteria while preserving the T1--T8 reporting frame.
 
-See the [full dimension guide](docs/t1-t8-framework.md), the
-[rubric-authoring guide](docs/rubric-authoring-guide.md), and the
-[blank rubric template](rubrics/templates/rubric.template.json).
+See the [full dimension guide](benchmark-toolkit/guides/t1-t8-framework.md),
+the [rubric-authoring guide](benchmark-toolkit/guides/rubric-authoring-guide.md),
+and the [blank rubric template](benchmark-toolkit/templates/rubric.template.json).
 
 ## What is included and what remains private
 
@@ -162,29 +186,36 @@ rights attached to source examination material. The public release therefore
 contains provenance information and derived aggregate evidence without serving
 as a redistribution channel for the underlying exams.
 
-See [Data provenance](DATA_PROVENANCE.md) and the
+See [Data provenance](uniaibench/DATA_PROVENANCE.md) and the
 [publication manifest](EXPORT_MANIFEST.md) for the exact boundary.
 
 ## Repository structure
 
 ```text
 UniAIBench-public/
-|-- docs/                    methodology, protocols, and extension guides
-|-- schemas/                 rubric, judgment, and configuration JSON Schemas
-|-- rubrics/templates/       blank, unfilled rubric template
-|-- prompts/                 solver, rubric, judge, and adjudicator templates
-|-- configs/                 generic benchmark configuration templates
-|-- tools/                   offline artifact and publication validators
-|-- analysis/
-|   |-- data/                sanitized score, resource, and model metadata
-|   |-- tables/              aggregate rankings and T1--T8 profiles
-|   |-- figures/site/        eight English figures matching the website views
-|   `-- scripts/             figure and website-data generators
-|-- paper/                   manuscript source, figures, and compiled PDF
-|-- benchmark_harness.py     multi-provider reference implementation
-|-- DATA_PROVENANCE.md       source-material and redistribution boundary
-|-- LICENSE.md               component-specific licence scope
-`-- CITATION.cff             machine-readable citation metadata
+|-- uniaibench/                     the concrete v1.0 study
+|   |-- analysis/
+|   |   |-- data/                   sanitized item-level evidence
+|   |   |-- tables/                 derived rankings and profiles
+|   |   |-- figures/site/           eight current English website figures
+|   |   `-- scripts/                figure and website-data generators
+|   |-- paper/                      manuscript source and compiled PDF
+|   |-- profile/                    evaluated models and dated prices
+|   |-- STUDY_MANIFEST.json         machine-readable study identity
+|   `-- DATA_PROVENANCE.md          source and redistribution boundary
+|-- benchmark-toolkit/              reusable benchmark construction kit
+|   |-- harness/                    multi-provider generation harness
+|   |-- tools/                      blind-workflow and schema validators
+|   |-- schemas/                    machine-readable artifact contracts
+|   |-- templates/                  blank rubric and judgment artifacts
+|   |-- prompts/                    role-separated prompt templates
+|   |-- configs/                    generic campaign configurations
+|   |-- guides/                     design and implementation guidance
+|   `-- tests/                      study-independent toolkit tests
+|-- tools/                          repository publication-safety checks
+|-- tests/                          publication-boundary tests
+|-- LICENSE.md                      component-specific licence scope
+`-- CITATION.cff                    machine-readable citation metadata
 ```
 
 The root README is the navigation entry point. Operational details belong in
@@ -217,6 +248,15 @@ Run the complete offline validation gate:
 make check
 ```
 
+The same gate can be run by responsibility:
+
+| Command | Validates |
+|---|---|
+| `make check-toolkit` | Generic schemas, blank templates, harness entry points, and toolkit tests |
+| `make check-uniaibench` | Study manifest, model catalog, numerical evidence, and generated study documentation |
+| `make check-publication` | Repository boundary, links, credentials, and private-artifact exclusions |
+| `make check-boundaries` | The rule that reusable toolkit code must remain study-independent |
+
 Before a release or visibility change, run the stricter publication gate:
 
 ```bash
@@ -224,10 +264,12 @@ make check-strict
 ```
 
 These checks validate schemas, templates, model metadata, aggregate data,
-internal links, repository structure, and publication-safety rules. They also
-scan for forbidden private-artifact paths, credential patterns, local absolute
-paths, completed rubrics, and sensitive CSV headers. They do not replace the
-final human review of rights and licence scope.
+internal links, repository structure, and publication-safety rules. They scan
+the working tree and reachable Git history for forbidden private-artifact
+paths, credential and local-path patterns, and private JSON workflow artifacts;
+only the canonical blank templates are exempt. Sensitive CSV headers are also
+rejected. These checks do not replace the final human review of rights and
+licence scope.
 
 ## Reusing the method in another benchmark
 
@@ -248,9 +290,10 @@ A new benchmark should be built in this order:
 8. Unblind only after the blind batch is complete, then aggregate matched data
    and state all exclusions explicitly.
 
-The [extension guide](docs/extending-the-method.md) turns these principles into
-a practical sequence. The [prompt guide](prompts/README.md) explains what each
-role receives and what information must remain hidden.
+The [implementation guide](benchmark-toolkit/guides/implementation-guide.md)
+turns these principles into a practical sequence. The
+[prompt guide](benchmark-toolkit/prompts/README.md) explains what each role
+receives and what information must remain hidden.
 
 ## Choosing models and roles
 
@@ -269,8 +312,8 @@ reasoning mode, token limit, sampling settings, and any provider-specific
 parameters. Human approval remains mandatory when freezing rubrics and deciding
 adjudications.
 
-See [Model selection and operation](docs/model-selection.md). The
-[evaluated-model catalog](docs/evaluated-models.md) records the 14 v1.0
+See [Model selection and operation](benchmark-toolkit/guides/model-selection.md).
+The [evaluated-model catalog](uniaibench/profile/evaluated-models.md) records the 14 v1.0
 configurations, technical specifications, reasoning modes, official links, and
 both current and frozen benchmark prices.
 
@@ -281,11 +324,11 @@ Kimi/Moonshot, DeepSeek, and xAI. It is published as a reference
 implementation, not as a turnkey reproduction of the private campaign.
 
 ```bash
-.venv/bin/python benchmark_harness.py --help
+.venv/bin/python benchmark-toolkit/harness/benchmark_harness.py --help
 ```
 
 Start from
-[`configs/benchmark_config.template.json`](configs/benchmark_config.template.json)
+[`benchmark-toolkit/configs/benchmark_config.template.json`](benchmark-toolkit/configs/benchmark_config.template.json)
 or the provider-specific Google template. The templates deliberately keep
 `provider_calls_authorized` disabled. A real campaign requires a locally
 provided dataset, protected credentials, an inspected offline plan, and a
@@ -312,7 +355,7 @@ The top six configurations by mean rubric score were:
 | 5 | Gemini 3.5 Flash | 96.95% | 95.10--98.51% |
 | 6 | DeepSeek V4 Pro | 96.71% | 94.76--98.31% |
 
-![Overall ranking by mean accuracy across the 60 common exercises, with 95% confidence intervals](analysis/figures/site/01_01_overall_ranking.svg)
+![Overall ranking by mean accuracy across the 60 common exercises, with 95% confidence intervals](uniaibench/analysis/figures/site/01_01_overall_ranking.svg)
 
 The overlapping intervals do not justify treating the displayed order as a
 set of sharply separated performance tiers. Subject stability, T1--T8 profiles,
@@ -324,19 +367,28 @@ instead of presenting a single immutable ranking.
 
 The public evidence is organized as follows:
 
-- [`analysis/data/`](analysis/data/): sanitized model--item scores, resource
-  panels, and canonical model metadata;
-- [`analysis/tables/`](analysis/tables/): principal rankings, coverage,
+- [`uniaibench/analysis/data/`](uniaibench/analysis/data/): sanitized model--item scores, resource
+  panels, canonical model metadata, and the frozen public pricing manifest;
+- [`uniaibench/analysis/config/public_analysis.json`](uniaibench/analysis/config/public_analysis.json):
+  released statistical settings, model order, and analysis provenance;
+- [`uniaibench/analysis/tables/`](uniaibench/analysis/tables/): principal rankings, coverage,
   T1--T8 profiles, and resource summaries;
-- [`analysis/figures/site/`](analysis/figures/site/): eight current English SVG
+- [`uniaibench/analysis/figures/site/`](uniaibench/analysis/figures/site/): eight current English SVG
   figures corresponding to the evidence views published on the website;
-- [`analysis/scripts/`](analysis/scripts/): executable generators for all
-  public paper and website chart families;
-- [`analysis/FIGURE_PROVENANCE.md`](analysis/FIGURE_PROVENANCE.md): exact
+- [`uniaibench/analysis/scripts/`](uniaibench/analysis/scripts/): executable generators for all
+  public tables and paper/website chart families;
+- [`uniaibench/analysis/FIGURE_PROVENANCE.md`](uniaibench/analysis/FIGURE_PROVENANCE.md): exact
   output-to-program and output-to-input mapping;
-- [`paper/`](paper/): manuscript source and compiled PDF.
+- [`uniaibench/paper/`](uniaibench/paper/): manuscript source and compiled PDF.
 
-Rebuild the public figures and generated model documentation with:
+Verify all 11 released tables byte-for-byte from the sanitized panels and
+public model metadata with:
+
+```bash
+make check-tables
+```
+
+Rebuild the public tables, figures, and generated model documentation with:
 
 ```bash
 make figures
@@ -357,29 +409,32 @@ Exact answer generation and individual re-judgment require the non-distributed
 source artifacts. The public repository therefore supports exact regeneration
 of its aggregate views, but only method-level reproduction of the private
 source-to-judgment pipeline. See
-[Reproducibility boundaries](docs/reproducibility.md).
+[Reproducibility boundaries](benchmark-toolkit/guides/reproducibility.md).
 
 ## Documentation map
 
 Read the detailed documentation in this order:
 
-1. [Benchmark design](docs/benchmark-design.md)
-2. [T1--T8 framework](docs/t1-t8-framework.md)
-3. [Rubric authoring](docs/rubric-authoring-guide.md)
-4. [Model selection and operation](docs/model-selection.md)
-5. [Evaluated models and prices](docs/evaluated-models.md)
-6. [Blind judging protocol](docs/blind-judging-protocol.md)
-7. [Human adjudication](docs/human-adjudication.md)
-8. [Reproducibility boundaries](docs/reproducibility.md)
-9. [Extending the method](docs/extending-the-method.md)
+1. [UniAIBench study overview](uniaibench/README.md)
+2. [How the generic method was instantiated](uniaibench/METHOD_IMPLEMENTATION.md)
+3. [Benchmark toolkit](benchmark-toolkit/README.md)
+4. [Benchmark design](benchmark-toolkit/guides/benchmark-design.md)
+5. [T1--T8 framework](benchmark-toolkit/guides/t1-t8-framework.md)
+6. [Rubric authoring](benchmark-toolkit/guides/rubric-authoring-guide.md)
+7. [Model selection and operation](benchmark-toolkit/guides/model-selection.md)
+8. [Blind judging protocol](benchmark-toolkit/guides/blind-judging-protocol.md)
+9. [Human adjudication](benchmark-toolkit/guides/human-adjudication.md)
+10. [Statistical analysis](benchmark-toolkit/guides/statistical-analysis.md)
+11. [Reproducibility boundaries](benchmark-toolkit/guides/reproducibility.md)
+12. [Extending the method](benchmark-toolkit/guides/extending-the-method.md)
 
 Supporting entry points:
 
-- [`prompts/README.md`](prompts/README.md): role-specific prompt templates;
-- [`configs/README.md`](configs/README.md): configuration templates and safety
+- [`benchmark-toolkit/prompts/README.md`](benchmark-toolkit/prompts/README.md): role-specific prompt templates;
+- [`benchmark-toolkit/configs/README.md`](benchmark-toolkit/configs/README.md): configuration templates and safety
   defaults;
-- [`analysis/README.md`](analysis/README.md): aggregate-data layout;
-- [`paper/README.md`](paper/README.md): manuscript build policy;
+- [`uniaibench/analysis/README.md`](uniaibench/analysis/README.md): aggregate-data layout;
+- [`uniaibench/paper/README.md`](uniaibench/paper/README.md): manuscript build policy;
 - [`PUBLICATION_CHECKLIST.md`](PUBLICATION_CHECKLIST.md): technical, AI-assisted,
   and human publication checks.
 

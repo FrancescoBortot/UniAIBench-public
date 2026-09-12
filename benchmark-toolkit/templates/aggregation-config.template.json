@@ -1,0 +1,47 @@
+{
+  "$schema": "https://raw.githubusercontent.com/FrancescoBortot/UniAIBench-public/v1.0/benchmark-toolkit/schemas/aggregation-config.schema.json",
+  "schema_version": "1.0",
+  "aggregation_id": "replace-with-aggregation-id",
+  "status": "draft",
+  "input": {
+    "unblinded_results_path": "unblinded/replace-with-batch-id.json",
+    "unblinded_results_sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+  },
+  "fields": {
+    "system_field": "system_id",
+    "item_field": "item_id",
+    "repetition_field": "repetition_id",
+    "score_field": "final_score"
+  },
+  "eligibility": {
+    "field": "judgment.run_validity",
+    "accepted_values": [
+      "valid"
+    ]
+  },
+  "repetition_aggregation": {
+    "method": "mean",
+    "expected_repetitions_per_cell": null
+  },
+  "missing_data": {
+    "policy": "fail"
+  },
+  "item_aggregation": {
+    "method": "mean",
+    "weights": {}
+  },
+  "bootstrap": {
+    "enabled": true,
+    "method": "percentile",
+    "samples": 10000,
+    "confidence_level": 0.95,
+    "seed": 0,
+    "resampling_unit": "item"
+  },
+  "outputs": {
+    "directory": "reports/replace-with-aggregation-id",
+    "system_table_csv": "system-summary.csv",
+    "cell_table_csv": "system-item-cells.csv",
+    "summary_json": "aggregation-summary.json"
+  }
+}

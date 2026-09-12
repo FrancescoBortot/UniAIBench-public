@@ -1,0 +1,360 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/FrancescoBortot/UniAIBench-public/v1.0/benchmark-toolkit/schemas/adjudication.schema.json",
+  "title": "Append-only human adjudication record",
+  "description": "One blind human decision. A final record is immutable; a correction creates one non-forking successor with explicit supersession fields and the same campaign, batch, classification, and affected responses. Outcome-specific consistency is enforced by the toolkit validators.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "adjudication_id",
+    "adjudication_version",
+    "decision_status",
+    "supersedes_adjudication_id",
+    "supersedes_adjudication_sha256",
+    "campaign_id",
+    "batch_id",
+    "recorded_at",
+    "reviewer",
+    "trigger",
+    "source_artifacts",
+    "classification",
+    "decision",
+    "impact",
+    "affected_response_ids",
+    "reevaluation",
+    "superseded_artifacts",
+    "notes"
+  ],
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "schema_version": {
+      "enum": [
+        "1.0"
+      ]
+    },
+    "adjudication_id": {
+      "$ref": "#/$defs/nonEmptyString"
+    },
+    "adjudication_version": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "decision_status": {
+      "enum": [
+        "draft",
+        "final"
+      ]
+    },
+    "supersedes_adjudication_id": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "minLength": 1
+    },
+    "supersedes_adjudication_sha256": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "campaign_id": {
+      "$ref": "#/$defs/nonEmptyString"
+    },
+    "batch_id": {
+      "$ref": "#/$defs/nonEmptyString"
+    },
+    "recorded_at": {
+      "type": "string",
+      "minLength": 1,
+      "format": "date-time"
+    },
+    "reviewer": {
+      "$ref": "#/$defs/reviewer"
+    },
+    "trigger": {
+      "$ref": "#/$defs/trigger"
+    },
+    "source_artifacts": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/artifactReference"
+      }
+    },
+    "classification": {
+      "enum": [
+        "response_only",
+        "rubric_level",
+        "reference_level",
+        "campaign_level"
+      ]
+    },
+    "decision": {
+      "$ref": "#/$defs/decision"
+    },
+    "impact": {
+      "$ref": "#/$defs/impact"
+    },
+    "affected_response_ids": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "$ref": "#/$defs/nonEmptyString"
+      }
+    },
+    "reevaluation": {
+      "$ref": "#/$defs/reevaluation"
+    },
+    "superseded_artifacts": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "$ref": "#/$defs/artifactReference"
+      }
+    },
+    "notes": {
+      "type": "string"
+    }
+  },
+  "$defs": {
+    "nonEmptyString": {
+      "type": "string",
+      "minLength": 1
+    },
+    "sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "nullableVersion": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "minLength": 1
+    },
+    "reviewer": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "reviewer_id",
+        "role",
+        "human_confirmed"
+      ],
+      "properties": {
+        "reviewer_id": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "role": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "human_confirmed": {
+          "type": "boolean"
+        }
+      }
+    },
+    "trigger": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "type",
+        "summary",
+        "evidence"
+      ],
+      "properties": {
+        "type": {
+          "enum": [
+            "requires_human_review",
+            "reference_conflict",
+            "rubric_gap",
+            "judge_error",
+            "ambiguous_input",
+            "operational_invalidity",
+            "conflicting_judgments",
+            "other"
+          ]
+        },
+        "summary": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "evidence": {
+          "$ref": "#/$defs/nonEmptyString"
+        }
+      }
+    },
+    "artifactReference": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "artifact_type",
+        "artifact_id",
+        "path",
+        "sha256"
+      ],
+      "properties": {
+        "artifact_type": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "artifact_id": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "path": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "sha256": {
+          "$ref": "#/$defs/sha256"
+        }
+      }
+    },
+    "decision": {
+      "description": "Use uphold to close a human-review flag while retaining a valid original judgment unchanged. no_action records a decision without changing artifacts and does not resolve a pending review flag. exclude_response marks validity invalid without score substitution. replace_judgment requires hash-verified replacement artifacts.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "outcome",
+        "summary",
+        "technical_rationale"
+      ],
+      "properties": {
+        "outcome": {
+          "enum": [
+            "uphold",
+            "replace_judgment",
+            "revise_rubric",
+            "revise_reference",
+            "exclude_response",
+            "exclude_item",
+            "invalidate_campaign",
+            "no_action",
+            "other"
+          ]
+        },
+        "summary": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "technical_rationale": {
+          "$ref": "#/$defs/nonEmptyString"
+        }
+      }
+    },
+    "versionImpact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "changed",
+        "previous_version",
+        "replacement_version"
+      ],
+      "properties": {
+        "changed": {
+          "type": "boolean"
+        },
+        "previous_version": {
+          "$ref": "#/$defs/nullableVersion"
+        },
+        "replacement_version": {
+          "$ref": "#/$defs/nullableVersion"
+        }
+      }
+    },
+    "impact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "reference",
+        "rubric",
+        "response_validity",
+        "scores"
+      ],
+      "properties": {
+        "reference": {
+          "$ref": "#/$defs/versionImpact"
+        },
+        "rubric": {
+          "$ref": "#/$defs/versionImpact"
+        },
+        "response_validity": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "changed",
+            "new_status"
+          ],
+          "properties": {
+            "changed": {
+              "type": "boolean"
+            },
+            "new_status": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "enum": [
+                "valid",
+                "invalid",
+                "uncertain",
+                null
+              ]
+            }
+          }
+        },
+        "scores": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "changed",
+            "requires_recomputation"
+          ],
+          "properties": {
+            "changed": {
+              "type": "boolean"
+            },
+            "requires_recomputation": {
+              "type": "boolean"
+            }
+          }
+        }
+      }
+    },
+    "reevaluation": {
+      "description": "replace_judgment requires response_subset re-evaluation and replacement paths. uphold, no_action, and exclude_response require required=false, scope=none, and no replacement paths.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "required",
+        "scope",
+        "reason",
+        "replacement_artifact_paths"
+      ],
+      "properties": {
+        "required": {
+          "type": "boolean"
+        },
+        "scope": {
+          "enum": [
+            "none",
+            "response_subset",
+            "item_all_responses",
+            "batch",
+            "campaign"
+          ]
+        },
+        "reason": {
+          "type": "string"
+        },
+        "replacement_artifact_paths": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/$defs/nonEmptyString"
+          }
+        }
+      }
+    }
+  }
+}
