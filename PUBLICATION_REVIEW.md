@@ -1,15 +1,28 @@
 # Publication readiness review
 
+> **Current status (21 September 2026):** UniAIBench v1.0 is publicly
+> available. This document preserves the pre-publication review performed on
+> 12 September 2026. References below to private visibility and pending public
+> authorization describe the state at that review date; they are not the
+> repository's current status.
+
 - **Review date:** 12 September 2026
 - **Repository version:** v1.0
-- **Repository visibility:** private
+- **Repository visibility at review time:** private
+- **Current repository visibility:** public
 - **Official website:** https://uniaibench.org
 
-## Review status
+## Review status at 12 September 2026
 
 - `AI_REVIEW_STATUS: PASSED`
 - `HUMAN_RIGHTS_STATUS: CONFIRMED`
 - `PUBLIC_VISIBILITY_STATUS: NOT_AUTHORIZED`
+
+The historical `PUBLIC_VISIBILITY_STATUS` value above was the required result
+of the pre-publication review: an automated or AI-assisted review could not
+authorize a visibility change. The repository owner subsequently completed the
+separate manual publication step, so the current operational status is
+`PUBLIC`.
 
 ## Deterministic review
 
@@ -63,5 +76,6 @@ authorization.
 
 The author confirmed that the original material included in this repository may
 be published. Third-party examination material remains outside the repository
-and outside the licences granted here. The final decision to change GitHub
-visibility remains a separate manual action by the repository owner.
+and outside the licences granted here. At the review date, the final decision
+to change GitHub visibility was still a separate manual action by the
+repository owner; that action was completed after this review.

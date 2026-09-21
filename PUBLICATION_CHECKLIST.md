@@ -1,7 +1,13 @@
 # Publication checklist
 
-The repository remains private until the owner explicitly changes its GitHub
-visibility. Publication readiness is assessed in three independent layers.
+> **Current status (21 September 2026):** UniAIBench v1.0 is publicly
+> available. This checklist is retained as the audit record of the
+> pre-publication gate; statements about private visibility below refer to the
+> state in which the checklist was originally completed.
+
+Before publication, the repository was required to remain private until the
+owner explicitly changed its GitHub visibility. Publication readiness was
+assessed in three independent layers.
 
 ## 1. Deterministic validation
 
@@ -42,13 +48,14 @@ AI review is advisory. It cannot grant rights or authorize publication.
       `benchmark-toolkit/` reuse layer are clearly separated, and the toolkit
       has no dependency on study artifacts.
 
-The owner must still give a separate explicit instruction before changing the
-repository visibility from private to public.
+At checklist completion, the owner still had to perform the separate manual
+visibility change. That release-administration step has since been completed.
 
 ## Release administration
 
 - [x] Create the `v1.0` tag and corresponding private GitHub Release.
-- [ ] Change visibility to public only after an explicit owner instruction.
+- [x] Change repository visibility to public as a separate owner-controlled
+      action after the pre-publication review.
 - [ ] Optional: archive the release and add its DOI to `CITATION.cff`.
 
 Unchecked operational and optional items do not make deterministic validation
