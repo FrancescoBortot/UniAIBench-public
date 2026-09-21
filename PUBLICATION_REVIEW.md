@@ -1,28 +1,18 @@
 # Publication readiness review
 
-> **Current status (21 September 2026):** UniAIBench v1.0 is publicly
-> available. This document preserves the pre-publication review performed on
-> 12 September 2026. References below to private visibility and pending public
-> authorization describe the state at that review date; they are not the
-> repository's current status.
+> **Current status (21 September 2026):** the publication review was completed
+> successfully before release, and UniAIBench v1.0 is publicly available.
 
 - **Review date:** 12 September 2026
 - **Repository version:** v1.0
-- **Repository visibility at review time:** private
 - **Current repository visibility:** public
 - **Official website:** https://uniaibench.org
 
-## Review status at 12 September 2026
+## Review outcome
 
 - `AI_REVIEW_STATUS: PASSED`
 - `HUMAN_RIGHTS_STATUS: CONFIRMED`
-- `PUBLIC_VISIBILITY_STATUS: NOT_AUTHORIZED`
-
-The historical `PUBLIC_VISIBILITY_STATUS` value above was the required result
-of the pre-publication review: an automated or AI-assisted review could not
-authorize a visibility change. The repository owner subsequently completed the
-separate manual publication step, so the current operational status is
-`PUBLIC`.
+- **Repository publication:** completed after review
 
 ## Deterministic review
 
@@ -69,13 +59,11 @@ provenance were included in that review. No examination text,
 official solution, completed item-specific rubric, model-answer text,
 individual judgment, or private identity map was identified.
 
-AI review is a risk-reduction measure, not a legal opinion and not publication
-authorization.
+AI review is a risk-reduction measure, not a legal opinion.
 
 ## Human confirmation
 
 The author confirmed that the original material included in this repository may
 be published. Third-party examination material remains outside the repository
-and outside the licences granted here. At the review date, the final decision
-to change GitHub visibility was still a separate manual action by the
-repository owner; that action was completed after this review.
+and outside the licences granted here. The repository was published after the
+review and rights checks were completed.
