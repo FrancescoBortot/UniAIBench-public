@@ -435,7 +435,7 @@ Supporting entry points:
   defaults;
 - [`uniaibench/analysis/README.md`](uniaibench/analysis/README.md): aggregate-data layout;
 - [`uniaibench/paper/README.md`](uniaibench/paper/README.md): manuscript build policy;
-- [`PUBLICATION_CHECKLIST.md`](PUBLICATION_CHECKLIST.md): technical, AI-assisted,
+- [`PUBLICATION_CHECKLIST.md`](PUBLICATION_CHECKLIST.md): technical, semantic,
   and human publication checks.
 
 ## Data and artifact policy

@@ -10,7 +10,7 @@
 
 ## Review outcome
 
-- `AI_REVIEW_STATUS: PASSED`
+- `SEMANTIC_REVIEW_STATUS: PASSED`
 - `HUMAN_RIGHTS_STATUS: CONFIRMED`
 - **Repository publication:** completed after review
 
@@ -49,7 +49,7 @@ platforms. Superseded, Italian, article-specific, and unreferenced exports are
 excluded, while every program needed for the paper and website chart families
 remains available.
 
-## AI-assisted semantic review
+## Semantic review
 
 The public repository was reviewed for internal consistency across its two
 explicit namespaces: `uniaibench/` for the concrete v1.0 study and
@@ -58,8 +58,6 @@ aggregate tables, model catalog, chart programs, paper, licences, and
 provenance were included in that review. No examination text,
 official solution, completed item-specific rubric, model-answer text,
 individual judgment, or private identity map was identified.
-
-AI review is a risk-reduction measure, not a legal opinion.
 
 ## Human confirmation
 

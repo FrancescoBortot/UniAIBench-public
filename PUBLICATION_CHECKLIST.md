@@ -19,14 +19,12 @@ make check-strict
 not require a checkbox saying that `make check-strict` was run, which would
 make the gate circular.
 
-## 2. AI-assisted semantic review
+## 2. Semantic review
 
-- [x] <!-- required:ai-review --> Review the repository for semantic
+- [x] <!-- required:semantic-review --> Review the repository for semantic
       inconsistencies, ambiguous publication boundaries, accidental source
       reconstruction, misleading claims, and presentation problems. The dated
       result is recorded in [`PUBLICATION_REVIEW.md`](PUBLICATION_REVIEW.md).
-
-AI review is advisory. It cannot grant rights or authorize publication.
 
 ## 3. Human final review
 

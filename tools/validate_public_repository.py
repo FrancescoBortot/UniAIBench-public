@@ -91,7 +91,7 @@ REQUIRED = {
 OFFICIAL_SITE = "https://uniaibench.org"
 RELEASE_VERSION = "1.0"
 REQUIRED_CHECKS = {
-    "ai-review", "rights", "scope", "licence", "metadata", "aggregate-data",
+    "semantic-review", "rights", "scope", "licence", "metadata", "aggregate-data",
 }
 EXPECTED_ANALYSIS_FIGURES = {
     "site/01_01_overall_ranking.svg",
@@ -776,7 +776,7 @@ def main() -> int:
             errors.append(f"required publication checks incomplete: {sorted(incomplete)}")
 
         review = (ROOT / "PUBLICATION_REVIEW.md").read_text(encoding="utf-8")
-        for marker in ("AI_REVIEW_STATUS: PASSED", "HUMAN_RIGHTS_STATUS: CONFIRMED"):
+        for marker in ("SEMANTIC_REVIEW_STATUS: PASSED", "HUMAN_RIGHTS_STATUS: CONFIRMED"):
             if marker not in review:
                 errors.append(f"publication review marker missing: {marker}")
 
