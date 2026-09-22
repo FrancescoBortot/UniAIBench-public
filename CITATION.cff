@@ -7,8 +7,8 @@ authors:
     given-names: Francesco
 repository-code: "https://github.com/FrancescoBortot/UniAIBench-public"
 url: "https://uniaibench.org"
-version: "1.0"
-date-released: 2026-09-13
+version: "1.1"
+date-released: 2026-09-22
 abstract: >-
   A controlled and auditable benchmark of open-ended AI model solutions to
   advanced university-level problems in Mathematical Analysis III and General

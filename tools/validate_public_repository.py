@@ -89,7 +89,7 @@ REQUIRED = {
     "CONTRIBUTING.md",
 }
 OFFICIAL_SITE = "https://uniaibench.org"
-RELEASE_VERSION = "1.0"
+RELEASE_VERSION = "1.1"
 REQUIRED_CHECKS = {
     "semantic-review", "rights", "scope", "licence", "metadata", "aggregate-data",
 }

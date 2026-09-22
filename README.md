@@ -21,7 +21,7 @@ study of advanced mathematical and physical reasoning, examined together with
 token use, estimated API cost, and end-to-end response time.
 
 [Explore the interactive benchmark](https://uniaibench.org) or read the
-[current paper](uniaibench/paper/benchmark_publication.pdf).
+[fixed v1.0 paper snapshot](uniaibench/paper/benchmark_publication.pdf).
 
 ## Two connected parts, with different purposes
 
@@ -30,7 +30,7 @@ method. This is the main navigation rule:
 
 | If you want to... | Start here | What you will find |
 |---|---|---|
-| Understand or audit the UniAIBench v1.0 study | [`uniaibench/`](uniaibench/) | Study scope, dated evidence, model catalog, tables, figures, provenance, and paper |
+| Understand or audit the current UniAIBench study | [`uniaibench/`](uniaibench/) | Current aggregate evidence, model catalog, tables and figures, plus the fixed paper snapshot |
 | Build a benchmark of your own | [`benchmark-toolkit/`](benchmark-toolkit/) | Generic harness, workflow tools, prompts, schemas, blank templates, and implementation guides |
 
 The dependency is intentionally one-way:
@@ -56,7 +56,7 @@ You can use it to:
 - adapt the solver, rubric-builder, judge, and adjudicator prompts;
 - inspect a reference multi-provider benchmark harness and configuration model;
 - validate rubric, judgment, and configuration artifacts offline;
-- study the published 14-configuration by 60-exercise matched comparison;
+- study the published 17-configuration by 60-exercise matched comparison;
 - reproduce the public correctness, token, cost, and latency figures;
 - rebuild the scientific paper from its public sources;
 - audit which components are public and which remain in the private archive.
@@ -89,18 +89,22 @@ but they also make individual scores easier to inspect, contest, and reproduce.
 
 ## Current study and release status
 
-This repository represents the **UniAIBench v1.0** publication release.
+This repository represents the **UniAIBench v1.1** aggregate release.
 
 | Item | Published study |
 |---|---:|
-| Benchmark snapshot | 14 August 2026 |
+| Benchmark snapshot | 16 September 2026 |
 | Subjects | 2 |
-| Model--mode configurations | 14 |
+| Model--mode configurations | 17 |
 | Common exercises | 60 |
 | Mathematical Analysis III exercises | 33 |
 | General Physics II exercises | 27 |
-| Matched model--exercise cells | 840 |
-| Retained responses summarized by those cells | 924 |
+| Matched model--exercise cells | 1,020 |
+| Retained responses summarized by those cells | 1,104 |
+
+The accompanying paper remains the fixed **v1.0, 14-configuration by 60-item**
+snapshot dated 14 August 2026. The current repository and website extend the
+same controlled panel to 17 configurations without rewriting that paper.
 
 “Model--mode configuration” is used deliberately: two configurations of the
 same underlying model can differ in reasoning mode, endpoint, or other recorded
@@ -193,7 +197,7 @@ See [Data provenance](uniaibench/DATA_PROVENANCE.md) and the
 
 ```text
 UniAIBench-public/
-|-- uniaibench/                     the concrete v1.0 study
+|-- uniaibench/                     the current aggregate study release
 |   |-- analysis/
 |   |   |-- data/                   sanitized item-level evidence
 |   |   |-- tables/                 derived rankings and profiles
@@ -313,14 +317,14 @@ parameters. Human approval remains mandatory when freezing rubrics and deciding
 adjudications.
 
 See [Model selection and operation](benchmark-toolkit/guides/model-selection.md).
-The [evaluated-model catalog](uniaibench/profile/evaluated-models.md) records the 14 v1.0
+The [evaluated-model catalog](uniaibench/profile/evaluated-models.md) records the 17 current
 configurations, technical specifications, reasoning modes, official links, and
 both current and frozen benchmark prices.
 
 ## Reference harness
 
 The Python harness contains adapters for OpenAI, Anthropic, Google,
-Kimi/Moonshot, DeepSeek, and xAI. It is published as a reference
+Kimi/Moonshot, DeepSeek, xAI, and Mistral. It is published as a reference
 implementation, not as a turnkey reproduction of the private campaign.
 
 ```bash
@@ -340,8 +344,8 @@ settings in the same run directory.
 
 ## Published results
 
-The principal comparison uses the same 60 exercises for all 14 configurations.
-Its 840 model--exercise cells summarize 924 retained responses because some
+The principal comparison uses the same 60 exercises for all 17 configurations.
+Its 1,020 model--exercise cells summarize 1,104 retained responses because some
 cells contain repeated runs.
 
 The top six configurations by mean rubric score were:
@@ -351,9 +355,9 @@ The top six configurations by mean rubric score were:
 | 1 | GPT-5.6 Sol | 98.72% | 97.04--99.86% |
 | 2 | Claude Fable 5 | 97.99% | 96.15--99.38% |
 | 3 | DeepSeek V4 Flash | 97.24% | 94.66--99.16% |
-| 4 | Gemini 3.1 Pro Preview | 97.05% | 95.11--98.60% |
-| 5 | Gemini 3.5 Flash | 96.95% | 95.10--98.51% |
-| 6 | DeepSeek V4 Pro | 96.71% | 94.76--98.31% |
+| 4 | DeepSeek V4.1 Flash | 97.23% | 95.10--98.78% |
+| 5 | Gemini 3.1 Pro Preview | 97.05% | 95.11--98.60% |
+| 6 | Gemini 3.5 Flash | 96.95% | 95.10--98.51% |
 
 ![Overall ranking by mean accuracy across the 60 common exercises, with 95% confidence intervals](uniaibench/analysis/figures/site/01_01_overall_ranking.svg)
 
@@ -483,14 +487,14 @@ the process auditable.
 
 Machine-readable citation metadata are available in
 [`CITATION.cff`](CITATION.cff). Until an archival DOI is available, cite the
-v1.0 repository release and accompanying manuscript:
+v1.1 repository release and the fixed v1.0 manuscript snapshot:
 
 ```bibtex
 @misc{bortot2026uniaibench,
   author  = {Francesco Bortot},
   title   = {UniAIBench: Benchmarking AI Models on Advanced University-Level Analysis III and Physics II Problems},
   year    = {2026},
-  version = {1.0},
+  version = {1.1},
   url     = {https://github.com/FrancescoBortot/UniAIBench-public}
 }
 ```

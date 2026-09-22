@@ -25,10 +25,10 @@ OUTPUT_DIR = TIME_DIR / "alternatives_en"
 FIGURE_DIR = OUTPUT_DIR / "figures"
 PDF_DIR = OUTPUT_DIR / "output" / "pdf"
 RENDERED_DIR = OUTPUT_DIR / "output" / "rendered"
-SUMMARY_PATH = TIME_DIR / "tables" / "tempi_modelli_14x60.csv"
+SUMMARY_PATH = TIME_DIR / "tables" / "tempi_modelli_17x60.csv"
 SOURCE_MANIFEST = TIME_DIR / "MANIFEST.json"
 
-FOOTER = "Common panel: 60 exercises, 14 models, 840 macro-averaged cells | English alternatives"
+FOOTER = "Common panel: 60 exercises, 17 models, 1,020 macro-averaged cells | English alternatives"
 TIME_MIN, TIME_MAX = 15.0, 500.0
 
 SHORT_NAMES = {
@@ -38,6 +38,7 @@ SHORT_NAMES = {
     "DeepSeek V4 Flash": "DS Flash",
     "DeepSeek V4 Flash (no thinking)": "DS Flash NT",
     "DeepSeek V4 Pro": "DS Pro",
+    "DeepSeek V4.1 Flash": "DS 4.1 Flash",
     "GPT-5.6 Sol": "GPT-5.6",
     "Gemini 3.1 Pro Preview": "Gemini Pro",
     "Gemini 3.5 Flash": "Gemini Flash",
@@ -46,6 +47,8 @@ SHORT_NAMES = {
     "Grok 4.5": "Grok 4.5",
     "OpenAI GPT-4.1": "GPT-4.1",
     "OpenAI o3": "o3",
+    "Mistral Medium 3.5": "Mistral Med.",
+    "Mistral Small 4": "Mistral Small",
 }
 
 
@@ -75,8 +78,8 @@ def load_summary() -> list[dict[str, Any]]:
             row[key] = float(row[key])
         row["time_rank"] = int(row["time_rank"])
         result.append(row)
-    if len(result) != 14 or len({row["model"] for row in result}) != 14:
-        raise RuntimeError("Expected exactly 14 models")
+    if len(result) != 17 or len({row["model"] for row in result}) != 17:
+        raise RuntimeError("Expected exactly 17 models")
     return result
 
 
@@ -266,7 +269,7 @@ def page_speed_bars(summary: list[dict[str, Any]]) -> Drawing:
 
 def provider_legend(drawing: Drawing) -> None:
     names = [("openai", "OpenAI"), ("anthropic", "Anthropic"), ("google", "Google"),
-             ("deepseek", "DeepSeek"), ("xai", "xAI")]
+             ("deepseek", "DeepSeek"), ("xai", "xAI"), ("mistral", "Mistral")]
     x = 82
     for provider, label in names:
         base.add_circle(drawing, x, 112, 3.8, base.PROVIDER_COLORS[provider], base.WHITE, 0.5)
@@ -360,7 +363,7 @@ def page_correlation_outliers(summary: list[dict[str, Any]], main_report: bool =
             drawing, 798, 43, "OPTION 4", 7.0, base.MUTED,
             anchor="end", font="Helvetica-Bold",
         )
-    base.add_text(drawing, 44, 69, "Correlation and model deviations | 14 models x 60 common exercises", 10.2, base.MUTED)
+    base.add_text(drawing, 44, 69, "Correlation and model deviations | 17 models x 60 common exercises", 10.2, base.MUTED)
 
     takeaway_fill = base.blend(base.WHITE, base.GREEN, 0.10)
     takeaway_stroke = base.blend(base.WHITE, base.GREEN, 0.38)
@@ -401,6 +404,7 @@ def page_correlation_outliers(summary: list[dict[str, Any]], main_report: bool =
         (299, "google", "Google"),
         (354, "deepseek", "DeepSeek"),
         (423, "xai", "xAI"),
+        (463, "mistral", "Mistral"),
     ]
     for x, provider, label in provider_legend_items:
         base.add_circle(drawing, x, 157, 3.5, base.PROVIDER_COLORS[provider], base.WHITE, 0.5)
@@ -498,9 +502,9 @@ def page_correlation_outliers(summary: list[dict[str, Any]], main_report: bool =
         7.1, base.MUTED,
     )
     footer = (
-        "Common panel: 60 exercises (33 Analysis 3, 27 Physics 2), 14 models, 840 macro-averaged cells"
+        "Common panel: 60 exercises (33 Analysis 3, 27 Physics 2), 17 models, 1,020 macro-averaged cells"
         if main_report
-        else "Bounded saturating trend | descriptive association, not causation | 60 exercises, 14 models, 840 cells"
+        else "Bounded saturating trend | descriptive association, not causation | 60 exercises, 17 models, 1,020 cells"
     )
     base.add_text(drawing, 44, 581, footer, 6.6, base.MUTED)
     if main_report:
@@ -517,7 +521,7 @@ def export_one(name: str, title: str, drawing: Drawing) -> dict[str, Path]:
     renderSVG.drawToFile(drawing, str(svg_path))
     pdf = canvas.Canvas(str(pdf_path), pagesize=(base.PAGE_W, base.PAGE_H), pageCompression=1)
     pdf.setTitle(title)
-    pdf.setSubject("Speed and correctness chart alternative for the balanced 14 x 60 benchmark")
+    pdf.setSubject("Speed and correctness chart alternative for the balanced 17 x 60 benchmark")
     pdf.setAuthor("Francesco Bortot")
     pdf.setCreator("UniAIBench figure generator")
     renderPDF.draw(drawing, pdf, 0, 0)
@@ -570,7 +574,7 @@ These are separate English previews. They do not replace or modify the main resp
             str(SUMMARY_PATH.relative_to(ANALYSIS_DIR)): sha256_file(SUMMARY_PATH),
             str(SOURCE_MANIFEST.relative_to(ANALYSIS_DIR)): sha256_file(SOURCE_MANIFEST),
         },
-        "counts": {"models": 14, "common_items": 60, "alternatives": 4, "pages_per_pdf": 1},
+        "counts": {"models": 17, "common_items": 60, "alternatives": 4, "pages_per_pdf": 1},
         "main_report_modified": False,
         "outputs": {str(readme.relative_to(OUTPUT_DIR)): sha256_file(readme)},
     }

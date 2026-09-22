@@ -30,7 +30,7 @@ FIGURES_EN = OUTPUT_DIR / "figures_en"
 PDF_DIR = OUTPUT_DIR / "output" / "pdf"
 RENDERED_IT = OUTPUT_DIR / "output" / "rendered"
 RENDERED_EN = OUTPUT_DIR / "output" / "rendered_en"
-SUMMARY_PATH = ANALYSIS_DIR / "tables" / "model_token_costs_14x60.csv"
+SUMMARY_PATH = ANALYSIS_DIR / "tables" / "model_token_costs_17x60.csv"
 RAW_PATH = ANALYSIS_DIR / "data" / "model_item_resources.csv"
 DEEPSEEK_PATH = ANALYSIS_DIR / "tables" / "deepseek_flash_thinking_vs_no_thinking.csv"
 METHODOLOGY_PATH = ANALYSIS_DIR / "README.md"
@@ -54,6 +54,7 @@ PROVIDER_COLORS = {
     "google": HexColor("#2C6ECB"),
     "deepseek": HexColor("#5A4BD6"),
     "xai": HexColor("#202124"),
+    "mistral": HexColor("#F05A28"),
 }
 TOKEN_COLORS = {
     "input": HexColor("#2C6ECB"),
@@ -65,7 +66,7 @@ TOKEN_COLORS = {
 TEXT = {
     "it": {
         "pdf_title": "Grafici selezionati - token e costi",
-        "pdf_subject": "Benchmark 14 x 60: token, reasoning e costi",
+        "pdf_subject": "Benchmark 17 x 60: token, reasoning e costi",
         "p1_title": "Classifica del costo medio",
         "p1_sub": "Costo API medio per risposta su 60 esercizi comuni | dall'alto: meno costoso -> piu costoso",
         "how": "COME LEGGERE",
@@ -90,7 +91,7 @@ TEXT = {
         "p3_right": "Costo per risposta",
         "p3_note": "La dispersione mostra quanto esercizi diversi cambiano consumo e costo; le repliche sono macro-mediate per cella.",
         "p4_title": "Heatmap del costo per risposta",
-        "p4_sub": "14 modelli x 60 esercizi comuni | colore su scala logaritmica per rendere visibili anche i costi bassi",
+        "p4_sub": "17 modelli x 60 esercizi comuni | colore su scala logaritmica per rendere visibili anche i costi bassi",
         "low": "Costo minore",
         "high": "Costo maggiore",
         "zero": "tariffa configurata = 0",
@@ -108,11 +109,11 @@ TEXT = {
         "p6_left": "Delta token per esercizio",
         "p6_right": "Delta costo per esercizio (USD)",
         "p6_note": "Barra positiva = la versione thinking consuma o costa di piu. Tutti i confronti usano lo stesso esercizio.",
-        "footer": "Panel comune: 60 esercizi, 14 modelli, 840 celle macro-mediate",
+        "footer": "Panel comune: 60 esercizi, 17 modelli, 1.020 celle macro-mediate",
     },
     "en": {
         "pdf_title": "Selected token and cost charts",
-        "pdf_subject": "14 x 60 benchmark: tokens, reasoning, and API cost",
+        "pdf_subject": "17 x 60 benchmark: tokens, reasoning, and API cost",
         "p1_title": "Mean cost ranking",
         "p1_sub": "Mean API cost per response across 60 common exercises | top to bottom: cheaper -> more expensive",
         "how": "HOW TO READ",
@@ -137,7 +138,7 @@ TEXT = {
         "p3_right": "Cost per response",
         "p3_note": "The spread shows how exercises change usage and cost; repetitions are macro-averaged within each cell.",
         "p4_title": "Cost-per-response heatmap",
-        "p4_sub": "14 models x 60 common exercises | logarithmic color scale keeps low costs visible",
+        "p4_sub": "17 models x 60 common exercises | logarithmic color scale keeps low costs visible",
         "low": "Lower cost",
         "high": "Higher cost",
         "zero": "configured rate = 0",
@@ -155,7 +156,7 @@ TEXT = {
         "p6_left": "Token delta per exercise",
         "p6_right": "Cost delta per exercise (USD)",
         "p6_note": "A positive bar means the thinking version uses more tokens or costs more. Every comparison uses the same exercise.",
-        "footer": "Common panel: 60 exercises, 14 models, 840 macro-averaged cells",
+        "footer": "Common panel: 60 exercises, 17 models, 1,020 macro-averaged cells",
     },
 }
 
@@ -342,7 +343,8 @@ def page_cost_ranking(summary: list[dict[str, str]], lang: str, total_pages: int
     add_text(drawing, 800, 126, t["total"], 8, MUTED, anchor="end")
     add_line(drawing, 44, 134, 804, 134, GRID, 1)
 
-    row_top, row_height = 138, 23.7
+    row_top = 138
+    row_height = min(23.7, 331.8 / max(len(rows), 1))
     add_alternating_rows(drawing, row_top, row_height, len(rows))
     plot_x0, plot_x1 = 285, 635
     maximum = max(float(row["cost_mean_ci95_high_usd"]) for row in rows)
@@ -390,7 +392,8 @@ def page_token_composition(summary: list[dict[str, str]], lang: str, total_pages
         add_text(drawing, x + 16, 101, label, 7.7, MUTED)
         x += 65 + len(label) * 4.2
 
-    row_top, row_height = 116, 25.2
+    row_top = 116
+    row_height = min(25.2, 352.8 / max(len(rows), 1))
     add_alternating_rows(drawing, row_top, row_height, len(rows))
     plot_x0, plot_x1 = 260, 733
     maximum = max(float(row["analytical_total_tokens_total"]) for row in rows)
@@ -433,7 +436,8 @@ def page_distributions(summary: list[dict[str, str]], raw: list[dict[str, str]],
     drawing = Drawing(PAGE_W, PAGE_H)
     add_page_header(drawing, t["p3_title"], t["p3_sub"])
 
-    row_top, row_height = 116, 25.2
+    row_top = 116
+    row_height = min(25.2, 352.8 / max(len(rows), 1))
     add_alternating_rows(drawing, row_top, row_height, len(rows))
     left_x0, left_x1 = 250, 490
     right_x0, right_x1 = 555, 800
@@ -486,7 +490,8 @@ def page_heatmap(summary: list[dict[str, str]], raw: list[dict[str, str]], lang:
     drawing = Drawing(PAGE_W, PAGE_H)
     add_page_header(drawing, t["p4_title"], t["p4_sub"])
 
-    left, right, cell_h = 228, 810, 11.6
+    left, right = 228, 810
+    cell_h = min(11.6, 162.4 / max(len(rows), 1))
     panels = [
         ("analysis_3", 105, "ANALISI 3" if lang == "it" else "ANALYSIS 3"),
         ("physics_2", 320, "FISICA 2" if lang == "it" else "PHYSICS 2"),
@@ -564,7 +569,8 @@ def page_cost_drivers(summary: list[dict[str, str]], lang: str) -> Drawing:
         add_circle(drawing, x, y, radius, color, WHITE, 1)
         add_text(drawing, x, y + 2.5, f"{index}", 5.5, WHITE, anchor="middle", font="Helvetica-Bold")
 
-    list_x, list_top, list_height = 628, 116, 27
+    list_x, list_top = 628, 116
+    list_height = min(27, 378 / max(len(rows), 1))
     add_text(drawing, list_x, 101, t["rank"], 7.2, MUTED)
     add_text(drawing, list_x + 30, 101, t["model"], 7.2, MUTED)
     for index, row in enumerate(rows, start=1):
@@ -717,7 +723,7 @@ def write_analysis(summary: list[dict[str, str]], deepseek: list[dict[str, str]]
     visible_no = sum(float(row["visible_output_tokens_no_thinking"]) for row in deepseek)
     path = OUTPUT_DIR / "ANALISI.md"
     path.write_text(
-        f"""# Analisi grafica - token e costi del panel 14 x 60
+        f"""# Analisi grafica - token e costi del panel 17 x 60
 
 ## Evidenze principali
 
@@ -753,7 +759,7 @@ def main() -> int:
     summary = read_csv(SUMMARY_PATH)
     raw = read_csv(RAW_PATH)
     deepseek = read_csv(DEEPSEEK_PATH)
-    if len(summary) != 14 or len(raw) != 840 or len(deepseek) != 60:
+    if len(summary) != 17 or len(raw) != 1020 or len(deepseek) != 60:
         raise RuntimeError("Unexpected source dimensions for selected charts")
     outputs = {}
     for lang in ("it", "en"):
@@ -769,7 +775,7 @@ def main() -> int:
             str(path.relative_to(ANALYSIS_DIR)): sha256_file(path)
             for path in (SUMMARY_PATH, RAW_PATH, DEEPSEEK_PATH, METHODOLOGY_PATH)
         },
-        "counts": {"pages_per_pdf": 6, "models": 14, "common_items": 60, "model_item_cells": 840},
+        "counts": {"pages_per_pdf": 6, "models": 17, "common_items": 60, "model_item_cells": 1020},
         "outputs": {},
     }
     for output in outputs.values():

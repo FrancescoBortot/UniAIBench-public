@@ -1,15 +1,15 @@
 # How UniAIBench instantiates the reusable method
 
-This document identifies which choices belong specifically to UniAIBench v1.0
+This document identifies which choices belong specifically to UniAIBench v1.1
 and how they relate to the generic workflow under
 [`benchmark-toolkit/`](../benchmark-toolkit/). It is a traceability map, not a
 replacement for the paper or the toolkit guides.
 
-| Generic stage | UniAIBench v1.0 decision | Public evidence |
+| Generic stage | UniAIBench v1.1 decision | Public evidence |
 |---|---|---|
 | Define scope | Advanced open-ended Mathematical Analysis III and General Physics II tasks; one item per request | [`STUDY_MANIFEST.json`](STUDY_MANIFEST.json), paper |
 | Record provenance | University of Padua examination material; source text and solutions kept outside this repository | [`DATA_PROVENANCE.md`](DATA_PROVENANCE.md) |
-| Select solvers | 14 explicitly versioned model--mode configurations | [`profile/evaluated-models.md`](profile/evaluated-models.md), `analysis/data/model_catalog.json` |
+| Select solvers | 17 explicitly versioned model--mode configurations | [`profile/evaluated-models.md`](profile/evaluated-models.md), `analysis/data/model_catalog.json` |
 | Freeze evaluation | Item-specific atomic 100-point rubrics organized by T1--T8, created before target responses were inspected | Paper methodology; generic rubric contract in the toolkit |
 | Generate answers | Direct provider APIs, closed-resource condition, no web, tools, retrieval, calculators, or code execution | Paper methodology; generic solver prompt and harness in the toolkit |
 | Blind judgments | One anonymous answer at a time, separated from the private model-identity map | Paper methodology; generic blind-judging protocol in the toolkit |
@@ -23,7 +23,7 @@ The following are study choices, not toolkit defaults:
 
 - the University of Padua source material;
 - the two subjects and 60-item sample;
-- the 14 evaluated model--mode configurations;
+- the 17 evaluated model--mode configurations;
 - the benchmark date and recorded provider prices;
 - the observed scores, tokens, costs, response times, and failures;
 - the exact completed rubrics and all protected response-level artifacts.

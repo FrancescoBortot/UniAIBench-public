@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build focused response-time charts for the balanced 14 x 60 panel."""
+"""Build focused response-time charts for the balanced 17 x 60 panel."""
 
 from __future__ import annotations
 
@@ -44,7 +44,7 @@ RETRY = HexColor("#D1495B")
 TEXT = {
     "it": {
         "pdf_title": "Grafici focus - tempo di risposta",
-        "pdf_subject": "Benchmark 14 x 60: tempo, token e correttezza",
+        "pdf_subject": "Benchmark 17 x 60: tempo, token e correttezza",
         "p1_title": "Classifica del tempo tipico",
         "p1_sub": "Tempo end-to-end su 60 esercizi comuni | ordinamento per mediana crescente",
         "how": "COME LEGGERE",
@@ -84,11 +84,11 @@ TEXT = {
         "time": "SEC.",
         "desired": "PIU CORRETTO E PIU VELOCE",
         "p4_note": "Risposte/ora = 3.600 diviso il tempo mediano. E una velocita tipica teorica per richieste eseguite in sequenza.",
-        "footer": "Panel comune: 60 esercizi (33 Analisi 3, 27 Fisica 2), 14 modelli, 840 celle macro-mediate",
+        "footer": "Panel comune: 60 esercizi (33 Analisi 3, 27 Fisica 2), 17 modelli, 1.020 celle macro-mediate",
     },
     "en": {
         "pdf_title": "Focused response-time charts",
-        "pdf_subject": "14 x 60 benchmark: response time, tokens, and correctness",
+        "pdf_subject": "17 x 60 benchmark: response time, tokens, and correctness",
         "p1_title": "Typical response-time ranking",
         "p1_sub": "End-to-end time across 60 common exercises | ordered by increasing median",
         "how": "HOW TO READ",
@@ -128,7 +128,7 @@ TEXT = {
         "time": "SEC.",
         "desired": "MORE CORRECT AND FASTER",
         "p4_note": "Responses/hour = 3,600 divided by median time. It is a theoretical typical rate for sequential requests.",
-        "footer": "Common panel: 60 exercises (33 Analysis 3, 27 Physics 2), 14 models, 840 macro-averaged cells",
+        "footer": "Common panel: 60 exercises (33 Analysis 3, 27 Physics 2), 17 models, 1,020 macro-averaged cells",
     },
 }
 
@@ -172,15 +172,15 @@ def validate(raw: list[dict[str, str]], quality: list[dict[str, str]]) -> list[d
     models = {row["model"] for row in raw}
     items = {row["item_key"] for row in raw}
     cells = Counter((row["model"], row["item_key"]) for row in raw)
-    if len(raw) != 840 or len(models) != 14 or len(items) != 60:
-        raise RuntimeError("Balanced panel is not 14 x 60")
+    if len(raw) != 1020 or len(models) != 17 or len(items) != 60:
+        raise RuntimeError("Balanced panel is not 17 x 60")
     if any(value != 1 for value in cells.values()):
         raise RuntimeError("Model-item cells are not one-to-one")
     if any(not row["elapsed_seconds"] for row in raw):
         raise RuntimeError("Missing elapsed_seconds")
     selected = [row for row in quality if row["ranking_type"] == "matched_common_items" and row["scope"] == "overall"]
-    if len(selected) != 14 or {row["model"] for row in selected} != models:
-        raise RuntimeError("Quality rows do not match the 14-model panel")
+    if len(selected) != 17 or {row["model"] for row in selected} != models:
+        raise RuntimeError("Quality rows do not match the 17-model panel")
     return selected
 
 
@@ -248,7 +248,8 @@ def page_time_ranking(summary: list[dict[str, Any]], lang: str) -> Drawing:
         base.add_text(drawing, x, 126, label, 7.5, base.MUTED, anchor=anchor)
     base.add_line(drawing, 44, 134, 804, 134, base.GRID, 1)
 
-    row_top, row_height = 138, 23.7
+    row_top = 138
+    row_height = min(23.7, 331.8 / max(len(rows), 1))
     base.add_alternating_rows(drawing, row_top, row_height, len(rows))
     plot_x0, plot_x1 = 285, 540
     axis_max = math.ceil(max(row["q3_seconds"] for row in rows) / 100) * 100
@@ -303,7 +304,8 @@ def page_heatmap(raw: list[dict[str, str]], summary: list[dict[str, Any]], lang:
     base.add_rect(drawing, 742, 91, 18, 12, base.WHITE, RETRY, 1.5)
     base.add_text(drawing, 766, 101, t["retry"], 6.8, base.MUTED)
 
-    x0, x1, row_h = 230, 804, 11.8
+    x0, x1 = 230, 804
+    row_h = min(11.8, 165.2 / max(len(summary), 1))
     session_codes = {
         "primoapp": "P1", "secondoapp": "P2", "terzoapp": "P3", "quartoapp": "P4", "quintoapp": "P5",
         "primoapp_tema_a": "P1A", "primoapp_tema_b": "P1B", "secondoapp_tema_a": "P2A", "secondoapp_tema_b": "P2B",
@@ -399,7 +401,8 @@ def page_time_drivers(summary: list[dict[str, Any]], lang: str) -> Drawing:
     base.add_text(drawing, (x0 + x1) / 2, 546, t["p3_x"], 8.1, base.NAVY, anchor="middle")
     base.add_text(drawing, 44, (top + bottom) / 2, t["p3_y"], 8.0, base.NAVY, anchor="middle", angle=90)
 
-    list_x, list_top, list_height = 628, 155, 24.7
+    list_x, list_top = 628, 155
+    list_height = min(24.7, 345.8 / max(len(summary), 1))
     base.add_text(drawing, list_x, 140, t["rank"], 7.0, base.MUTED)
     base.add_text(drawing, list_x + 30, 140, t["model"], 7.0, base.MUTED)
     for row in summary:
@@ -452,7 +455,8 @@ def page_speed_accuracy(summary: list[dict[str, Any]], lang: str) -> Drawing:
     base.add_text(drawing, (x0 + x1) / 2, 546, t["p4_x"], 8.1, base.NAVY, anchor="middle")
     base.add_text(drawing, 44, (top + bottom) / 2, t["p4_y"], 8.0, base.NAVY, anchor="middle", angle=90)
 
-    list_x, list_top, list_height = 615, 148, 25.0
+    list_x, list_top = 615, 148
+    list_height = min(25.0, 350 / max(len(summary), 1))
     base.add_text(drawing, list_x, 132, t["rank"], 6.8, base.MUTED)
     base.add_text(drawing, list_x + 28, 132, t["model"], 6.8, base.MUTED)
     base.add_text(drawing, 748, 132, t["accuracy"], 6.4, base.MUTED, anchor="end")
@@ -476,14 +480,14 @@ def page_speed_accuracy(summary: list[dict[str, Any]], lang: str) -> Drawing:
 
 def write_tables(raw: list[dict[str, str]], summary: list[dict[str, Any]]) -> list[Path]:
     TABLE_DIR.mkdir(parents=True, exist_ok=True)
-    summary_path = TABLE_DIR / "tempi_modelli_14x60.csv"
+    summary_path = TABLE_DIR / "tempi_modelli_17x60.csv"
     fields = list(summary[0].keys())
     with summary_path.open("w", encoding="utf-8", newline="") as stream:
         writer = csv.DictWriter(stream, fieldnames=fields)
         writer.writeheader()
         writer.writerows(summary)
 
-    normalized_path = TABLE_DIR / "tempi_normalizzati_modello_esercizio_14x60.csv"
+    normalized_path = TABLE_DIR / "tempi_normalizzati_modello_esercizio_17x60.csv"
     medians = {
         item: statistics.median(float(row["elapsed_seconds"]) for row in raw if row["item_key"] == item)
         for item in {row["item_key"] for row in raw}
@@ -545,14 +549,14 @@ def export_set(lang: str, drawings: list[Drawing]) -> dict[str, Any]:
 def write_methodology(summary: list[dict[str, Any]]) -> Path:
     path = OUTPUT_DIR / "METODOLOGIA.md"
     path.write_text(
-        """# Metodologia - tempo di risposta 14 x 60
+        """# Metodologia - tempo di risposta 17 x 60
 
-- Panel: 14 modelli x 60 esercizi comuni = 840 celle modello-esercizio.
+- Panel: 17 modelli x 60 esercizi comuni = 1020 celle modello-esercizio.
 - Composizione: 33 esercizi di Analisi 3 e 27 di Fisica 2, anni 2025-2026.
 - Tempo: `timing.elapsed_seconds` della run attiva selezionata dall'indice autorevole.
 - Semantica: il cronometro parte al primo dispatch, esclude l'attesa del semaforo locale e include chiamata API, generazione, backoff e retry.
 - Classifica: mediana crescente; dispersione principale Q1-Q3; media, P90 e totale restano visibili.
-- Heatmap: tempo della cella / mediana dei 14 modelli sullo stesso esercizio.
+- Heatmap: tempo della cella / mediana dei 17 modelli sullo stesso esercizio.
 - Driver: `tempo medio = token analitici medi x secondi effettivi per 1K / 1.000`.
 - Correttezza: macro-media sui medesimi 60 esercizi e giudizi attivi.
 - Velocita nel grafico congiunto: `risposte tipiche/ora = 3.600 / tempo mediano in secondi`.
@@ -598,16 +602,16 @@ def main() -> None:
             str(REFERENCE_PDF.relative_to(ANALYSIS_DIR)): sha256_file(REFERENCE_PDF),
         },
         "counts": {
-            "models": 14,
+            "models": 17,
             "common_items": 60,
             "analysis_3_items": 33,
             "physics_2_items": 27,
-            "model_item_cells": 840,
+            "model_item_cells": 1020,
             "retry_rows": sum(float(row["retry_count"] or 0) > 0 for row in raw),
             "pages_per_pdf": 4,
         },
         "quality_checks": {
-            "balanced_14x60": True,
+            "balanced_17x60": True,
             "elapsed_complete": True,
             "quality_panel_matches": True,
             "active_source_manifest": str(SOURCE_MANIFEST.relative_to(ANALYSIS_DIR)),

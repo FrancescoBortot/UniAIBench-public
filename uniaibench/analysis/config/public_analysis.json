@@ -14,7 +14,10 @@
     "Grok 4.3",
     "Grok 4.5",
     "OpenAI GPT-4.1",
-    "OpenAI o3"
+    "OpenAI o3",
+    "Mistral Medium 3.5",
+    "Mistral Small 4",
+    "DeepSeek V4.1 Flash"
   ],
   "dimensions": ["T1", "T2", "T3", "T4", "T5", "T6", "T7", "T8"],
   "expected_common_items": {
@@ -38,7 +41,8 @@
       "anthropic": "#9A4D00",
       "google": "#175CD3",
       "deepseek": "#5B4BCE",
-      "xai": "#202124"
+      "xai": "#202124",
+      "mistral": "#F05A28"
     }
   },
   "upstream_attestations": {

@@ -44,6 +44,7 @@ PROVIDER_COLORS = {
     "google": HexColor("#2363C7"),
     "deepseek": HexColor("#5B4BCE"),
     "xai": HexColor("#202124"),
+    "mistral": HexColor("#F05A28"),
 }
 
 SCOPES = [
@@ -161,7 +162,8 @@ def forest_chart(rows: list[dict[str, str]], title: str, lang: str) -> Drawing:
     mean_x = 945
     ci_x = 1070
     first_y = 578
-    row_gap = 33.2
+    row_gap = min(33.2, 450 / max(len(rows) - 1, 1))
+    row_band_height = min(31, row_gap - 1)
     axis_y = 105
 
     add_text(drawing, 42, 710, title, 29, NAVY, "Helvetica-Bold")
@@ -224,7 +226,16 @@ def forest_chart(rows: list[dict[str, str]], title: str, lang: str) -> Drawing:
     for index, row in enumerate(rows):
         y = first_y - index * row_gap
         if index % 2:
-            drawing.add(Rect(36, y - 15, 1040, 31, fillColor=ROW_ALT, strokeColor=None))
+            drawing.add(
+                Rect(
+                    36,
+                    y - row_band_height / 2,
+                    1040,
+                    row_band_height,
+                    fillColor=ROW_ALT,
+                    strokeColor=None,
+                )
+            )
 
         rank = int(row["rank"])
         rank_text = f"{rank:02d}"
@@ -327,7 +338,7 @@ def profile_chart(
     n_items = int(ranking_rows[0]["n_items"])
     table_left = 350
     cell_w = 87
-    cell_h = 33
+    cell_h = min(33, 432 / max(len(profile_rows) - 1, 1))
     first_y = 585
 
     add_text(drawing, 42, 710, title, 29, NAVY, "Helvetica-Bold")
@@ -349,7 +360,7 @@ def profile_chart(
     for index, row in enumerate(profile_rows):
         y = first_y - index * cell_h
         if index % 2:
-            drawing.add(Rect(36, y - 13, 306, 31, fillColor=ROW_ALT, strokeColor=None))
+            drawing.add(Rect(36, y - 13, 306, min(31, cell_h - 2), fillColor=ROW_ALT, strokeColor=None))
 
         rank = int(row["rank"])
         add_text(drawing, 42, y - 4, f"{rank:02d}", 12.5, MUTED, "Helvetica-Bold")

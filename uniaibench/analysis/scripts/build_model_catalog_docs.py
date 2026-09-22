@@ -38,7 +38,7 @@ def build(*, write: bool = True) -> str:
         "This catalog is generated from the versioned",
         "[`analysis/data/model_catalog.json`](../analysis/data/model_catalog.json)",
         "record used by the paper appendix and website export. It identifies the",
-        "**14 model--mode configurations** in the matched 60-item panel and separates two price concepts:", "",
+        "**17 model--mode configurations** in the matched 60-item panel and separates two price concepts:", "",
         f"- **latest verified API rate:** the standard first-party rate manually checked on **{latest_date}**;",
         f"- **benchmark rate:** the frozen rate used to estimate study costs on **{benchmark_date}**.", "",
         "Prices are in USD per one million tokens and show input before output. They",
@@ -90,7 +90,7 @@ def build(*, write: bool = True) -> str:
         "The same values are exposed as a flat analysis input in",
         "[`analysis/tables/token_cost_rates.csv`](../analysis/tables/token_cost_rates.csv),",
         "while per-model observed token and cost summaries are in",
-        "[`analysis/tables/model_token_costs_14x60.csv`](../analysis/tables/model_token_costs_14x60.csv).", "",
+        "[`analysis/tables/model_token_costs_17x60.csv`](../analysis/tables/model_token_costs_17x60.csv).", "",
     ])
     content = "\n".join(lines)
     if write:

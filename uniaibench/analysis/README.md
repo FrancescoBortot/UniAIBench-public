@@ -32,7 +32,7 @@ root, run `make check-tables` to verify every released CSV byte-for-byte,
 `make tables` to rebuild them, and `make figures` to rebuild the tables and
 chart collections in dependency order.
 
-The principal matched panel comprises 14 model configurations and 60 common
+The principal matched panel comprises 17 model configurations and 60 common
 items. Some cells summarize repeated runs; consult `n_responses` rather than
 assuming one response per row. Provider pricing and model availability are
 time-dependent, so the dates and source fields in the resource data and

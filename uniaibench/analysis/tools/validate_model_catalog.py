@@ -16,8 +16,8 @@ PRICING_MANIFEST = ROOT / "analysis" / "data" / "benchmark_pricing_manifest.json
 RESOURCES = ROOT / "analysis" / "data" / "model_item_resources.csv"
 RANKING = ROOT / "analysis" / "tables" / "main_ranking_overall.csv"
 RATES = ROOT / "analysis" / "tables" / "token_cost_rates.csv"
-MODEL_TOKEN_COSTS = ROOT / "analysis" / "tables" / "model_token_costs_14x60.csv"
-QUALITY_TOKEN_COST = ROOT / "analysis" / "tables" / "quality_token_cost_14x60.csv"
+MODEL_TOKEN_COSTS = ROOT / "analysis" / "tables" / "model_token_costs_17x60.csv"
+QUALITY_TOKEN_COST = ROOT / "analysis" / "tables" / "quality_token_cost_17x60.csv"
 MANIFEST_REPO_PATH = "uniaibench/analysis/data/benchmark_pricing_manifest.json"
 PUBLIC_SOURCE_KIND = "public_pricing_manifest_record"
 PRIVATE_SOURCE_KIND = "private_campaign_configuration_snapshot"
@@ -25,6 +25,7 @@ OFFICIAL_SOURCE_KIND = "official_provider_documentation"
 EXPECTED_PRIVATE_FINGERPRINTS = {
     "e4f31febe7e7ad22fa126b61e9f3b8ca29d10cda877ef29d9933e33deb77af23",
     "72f55057c52ab2b6c046bfaf25c4b38760bba171fe667cc82cde02e342da559b",
+    "8048c80ca15cebfabab8d0b6c688f6b247df67f0299985ec219e3907fcda1a78",
 }
 PRIVATE_NAME_MARKERS = ("benchmark_config_", "primo_secondo", "deepseek_xai")
 RECORD_ID_RE = re.compile(r"[a-z0-9][a-z0-9.-]*\Z")
@@ -95,8 +96,8 @@ def load_pricing_manifest(catalog: dict[str, object]) -> dict[str, dict[str, obj
         raise ValueError("pricing manifest must document its public/private source boundary")
 
     rates = payload.get("rates")
-    if not isinstance(rates, list) or len(rates) != 14:
-        raise ValueError("benchmark_pricing_manifest.json must contain exactly 14 rates")
+    if not isinstance(rates, list) or len(rates) != 17:
+        raise ValueError("benchmark_pricing_manifest.json must contain exactly 17 rates")
 
     records: dict[str, dict[str, object]] = {}
     model_ids: list[str] = []
@@ -145,15 +146,15 @@ def load_pricing_manifest(catalog: dict[str, object]) -> dict[str, dict[str, obj
     require_unique(model_ids, context="pricing manifest model_id")
     require_unique(model_names, context="pricing manifest model")
     if private_fingerprints != EXPECTED_PRIVATE_FINGERPRINTS:
-        raise ValueError("pricing manifest does not bind both frozen private configuration snapshots")
+        raise ValueError("pricing manifest does not bind every frozen private configuration snapshot")
     return records
 
 
 def main() -> int:
     catalog = json.loads(CATALOG.read_text(encoding="utf-8"))
     models = catalog.get("models")
-    if not isinstance(models, list) or len(models) != 14:
-        raise ValueError("model_catalog.json must contain exactly 14 configurations")
+    if not isinstance(models, list) or len(models) != 17:
+        raise ValueError("model_catalog.json must contain exactly 17 configurations")
     manifest = load_pricing_manifest(catalog)
     manifest_by_model_id = {str(record["model_id"]): record for record in manifest.values()}
 
@@ -203,8 +204,8 @@ def main() -> int:
     rate_header, rates = read_csv(RATES)
     if rate_header != RATE_COLUMNS:
         raise ValueError(f"token_cost_rates.csv: expected columns {RATE_COLUMNS}")
-    if len(rates) != 14:
-        raise ValueError("token_cost_rates.csv must contain exactly 14 rows")
+    if len(rates) != 17:
+        raise ValueError("token_cost_rates.csv must contain exactly 17 rows")
     rate_by_model = {row["model"]: row for row in rates}
     if len(rate_by_model) != len(rates) or set(names) != set(rate_by_model):
         raise ValueError("model catalog and frozen-rate table contain different or duplicate model sets")
@@ -224,8 +225,8 @@ def main() -> int:
                 raise ValueError(f"{model['model']}: rate table and manifest {side} rates differ")
 
     _, resources = read_csv(RESOURCES)
-    if len(resources) != 840:
-        raise ValueError("model_item_resources.csv must contain exactly 840 matched model-item rows")
+    if len(resources) != 1020:
+        raise ValueError("model_item_resources.csv must contain exactly 1020 matched model-item rows")
     if {row["model"] for row in resources} != set(names):
         raise ValueError("resource panel and model catalog contain different model sets")
     for index, row in enumerate(resources, start=2):
@@ -244,8 +245,8 @@ def main() -> int:
 
     _, token_summaries = read_csv(MODEL_TOKEN_COSTS)
     token_summary_by_model = {row["model"]: row for row in token_summaries}
-    if len(token_summaries) != 14 or len(token_summary_by_model) != 14 or set(token_summary_by_model) != set(names):
-        raise ValueError("model_token_costs_14x60.csv must contain one row per model")
+    if len(token_summaries) != 17 or len(token_summary_by_model) != 17 or set(token_summary_by_model) != set(names):
+        raise ValueError("model_token_costs_17x60.csv must contain one row per model")
     for model_name, row in token_summary_by_model.items():
         model = model_by_name[model_name]
         record = manifest_by_model_id[str(model["id"])]
@@ -261,8 +262,8 @@ def main() -> int:
 
     _, quality_rows = read_csv(QUALITY_TOKEN_COST)
     quality_by_model = {row["model"]: row for row in quality_rows}
-    if len(quality_rows) != 14 or len(quality_by_model) != 14 or set(quality_by_model) != set(names):
-        raise ValueError("quality_token_cost_14x60.csv must contain one row per model")
+    if len(quality_rows) != 17 or len(quality_by_model) != 17 or set(quality_by_model) != set(names):
+        raise ValueError("quality_token_cost_17x60.csv must contain one row per model")
     for model_name, row in quality_by_model.items():
         if row["price_source_kind"] != PUBLIC_SOURCE_KIND:
             raise ValueError(f"{model_name}: quality summary source_kind does not point to the public manifest")
@@ -276,7 +277,7 @@ def main() -> int:
             raise ValueError(f"{path.name}: contains a private configuration name")
 
     print(
-        "OK: 14 model records, 14 frozen rates, 840 resource rows, and "
+        "OK: 17 model records, 17 frozen rates, 1020 resource rows, and "
         "both cost summaries resolve to the public pricing manifest"
     )
     return 0

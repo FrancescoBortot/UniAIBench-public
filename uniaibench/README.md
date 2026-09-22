@@ -1,7 +1,7 @@
-# UniAIBench v1.0 study
+# UniAIBench current study release
 
-This directory contains the public evidence for **UniAIBench v1.0**, the
-concrete study described by the repository. It is intentionally separate from
+This directory contains the public aggregate evidence for **UniAIBench v1.1**,
+the current study release described by the repository. It is intentionally separate from
 the reusable [`benchmark-toolkit/`](../benchmark-toolkit/) so that readers can
 distinguish dated research choices from general-purpose machinery.
 
@@ -9,11 +9,12 @@ distinguish dated research choices from general-purpose machinery.
 
 UniAIBench evaluates complete, open-ended solutions to 60 advanced
 university-level items: 33 from Mathematical Analysis III and 27 from General
-Physics II. Fourteen model--mode configurations were compared on the same item
+Physics II. Seventeen model--mode configurations were compared on the same item
 panel under closed-resource, no-tool conditions. The published aggregate
-evidence represents 840 matched model--item cells and 924 retained responses.
+evidence represents 1,020 matched model--item cells and 1,104 retained responses.
 
-The benchmark snapshot is dated **14 August 2026**. Model identifiers,
+The current aggregate snapshot is dated **16 September 2026**. The paper remains
+the fixed 14-configuration snapshot dated **14 August 2026**. Model identifiers,
 reasoning modes, prices, results, and operational measurements must be
 interpreted as properties of that dated campaign rather than permanent product
 properties.
@@ -25,13 +26,13 @@ properties.
 | [`STUDY_MANIFEST.json`](STUDY_MANIFEST.json) | Machine-readable identity, counts, dates, and public/private boundary |
 | [`METHOD_IMPLEMENTATION.md`](METHOD_IMPLEMENTATION.md) | Mapping from the generic toolkit workflow to this study |
 | [`DATA_PROVENANCE.md`](DATA_PROVENANCE.md) | Origin and redistribution policy for source material |
-| [`profile/evaluated-models.md`](profile/evaluated-models.md) | The 14 configurations, technical metadata, and dated prices |
+| [`profile/evaluated-models.md`](profile/evaluated-models.md) | The 17 configurations, technical metadata, and dated prices |
 | [`analysis/data/benchmark_pricing_manifest.json`](analysis/data/benchmark_pricing_manifest.json) | Frozen benchmark rates and public/private provenance records |
 | [`analysis/data/`](analysis/data/) | Sanitized model--item score and resource panels |
 | [`analysis/tables/`](analysis/tables/) | Derived rankings, coverage, T1--T8 profiles, token and cost summaries |
 | [`analysis/figures/site/`](analysis/figures/site/) | Eight selected English figures used as public evidence views |
 | [`analysis/scripts/`](analysis/scripts/) | Programs used to regenerate paper and website chart families |
-| [`paper/`](paper/) | Manuscript source, canonical figures, and compiled paper |
+| [`paper/`](paper/) | Fixed v1.0 manuscript snapshot, canonical figures, and compiled paper |
 
 ## What is authoritative
 

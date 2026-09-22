@@ -1,9 +1,9 @@
 {
   "schema_version": "1.0",
-  "study_id": "uniaibench-v1.0",
+  "study_id": "uniaibench-v1.1",
   "title": "UniAIBench: Benchmarking AI Models on Advanced University-Level Analysis III and Physics II Problems",
-  "release_version": "1.0",
-  "benchmark_snapshot_date": "2026-08-14",
+  "release_version": "1.1",
+  "benchmark_snapshot_date": "2026-09-16",
   "official_website": "https://uniaibench.org",
   "toolkit": {
     "path": "../benchmark-toolkit",
@@ -21,10 +21,19 @@
         "item_count": 27
       }
     ],
+    "model_mode_configurations": 17,
+    "common_items": 60,
+    "matched_model_item_cells": 1020,
+    "retained_responses": 1104
+  },
+  "paper_snapshot": {
+    "study_id": "uniaibench-v1.0",
+    "benchmark_snapshot_date": "2026-08-14",
     "model_mode_configurations": 14,
     "common_items": 60,
     "matched_model_item_cells": 840,
-    "retained_responses": 924
+    "retained_responses": 924,
+    "note": "The paper and its compiled PDF remain the fixed 14-by-60 publication snapshot. The surrounding repository publishes the later 17-by-60 aggregate extension."
   },
   "public_evidence": {
     "model_catalog": "analysis/data/model_catalog.json",

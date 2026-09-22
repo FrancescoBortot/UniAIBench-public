@@ -5,11 +5,14 @@ Claude Sonnet 4.5,anthropic,60,60,60,60,0,60,60,0,60,0,True,True,public_pricing_
 DeepSeek V4 Flash,deepseek,60,60,60,60,60,60,60,0,60,1,True,True,public_pricing_manifest_record,final response only for rows with retry
 DeepSeek V4 Flash (no thinking),deepseek,60,60,60,60,0,60,60,0,60,0,True,True,public_pricing_manifest_record,none
 DeepSeek V4 Pro,deepseek,60,60,60,60,60,60,60,0,60,0,True,True,public_pricing_manifest_record,none
+DeepSeek V4.1 Flash,deepseek,60,60,60,60,60,60,60,0,60,0,True,True,public_pricing_manifest_record,none
 GPT-5.6 Sol,openai,60,60,60,60,60,60,60,0,60,3,True,True,public_pricing_manifest_record,final response only for rows with retry
 Gemini 3.1 Pro Preview,google,60,60,60,60,60,60,60,0,60,10,True,True,public_pricing_manifest_record,final response only for rows with retry
 Gemini 3.5 Flash,google,60,60,60,60,60,60,60,0,60,5,True,True,public_pricing_manifest_record,final response only for rows with retry
 Gemma 4 31B IT,google,60,60,60,60,0,60,60,0,60,0,True,True,public_pricing_manifest_record,none
 Grok 4.3,xai,60,60,60,60,60,60,60,60,0,0,True,True,public_pricing_manifest_record,none
 Grok 4.5,xai,60,60,60,60,60,60,60,60,0,0,True,True,public_pricing_manifest_record,none
+Mistral Medium 3.5,mistral,60,60,60,0,0,0,60,0,60,0,True,True,public_pricing_manifest_record,none
+Mistral Small 4,mistral,60,60,60,0,0,0,60,0,60,1,True,True,public_pricing_manifest_record,final response only for rows with retry
 OpenAI GPT-4.1,openai,60,60,60,60,60,60,60,0,60,0,True,True,public_pricing_manifest_record,none
 OpenAI o3,openai,60,60,60,60,60,60,60,0,60,1,True,True,public_pricing_manifest_record,final response only for rows with retry

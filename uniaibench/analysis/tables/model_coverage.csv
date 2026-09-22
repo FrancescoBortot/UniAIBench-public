@@ -13,6 +13,9 @@ overall,Grok 4.3,60,60,1.0,60,60,0
 overall,Grok 4.5,60,60,1.0,60,60,0
 overall,OpenAI GPT-4.1,60,60,1.0,60,60,0
 overall,OpenAI o3,60,60,1.0,60,60,0
+overall,Mistral Medium 3.5,60,60,1.0,60,60,0
+overall,Mistral Small 4,60,60,1.0,60,60,0
+overall,DeepSeek V4.1 Flash,60,60,1.0,60,60,0
 analysis_3,Claude Fable 5,33,33,1.0,33,39,3
 analysis_3,Claude Haiku 4.5,33,33,1.0,33,33,0
 analysis_3,Claude Sonnet 4.5,33,33,1.0,33,33,0
@@ -27,6 +30,9 @@ analysis_3,Grok 4.3,33,33,1.0,33,33,0
 analysis_3,Grok 4.5,33,33,1.0,33,33,0
 analysis_3,OpenAI GPT-4.1,33,33,1.0,33,33,0
 analysis_3,OpenAI o3,33,33,1.0,33,33,0
+analysis_3,Mistral Medium 3.5,33,33,1.0,33,33,0
+analysis_3,Mistral Small 4,33,33,1.0,33,33,0
+analysis_3,DeepSeek V4.1 Flash,33,33,1.0,33,33,0
 physics_2,Claude Fable 5,27,27,1.0,27,39,6
 physics_2,Claude Haiku 4.5,27,27,1.0,27,27,0
 physics_2,Claude Sonnet 4.5,27,27,1.0,27,27,0
@@ -41,3 +47,6 @@ physics_2,Grok 4.3,27,27,1.0,27,27,0
 physics_2,Grok 4.5,27,27,1.0,27,27,0
 physics_2,OpenAI GPT-4.1,27,27,1.0,27,27,0
 physics_2,OpenAI o3,27,27,1.0,27,27,0
+physics_2,Mistral Medium 3.5,27,27,1.0,27,27,0
+physics_2,Mistral Small 4,27,27,1.0,27,27,0
+physics_2,DeepSeek V4.1 Flash,27,27,1.0,27,27,0

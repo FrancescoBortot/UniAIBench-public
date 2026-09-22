@@ -30,6 +30,7 @@ tmp/
 /benchmark-toolkit/local_outputs/
 /benchmark-toolkit/local_workflow/
 /uniaibench/analysis/grafici_*/
+/uniaibench/analysis/output/
 /uniaibench/analysis/site_exports/
 /uniaibench/paper/build/
 raw_response.json

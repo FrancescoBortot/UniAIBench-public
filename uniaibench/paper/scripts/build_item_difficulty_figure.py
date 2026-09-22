@@ -10,7 +10,7 @@ from pathlib import Path
 
 
 REPOSITORY = Path(__file__).resolve().parents[2]
-SOURCE = REPOSITORY / "analysis" / "data" / "model_item_scores.csv"
+SOURCE = REPOSITORY / "paper" / "data" / "model_item_scores_14x60.csv"
 OUTPUT = REPOSITORY / "paper" / "figures" / "item_difficulty.tex"
 
 

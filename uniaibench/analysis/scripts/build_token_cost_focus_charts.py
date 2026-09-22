@@ -30,7 +30,7 @@ RENDERED_EN = OUTPUT_DIR / "output" / "rendered_en"
 TEXT = {
     "it": {
         "pdf_title": "Grafici focus - token e costi",
-        "pdf_subject": "Benchmark 14 x 60: classifica, composizione, driver e tariffe",
+        "pdf_subject": "Benchmark 17 x 60: classifica, composizione, driver e tariffe",
         "p3_title": "Come si forma il costo medio",
         "p3_sub": "Volume consumato e costo effettivo unitario spiegano insieme il costo per risposta",
         "formula": "COSTO MEDIO = TOKEN MEDI x COSTO EFFETTIVO PER 1M / 1.000.000",
@@ -47,14 +47,14 @@ TEXT = {
         "output": "OUTPUT",
         "axis": "USD PER 1 MILIONE DI TOKEN",
         "p4_note": "Il reasoning e fatturato come output dove previsto. Gemma usa la tariffa zero configurata per questa campagna.",
-        "footer": "Panel comune: 60 esercizi, 14 modelli, 840 celle macro-mediate",
+        "footer": "Panel comune: 60 esercizi, 17 modelli, 1.020 celle macro-mediate",
         "rank": "POS.",
         "model": "MODELLO",
         "bubble_mean": "DIMENSIONE BOLLA = COSTO MEDIO PER RISPOSTA",
     },
     "en": {
         "pdf_title": "Focused token and cost charts",
-        "pdf_subject": "14 x 60 benchmark: ranking, composition, drivers, and token rates",
+        "pdf_subject": "17 x 60 benchmark: ranking, composition, drivers, and token rates",
         "p3_title": "How mean cost is formed",
         "p3_sub": "Consumed volume and effective unit cost jointly explain cost per response | each bubble is one model",
         "formula": "MEAN COST = MEAN TOKENS x EFFECTIVE COST PER 1M / 1,000,000",
@@ -71,7 +71,7 @@ TEXT = {
         "output": "OUTPUT",
         "axis": "USD PER 1 MILLION TOKENS",
         "p4_note": "Reasoning is billed as output where applicable. Gemma uses the campaign-configured zero rate.",
-        "footer": "Common panel: 60 exercises, 14 models, 840 macro-averaged cells",
+        "footer": "Common panel: 60 exercises, 17 models, 1,020 macro-averaged cells",
         "rank": "RANK",
         "model": "MODEL",
         "bubble_mean": "BUBBLE SIZE = MEAN COST PER RESPONSE",
@@ -272,8 +272,8 @@ def main() -> int:
     parser.add_argument("--lang", choices=("it", "en", "both"), default="both")
     args = parser.parse_args()
     summary = base.read_csv(base.SUMMARY_PATH)
-    if len(summary) != 14:
-        raise RuntimeError("Expected 14 models")
+    if len(summary) != 17:
+        raise RuntimeError("Expected 17 models")
     outputs: dict[str, dict[str, Any]] = {}
     languages = ("it", "en") if args.lang == "both" else (args.lang,)
     for lang in languages:
@@ -293,7 +293,7 @@ def main() -> int:
             str(base.RAW_PATH.relative_to(base.ANALYSIS_DIR)): sha256_file(base.RAW_PATH),
             str((base.ANALYSIS_DIR / "tables" / "token_cost_rates.csv").relative_to(base.ANALYSIS_DIR)): sha256_file(base.ANALYSIS_DIR / "tables" / "token_cost_rates.csv"),
         },
-        "counts": {"pages_per_pdf": 4, "models": 14, "common_items": 60, "model_item_cells": 840},
+        "counts": {"pages_per_pdf": 4, "models": 17, "common_items": 60, "model_item_cells": 1020},
         "outputs": {},
     }
     for output in outputs.values():

@@ -14,9 +14,10 @@ make paper
 For a manuscript-only build from the repository root, use
 `make -C uniaibench/paper publication`.
 
-The paper reports the dated 14-configuration by 60-item matched panel. Aggregate source
-data are available under `../analysis/`; private run and judgment artifacts are
-not distributed.
+The paper reports the fixed, dated 14-configuration by 60-item matched panel.
+Its archived score panel is available under `data/`; the current 17-configuration
+aggregate release is available under `../analysis/`. Private run and judgment
+artifacts are not distributed.
 
 All supplementary chart programs are under `../analysis/scripts/`. Their
 inputs and outputs are mapped in

@@ -85,10 +85,7 @@ figures: tables figure-families
 	$(PYTHON) $(ANALYSIS)/scripts/build_model_catalog_docs.py
 	$(PYTHON) $(ANALYSIS)/scripts/build_model_specifications_pdf.py
 	$(PYTHON) $(ANALYSIS)/scripts/build_website_benchmark_data.py
-	cp $(ANALYSIS)/grafici_selezionati/output/pdf/selected_correctness_charts.pdf $(PAPER)/figures/
-	cp $(ANALYSIS)/grafici_token_costi_focus/output/pdf/focused_token_cost_charts.pdf $(PAPER)/figures/
-	cp $(ANALYSIS)/grafici_tempo_risposta_focus/output/pdf/focused_response_time_charts.pdf $(PAPER)/figures/
 
-paper: figures
+paper:
 	$(PYTHON) $(PAPER)/scripts/build_item_difficulty_figure.py
 	$(MAKE) -C $(PAPER) publication

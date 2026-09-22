@@ -3,10 +3,10 @@
 This catalog is generated from the versioned
 [`analysis/data/model_catalog.json`](../analysis/data/model_catalog.json)
 record used by the paper appendix and website export. It identifies the
-**14 model--mode configurations** in the matched 60-item panel and separates two price concepts:
+**17 model--mode configurations** in the matched 60-item panel and separates two price concepts:
 
-- **latest verified API rate:** the standard first-party rate manually checked on **31 August 2026**;
-- **benchmark rate:** the frozen rate used to estimate study costs on **14 August 2026**.
+- **latest verified API rate:** the standard first-party rate manually checked on **16 September 2026**;
+- **benchmark rate:** the frozen rate used to estimate study costs on **16 September 2026**.
 
 Prices are in USD per one million tokens and show input before output. They
 are not live prices. Cached input, batch, regional, tax, tool, and
@@ -36,6 +36,9 @@ Each record also keeps an official provider page as a public reference.
 | [DeepSeek V4 Pro](https://api-docs.deepseek.com/news/news260424/) | DeepSeek | [`deepseek-v4-pro`](https://api-docs.deepseek.com/api/create-chat-completion) | 24 Apr 2026; V4 preview | Yes | Thinking enabled; `high` |
 | [Grok 4.5](https://x.ai/news/grok-4-5) | xAI | [`grok-4.5`](https://docs.x.ai/developers/models/grok-4.5) | 16 Jul 2026; public launch | No | Configurable reasoning; `high` |
 | [Grok 4.3](https://x.ai/news/grok-amazon-bedrock) | xAI | [`grok-4.3`](https://docs.x.ai/developers/models/grok-4.3) | By 6 May 2026; earliest dated official use identified | No | Configurable reasoning; `high` |
+| [DeepSeek V4.1 Flash](https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash) | DeepSeek | [`deepseek-flash`](https://api-docs.deepseek.com/guides/thinking_mode) | 10 Sep 2026; API observed 16 Sep 2026 | Yes | Dual-mode reasoning; thinking `high` |
+| [Mistral Medium 3.5](https://docs.mistral.ai/getting-started/models/models_overview/) | Mistral | [`mistral-medium-3-5`](https://docs.mistral.ai/api/) | API snapshot observed 13 Sep 2026 | No | Configurable reasoning effort; `high` |
+| [Mistral Small 4](https://docs.mistral.ai/getting-started/models/models_overview/) | Mistral | [`mistral-small-2603`](https://docs.mistral.ai/api/) | API snapshot observed 13 Sep 2026 | No | Configurable reasoning effort; `high` |
 
 The two DeepSeek V4 Flash rows are distinct benchmark configurations of the same model weights.
 
@@ -57,6 +60,9 @@ The two DeepSeek V4 Flash rows are distinct benchmark configurations of the same
 | DeepSeek V4 Pro | 1.6T total; 49B active per token | Mixture-of-Experts; DeepSeek Sparse Attention | 1,000,000 | 384,000 | Not disclosed |
 | Grok 4.5 | Not disclosed | Closed frontier model; architecture undisclosed | 500,000 | Not specified | 1 Feb 2026 knowledge |
 | Grok 4.3 | Not disclosed | Closed general-purpose model; architecture undisclosed | 1,000,000 | Not specified | Not disclosed |
+| DeepSeek V4.1 Flash | 552B backbone + 196B conditional memory; 8B / 16B active in prefill / decode | Multimodal Mixture-of-Experts; causal encoder-decoder; Compressed Sparse Attention 2 | 1,000,000 | 384,000 | Not disclosed |
+| Mistral Medium 3.5 | Not disclosed | Closed Medium-tier model; architecture undisclosed | 256,000 | Not specified | Not disclosed |
+| Mistral Small 4 | Not disclosed | Closed Small-tier model; architecture undisclosed | 256,000 | Not specified | Not disclosed |
 
 ## Pricing
 
@@ -76,6 +82,9 @@ The two DeepSeek V4 Flash rows are distinct benchmark configurations of the same
 | DeepSeek V4 Pro | Off-peak $0.66 / $1.98; peak $1.32 / $3.96 | Input $0.435; output $0.87 | [DeepSeek](https://api-docs.deepseek.com/quick_start/pricing/) |
 | Grok 4.5 | Input $2; cached input $0.30; output $6; over 200k: $4 / $12 | Input $2; output $6 | [xAI](https://docs.x.ai/developers/models/grok-4.5) |
 | Grok 4.3 | Input $1.25; cached input $0.20; output $2.50; over 200k: $2.50 / $5 | Input $1.25; output $2.50 | [xAI](https://docs.x.ai/developers/models/grok-4.3) |
+| DeepSeek V4.1 Flash | Off-peak input $0.15; output $0.60; peak input $0.30; output $1.20 | Input $0.30; output $1.20 | [DeepSeek](https://api-docs.deepseek.com/quick_start/pricing/) |
+| Mistral Medium 3.5 | Input $1.50; output $7.50 | Input $1.50; output $7.50 | [Mistral](https://docs.mistral.ai/getting-started/models/models_overview/) |
+| Mistral Small 4 | Input $0.15; output $0.60 | Input $0.15; output $0.60 | [Mistral](https://docs.mistral.ai/getting-started/models/models_overview/) |
 
 For DeepSeek, the current-rate pairs are cache-miss input / output and vary by time of day.
 Gemma's zero benchmark rate was explicitly configured for the campaign and is not a universal market price.
@@ -86,4 +95,4 @@ The canonical frozen-rate records are in
 The same values are exposed as a flat analysis input in
 [`analysis/tables/token_cost_rates.csv`](../analysis/tables/token_cost_rates.csv),
 while per-model observed token and cost summaries are in
-[`analysis/tables/model_token_costs_14x60.csv`](../analysis/tables/model_token_costs_14x60.csv).
+[`analysis/tables/model_token_costs_17x60.csv`](../analysis/tables/model_token_costs_17x60.csv).

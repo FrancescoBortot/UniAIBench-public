@@ -17,10 +17,9 @@ make figures
 make paper
 ```
 
-Generated working directories named `uniaibench/analysis/grafici_*` are
-ignored by Git. The canonical supplementary PDFs are copied to
-`uniaibench/paper/figures/` by
-`make figures`.
+Generated working directories named `uniaibench/analysis/grafici_*` and the
+current model-specification PDF under `uniaibench/analysis/output/` are ignored
+by Git. `make figures` does not modify the fixed paper snapshot.
 
 ## Tracked-output policy
 
@@ -34,7 +33,7 @@ the publication repository.
 The tracked `uniaibench/paper/figures/` directory is intentionally limited to two groups:
 
 - the seven `.tex` figures directly included by `main_publication.tex`;
-- four current English supplementary PDFs covering correctness, token/cost,
+- four fixed v1.0 English supplementary PDFs covering correctness, token/cost,
   response time, and model specifications.
 
 Unused legacy diagram sources are excluded. The publication validator enforces
@@ -52,9 +51,9 @@ silently.
 | Response-time ranking, heatmap, drivers, and accuracy correlation | `uniaibench/analysis/scripts/build_response_time_focus_charts.py` and `build_speed_correctness_alternatives.py` | public resource panel and overall ranking table |
 | Canonical ten-chart collection, including the eight tracked website SVGs | `uniaibench/analysis/scripts/build_main_chart_collection.py` | the chart families above |
 | Model catalog documentation | `uniaibench/analysis/scripts/build_model_catalog_docs.py` | `uniaibench/analysis/data/model_catalog.json` |
-| Model technical-specification appendix | `uniaibench/analysis/scripts/build_model_specifications_pdf.py` | `uniaibench/analysis/data/model_catalog.json` |
+| Current model technical-specification supplement | `uniaibench/analysis/scripts/build_model_specifications_pdf.py` | `uniaibench/analysis/data/model_catalog.json` |
 | Website chart-data modules | `uniaibench/analysis/scripts/build_website_benchmark_data.py` | both public model--item panels, derived tables, and `model_catalog.json` |
-| Paper item-difficulty strip | `uniaibench/paper/scripts/build_item_difficulty_figure.py` | `uniaibench/analysis/data/model_item_scores.csv` |
+| Paper item-difficulty strip | `uniaibench/paper/scripts/build_item_difficulty_figure.py` | fixed `uniaibench/paper/data/model_item_scores_14x60.csv` snapshot |
 
 The remaining paper diagrams are declarative TikZ programs stored directly as
 `uniaibench/paper/figures/*.tex`; LaTeX compiles them without a separate Python generator.

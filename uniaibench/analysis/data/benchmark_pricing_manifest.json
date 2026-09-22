@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "benchmark_snapshot_date": "2026-08-14",
+  "benchmark_snapshot_date": "2026-09-16",
   "currency": "USD",
   "price_unit": "per 1,000,000 tokens",
-  "scope": "Frozen input and output rates used for the UniAIBench v1.0 cost estimates.",
+  "scope": "Frozen input and output rates used for the current 17-configuration UniAIBench cost estimates.",
   "source_boundary": {
     "distributed": "This manifest publishes every applied rate, its public provider reference, and the provenance class used for the frozen value.",
     "withheld": "Operational campaign configurations are not distributed because they contain study-specific execution details outside the public evidence boundary.",
@@ -163,6 +163,39 @@
       "official_reference_url": "https://docs.x.ai/developers/models/grok-4.3",
       "configuration_snapshot_sha256": "72f55057c52ab2b6c046bfaf25c4b38760bba171fe667cc82cde02e342da559b",
       "note": "Selected total cost uses the provider-reported value; the rate is retained for cross-checking."
+    },
+    {
+      "record_id": "deepseek-v4-1-flash",
+      "model_id": "deepseek-flash",
+      "model": "DeepSeek V4.1 Flash",
+      "input_usd_per_million": 0.3,
+      "output_usd_per_million": 1.2,
+      "rate_origin_kind": "private_campaign_configuration_snapshot",
+      "official_reference_url": "https://api-docs.deepseek.com/quick_start/pricing/",
+      "configuration_snapshot_sha256": "8048c80ca15cebfabab8d0b6c688f6b247df67f0299985ec219e3907fcda1a78",
+      "note": "Conservative peak-rate estimate with uncached input; not an actual invoice. Thinking tokens are included in billed output."
+    },
+    {
+      "record_id": "mistral-medium-3-5",
+      "model_id": "mistral-medium-3-5",
+      "model": "Mistral Medium 3.5",
+      "input_usd_per_million": 1.5,
+      "output_usd_per_million": 7.5,
+      "rate_origin_kind": "official_provider_documentation",
+      "official_reference_url": "https://docs.mistral.ai/getting-started/models/models_overview/",
+      "configuration_snapshot_sha256": null,
+      "note": "Campaign rate recorded with the Mistral benchmark runs; provider output does not separate reasoning tokens."
+    },
+    {
+      "record_id": "mistral-small-2603",
+      "model_id": "mistral-small-2603",
+      "model": "Mistral Small 4",
+      "input_usd_per_million": 0.15,
+      "output_usd_per_million": 0.6,
+      "rate_origin_kind": "official_provider_documentation",
+      "official_reference_url": "https://docs.mistral.ai/getting-started/models/models_overview/",
+      "configuration_snapshot_sha256": null,
+      "note": "Campaign rate recorded with the Mistral benchmark runs; provider output does not separate reasoning tokens."
     }
   ]
 }

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build the canonical 14x60 chart collection used by the paper and public site.
+"""Build the canonical 17x60 chart collection used by the public repository and site.
 
 The script does not modify ``uniaibench/paper/`` or any website source. It selects
 the updated pages that correspond to the chart concepts exposed by the paper and
@@ -25,10 +25,10 @@ rl_config.invariant = 1
 
 
 ANALYSIS_DIR = Path(__file__).resolve().parents[1]
-OUTPUT_DIR = ANALYSIS_DIR / "grafici_principali_14x60"
+OUTPUT_DIR = ANALYSIS_DIR / "grafici_principali_17x60"
 FIGURE_DIR = OUTPUT_DIR / "figures"
 PDF_DIR = OUTPUT_DIR / "output" / "pdf"
-OUTPUT_PDF = PDF_DIR / "grafici_principali_benchmark_14x60.pdf"
+OUTPUT_PDF = PDF_DIR / "grafici_principali_benchmark_17x60.pdf"
 PUBLIC_SITE_FIGURE_DIR = ANALYSIS_DIR / "figures" / "site"
 
 
@@ -203,7 +203,7 @@ def main() -> None:
 
     writer.add_metadata(
         {
-            "/Title": "UniAIBench - Main benchmark charts (14 x 60)",
+            "/Title": "UniAIBench - Main benchmark charts (17 x 60)",
             "/Subject": "Correctness, cost, tokens, and response time",
             "/Author": "UniAIBench",
         }
@@ -212,8 +212,8 @@ def main() -> None:
         writer.write(stream)
 
     manifest = {
-        "collection": "main_benchmark_charts_14x60",
-        "models": 14,
+        "collection": "main_benchmark_charts_17x60",
+        "models": 17,
         "common_exercises": 60,
         "analysis_3_exercises": 33,
         "physics_2_exercises": 27,

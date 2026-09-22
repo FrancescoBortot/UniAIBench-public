@@ -13,7 +13,7 @@ rl_config.invariant = 1
 
 
 ROOT = Path(__file__).resolve().parents[2]
-OUTPUT = ROOT / "paper" / "figures" / "model_technical_specifications.pdf"
+OUTPUT = ROOT / "analysis" / "output" / "model_technical_specifications_17x60.pdf"
 
 INK = colors.HexColor("#172431")
 NAVY = colors.HexColor("#17324D")
@@ -27,6 +27,7 @@ PROVIDER_COLORS = {
     "Google": colors.HexColor("#2363C7"),
     "DeepSeek": colors.HexColor("#5B4BCE"),
     "xAI": colors.HexColor("#202124"),
+    "Mistral": colors.HexColor("#F05A28"),
 }
 
 
@@ -39,8 +40,8 @@ CATALOG = ROOT / "analysis" / "data" / "model_catalog.json"
 def load_catalog() -> dict[str, object]:
     payload = json.loads(CATALOG.read_text(encoding="utf-8"))
     rows = payload.get("models")
-    if not isinstance(rows, list) or len(rows) != 14:
-        raise ValueError("model_catalog.json must contain exactly 14 model configurations")
+    if not isinstance(rows, list) or len(rows) != 17:
+        raise ValueError("model_catalog.json must contain exactly 17 model configurations")
     return payload
 
 
@@ -128,7 +129,7 @@ def build_pdf():
     story = [
         para("Technical specifications of the evaluated models", title_style),
         para(
-            "A priori comparison of the 14 benchmark configurations. No benchmark outcome is included. "
+            "A priori comparison of the 17 benchmark configurations. No benchmark outcome is included. "
             "Token limits and model status refer to first-party documentation available on "
             f"{CATALOG_DATA['technical_snapshot_date']}.",
             subtitle_style,
@@ -216,7 +217,7 @@ def build_pdf():
         para(
             "Primary sources: OpenAI model documentation; Anthropic model overview and release notes; Gemini API "
             "model and deprecation documentation; Gemma 4 model card; DeepSeek V4 release and pricing documentation; "
-            "xAI model documentation.",
+            "xAI model documentation; and Mistral model documentation.",
             note_style,
         )
     )
