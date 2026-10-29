@@ -25,10 +25,10 @@ OUTPUT_DIR = TIME_DIR / "alternatives_en"
 FIGURE_DIR = OUTPUT_DIR / "figures"
 PDF_DIR = OUTPUT_DIR / "output" / "pdf"
 RENDERED_DIR = OUTPUT_DIR / "output" / "rendered"
-SUMMARY_PATH = TIME_DIR / "tables" / "tempi_modelli_17x60.csv"
+SUMMARY_PATH = TIME_DIR / "tables" / "tempi_modelli_21x60.csv"
 SOURCE_MANIFEST = TIME_DIR / "MANIFEST.json"
 
-FOOTER = "Common panel: 60 exercises, 17 models, 1,020 macro-averaged cells | English alternatives"
+FOOTER = "Common panel: 60 exercises, 21 models, 1,260 macro-averaged cells | English alternatives"
 TIME_MIN, TIME_MAX = 15.0, 500.0
 
 SHORT_NAMES = {
@@ -40,6 +40,10 @@ SHORT_NAMES = {
     "DeepSeek V4 Pro": "DS Pro",
     "DeepSeek V4.1 Flash": "DS 4.1 Flash",
     "GPT-5.6 Sol": "GPT-5.6",
+    "GPT-6.1 Sol": "GPT-6.1",
+    "GPT-6 Luna": "GPT-6 Luna",
+    "Claude Opus 5.5": "Opus 5.5",
+    "Claude Sonnet 5.5": "Sonnet 5.5",
     "Gemini 3.1 Pro Preview": "Gemini Pro",
     "Gemini 3.5 Flash": "Gemini Flash",
     "Gemma 4 31B IT": "Gemma",
@@ -78,8 +82,8 @@ def load_summary() -> list[dict[str, Any]]:
             row[key] = float(row[key])
         row["time_rank"] = int(row["time_rank"])
         result.append(row)
-    if len(result) != 17 or len({row["model"] for row in result}) != 17:
-        raise RuntimeError("Expected exactly 17 models")
+    if len(result) != 21 or len({row["model"] for row in result}) != 21:
+        raise RuntimeError("Expected exactly 21 models")
     return result
 
 
@@ -174,7 +178,7 @@ def page_dual_ranking(summary: list[dict[str, Any]]) -> Drawing:
     base.add_text(drawing, 390, 121, "farther right = more correct", 6.5, base.MUTED, anchor="middle")
     base.add_text(drawing, 681, 121, "farther left = faster", 6.5, base.MUTED, anchor="middle")
 
-    row_top, row_h = 132, 25.0
+    row_top, row_h = 132, min(25.0, 350 / max(len(rows), 1))
     base.add_alternating_rows(drawing, row_top, row_h, len(rows), x=40, width=770)
     acc_x0, acc_x1 = 285, 495
     time_x0, time_x1 = 575, 765
@@ -241,7 +245,7 @@ def page_speed_bars(summary: list[dict[str, Any]]) -> Drawing:
         base.add_rect(drawing, x, 112, 18, 8, accuracy_color(float(accuracy)), base.WHITE, 0.4)
         base.add_text(drawing, x + 22, 119, f"{accuracy}%", 5.8, base.MUTED)
 
-    row_top, row_h = 132, 25.0
+    row_top, row_h = 132, min(25.0, 350 / max(len(rows), 1))
     base.add_alternating_rows(drawing, row_top, row_h, len(rows), x=40, width=770)
     bar_x0, bar_x1 = 285, 655
     speed_max = 175.0
@@ -363,7 +367,7 @@ def page_correlation_outliers(summary: list[dict[str, Any]], main_report: bool =
             drawing, 798, 43, "OPTION 4", 7.0, base.MUTED,
             anchor="end", font="Helvetica-Bold",
         )
-    base.add_text(drawing, 44, 69, "Correlation and model deviations | 17 models x 60 common exercises", 10.2, base.MUTED)
+    base.add_text(drawing, 44, 69, "Correlation and model deviations | 21 models x 60 common exercises", 10.2, base.MUTED)
 
     takeaway_fill = base.blend(base.WHITE, base.GREEN, 0.10)
     takeaway_stroke = base.blend(base.WHITE, base.GREEN, 0.38)
@@ -447,6 +451,10 @@ def page_correlation_outliers(summary: list[dict[str, Any]], main_report: bool =
         "DeepSeek V4 Flash": (-5, 18),
         "DeepSeek V4 Pro": (8, 15),
         "GPT-5.6 Sol": (-8, -10),
+        "Claude Sonnet 5.5": (8, -14),
+        "Claude Opus 5.5": (8, -26),
+        "GPT-6 Luna": (8, -15),
+        "GPT-6.1 Sol": (8, -15),
     }
     for row in rows:
         x = scatter_x(row["median_seconds"])
@@ -467,8 +475,9 @@ def page_correlation_outliers(summary: list[dict[str, Any]], main_report: bool =
     # Residual plot: all models, sorted by deviation from the fitted trend.
     residual_rows = sorted(rows, key=lambda row: -row["residual_pp"])
     residual_x0, residual_x1 = 650.0, 800.0
-    residual_min, residual_max = -16.0, 18.0
-    residual_top, row_h = 176.0, 22.4
+    residual_min = min(-16.0, math.floor(min(row["residual_pp"] for row in rows) / 5) * 5 - 1)
+    residual_max = max(18.0, math.ceil(max(row["residual_pp"] for row in rows) / 5) * 5 + 1)
+    residual_top, row_h = 176.0, min(22.4, 322 / max(len(residual_rows), 1))
 
     def residual_x(value: float) -> float:
         return residual_x0 + (residual_x1 - residual_x0) * (value - residual_min) / (residual_max - residual_min)
@@ -477,7 +486,7 @@ def page_correlation_outliers(summary: list[dict[str, Any]], main_report: bool =
     base.add_text(drawing, 685, 160, "BELOW EXPECTED", 6.2, base.RED, anchor="middle", font="Helvetica-Bold")
     base.add_text(drawing, 758, 160, "ABOVE EXPECTED", 6.2, base.GREEN, anchor="middle", font="Helvetica-Bold")
     base.add_text(drawing, 800, 143, "ACCURACY GAP (POINTS)", 6.2, base.MUTED, anchor="end")
-    for value in (-15, -10, -5, 0, 5, 10, 15):
+    for value in range(math.ceil(residual_min / 5) * 5, math.floor(residual_max / 5) * 5 + 1, 5):
         x = residual_x(float(value))
         base.add_line(drawing, x, residual_top, x, residual_top + row_h * len(residual_rows), base.GRID if value else base.NAVY, 1.0 if value == 0 else 0.55)
         base.add_text(drawing, x, 510, f"{value:+d}", 6.5, base.NAVY, anchor="middle")
@@ -502,9 +511,9 @@ def page_correlation_outliers(summary: list[dict[str, Any]], main_report: bool =
         7.1, base.MUTED,
     )
     footer = (
-        "Common panel: 60 exercises (33 Analysis 3, 27 Physics 2), 17 models, 1,020 macro-averaged cells"
+        "Common panel: 60 exercises (33 Analysis 3, 27 Physics 2), 21 models, 1,260 macro-averaged cells"
         if main_report
-        else "Bounded saturating trend | descriptive association, not causation | 60 exercises, 17 models, 1,020 cells"
+        else "Bounded saturating trend | descriptive association, not causation | 60 exercises, 21 models, 1,260 cells"
     )
     base.add_text(drawing, 44, 581, footer, 6.6, base.MUTED)
     if main_report:
@@ -521,7 +530,7 @@ def export_one(name: str, title: str, drawing: Drawing) -> dict[str, Path]:
     renderSVG.drawToFile(drawing, str(svg_path))
     pdf = canvas.Canvas(str(pdf_path), pagesize=(base.PAGE_W, base.PAGE_H), pageCompression=1)
     pdf.setTitle(title)
-    pdf.setSubject("Speed and correctness chart alternative for the balanced 17 x 60 benchmark")
+    pdf.setSubject("Speed and correctness chart alternative for the balanced 21 x 60 benchmark")
     pdf.setAuthor("Francesco Bortot")
     pdf.setCreator("UniAIBench figure generator")
     renderPDF.draw(drawing, pdf, 0, 0)
@@ -574,7 +583,7 @@ These are separate English previews. They do not replace or modify the main resp
             str(SUMMARY_PATH.relative_to(ANALYSIS_DIR)): sha256_file(SUMMARY_PATH),
             str(SOURCE_MANIFEST.relative_to(ANALYSIS_DIR)): sha256_file(SOURCE_MANIFEST),
         },
-        "counts": {"models": 17, "common_items": 60, "alternatives": 4, "pages_per_pdf": 1},
+        "counts": {"models": 21, "common_items": 60, "alternatives": 4, "pages_per_pdf": 1},
         "main_report_modified": False,
         "outputs": {str(readme.relative_to(OUTPUT_DIR)): sha256_file(readme)},
     }

@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "technical_snapshot_date": "2026-09-16",
-  "benchmark_snapshot_date": "2026-09-16",
-  "latest_price_verification_date": "2026-09-16",
+  "technical_snapshot_date": "2026-10-15",
+  "benchmark_snapshot_date": "2026-10-15",
+  "latest_price_verification_date": "2026-10-15",
   "currency": "USD",
   "price_unit": "per 1,000,000 tokens",
   "models": [
@@ -34,7 +34,8 @@
       "benchmark_input_usd_per_million": 5.0,
       "benchmark_output_usd_per_million": 30.0,
       "benchmark_price_source_kind": "public_pricing_manifest_record",
-      "benchmark_price_source": "uniaibench/analysis/data/benchmark_pricing_manifest.json#gpt-5.6-sol"
+      "benchmark_price_source": "uniaibench/analysis/data/benchmark_pricing_manifest.json#gpt-5.6-sol",
+      "latest_price_verification_date": "2026-09-16"
     },
     {
       "provider": "OpenAI",
@@ -64,7 +65,8 @@
       "benchmark_input_usd_per_million": 2.0,
       "benchmark_output_usd_per_million": 8.0,
       "benchmark_price_source_kind": "public_pricing_manifest_record",
-      "benchmark_price_source": "uniaibench/analysis/data/benchmark_pricing_manifest.json#o3-2025-04-16"
+      "benchmark_price_source": "uniaibench/analysis/data/benchmark_pricing_manifest.json#o3-2025-04-16",
+      "latest_price_verification_date": "2026-09-16"
     },
     {
       "provider": "OpenAI",
@@ -94,7 +96,70 @@
       "benchmark_input_usd_per_million": 2.0,
       "benchmark_output_usd_per_million": 8.0,
       "benchmark_price_source_kind": "public_pricing_manifest_record",
-      "benchmark_price_source": "uniaibench/analysis/data/benchmark_pricing_manifest.json#gpt-4.1-2025-04-14"
+      "benchmark_price_source": "uniaibench/analysis/data/benchmark_pricing_manifest.json#gpt-4.1-2025-04-14",
+      "latest_price_verification_date": "2026-09-16"
+    },
+    {
+      "provider": "OpenAI",
+      "model": "GPT-6.1 Sol",
+      "id": "gpt-6.1-sol",
+      "release": "29 Sep 2026",
+      "release_note": "GA",
+      "parameters": "Not disclosed",
+      "weights": "No",
+      "architecture": "Closed Sol-tier reasoning model; architecture undisclosed",
+      "reasoning": "Configurable effort: low to max; benchmark: xhigh",
+      "context": "1,050,000",
+      "output": "128,000",
+      "modalities": "Not recorded in the frozen specification",
+      "cutoff": "30 Apr 2026 knowledge",
+      "model_url": "https://openai.com/index/introducing-gpt-6-1-sol/",
+      "provider_display": "OpenAI",
+      "api_display": "gpt-6.1-sol",
+      "api_url": "https://developers.openai.com/api/docs/models/gpt-6.1-sol",
+      "public_release_display": "29 Sep 2026; GA",
+      "open_weights_display": "No",
+      "benchmark_reasoning_display": "Configurable effort; `xhigh`",
+      "latest_verified_rate": "Input $2; cached input $0.10; output $10",
+      "benchmark_rate": "Input $2; output $10",
+      "pricing_source_label": "OpenAI",
+      "pricing_source_url": "https://developers.openai.com/api/docs/models/gpt-6.1-sol",
+      "benchmark_input_usd_per_million": 2.0,
+      "benchmark_output_usd_per_million": 10.0,
+      "benchmark_price_source_kind": "public_pricing_manifest_record",
+      "benchmark_price_source": "uniaibench/analysis/data/benchmark_pricing_manifest.json#gpt-6.1-sol",
+      "latest_price_verification_date": "2026-10-15"
+    },
+    {
+      "provider": "OpenAI",
+      "model": "GPT-6 Luna",
+      "id": "gpt-6-luna",
+      "release": "22 Sep 2026",
+      "release_note": "GA",
+      "parameters": "Not disclosed",
+      "weights": "No",
+      "architecture": "Closed efficient reasoning model; architecture undisclosed",
+      "reasoning": "Configurable effort: none to max; benchmark: xhigh",
+      "context": "1,050,000",
+      "output": "128,000",
+      "modalities": "Not recorded in the frozen specification",
+      "cutoff": "18 May 2026 knowledge",
+      "model_url": "https://developers.openai.com/api/docs/models/gpt-6-luna",
+      "provider_display": "OpenAI",
+      "api_display": "gpt-6-luna",
+      "api_url": "https://developers.openai.com/api/docs/models/gpt-6-luna",
+      "public_release_display": "22 Sep 2026; GA",
+      "open_weights_display": "No",
+      "benchmark_reasoning_display": "Configurable effort; `xhigh`",
+      "latest_verified_rate": "Input $0.10; cached input $0.01; output $0.50",
+      "benchmark_rate": "Input $0.1; output $0.5",
+      "pricing_source_label": "OpenAI",
+      "pricing_source_url": "https://developers.openai.com/api/docs/models/gpt-6-luna",
+      "benchmark_input_usd_per_million": 0.1,
+      "benchmark_output_usd_per_million": 0.5,
+      "benchmark_price_source_kind": "public_pricing_manifest_record",
+      "benchmark_price_source": "uniaibench/analysis/data/benchmark_pricing_manifest.json#gpt-6-luna",
+      "latest_price_verification_date": "2026-10-15"
     },
     {
       "provider": "Anthropic",
@@ -124,7 +189,8 @@
       "benchmark_input_usd_per_million": 10.0,
       "benchmark_output_usd_per_million": 50.0,
       "benchmark_price_source_kind": "public_pricing_manifest_record",
-      "benchmark_price_source": "uniaibench/analysis/data/benchmark_pricing_manifest.json#claude-fable-5"
+      "benchmark_price_source": "uniaibench/analysis/data/benchmark_pricing_manifest.json#claude-fable-5",
+      "latest_price_verification_date": "2026-09-16"
     },
     {
       "provider": "Anthropic",
@@ -154,7 +220,8 @@
       "benchmark_input_usd_per_million": 3.0,
       "benchmark_output_usd_per_million": 15.0,
       "benchmark_price_source_kind": "public_pricing_manifest_record",
-      "benchmark_price_source": "uniaibench/analysis/data/benchmark_pricing_manifest.json#claude-sonnet-4-5-20250929"
+      "benchmark_price_source": "uniaibench/analysis/data/benchmark_pricing_manifest.json#claude-sonnet-4-5-20250929",
+      "latest_price_verification_date": "2026-09-16"
     },
     {
       "provider": "Anthropic",
@@ -184,7 +251,70 @@
       "benchmark_input_usd_per_million": 1.0,
       "benchmark_output_usd_per_million": 5.0,
       "benchmark_price_source_kind": "public_pricing_manifest_record",
-      "benchmark_price_source": "uniaibench/analysis/data/benchmark_pricing_manifest.json#claude-haiku-4-5-20251001"
+      "benchmark_price_source": "uniaibench/analysis/data/benchmark_pricing_manifest.json#claude-haiku-4-5-20251001",
+      "latest_price_verification_date": "2026-09-16"
+    },
+    {
+      "provider": "Anthropic",
+      "model": "Claude Opus 5.5",
+      "id": "claude-opus-5-5",
+      "release": "22 Sep 2026",
+      "release_note": "GA",
+      "parameters": "Not disclosed",
+      "weights": "No",
+      "architecture": "Closed Opus-tier hybrid reasoning model",
+      "reasoning": "Always-on adaptive thinking; benchmark: effort high",
+      "context": "1,000,000",
+      "output": "128,000",
+      "modalities": "Not recorded in the frozen specification",
+      "cutoff": "Jun 2026 reliable/training",
+      "model_url": "https://www.anthropic.com/news/claude-opus-5-5",
+      "provider_display": "Anthropic",
+      "api_display": "claude-opus-5-5",
+      "api_url": "https://platform.claude.com/docs/en/models/opus-5-5/overview",
+      "public_release_display": "22 Sep 2026; GA",
+      "open_weights_display": "No",
+      "benchmark_reasoning_display": "Adaptive thinking; effort `high`",
+      "latest_verified_rate": "Input $4; cache read $0.20; output $20",
+      "benchmark_rate": "Input $4; output $20",
+      "pricing_source_label": "Anthropic",
+      "pricing_source_url": "https://platform.claude.com/docs/en/models/opus-5-5/overview",
+      "benchmark_input_usd_per_million": 4.0,
+      "benchmark_output_usd_per_million": 20.0,
+      "benchmark_price_source_kind": "public_pricing_manifest_record",
+      "benchmark_price_source": "uniaibench/analysis/data/benchmark_pricing_manifest.json#claude-opus-5-5",
+      "latest_price_verification_date": "2026-10-15"
+    },
+    {
+      "provider": "Anthropic",
+      "model": "Claude Sonnet 5.5",
+      "id": "claude-sonnet-5-5",
+      "release": "28 Sep 2026",
+      "release_note": "GA",
+      "parameters": "Not disclosed",
+      "weights": "No",
+      "architecture": "Closed Sonnet-tier hybrid reasoning model",
+      "reasoning": "Adaptive thinking; benchmark: effort high",
+      "context": "1,000,000",
+      "output": "128,000",
+      "modalities": "Not recorded in the frozen specification",
+      "cutoff": "Jun 2026 reliable/training",
+      "model_url": "https://www.anthropic.com/news/claude-sonnet-5-5",
+      "provider_display": "Anthropic",
+      "api_display": "claude-sonnet-5-5",
+      "api_url": "https://platform.claude.com/docs/en/models/sonnet-5-5/overview",
+      "public_release_display": "28 Sep 2026; GA",
+      "open_weights_display": "No",
+      "benchmark_reasoning_display": "Adaptive thinking; effort `high`",
+      "latest_verified_rate": "Input $2; cache read $0.10; output $10",
+      "benchmark_rate": "Input $2; output $10",
+      "pricing_source_label": "Anthropic",
+      "pricing_source_url": "https://platform.claude.com/docs/en/models/sonnet-5-5/overview",
+      "benchmark_input_usd_per_million": 2.0,
+      "benchmark_output_usd_per_million": 10.0,
+      "benchmark_price_source_kind": "public_pricing_manifest_record",
+      "benchmark_price_source": "uniaibench/analysis/data/benchmark_pricing_manifest.json#claude-sonnet-5-5",
+      "latest_price_verification_date": "2026-10-15"
     },
     {
       "provider": "Google",
@@ -214,7 +344,8 @@
       "benchmark_input_usd_per_million": 1.5,
       "benchmark_output_usd_per_million": 9.0,
       "benchmark_price_source_kind": "public_pricing_manifest_record",
-      "benchmark_price_source": "uniaibench/analysis/data/benchmark_pricing_manifest.json#gemini-3.5-flash"
+      "benchmark_price_source": "uniaibench/analysis/data/benchmark_pricing_manifest.json#gemini-3.5-flash",
+      "latest_price_verification_date": "2026-09-16"
     },
     {
       "provider": "Google",
@@ -244,7 +375,8 @@
       "benchmark_input_usd_per_million": 2.0,
       "benchmark_output_usd_per_million": 12.0,
       "benchmark_price_source_kind": "public_pricing_manifest_record",
-      "benchmark_price_source": "uniaibench/analysis/data/benchmark_pricing_manifest.json#gemini-3.1-pro-preview"
+      "benchmark_price_source": "uniaibench/analysis/data/benchmark_pricing_manifest.json#gemini-3.1-pro-preview",
+      "latest_price_verification_date": "2026-09-16"
     },
     {
       "provider": "Google",
@@ -274,7 +406,8 @@
       "benchmark_input_usd_per_million": 0.0,
       "benchmark_output_usd_per_million": 0.0,
       "benchmark_price_source_kind": "public_pricing_manifest_record",
-      "benchmark_price_source": "uniaibench/analysis/data/benchmark_pricing_manifest.json#gemma-4-31b-it"
+      "benchmark_price_source": "uniaibench/analysis/data/benchmark_pricing_manifest.json#gemma-4-31b-it",
+      "latest_price_verification_date": "2026-09-16"
     },
     {
       "provider": "DeepSeek",
@@ -304,7 +437,8 @@
       "benchmark_input_usd_per_million": 0.14,
       "benchmark_output_usd_per_million": 0.28,
       "benchmark_price_source_kind": "public_pricing_manifest_record",
-      "benchmark_price_source": "uniaibench/analysis/data/benchmark_pricing_manifest.json#deepseek-v4-flash-thinking"
+      "benchmark_price_source": "uniaibench/analysis/data/benchmark_pricing_manifest.json#deepseek-v4-flash-thinking",
+      "latest_price_verification_date": "2026-09-16"
     },
     {
       "provider": "DeepSeek",
@@ -334,7 +468,8 @@
       "benchmark_input_usd_per_million": 0.14,
       "benchmark_output_usd_per_million": 0.28,
       "benchmark_price_source_kind": "public_pricing_manifest_record",
-      "benchmark_price_source": "uniaibench/analysis/data/benchmark_pricing_manifest.json#deepseek-v4-flash-no-thinking"
+      "benchmark_price_source": "uniaibench/analysis/data/benchmark_pricing_manifest.json#deepseek-v4-flash-no-thinking",
+      "latest_price_verification_date": "2026-09-16"
     },
     {
       "provider": "DeepSeek",
@@ -364,67 +499,8 @@
       "benchmark_input_usd_per_million": 0.435,
       "benchmark_output_usd_per_million": 0.87,
       "benchmark_price_source_kind": "public_pricing_manifest_record",
-      "benchmark_price_source": "uniaibench/analysis/data/benchmark_pricing_manifest.json#deepseek-v4-pro"
-    },
-    {
-      "provider": "xAI",
-      "model": "Grok 4.5",
-      "id": "grok-4.5",
-      "release": "16 Jul 2026",
-      "release_note": "public launch",
-      "parameters": "Not disclosed",
-      "weights": "No",
-      "architecture": "Closed frontier model; architecture undisclosed",
-      "reasoning": "Configurable low/medium/high; benchmark: high",
-      "context": "500,000",
-      "output": "Not specified",
-      "modalities": "Text, image to text",
-      "cutoff": "1 Feb 2026 knowledge",
-      "model_url": "https://x.ai/news/grok-4-5",
-      "provider_display": "xAI",
-      "api_display": "grok-4.5",
-      "api_url": "https://docs.x.ai/developers/models/grok-4.5",
-      "public_release_display": "16 Jul 2026; public launch",
-      "open_weights_display": "No",
-      "benchmark_reasoning_display": "Configurable reasoning; `high`",
-      "latest_verified_rate": "Input $2; cached input $0.30; output $6; over 200k: $4 / $12",
-      "benchmark_rate": "Input $2; output $6",
-      "pricing_source_label": "xAI",
-      "pricing_source_url": "https://docs.x.ai/developers/models/grok-4.5",
-      "benchmark_input_usd_per_million": 2.0,
-      "benchmark_output_usd_per_million": 6.0,
-      "benchmark_price_source_kind": "public_pricing_manifest_record",
-      "benchmark_price_source": "uniaibench/analysis/data/benchmark_pricing_manifest.json#grok-4.5"
-    },
-    {
-      "provider": "xAI",
-      "model": "Grok 4.3",
-      "id": "grok-4.3",
-      "release": "By 6 May 2026*",
-      "release_note": "first dated official use",
-      "parameters": "Not disclosed",
-      "weights": "No",
-      "architecture": "Closed general-purpose model; architecture undisclosed",
-      "reasoning": "Configurable none/low/medium/high; benchmark: high",
-      "context": "1,000,000",
-      "output": "Not specified",
-      "modalities": "Text, image to text",
-      "cutoff": "Not disclosed",
-      "model_url": "https://x.ai/news/grok-amazon-bedrock",
-      "provider_display": "xAI",
-      "api_display": "grok-4.3",
-      "api_url": "https://docs.x.ai/developers/models/grok-4.3",
-      "public_release_display": "By 6 May 2026; earliest dated official use identified",
-      "open_weights_display": "No",
-      "benchmark_reasoning_display": "Configurable reasoning; `high`",
-      "latest_verified_rate": "Input $1.25; cached input $0.20; output $2.50; over 200k: $2.50 / $5",
-      "benchmark_rate": "Input $1.25; output $2.50",
-      "pricing_source_label": "xAI",
-      "pricing_source_url": "https://docs.x.ai/developers/models/grok-4.3",
-      "benchmark_input_usd_per_million": 1.25,
-      "benchmark_output_usd_per_million": 2.5,
-      "benchmark_price_source_kind": "public_pricing_manifest_record",
-      "benchmark_price_source": "uniaibench/analysis/data/benchmark_pricing_manifest.json#grok-4.3"
+      "benchmark_price_source": "uniaibench/analysis/data/benchmark_pricing_manifest.json#deepseek-v4-pro",
+      "latest_price_verification_date": "2026-09-16"
     },
     {
       "provider": "DeepSeek",
@@ -454,7 +530,70 @@
       "benchmark_input_usd_per_million": 0.3,
       "benchmark_output_usd_per_million": 1.2,
       "benchmark_price_source_kind": "public_pricing_manifest_record",
-      "benchmark_price_source": "uniaibench/analysis/data/benchmark_pricing_manifest.json#deepseek-v4-1-flash"
+      "benchmark_price_source": "uniaibench/analysis/data/benchmark_pricing_manifest.json#deepseek-v4-1-flash",
+      "latest_price_verification_date": "2026-09-16"
+    },
+    {
+      "provider": "xAI",
+      "model": "Grok 4.5",
+      "id": "grok-4.5",
+      "release": "16 Jul 2026",
+      "release_note": "public launch",
+      "parameters": "Not disclosed",
+      "weights": "No",
+      "architecture": "Closed frontier model; architecture undisclosed",
+      "reasoning": "Configurable low/medium/high; benchmark: high",
+      "context": "500,000",
+      "output": "Not specified",
+      "modalities": "Text, image to text",
+      "cutoff": "1 Feb 2026 knowledge",
+      "model_url": "https://x.ai/news/grok-4-5",
+      "provider_display": "xAI",
+      "api_display": "grok-4.5",
+      "api_url": "https://docs.x.ai/developers/models/grok-4.5",
+      "public_release_display": "16 Jul 2026; public launch",
+      "open_weights_display": "No",
+      "benchmark_reasoning_display": "Configurable reasoning; `high`",
+      "latest_verified_rate": "Input $2; cached input $0.30; output $6; over 200k: $4 / $12",
+      "benchmark_rate": "Input $2; output $6",
+      "pricing_source_label": "xAI",
+      "pricing_source_url": "https://docs.x.ai/developers/models/grok-4.5",
+      "benchmark_input_usd_per_million": 2.0,
+      "benchmark_output_usd_per_million": 6.0,
+      "benchmark_price_source_kind": "public_pricing_manifest_record",
+      "benchmark_price_source": "uniaibench/analysis/data/benchmark_pricing_manifest.json#grok-4.5",
+      "latest_price_verification_date": "2026-09-16"
+    },
+    {
+      "provider": "xAI",
+      "model": "Grok 4.3",
+      "id": "grok-4.3",
+      "release": "By 6 May 2026*",
+      "release_note": "first dated official use",
+      "parameters": "Not disclosed",
+      "weights": "No",
+      "architecture": "Closed general-purpose model; architecture undisclosed",
+      "reasoning": "Configurable none/low/medium/high; benchmark: high",
+      "context": "1,000,000",
+      "output": "Not specified",
+      "modalities": "Text, image to text",
+      "cutoff": "Not disclosed",
+      "model_url": "https://x.ai/news/grok-amazon-bedrock",
+      "provider_display": "xAI",
+      "api_display": "grok-4.3",
+      "api_url": "https://docs.x.ai/developers/models/grok-4.3",
+      "public_release_display": "By 6 May 2026; earliest dated official use identified",
+      "open_weights_display": "No",
+      "benchmark_reasoning_display": "Configurable reasoning; `high`",
+      "latest_verified_rate": "Input $1.25; cached input $0.20; output $2.50; over 200k: $2.50 / $5",
+      "benchmark_rate": "Input $1.25; output $2.50",
+      "pricing_source_label": "xAI",
+      "pricing_source_url": "https://docs.x.ai/developers/models/grok-4.3",
+      "benchmark_input_usd_per_million": 1.25,
+      "benchmark_output_usd_per_million": 2.5,
+      "benchmark_price_source_kind": "public_pricing_manifest_record",
+      "benchmark_price_source": "uniaibench/analysis/data/benchmark_pricing_manifest.json#grok-4.3",
+      "latest_price_verification_date": "2026-09-16"
     },
     {
       "provider": "Mistral",
@@ -484,7 +623,8 @@
       "benchmark_input_usd_per_million": 1.5,
       "benchmark_output_usd_per_million": 7.5,
       "benchmark_price_source_kind": "public_pricing_manifest_record",
-      "benchmark_price_source": "uniaibench/analysis/data/benchmark_pricing_manifest.json#mistral-medium-3-5"
+      "benchmark_price_source": "uniaibench/analysis/data/benchmark_pricing_manifest.json#mistral-medium-3-5",
+      "latest_price_verification_date": "2026-09-16"
     },
     {
       "provider": "Mistral",
@@ -514,7 +654,8 @@
       "benchmark_input_usd_per_million": 0.15,
       "benchmark_output_usd_per_million": 0.6,
       "benchmark_price_source_kind": "public_pricing_manifest_record",
-      "benchmark_price_source": "uniaibench/analysis/data/benchmark_pricing_manifest.json#mistral-small-2603"
+      "benchmark_price_source": "uniaibench/analysis/data/benchmark_pricing_manifest.json#mistral-small-2603",
+      "latest_price_verification_date": "2026-09-16"
     }
   ]
 }

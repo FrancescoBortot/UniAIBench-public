@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build focused response-time charts for the balanced 17 x 60 panel."""
+"""Build focused response-time charts for the balanced 21 x 60 panel."""
 
 from __future__ import annotations
 
@@ -44,7 +44,7 @@ RETRY = HexColor("#D1495B")
 TEXT = {
     "it": {
         "pdf_title": "Grafici focus - tempo di risposta",
-        "pdf_subject": "Benchmark 17 x 60: tempo, token e correttezza",
+        "pdf_subject": "Benchmark 21 x 60: tempo, token e correttezza",
         "p1_title": "Classifica del tempo tipico",
         "p1_sub": "Tempo end-to-end su 60 esercizi comuni | ordinamento per mediana crescente",
         "how": "COME LEGGERE",
@@ -84,11 +84,11 @@ TEXT = {
         "time": "SEC.",
         "desired": "PIU CORRETTO E PIU VELOCE",
         "p4_note": "Risposte/ora = 3.600 diviso il tempo mediano. E una velocita tipica teorica per richieste eseguite in sequenza.",
-        "footer": "Panel comune: 60 esercizi (33 Analisi 3, 27 Fisica 2), 17 modelli, 1.020 celle macro-mediate",
+        "footer": "Panel comune: 60 esercizi (33 Analisi 3, 27 Fisica 2), 21 modelli, 1.260 celle macro-mediate",
     },
     "en": {
         "pdf_title": "Focused response-time charts",
-        "pdf_subject": "17 x 60 benchmark: response time, tokens, and correctness",
+        "pdf_subject": "21 x 60 benchmark: response time, tokens, and correctness",
         "p1_title": "Typical response-time ranking",
         "p1_sub": "End-to-end time across 60 common exercises | ordered by increasing median",
         "how": "HOW TO READ",
@@ -128,7 +128,7 @@ TEXT = {
         "time": "SEC.",
         "desired": "MORE CORRECT AND FASTER",
         "p4_note": "Responses/hour = 3,600 divided by median time. It is a theoretical typical rate for sequential requests.",
-        "footer": "Common panel: 60 exercises (33 Analysis 3, 27 Physics 2), 17 models, 1,020 macro-averaged cells",
+        "footer": "Common panel: 60 exercises (33 Analysis 3, 27 Physics 2), 21 models, 1,260 macro-averaged cells",
     },
 }
 
@@ -172,15 +172,15 @@ def validate(raw: list[dict[str, str]], quality: list[dict[str, str]]) -> list[d
     models = {row["model"] for row in raw}
     items = {row["item_key"] for row in raw}
     cells = Counter((row["model"], row["item_key"]) for row in raw)
-    if len(raw) != 1020 or len(models) != 17 or len(items) != 60:
-        raise RuntimeError("Balanced panel is not 17 x 60")
+    if len(raw) != 1260 or len(models) != 21 or len(items) != 60:
+        raise RuntimeError("Balanced panel is not 21 x 60")
     if any(value != 1 for value in cells.values()):
         raise RuntimeError("Model-item cells are not one-to-one")
     if any(not row["elapsed_seconds"] for row in raw):
         raise RuntimeError("Missing elapsed_seconds")
     selected = [row for row in quality if row["ranking_type"] == "matched_common_items" and row["scope"] == "overall"]
-    if len(selected) != 17 or {row["model"] for row in selected} != models:
-        raise RuntimeError("Quality rows do not match the 17-model panel")
+    if len(selected) != 21 or {row["model"] for row in selected} != models:
+        raise RuntimeError("Quality rows do not match the 21-model panel")
     return selected
 
 
@@ -480,14 +480,14 @@ def page_speed_accuracy(summary: list[dict[str, Any]], lang: str) -> Drawing:
 
 def write_tables(raw: list[dict[str, str]], summary: list[dict[str, Any]]) -> list[Path]:
     TABLE_DIR.mkdir(parents=True, exist_ok=True)
-    summary_path = TABLE_DIR / "tempi_modelli_17x60.csv"
+    summary_path = TABLE_DIR / "tempi_modelli_21x60.csv"
     fields = list(summary[0].keys())
     with summary_path.open("w", encoding="utf-8", newline="") as stream:
         writer = csv.DictWriter(stream, fieldnames=fields)
         writer.writeheader()
         writer.writerows(summary)
 
-    normalized_path = TABLE_DIR / "tempi_normalizzati_modello_esercizio_17x60.csv"
+    normalized_path = TABLE_DIR / "tempi_normalizzati_modello_esercizio_21x60.csv"
     medians = {
         item: statistics.median(float(row["elapsed_seconds"]) for row in raw if row["item_key"] == item)
         for item in {row["item_key"] for row in raw}
@@ -549,14 +549,14 @@ def export_set(lang: str, drawings: list[Drawing]) -> dict[str, Any]:
 def write_methodology(summary: list[dict[str, Any]]) -> Path:
     path = OUTPUT_DIR / "METODOLOGIA.md"
     path.write_text(
-        """# Metodologia - tempo di risposta 17 x 60
+        """# Metodologia - tempo di risposta 21 x 60
 
-- Panel: 17 modelli x 60 esercizi comuni = 1020 celle modello-esercizio.
+- Panel: 21 modelli x 60 esercizi comuni = 1260 celle modello-esercizio.
 - Composizione: 33 esercizi di Analisi 3 e 27 di Fisica 2, anni 2025-2026.
 - Tempo: `timing.elapsed_seconds` della run attiva selezionata dall'indice autorevole.
 - Semantica: il cronometro parte al primo dispatch, esclude l'attesa del semaforo locale e include chiamata API, generazione, backoff e retry.
 - Classifica: mediana crescente; dispersione principale Q1-Q3; media, P90 e totale restano visibili.
-- Heatmap: tempo della cella / mediana dei 17 modelli sullo stesso esercizio.
+- Heatmap: tempo della cella / mediana dei 21 modelli sullo stesso esercizio.
 - Driver: `tempo medio = token analitici medi x secondi effettivi per 1K / 1.000`.
 - Correttezza: macro-media sui medesimi 60 esercizi e giudizi attivi.
 - Velocita nel grafico congiunto: `risposte tipiche/ora = 3.600 / tempo mediano in secondi`.
@@ -602,16 +602,16 @@ def main() -> None:
             str(REFERENCE_PDF.relative_to(ANALYSIS_DIR)): sha256_file(REFERENCE_PDF),
         },
         "counts": {
-            "models": 17,
+            "models": 21,
             "common_items": 60,
             "analysis_3_items": 33,
             "physics_2_items": 27,
-            "model_item_cells": 1020,
+            "model_item_cells": 1260,
             "retry_rows": sum(float(row["retry_count"] or 0) > 0 for row in raw),
             "pages_per_pdf": 4,
         },
         "quality_checks": {
-            "balanced_17x60": True,
+            "balanced_21x60": True,
             "elapsed_complete": True,
             "quality_panel_matches": True,
             "active_source_manifest": str(SOURCE_MANIFEST.relative_to(ANALYSIS_DIR)),

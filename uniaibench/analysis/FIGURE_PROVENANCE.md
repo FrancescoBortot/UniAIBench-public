@@ -72,3 +72,8 @@ rankings are consequently defined as the deterministic aggregation of that
 public precision, rather than an inaccessible higher-precision private
 intermediate. The prompt-hash consistency flag is retained as an explicitly
 labelled upstream attestation because prompt hashes themselves are excluded.
+
+The complete fixed manuscript tree is bound by
+[`../paper_snapshot_sha256.json`](../paper_snapshot_sha256.json). The normal
+`make check` gate verifies its exact file inventory and SHA-256 hashes in read-only mode.
+Current 21-configuration chart generators write only analysis outputs.

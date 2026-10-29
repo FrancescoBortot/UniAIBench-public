@@ -25,7 +25,7 @@ not assert that third-party examination material is relicensed here.
 
 The exact input and output rates used for the current cost estimates are published
 in [`analysis/data/benchmark_pricing_manifest.json`](analysis/data/benchmark_pricing_manifest.json).
-Each of its 17 records gives the applied rate, an official provider reference,
+Each of its 21 records gives the applied rate, an official provider reference,
 and the origin class of the frozen value.
 
 When an applied rate came from a private operational campaign configuration,

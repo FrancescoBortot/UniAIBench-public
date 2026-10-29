@@ -75,8 +75,8 @@ EXPECTED_TABLES = {
     for key in ("ranking", "profile")
 } | {
     "model_coverage.csv",
-    "model_token_costs_17x60.csv",
-    "quality_token_cost_17x60.csv",
+    "model_token_costs_21x60.csv",
+    "quality_token_cost_21x60.csv",
     "token_cost_rates.csv",
     "deepseek_flash_thinking_vs_no_thinking.csv",
 }
@@ -245,6 +245,7 @@ def validate_resource_row(
             raise RuntimeError(f"Invalid Google visible-output arithmetic for {model} / {row['item_key']}")
     elif rule in {
         "anthropic_fable_output_includes_unseparated_hidden_thinking",
+        "anthropic_adaptive_output_includes_unseparated_hidden_thinking",
         "mistral_output_includes_unseparated_hidden_thinking",
     }:
         if visible is not None or not close(combined, provider_output) or not close(billed_output, provider_output):
@@ -607,8 +608,8 @@ def generate_tables(destination: Path) -> None:
     round_for_csv(build_coverage(scores, config)).to_csv(destination / "model_coverage.csv", index=False)
 
     summaries = build_token_summaries(resources, config)
-    write_csv(destination / "model_token_costs_17x60.csv", summaries)
-    write_csv(destination / "quality_token_cost_17x60.csv", build_quality(resources, summaries, config))
+    write_csv(destination / "model_token_costs_21x60.csv", summaries)
+    write_csv(destination / "quality_token_cost_21x60.csv", build_quality(resources, summaries, config))
     pd.DataFrame.from_records(build_price_rows(catalog, pricing, config)).to_csv(
         destination / "token_cost_rates.csv", index=False
     )

@@ -25,14 +25,16 @@
 			<text x="706.6575" y="469.27559055118115" style="font-family: Helvetica; font-size: 7.5px;fill: rgb(35%,43%,50%); stroke:none;" transform="translate(0,938) scale(1,-1)">P90</text>
 			<text x="765.4025" y="469.27559055118115" style="font-family: Helvetica; font-size: 7.5px;fill: rgb(35%,43%,50%); stroke:none;" transform="translate(0,938) scale(1,-1)">TOTAL 60</text>
 			<path d="M 44,461.275591 L 804,461.275591 Z" style="stroke: rgb(83%,87%,90%); stroke-linecap: butt; stroke-width: 1;"/>
-			<rect x="40" y="418.24029643353407" width="770" height="19.517647058823513" style="stroke: none; stroke-linecap: butt; stroke-width: 0; fill: rgb(96%,97%,98%); fill-rule: evenodd;"/>
-			<rect x="40" y="379.205002315887" width="770" height="19.517647058823513" style="stroke: none; stroke-linecap: butt; stroke-width: 0; fill: rgb(96%,97%,98%); fill-rule: evenodd;"/>
-			<rect x="40" y="340.16970819823996" width="770" height="19.517647058823513" style="stroke: none; stroke-linecap: butt; stroke-width: 0; fill: rgb(96%,97%,98%); fill-rule: evenodd;"/>
-			<rect x="40" y="301.13441408059293" width="770" height="19.517647058823513" style="stroke: none; stroke-linecap: butt; stroke-width: 0; fill: rgb(96%,97%,98%); fill-rule: evenodd;"/>
-			<rect x="40" y="262.09911996294585" width="770" height="19.517647058823513" style="stroke: none; stroke-linecap: butt; stroke-width: 0; fill: rgb(96%,97%,98%); fill-rule: evenodd;"/>
-			<rect x="40" y="223.06382584529877" width="770" height="19.517647058823542" style="stroke: none; stroke-linecap: butt; stroke-width: 0; fill: rgb(96%,97%,98%); fill-rule: evenodd;"/>
-			<rect x="40" y="184.02853172765174" width="770" height="19.517647058823542" style="stroke: none; stroke-linecap: butt; stroke-width: 0; fill: rgb(96%,97%,98%); fill-rule: evenodd;"/>
-			<rect x="40" y="144.99323761000466" width="770" height="19.517647058823542" style="stroke: none; stroke-linecap: butt; stroke-width: 0; fill: rgb(96%,97%,98%); fill-rule: evenodd;"/>
+			<rect x="40" y="425.67559055118113" width="770" height="15.800000000000011" style="stroke: none; stroke-linecap: butt; stroke-width: 0; fill: rgb(96%,97%,98%); fill-rule: evenodd;"/>
+			<rect x="40" y="394.0755905511811" width="770" height="15.800000000000011" style="stroke: none; stroke-linecap: butt; stroke-width: 0; fill: rgb(96%,97%,98%); fill-rule: evenodd;"/>
+			<rect x="40" y="362.47559055118114" width="770" height="15.800000000000011" style="stroke: none; stroke-linecap: butt; stroke-width: 0; fill: rgb(96%,97%,98%); fill-rule: evenodd;"/>
+			<rect x="40" y="330.8755905511811" width="770" height="15.800000000000011" style="stroke: none; stroke-linecap: butt; stroke-width: 0; fill: rgb(96%,97%,98%); fill-rule: evenodd;"/>
+			<rect x="40" y="299.2755905511811" width="770" height="15.800000000000011" style="stroke: none; stroke-linecap: butt; stroke-width: 0; fill: rgb(96%,97%,98%); fill-rule: evenodd;"/>
+			<rect x="40" y="267.67559055118113" width="770" height="15.800000000000011" style="stroke: none; stroke-linecap: butt; stroke-width: 0; fill: rgb(96%,97%,98%); fill-rule: evenodd;"/>
+			<rect x="40" y="236.07559055118116" width="770" height="15.800000000000011" style="stroke: none; stroke-linecap: butt; stroke-width: 0; fill: rgb(96%,97%,98%); fill-rule: evenodd;"/>
+			<rect x="40" y="204.47559055118114" width="770" height="15.800000000000011" style="stroke: none; stroke-linecap: butt; stroke-width: 0; fill: rgb(96%,97%,98%); fill-rule: evenodd;"/>
+			<rect x="40" y="172.87559055118112" width="770" height="15.800000000000011" style="stroke: none; stroke-linecap: butt; stroke-width: 0; fill: rgb(96%,97%,98%); fill-rule: evenodd;"/>
+			<rect x="40" y="141.27559055118115" width="770" height="15.800000000000011" style="stroke: none; stroke-linecap: butt; stroke-width: 0; fill: rgb(96%,97%,98%); fill-rule: evenodd;"/>
 			<path d="M 285,457.275591 L 285,125.475591 Z" style="stroke: rgb(83%,87%,90%); stroke-linecap: butt; stroke-width: 0.7;"/>
 			<text x="282.9984" y="102.27559055118115" style="font-family: Helvetica; font-size: 7.2px;fill: rgb(9%,19%,30%); stroke:none;" transform="translate(0,204) scale(1,-1)">0</text>
 			<path d="M 336,457.275591 L 336,125.475591 Z" style="stroke: rgb(83%,87%,90%); stroke-linecap: butt; stroke-width: 0.7;"/>
@@ -45,214 +47,262 @@
 			<text x="482.9952" y="102.27559055118115" style="font-family: Helvetica; font-size: 7.2px;fill: rgb(9%,19%,30%); stroke:none;" transform="translate(0,204) scale(1,-1)">400</text>
 			<path d="M 540,457.275591 L 540,125.475591 Z" style="stroke: rgb(83%,87%,90%); stroke-linecap: butt; stroke-width: 0.7;"/>
 			<text x="533.9952" y="102.27559055118115" style="font-family: Helvetica; font-size: 7.2px;fill: rgb(9%,19%,30%); stroke:none;" transform="translate(0,204) scale(1,-1)">500</text>
-			<text x="44" y="445.565002315887" style="font-family: Helvetica; font-size: 9px;fill: rgb(35%,43%,50%); stroke:none;" transform="translate(0,891) scale(1,-1)">01</text>
-			<rect x="68" y="441.75794349235764" width="3" height="11.517647058823513" style="stroke: none; stroke-linecap: butt; stroke-width: 0; fill: rgb(70%,35%,0%); fill-rule: evenodd;"/>
-			<text x="79" y="446.9312376100047" style="font-family: Helvetica; font-size: 10.3px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,893) scale(1,-1)">Claude Haiku 4.5</text>
-			<text x="79" y="441.2711199629459" style="font-family: Helvetica; font-size: 5.8px;fill: rgb(35%,43%,50%); stroke:none;" transform="translate(0,882) scale(1,-1)">ANTHROPIC</text>
-			<path d="M 295.300319,446.931238 L 300.361695,446.931238 Z" style="stroke: rgb(25%,34%,41%); stroke-linecap: butt; stroke-width: 2.0;"/>
-			<path d="M 295.300319,452.931238 L 295.300319,440.931238 Z" style="stroke: rgb(25%,34%,41%); stroke-linecap: butt; stroke-width: 1.8;"/>
-			<path d="M 300.361695,452.931238 L 300.361695,440.931238 Z" style="stroke: rgb(25%,34%,41%); stroke-linecap: butt; stroke-width: 1.8;"/>
-			<circle cx="297.5661297" cy="446.9312376100047" r="5.5" style="stroke: rgb(9%,14%,20%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(70%,35%,0%); fill-rule: evenodd;"/>
-			<text x="574.2374" y="443.9312376100047" style="font-family: Helvetica; font-size: 8.1px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,887) scale(1,-1)">24.6</text>
-			<text x="639.2374" y="443.9312376100047" style="font-family: Helvetica; font-size: 8.1px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,887) scale(1,-1)">25.5</text>
-			<text x="704.2374" y="443.9312376100047" style="font-family: Helvetica; font-size: 8.1px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,887) scale(1,-1)">33.5</text>
-			<text x="777.4901" y="443.9312376100047" style="font-family: Helvetica; font-size: 8.1px;fill: rgb(35%,43%,50%); stroke:none;" transform="translate(0,887) scale(1,-1)">25.5m</text>
-			<text x="44" y="426.0473552570635" style="font-family: Helvetica; font-size: 9px;fill: rgb(35%,43%,50%); stroke:none;" transform="translate(0,852) scale(1,-1)">02</text>
-			<rect x="68" y="422.24029643353407" width="3" height="11.517647058823513" style="stroke: none; stroke-linecap: butt; stroke-width: 0; fill: rgb(35%,29%,83%); fill-rule: evenodd;"/>
-			<text x="79" y="427.41359055118113" style="font-family: Helvetica; font-size: 10.3px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,854) scale(1,-1)">DeepSeek V4 Flash (no thinking)</text>
-			<text x="79" y="421.7534729041223" style="font-family: Helvetica; font-size: 5.8px;fill: rgb(35%,43%,50%); stroke:none;" transform="translate(0,843) scale(1,-1)">DEEPSEEK</text>
-			<path d="M 297.701277,427.413591 L 312.054281,427.413591 Z" style="stroke: rgb(25%,34%,41%); stroke-linecap: butt; stroke-width: 2.0;"/>
-			<path d="M 297.701277,433.413591 L 297.701277,421.413591 Z" style="stroke: rgb(25%,34%,41%); stroke-linecap: butt; stroke-width: 1.8;"/>
-			<path d="M 312.054281,433.413591 L 312.054281,421.413591 Z" style="stroke: rgb(25%,34%,41%); stroke-linecap: butt; stroke-width: 1.8;"/>
-			<circle cx="303.684842205" cy="427.41359055118113" r="5.5" style="stroke: rgb(9%,14%,20%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(35%,29%,83%); fill-rule: evenodd;"/>
-			<text x="574.2374" y="424.41359055118113" style="font-family: Helvetica; font-size: 8.1px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,848) scale(1,-1)">36.6</text>
-			<text x="639.2374" y="424.41359055118113" style="font-family: Helvetica; font-size: 8.1px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,848) scale(1,-1)">50.5</text>
-			<text x="704.2374" y="424.41359055118113" style="font-family: Helvetica; font-size: 8.1px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,848) scale(1,-1)">80.0</text>
-			<text x="777.4901" y="424.41359055118113" style="font-family: Helvetica; font-size: 8.1px;fill: rgb(35%,43%,50%); stroke:none;" transform="translate(0,848) scale(1,-1)">50.5m</text>
-			<text x="44" y="406.52970819824" style="font-family: Helvetica; font-size: 9px;fill: rgb(35%,43%,50%); stroke:none;" transform="translate(0,813) scale(1,-1)">03</text>
-			<rect x="68" y="402.72264937471056" width="3" height="11.517647058823513" style="stroke: none; stroke-linecap: butt; stroke-width: 0; fill: rgb(70%,35%,0%); fill-rule: evenodd;"/>
-			<text x="79" y="407.8959434923576" style="font-family: Helvetica; font-size: 10.3px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,815) scale(1,-1)">Claude Sonnet 4.5</text>
-			<text x="79" y="402.2358258452988" style="font-family: Helvetica; font-size: 5.8px;fill: rgb(35%,43%,50%); stroke:none;" transform="translate(0,804) scale(1,-1)">ANTHROPIC</text>
-			<path d="M 301.00178,407.895943 L 307.712472,407.895943 Z" style="stroke: rgb(25%,34%,41%); stroke-linecap: butt; stroke-width: 2.0;"/>
-			<path d="M 301.00178,413.895943 L 301.00178,401.895943 Z" style="stroke: rgb(25%,34%,41%); stroke-linecap: butt; stroke-width: 1.8;"/>
-			<path d="M 307.712472,413.895943 L 307.712472,401.895943 Z" style="stroke: rgb(25%,34%,41%); stroke-linecap: butt; stroke-width: 1.8;"/>
-			<circle cx="304.051426125" cy="407.8959434923576" r="5.5" style="stroke: rgb(9%,14%,20%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(70%,35%,0%); fill-rule: evenodd;"/>
-			<text x="574.2374" y="404.8959434923576" style="font-family: Helvetica; font-size: 8.1px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,809) scale(1,-1)">37.4</text>
-			<text x="639.2374" y="404.8959434923576" style="font-family: Helvetica; font-size: 8.1px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,809) scale(1,-1)">39.5</text>
-			<text x="704.2374" y="404.8959434923576" style="font-family: Helvetica; font-size: 8.1px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,809) scale(1,-1)">54.6</text>
-			<text x="777.4901" y="404.8959434923576" style="font-family: Helvetica; font-size: 8.1px;fill: rgb(35%,43%,50%); stroke:none;" transform="translate(0,809) scale(1,-1)">39.5m</text>
-			<text x="44" y="387.01206113941646" style="font-family: Helvetica; font-size: 9px;fill: rgb(35%,43%,50%); stroke:none;" transform="translate(0,774) scale(1,-1)">04</text>
-			<rect x="68" y="383.205002315887" width="3" height="11.517647058823513" style="stroke: none; stroke-linecap: butt; stroke-width: 0; fill: rgb(5%,54%,51%); fill-rule: evenodd;"/>
-			<text x="79" y="388.37829643353405" style="font-family: Helvetica; font-size: 10.3px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,776) scale(1,-1)">OpenAI GPT-4.1</text>
-			<text x="79" y="382.7181787864753" style="font-family: Helvetica; font-size: 5.8px;fill: rgb(35%,43%,50%); stroke:none;" transform="translate(0,765) scale(1,-1)">OPENAI</text>
-			<path d="M 301.529286,388.378296 L 311.807684,388.378296 Z" style="stroke: rgb(25%,34%,41%); stroke-linecap: butt; stroke-width: 2.0;"/>
-			<path d="M 301.529286,394.378296 L 301.529286,382.378296 Z" style="stroke: rgb(25%,34%,41%); stroke-linecap: butt; stroke-width: 1.8;"/>
-			<path d="M 311.807684,394.378296 L 311.807684,382.378296 Z" style="stroke: rgb(25%,34%,41%); stroke-linecap: butt; stroke-width: 1.8;"/>
-			<circle cx="304.94607093" cy="388.37829643353405" r="5.5" style="stroke: rgb(9%,14%,20%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(5%,54%,51%); fill-rule: evenodd;"/>
-			<text x="574.2374" y="385.37829643353405" style="font-family: Helvetica; font-size: 8.1px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,770) scale(1,-1)">39.1</text>
-			<text x="639.2374" y="385.37829643353405" style="font-family: Helvetica; font-size: 8.1px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,770) scale(1,-1)">45.4</text>
-			<text x="704.2374" y="385.37829643353405" style="font-family: Helvetica; font-size: 8.1px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,770) scale(1,-1)">64.6</text>
-			<text x="777.4901" y="385.37829643353405" style="font-family: Helvetica; font-size: 8.1px;fill: rgb(35%,43%,50%); stroke:none;" transform="translate(0,770) scale(1,-1)">45.4m</text>
-			<text x="44" y="367.49441408059295" style="font-family: Helvetica; font-size: 9px;fill: rgb(35%,43%,50%); stroke:none;" transform="translate(0,734) scale(1,-1)">05</text>
-			<rect x="68" y="363.6873552570635" width="3" height="11.517647058823513" style="stroke: none; stroke-linecap: butt; stroke-width: 0; fill: rgb(17%,43%,79%); fill-rule: evenodd;"/>
-			<text x="79" y="368.86064937471053" style="font-family: Helvetica; font-size: 10.3px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,737) scale(1,-1)">Gemini 3.5 Flash</text>
-			<text x="79" y="363.20053172765176" style="font-family: Helvetica; font-size: 5.8px;fill: rgb(35%,43%,50%); stroke:none;" transform="translate(0,726) scale(1,-1)">GOOGLE</text>
-			<path d="M 309.298438,368.860649 L 374.188708,368.860649 Z" style="stroke: rgb(25%,34%,41%); stroke-linecap: butt; stroke-width: 2.0;"/>
-			<path d="M 309.298438,374.860649 L 309.298438,362.860649 Z" style="stroke: rgb(25%,34%,41%); stroke-linecap: butt; stroke-width: 1.8;"/>
-			<path d="M 374.188708,374.860649 L 374.188708,362.860649 Z" style="stroke: rgb(25%,34%,41%); stroke-linecap: butt; stroke-width: 1.8;"/>
-			<circle cx="316.20779454" cy="368.86064937471053" r="5.5" style="stroke: rgb(9%,14%,20%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(17%,43%,79%); fill-rule: evenodd;"/>
-			<text x="574.2374" y="365.86064937471053" style="font-family: Helvetica; font-size: 8.1px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,731) scale(1,-1)">61.2</text>
-			<text x="634.7338" y="365.86064937471053" style="font-family: Helvetica; font-size: 8.1px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,731) scale(1,-1)">140.5</text>
-			<text x="699.7338" y="365.86064937471053" style="font-family: Helvetica; font-size: 8.1px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,731) scale(1,-1)">418.2</text>
-			<text x="784.2374" y="365.86064937471053" style="font-family: Helvetica; font-size: 8.1px;fill: rgb(35%,43%,50%); stroke:none;" transform="translate(0,731) scale(1,-1)">2.3h</text>
-			<text x="44" y="347.9767670217694" style="font-family: Helvetica; font-size: 9px;fill: rgb(35%,43%,50%); stroke:none;" transform="translate(0,695) scale(1,-1)">06</text>
-			<rect x="68" y="344.16970819823996" width="3" height="11.517647058823513" style="stroke: none; stroke-linecap: butt; stroke-width: 0; fill: rgb(5%,54%,51%); fill-rule: evenodd;"/>
-			<text x="79" y="349.343002315887" style="font-family: Helvetica; font-size: 10.3px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,698) scale(1,-1)">OpenAI o3</text>
-			<text x="79" y="343.6828846688282" style="font-family: Helvetica; font-size: 5.8px;fill: rgb(35%,43%,50%); stroke:none;" transform="translate(0,687) scale(1,-1)">OPENAI</text>
-			<path d="M 311.14915,349.343002 L 350.090549,349.343002 Z" style="stroke: rgb(25%,34%,41%); stroke-linecap: butt; stroke-width: 2.0;"/>
-			<path d="M 311.14915,355.343002 L 311.14915,343.343002 Z" style="stroke: rgb(25%,34%,41%); stroke-linecap: butt; stroke-width: 1.8;"/>
-			<path d="M 350.090549,355.343002 L 350.090549,343.343002 Z" style="stroke: rgb(25%,34%,41%); stroke-linecap: butt; stroke-width: 1.8;"/>
-			<circle cx="320.799491565" cy="349.343002315887" r="5.5" style="stroke: rgb(9%,14%,20%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(5%,54%,51%); fill-rule: evenodd;"/>
-			<text x="574.2374" y="346.343002315887" style="font-family: Helvetica; font-size: 8.1px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,692) scale(1,-1)">70.2</text>
-			<text x="634.7338" y="346.343002315887" style="font-family: Helvetica; font-size: 8.1px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,692) scale(1,-1)">168.2</text>
-			<text x="699.7338" y="346.343002315887" style="font-family: Helvetica; font-size: 8.1px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,692) scale(1,-1)">182.4</text>
-			<text x="784.2374" y="346.343002315887" style="font-family: Helvetica; font-size: 8.1px;fill: rgb(35%,43%,50%); stroke:none;" transform="translate(0,692) scale(1,-1)">2.8h</text>
-			<text x="44" y="328.45911996294586" style="font-family: Helvetica; font-size: 9px;fill: rgb(35%,43%,50%); stroke:none;" transform="translate(0,656) scale(1,-1)">07</text>
-			<rect x="68" y="324.65206113941645" width="3" height="11.517647058823513" style="stroke: none; stroke-linecap: butt; stroke-width: 0; fill: rgb(12%,12%,14%); fill-rule: evenodd;"/>
-			<text x="79" y="329.8253552570635" style="font-family: Helvetica; font-size: 10.3px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,659) scale(1,-1)">Grok 4.3</text>
-			<text x="79" y="324.1652376100047" style="font-family: Helvetica; font-size: 5.8px;fill: rgb(35%,43%,50%); stroke:none;" transform="translate(0,648) scale(1,-1)">XAI</text>
-			<path d="M 318.021268,329.825355 L 336.318943,329.825355 Z" style="stroke: rgb(25%,34%,41%); stroke-linecap: butt; stroke-width: 2.0;"/>
-			<path d="M 318.021268,335.825355 L 318.021268,323.825355 Z" style="stroke: rgb(25%,34%,41%); stroke-linecap: butt; stroke-width: 1.8;"/>
-			<path d="M 336.318943,335.825355 L 336.318943,323.825355 Z" style="stroke: rgb(25%,34%,41%); stroke-linecap: butt; stroke-width: 1.8;"/>
-			<circle cx="322.6110261" cy="329.8253552570635" r="5.5" style="stroke: rgb(9%,14%,20%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(12%,12%,14%); fill-rule: evenodd;"/>
-			<text x="574.2374" y="326.8253552570635" style="font-family: Helvetica; font-size: 8.1px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,653) scale(1,-1)">73.7</text>
-			<text x="639.2374" y="326.8253552570635" style="font-family: Helvetica; font-size: 8.1px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,653) scale(1,-1)">89.0</text>
-			<text x="699.7338" y="326.8253552570635" style="font-family: Helvetica; font-size: 8.1px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,653) scale(1,-1)">148.9</text>
-			<text x="784.2374" y="326.8253552570635" style="font-family: Helvetica; font-size: 8.1px;fill: rgb(35%,43%,50%); stroke:none;" transform="translate(0,653) scale(1,-1)">1.5h</text>
-			<text x="44" y="308.94147290412235" style="font-family: Helvetica; font-size: 9px;fill: rgb(35%,43%,50%); stroke:none;" transform="translate(0,617) scale(1,-1)">08</text>
-			<rect x="68" y="305.13441408059293" width="3" height="11.517647058823513" style="stroke: none; stroke-linecap: butt; stroke-width: 0; fill: rgb(17%,43%,79%); fill-rule: evenodd;"/>
-			<text x="79" y="310.30770819824" style="font-family: Helvetica; font-size: 10.3px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,620) scale(1,-1)">Gemma 4 31B IT</text>
-			<text x="79" y="304.64759055118117" style="font-family: Helvetica; font-size: 5.8px;fill: rgb(35%,43%,50%); stroke:none;" transform="translate(0,609) scale(1,-1)">GOOGLE</text>
-			<path d="M 318.481807,310.307708 L 329.925958,310.307708 Z" style="stroke: rgb(25%,34%,41%); stroke-linecap: butt; stroke-width: 2.0;"/>
-			<path d="M 318.481807,316.307708 L 318.481807,304.307708 Z" style="stroke: rgb(25%,34%,41%); stroke-linecap: butt; stroke-width: 1.8;"/>
-			<path d="M 329.925958,316.307708 L 329.925958,304.307708 Z" style="stroke: rgb(25%,34%,41%); stroke-linecap: butt; stroke-width: 1.8;"/>
-			<circle cx="323.129557125" cy="310.30770819824" r="5.5" style="stroke: rgb(9%,14%,20%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(17%,43%,79%); fill-rule: evenodd;"/>
-			<text x="574.2374" y="307.30770819824" style="font-family: Helvetica; font-size: 8.1px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,614) scale(1,-1)">74.8</text>
-			<text x="639.2374" y="307.30770819824" style="font-family: Helvetica; font-size: 8.1px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,614) scale(1,-1)">79.8</text>
-			<text x="699.7338" y="307.30770819824" style="font-family: Helvetica; font-size: 8.1px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,614) scale(1,-1)">107.0</text>
-			<text x="784.2374" y="307.30770819824" style="font-family: Helvetica; font-size: 8.1px;fill: rgb(35%,43%,50%); stroke:none;" transform="translate(0,614) scale(1,-1)">1.3h</text>
-			<text x="44" y="289.42382584529884" style="font-family: Helvetica; font-size: 9px;fill: rgb(35%,43%,50%); stroke:none;" transform="translate(0,578) scale(1,-1)">09</text>
-			<rect x="68" y="285.6167670217694" width="3" height="11.517647058823513" style="stroke: none; stroke-linecap: butt; stroke-width: 0; fill: rgb(94%,35%,15%); fill-rule: evenodd;"/>
-			<text x="79" y="290.7900611394165" style="font-family: Helvetica; font-size: 10.3px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,581) scale(1,-1)">Mistral Small 4</text>
-			<text x="79" y="285.12994349235765" style="font-family: Helvetica; font-size: 5.8px;fill: rgb(35%,43%,50%); stroke:none;" transform="translate(0,570) scale(1,-1)">MISTRAL</text>
-			<path d="M 318.605402,290.790061 L 344.804629,290.790061 Z" style="stroke: rgb(25%,34%,41%); stroke-linecap: butt; stroke-width: 2.0;"/>
-			<path d="M 318.605402,296.790061 L 318.605402,284.790061 Z" style="stroke: rgb(25%,34%,41%); stroke-linecap: butt; stroke-width: 1.8;"/>
-			<path d="M 344.804629,296.790061 L 344.804629,284.790061 Z" style="stroke: rgb(25%,34%,41%); stroke-linecap: butt; stroke-width: 1.8;"/>
-			<circle cx="324.562005855" cy="290.7900611394165" r="5.5" style="stroke: rgb(9%,14%,20%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(94%,35%,15%); fill-rule: evenodd;"/>
-			<text x="574.2374" y="287.7900611394165" style="font-family: Helvetica; font-size: 8.1px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,575) scale(1,-1)">77.6</text>
-			<text x="634.7338" y="287.7900611394165" style="font-family: Helvetica; font-size: 8.1px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,575) scale(1,-1)">158.4</text>
-			<text x="699.7338" y="287.7900611394165" style="font-family: Helvetica; font-size: 8.1px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,575) scale(1,-1)">158.9</text>
-			<text x="784.2374" y="287.7900611394165" style="font-family: Helvetica; font-size: 8.1px;fill: rgb(35%,43%,50%); stroke:none;" transform="translate(0,575) scale(1,-1)">2.6h</text>
-			<text x="44" y="269.90617878647527" style="font-family: Helvetica; font-size: 9px;fill: rgb(35%,43%,50%); stroke:none;" transform="translate(0,539) scale(1,-1)">10</text>
-			<rect x="68" y="266.09911996294585" width="3" height="11.517647058823513" style="stroke: none; stroke-linecap: butt; stroke-width: 0; fill: rgb(70%,35%,0%); fill-rule: evenodd;"/>
-			<text x="79" y="271.2724140805929" style="font-family: Helvetica; font-size: 10.3px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,542) scale(1,-1)">Claude Fable 5</text>
-			<text x="79" y="265.6122964335341" style="font-family: Helvetica; font-size: 5.8px;fill: rgb(35%,43%,50%); stroke:none;" transform="translate(0,531) scale(1,-1)">ANTHROPIC</text>
-			<path d="M 318.200122,271.272414 L 381.910789,271.272414 Z" style="stroke: rgb(25%,34%,41%); stroke-linecap: butt; stroke-width: 2.0;"/>
-			<path d="M 318.200122,277.272414 L 318.200122,265.272414 Z" style="stroke: rgb(25%,34%,41%); stroke-linecap: butt; stroke-width: 1.8;"/>
-			<path d="M 381.910789,277.272414 L 381.910789,265.272414 Z" style="stroke: rgb(25%,34%,41%); stroke-linecap: butt; stroke-width: 1.8;"/>
-			<circle cx="327.573547185" cy="271.2724140805929" r="5.5" style="stroke: rgb(9%,14%,20%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(70%,35%,0%); fill-rule: evenodd;"/>
-			<text x="574.2374" y="268.2724140805929" style="font-family: Helvetica; font-size: 8.1px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,536) scale(1,-1)">83.5</text>
-			<text x="634.7338" y="268.2724140805929" style="font-family: Helvetica; font-size: 8.1px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,536) scale(1,-1)">470.2</text>
-			<text x="695.2302" y="268.2724140805929" style="font-family: Helvetica; font-size: 8.1px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,536) scale(1,-1)">1774.3</text>
-			<text x="784.2374" y="268.2724140805929" style="font-family: Helvetica; font-size: 8.1px;fill: rgb(35%,43%,50%); stroke:none;" transform="translate(0,536) scale(1,-1)">7.8h</text>
-			<text x="44" y="250.38853172765175" style="font-family: Helvetica; font-size: 9px;fill: rgb(35%,43%,50%); stroke:none;" transform="translate(0,500) scale(1,-1)">11</text>
-			<rect x="68" y="246.58147290412234" width="3" height="11.517647058823513" style="stroke: none; stroke-linecap: butt; stroke-width: 0; fill: rgb(94%,35%,15%); fill-rule: evenodd;"/>
-			<text x="79" y="251.7547670217694" style="font-family: Helvetica; font-size: 10.3px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,503) scale(1,-1)">Mistral Medium 3.5</text>
-			<text x="79" y="246.09464937471057" style="font-family: Helvetica; font-size: 5.8px;fill: rgb(35%,43%,50%); stroke:none;" transform="translate(0,492) scale(1,-1)">MISTRAL</text>
-			<path d="M 319.184939,251.754767 L 363.922282,251.754767 Z" style="stroke: rgb(25%,34%,41%); stroke-linecap: butt; stroke-width: 2.0;"/>
-			<path d="M 319.184939,257.754767 L 319.184939,245.754767 Z" style="stroke: rgb(25%,34%,41%); stroke-linecap: butt; stroke-width: 1.8;"/>
-			<path d="M 363.922282,257.754767 L 363.922282,245.754767 Z" style="stroke: rgb(25%,34%,41%); stroke-linecap: butt; stroke-width: 1.8;"/>
-			<circle cx="331.448024325" cy="251.7547670217694" r="5.5" style="stroke: rgb(9%,14%,20%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(94%,35%,15%); fill-rule: evenodd;"/>
-			<text x="574.2374" y="248.7547670217694" style="font-family: Helvetica; font-size: 8.1px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,497) scale(1,-1)">91.1</text>
-			<text x="634.7338" y="248.7547670217694" style="font-family: Helvetica; font-size: 8.1px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,497) scale(1,-1)">111.5</text>
-			<text x="699.7338" y="248.7547670217694" style="font-family: Helvetica; font-size: 8.1px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,497) scale(1,-1)">198.9</text>
-			<text x="784.2374" y="248.7547670217694" style="font-family: Helvetica; font-size: 8.1px;fill: rgb(35%,43%,50%); stroke:none;" transform="translate(0,497) scale(1,-1)">1.9h</text>
-			<text x="44" y="230.87088466882818" style="font-family: Helvetica; font-size: 9px;fill: rgb(35%,43%,50%); stroke:none;" transform="translate(0,461) scale(1,-1)">12</text>
-			<rect x="68" y="227.06382584529877" width="3" height="11.517647058823542" style="stroke: none; stroke-linecap: butt; stroke-width: 0; fill: rgb(35%,29%,83%); fill-rule: evenodd;"/>
-			<text x="79" y="232.23711996294583" style="font-family: Helvetica; font-size: 10.3px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,464) scale(1,-1)">DeepSeek V4.1 Flash</text>
-			<text x="79" y="226.577002315887" style="font-family: Helvetica; font-size: 5.8px;fill: rgb(35%,43%,50%); stroke:none;" transform="translate(0,453) scale(1,-1)">DEEPSEEK</text>
-			<path d="M 319.382253,232.23712 L 340.493628,232.23712 Z" style="stroke: rgb(25%,34%,41%); stroke-linecap: butt; stroke-width: 2.0;"/>
-			<path d="M 319.382253,238.23712 L 319.382253,226.23712 Z" style="stroke: rgb(25%,34%,41%); stroke-linecap: butt; stroke-width: 1.8;"/>
-			<path d="M 340.493628,238.23712 L 340.493628,226.23712 Z" style="stroke: rgb(25%,34%,41%); stroke-linecap: butt; stroke-width: 1.8;"/>
-			<circle cx="332.02134873" cy="232.23711996294583" r="5.5" style="stroke: rgb(9%,14%,20%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(35%,29%,83%); fill-rule: evenodd;"/>
-			<text x="574.2374" y="229.23711996294583" style="font-family: Helvetica; font-size: 8.1px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,458) scale(1,-1)">92.2</text>
-			<text x="639.2374" y="229.23711996294583" style="font-family: Helvetica; font-size: 8.1px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,458) scale(1,-1)">93.1</text>
-			<text x="699.7338" y="229.23711996294583" style="font-family: Helvetica; font-size: 8.1px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,458) scale(1,-1)">141.0</text>
-			<text x="784.2374" y="229.23711996294583" style="font-family: Helvetica; font-size: 8.1px;fill: rgb(35%,43%,50%); stroke:none;" transform="translate(0,458) scale(1,-1)">1.6h</text>
-			<text x="44" y="211.35323761000467" style="font-family: Helvetica; font-size: 9px;fill: rgb(35%,43%,50%); stroke:none;" transform="translate(0,422) scale(1,-1)">13</text>
-			<rect x="68" y="207.54617878647525" width="3" height="11.517647058823542" style="stroke: none; stroke-linecap: butt; stroke-width: 0; fill: rgb(12%,12%,14%); fill-rule: evenodd;"/>
-			<text x="79" y="212.7194729041223" style="font-family: Helvetica; font-size: 10.3px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,425) scale(1,-1)">Grok 4.5</text>
-			<text x="79" y="207.0593552570635" style="font-family: Helvetica; font-size: 5.8px;fill: rgb(35%,43%,50%); stroke:none;" transform="translate(0,414) scale(1,-1)">XAI</text>
-			<path d="M 333.113499,212.719473 L 363.784193,212.719473 Z" style="stroke: rgb(25%,34%,41%); stroke-linecap: butt; stroke-width: 2.0;"/>
-			<path d="M 333.113499,218.719473 L 333.113499,206.719473 Z" style="stroke: rgb(25%,34%,41%); stroke-linecap: butt; stroke-width: 1.8;"/>
-			<path d="M 363.784193,218.719473 L 363.784193,206.719473 Z" style="stroke: rgb(25%,34%,41%); stroke-linecap: butt; stroke-width: 1.8;"/>
-			<circle cx="343.03480383" cy="212.7194729041223" r="5.5" style="stroke: rgb(9%,14%,20%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(12%,12%,14%); fill-rule: evenodd;"/>
-			<text x="569.7338" y="209.7194729041223" style="font-family: Helvetica; font-size: 8.1px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,419) scale(1,-1)">113.8</text>
-			<text x="634.7338" y="209.7194729041223" style="font-family: Helvetica; font-size: 8.1px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,419) scale(1,-1)">153.3</text>
-			<text x="699.7338" y="209.7194729041223" style="font-family: Helvetica; font-size: 8.1px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,419) scale(1,-1)">274.7</text>
-			<text x="784.2374" y="209.7194729041223" style="font-family: Helvetica; font-size: 8.1px;fill: rgb(35%,43%,50%); stroke:none;" transform="translate(0,419) scale(1,-1)">2.6h</text>
-			<text x="44" y="191.83559055118116" style="font-family: Helvetica; font-size: 9px;fill: rgb(35%,43%,50%); stroke:none;" transform="translate(0,383) scale(1,-1)">14</text>
-			<rect x="68" y="188.02853172765174" width="3" height="11.517647058823542" style="stroke: none; stroke-linecap: butt; stroke-width: 0; fill: rgb(17%,43%,79%); fill-rule: evenodd;"/>
-			<text x="79" y="193.2018258452988" style="font-family: Helvetica; font-size: 10.3px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,386) scale(1,-1)">Gemini 3.1 Pro Preview</text>
-			<text x="79" y="187.54170819823997" style="font-family: Helvetica; font-size: 5.8px;fill: rgb(35%,43%,50%); stroke:none;" transform="translate(0,375) scale(1,-1)">GOOGLE</text>
-			<path d="M 322.329221,193.201826 L 424.719236,193.201826 Z" style="stroke: rgb(25%,34%,41%); stroke-linecap: butt; stroke-width: 2.0;"/>
-			<path d="M 322.329221,199.201826 L 322.329221,187.201826 Z" style="stroke: rgb(25%,34%,41%); stroke-linecap: butt; stroke-width: 1.8;"/>
-			<path d="M 424.719236,199.201826 L 424.719236,187.201826 Z" style="stroke: rgb(25%,34%,41%); stroke-linecap: butt; stroke-width: 1.8;"/>
-			<circle cx="343.51514223" cy="193.2018258452988" r="5.5" style="stroke: rgb(9%,14%,20%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(17%,43%,79%); fill-rule: evenodd;"/>
-			<text x="569.7338" y="190.2018258452988" style="font-family: Helvetica; font-size: 8.1px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,380) scale(1,-1)">114.7</text>
-			<text x="634.7338" y="190.2018258452988" style="font-family: Helvetica; font-size: 8.1px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,380) scale(1,-1)">520.2</text>
-			<text x="695.2302" y="190.2018258452988" style="font-family: Helvetica; font-size: 8.1px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,380) scale(1,-1)">2120.4</text>
-			<text x="784.2374" y="190.2018258452988" style="font-family: Helvetica; font-size: 8.1px;fill: rgb(35%,43%,50%); stroke:none;" transform="translate(0,380) scale(1,-1)">8.7h</text>
-			<text x="44" y="172.31794349235764" style="font-family: Helvetica; font-size: 9px;fill: rgb(35%,43%,50%); stroke:none;" transform="translate(0,344) scale(1,-1)">15</text>
-			<rect x="68" y="168.51088466882823" width="3" height="11.517647058823542" style="stroke: none; stroke-linecap: butt; stroke-width: 0; fill: rgb(35%,29%,83%); fill-rule: evenodd;"/>
-			<text x="79" y="173.6841787864753" style="font-family: Helvetica; font-size: 10.3px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,347) scale(1,-1)">DeepSeek V4 Flash</text>
-			<text x="79" y="168.02406113941646" style="font-family: Helvetica; font-size: 5.8px;fill: rgb(35%,43%,50%); stroke:none;" transform="translate(0,336) scale(1,-1)">DEEPSEEK</text>
-			<path d="M 357.09344,173.684179 L 408.901802,173.684179 Z" style="stroke: rgb(25%,34%,41%); stroke-linecap: butt; stroke-width: 2.0;"/>
-			<path d="M 357.09344,179.684179 L 357.09344,167.684179 Z" style="stroke: rgb(25%,34%,41%); stroke-linecap: butt; stroke-width: 1.8;"/>
-			<path d="M 408.901802,179.684179 L 408.901802,167.684179 Z" style="stroke: rgb(25%,34%,41%); stroke-linecap: butt; stroke-width: 1.8;"/>
-			<circle cx="380.89045959" cy="173.6841787864753" r="5.5" style="stroke: rgb(9%,14%,20%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(35%,29%,83%); fill-rule: evenodd;"/>
-			<text x="569.7338" y="170.6841787864753" style="font-family: Helvetica; font-size: 8.1px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,341) scale(1,-1)">188.0</text>
-			<text x="634.7338" y="170.6841787864753" style="font-family: Helvetica; font-size: 8.1px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,341) scale(1,-1)">227.0</text>
-			<text x="699.7338" y="170.6841787864753" style="font-family: Helvetica; font-size: 8.1px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,341) scale(1,-1)">325.6</text>
-			<text x="784.2374" y="170.6841787864753" style="font-family: Helvetica; font-size: 8.1px;fill: rgb(35%,43%,50%); stroke:none;" transform="translate(0,341) scale(1,-1)">3.8h</text>
-			<text x="44" y="152.80029643353407" style="font-family: Helvetica; font-size: 9px;fill: rgb(35%,43%,50%); stroke:none;" transform="translate(0,305) scale(1,-1)">16</text>
-			<rect x="68" y="148.99323761000466" width="3" height="11.517647058823542" style="stroke: none; stroke-linecap: butt; stroke-width: 0; fill: rgb(35%,29%,83%); fill-rule: evenodd;"/>
-			<text x="79" y="154.16653172765172" style="font-family: Helvetica; font-size: 10.3px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,308) scale(1,-1)">DeepSeek V4 Pro</text>
-			<text x="79" y="148.5064140805929" style="font-family: Helvetica; font-size: 5.8px;fill: rgb(35%,43%,50%); stroke:none;" transform="translate(0,297) scale(1,-1)">DEEPSEEK</text>
-			<path d="M 363.595312,154.166532 L 413.620328,154.166532 Z" style="stroke: rgb(25%,34%,41%); stroke-linecap: butt; stroke-width: 2.0;"/>
-			<path d="M 363.595312,160.166532 L 363.595312,148.166532 Z" style="stroke: rgb(25%,34%,41%); stroke-linecap: butt; stroke-width: 1.8;"/>
-			<path d="M 413.620328,160.166532 L 413.620328,148.166532 Z" style="stroke: rgb(25%,34%,41%); stroke-linecap: butt; stroke-width: 1.8;"/>
-			<circle cx="388.2285951" cy="154.16653172765172" r="5.5" style="stroke: rgb(9%,14%,20%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(35%,29%,83%); fill-rule: evenodd;"/>
-			<text x="569.7338" y="151.16653172765172" style="font-family: Helvetica; font-size: 8.1px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,302) scale(1,-1)">202.4</text>
-			<text x="634.7338" y="151.16653172765172" style="font-family: Helvetica; font-size: 8.1px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,302) scale(1,-1)">244.0</text>
-			<text x="699.7338" y="151.16653172765172" style="font-family: Helvetica; font-size: 8.1px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,302) scale(1,-1)">466.7</text>
-			<text x="784.2374" y="151.16653172765172" style="font-family: Helvetica; font-size: 8.1px;fill: rgb(35%,43%,50%); stroke:none;" transform="translate(0,302) scale(1,-1)">4.1h</text>
-			<text x="44" y="133.28264937471056" style="font-family: Helvetica; font-size: 9px;fill: rgb(35%,43%,50%); stroke:none;" transform="translate(0,266) scale(1,-1)">17</text>
-			<rect x="68" y="129.47559055118114" width="3" height="11.517647058823542" style="stroke: none; stroke-linecap: butt; stroke-width: 0; fill: rgb(5%,54%,51%); fill-rule: evenodd;"/>
-			<text x="79" y="134.6488846688282" style="font-family: Helvetica; font-size: 10.3px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,269) scale(1,-1)">GPT-5.6 Sol</text>
-			<text x="79" y="128.98876702176938" style="font-family: Helvetica; font-size: 5.8px;fill: rgb(35%,43%,50%); stroke:none;" transform="translate(0,257) scale(1,-1)">OPENAI</text>
-			<path d="M 403.936382,134.648885 L 536.869608,134.648885 Z" style="stroke: rgb(25%,34%,41%); stroke-linecap: butt; stroke-width: 2.0;"/>
-			<path d="M 403.936382,140.648885 L 403.936382,128.648885 Z" style="stroke: rgb(25%,34%,41%); stroke-linecap: butt; stroke-width: 1.8;"/>
-			<path d="M 536.869608,140.648885 L 536.869608,128.648885 Z" style="stroke: rgb(25%,34%,41%); stroke-linecap: butt; stroke-width: 1.8;"/>
-			<circle cx="441.59386646999997" cy="134.6488846688282" r="5.5" style="stroke: rgb(9%,14%,20%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(5%,54%,51%); fill-rule: evenodd;"/>
-			<text x="569.7338" y="131.6488846688282" style="font-family: Helvetica; font-size: 8.1px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,263) scale(1,-1)">307.0</text>
-			<text x="634.7338" y="131.6488846688282" style="font-family: Helvetica; font-size: 8.1px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,263) scale(1,-1)">727.6</text>
-			<text x="695.2302" y="131.6488846688282" style="font-family: Helvetica; font-size: 8.1px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,263) scale(1,-1)">2045.4</text>
-			<text x="779.7338" y="131.6488846688282" style="font-family: Helvetica; font-size: 8.1px;fill: rgb(35%,43%,50%); stroke:none;" transform="translate(0,263) scale(1,-1)">12.1h</text>
+			<text x="44" y="447.79559055118114" style="font-family: Helvetica; font-size: 9px;fill: rgb(35%,43%,50%); stroke:none;" transform="translate(0,895) scale(1,-1)">01</text>
+			<rect x="68" y="445.47559055118114" width="3" height="7.800000000000011" style="stroke: none; stroke-linecap: butt; stroke-width: 0; fill: rgb(70%,35%,0%); fill-rule: evenodd;"/>
+			<text x="79" y="448.90159055118113" style="font-family: Helvetica; font-size: 10.3px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,897) scale(1,-1)">Claude Haiku 4.5</text>
+			<text x="79" y="444.31959055118114" style="font-family: Helvetica; font-size: 5.8px;fill: rgb(35%,43%,50%); stroke:none;" transform="translate(0,888) scale(1,-1)">ANTHROPIC</text>
+			<path d="M 295.300319,448.901591 L 300.361695,448.901591 Z" style="stroke: rgb(25%,34%,41%); stroke-linecap: butt; stroke-width: 2.0;"/>
+			<path d="M 295.300319,454.901591 L 295.300319,442.901591 Z" style="stroke: rgb(25%,34%,41%); stroke-linecap: butt; stroke-width: 1.8;"/>
+			<path d="M 300.361695,454.901591 L 300.361695,442.901591 Z" style="stroke: rgb(25%,34%,41%); stroke-linecap: butt; stroke-width: 1.8;"/>
+			<circle cx="297.5661297" cy="448.90159055118113" r="5.5" style="stroke: rgb(9%,14%,20%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(70%,35%,0%); fill-rule: evenodd;"/>
+			<text x="574.2374" y="445.90159055118113" style="font-family: Helvetica; font-size: 8.1px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,891) scale(1,-1)">24.6</text>
+			<text x="639.2374" y="445.90159055118113" style="font-family: Helvetica; font-size: 8.1px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,891) scale(1,-1)">25.5</text>
+			<text x="704.2374" y="445.90159055118113" style="font-family: Helvetica; font-size: 8.1px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,891) scale(1,-1)">33.5</text>
+			<text x="777.4901" y="445.90159055118113" style="font-family: Helvetica; font-size: 8.1px;fill: rgb(35%,43%,50%); stroke:none;" transform="translate(0,891) scale(1,-1)">25.5m</text>
+			<text x="44" y="431.9955905511812" style="font-family: Helvetica; font-size: 9px;fill: rgb(35%,43%,50%); stroke:none;" transform="translate(0,863) scale(1,-1)">02</text>
+			<rect x="68" y="429.67559055118113" width="3" height="7.800000000000011" style="stroke: none; stroke-linecap: butt; stroke-width: 0; fill: rgb(70%,35%,0%); fill-rule: evenodd;"/>
+			<text x="79" y="433.1015905511812" style="font-family: Helvetica; font-size: 10.3px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,866) scale(1,-1)">Claude Sonnet 5.5</text>
+			<text x="79" y="428.5195905511812" style="font-family: Helvetica; font-size: 5.8px;fill: rgb(35%,43%,50%); stroke:none;" transform="translate(0,857) scale(1,-1)">ANTHROPIC</text>
+			<path d="M 299.996796,433.101591 L 308.50667,433.101591 Z" style="stroke: rgb(25%,34%,41%); stroke-linecap: butt; stroke-width: 2.0;"/>
+			<path d="M 299.996796,439.101591 L 299.996796,427.101591 Z" style="stroke: rgb(25%,34%,41%); stroke-linecap: butt; stroke-width: 1.8;"/>
+			<path d="M 308.50667,439.101591 L 308.50667,427.101591 Z" style="stroke: rgb(25%,34%,41%); stroke-linecap: butt; stroke-width: 1.8;"/>
+			<circle cx="302.76785481" cy="433.1015905511812" r="5.5" style="stroke: rgb(9%,14%,20%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(70%,35%,0%); fill-rule: evenodd;"/>
+			<text x="574.2374" y="430.1015905511812" style="font-family: Helvetica; font-size: 8.1px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,860) scale(1,-1)">34.8</text>
+			<text x="639.2374" y="430.1015905511812" style="font-family: Helvetica; font-size: 8.1px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,860) scale(1,-1)">38.9</text>
+			<text x="704.2374" y="430.1015905511812" style="font-family: Helvetica; font-size: 8.1px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,860) scale(1,-1)">57.5</text>
+			<text x="777.4901" y="430.1015905511812" style="font-family: Helvetica; font-size: 8.1px;fill: rgb(35%,43%,50%); stroke:none;" transform="translate(0,860) scale(1,-1)">38.9m</text>
+			<text x="44" y="416.19559055118117" style="font-family: Helvetica; font-size: 9px;fill: rgb(35%,43%,50%); stroke:none;" transform="translate(0,832) scale(1,-1)">03</text>
+			<rect x="68" y="413.8755905511812" width="3" height="7.800000000000011" style="stroke: none; stroke-linecap: butt; stroke-width: 0; fill: rgb(35%,29%,83%); fill-rule: evenodd;"/>
+			<text x="79" y="417.30159055118116" style="font-family: Helvetica; font-size: 10.3px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,834) scale(1,-1)">DeepSeek V4 Flash (no thinking)</text>
+			<text x="79" y="412.71959055118117" style="font-family: Helvetica; font-size: 5.8px;fill: rgb(35%,43%,50%); stroke:none;" transform="translate(0,825) scale(1,-1)">DEEPSEEK</text>
+			<path d="M 297.701277,417.301591 L 312.054281,417.301591 Z" style="stroke: rgb(25%,34%,41%); stroke-linecap: butt; stroke-width: 2.0;"/>
+			<path d="M 297.701277,423.301591 L 297.701277,411.301591 Z" style="stroke: rgb(25%,34%,41%); stroke-linecap: butt; stroke-width: 1.8;"/>
+			<path d="M 312.054281,423.301591 L 312.054281,411.301591 Z" style="stroke: rgb(25%,34%,41%); stroke-linecap: butt; stroke-width: 1.8;"/>
+			<circle cx="303.684842205" cy="417.30159055118116" r="5.5" style="stroke: rgb(9%,14%,20%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(35%,29%,83%); fill-rule: evenodd;"/>
+			<text x="574.2374" y="414.30159055118116" style="font-family: Helvetica; font-size: 8.1px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,828) scale(1,-1)">36.6</text>
+			<text x="639.2374" y="414.30159055118116" style="font-family: Helvetica; font-size: 8.1px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,828) scale(1,-1)">50.5</text>
+			<text x="704.2374" y="414.30159055118116" style="font-family: Helvetica; font-size: 8.1px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,828) scale(1,-1)">80.0</text>
+			<text x="777.4901" y="414.30159055118116" style="font-family: Helvetica; font-size: 8.1px;fill: rgb(35%,43%,50%); stroke:none;" transform="translate(0,828) scale(1,-1)">50.5m</text>
+			<text x="44" y="400.39559055118116" style="font-family: Helvetica; font-size: 9px;fill: rgb(35%,43%,50%); stroke:none;" transform="translate(0,800) scale(1,-1)">04</text>
+			<rect x="68" y="398.0755905511811" width="3" height="7.800000000000011" style="stroke: none; stroke-linecap: butt; stroke-width: 0; fill: rgb(70%,35%,0%); fill-rule: evenodd;"/>
+			<text x="79" y="401.50159055118115" style="font-family: Helvetica; font-size: 10.3px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,803) scale(1,-1)">Claude Sonnet 4.5</text>
+			<text x="79" y="396.91959055118116" style="font-family: Helvetica; font-size: 5.8px;fill: rgb(35%,43%,50%); stroke:none;" transform="translate(0,793) scale(1,-1)">ANTHROPIC</text>
+			<path d="M 301.00178,401.501591 L 307.712472,401.501591 Z" style="stroke: rgb(25%,34%,41%); stroke-linecap: butt; stroke-width: 2.0;"/>
+			<path d="M 301.00178,407.501591 L 301.00178,395.501591 Z" style="stroke: rgb(25%,34%,41%); stroke-linecap: butt; stroke-width: 1.8;"/>
+			<path d="M 307.712472,407.501591 L 307.712472,395.501591 Z" style="stroke: rgb(25%,34%,41%); stroke-linecap: butt; stroke-width: 1.8;"/>
+			<circle cx="304.051426125" cy="401.50159055118115" r="5.5" style="stroke: rgb(9%,14%,20%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(70%,35%,0%); fill-rule: evenodd;"/>
+			<text x="574.2374" y="398.50159055118115" style="font-family: Helvetica; font-size: 8.1px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,797) scale(1,-1)">37.4</text>
+			<text x="639.2374" y="398.50159055118115" style="font-family: Helvetica; font-size: 8.1px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,797) scale(1,-1)">39.5</text>
+			<text x="704.2374" y="398.50159055118115" style="font-family: Helvetica; font-size: 8.1px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,797) scale(1,-1)">54.6</text>
+			<text x="777.4901" y="398.50159055118115" style="font-family: Helvetica; font-size: 8.1px;fill: rgb(35%,43%,50%); stroke:none;" transform="translate(0,797) scale(1,-1)">39.5m</text>
+			<text x="44" y="384.5955905511812" style="font-family: Helvetica; font-size: 9px;fill: rgb(35%,43%,50%); stroke:none;" transform="translate(0,769) scale(1,-1)">05</text>
+			<rect x="68" y="382.27559055118115" width="3" height="7.800000000000011" style="stroke: none; stroke-linecap: butt; stroke-width: 0; fill: rgb(5%,54%,51%); fill-rule: evenodd;"/>
+			<text x="79" y="385.7015905511812" style="font-family: Helvetica; font-size: 10.3px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,771) scale(1,-1)">OpenAI GPT-4.1</text>
+			<text x="79" y="381.1195905511812" style="font-family: Helvetica; font-size: 5.8px;fill: rgb(35%,43%,50%); stroke:none;" transform="translate(0,762) scale(1,-1)">OPENAI</text>
+			<path d="M 301.529286,385.701591 L 311.807684,385.701591 Z" style="stroke: rgb(25%,34%,41%); stroke-linecap: butt; stroke-width: 2.0;"/>
+			<path d="M 301.529286,391.701591 L 301.529286,379.701591 Z" style="stroke: rgb(25%,34%,41%); stroke-linecap: butt; stroke-width: 1.8;"/>
+			<path d="M 311.807684,391.701591 L 311.807684,379.701591 Z" style="stroke: rgb(25%,34%,41%); stroke-linecap: butt; stroke-width: 1.8;"/>
+			<circle cx="304.94607093" cy="385.7015905511812" r="5.5" style="stroke: rgb(9%,14%,20%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(5%,54%,51%); fill-rule: evenodd;"/>
+			<text x="574.2374" y="382.7015905511812" style="font-family: Helvetica; font-size: 8.1px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,765) scale(1,-1)">39.1</text>
+			<text x="639.2374" y="382.7015905511812" style="font-family: Helvetica; font-size: 8.1px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,765) scale(1,-1)">45.4</text>
+			<text x="704.2374" y="382.7015905511812" style="font-family: Helvetica; font-size: 8.1px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,765) scale(1,-1)">64.6</text>
+			<text x="777.4901" y="382.7015905511812" style="font-family: Helvetica; font-size: 8.1px;fill: rgb(35%,43%,50%); stroke:none;" transform="translate(0,765) scale(1,-1)">45.4m</text>
+			<text x="44" y="368.79559055118114" style="font-family: Helvetica; font-size: 9px;fill: rgb(35%,43%,50%); stroke:none;" transform="translate(0,737) scale(1,-1)">06</text>
+			<rect x="68" y="366.47559055118114" width="3" height="7.800000000000011" style="stroke: none; stroke-linecap: butt; stroke-width: 0; fill: rgb(70%,35%,0%); fill-rule: evenodd;"/>
+			<text x="79" y="369.90159055118113" style="font-family: Helvetica; font-size: 10.3px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,739) scale(1,-1)">Claude Opus 5.5</text>
+			<text x="79" y="365.31959055118114" style="font-family: Helvetica; font-size: 5.8px;fill: rgb(35%,43%,50%); stroke:none;" transform="translate(0,730) scale(1,-1)">ANTHROPIC</text>
+			<path d="M 309.39917,369.901591 L 323.586852,369.901591 Z" style="stroke: rgb(25%,34%,41%); stroke-linecap: butt; stroke-width: 2.0;"/>
+			<path d="M 309.39917,375.901591 L 309.39917,363.901591 Z" style="stroke: rgb(25%,34%,41%); stroke-linecap: butt; stroke-width: 1.8;"/>
+			<path d="M 323.586852,375.901591 L 323.586852,363.901591 Z" style="stroke: rgb(25%,34%,41%); stroke-linecap: butt; stroke-width: 1.8;"/>
+			<circle cx="316.1301042" cy="369.90159055118113" r="5.5" style="stroke: rgb(9%,14%,20%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(70%,35%,0%); fill-rule: evenodd;"/>
+			<text x="574.2374" y="366.90159055118113" style="font-family: Helvetica; font-size: 8.1px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,733) scale(1,-1)">61.0</text>
+			<text x="639.2374" y="366.90159055118113" style="font-family: Helvetica; font-size: 8.1px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,733) scale(1,-1)">66.2</text>
+			<text x="704.2374" y="366.90159055118113" style="font-family: Helvetica; font-size: 8.1px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,733) scale(1,-1)">94.9</text>
+			<text x="784.2374" y="366.90159055118113" style="font-family: Helvetica; font-size: 8.1px;fill: rgb(35%,43%,50%); stroke:none;" transform="translate(0,733) scale(1,-1)">1.1h</text>
+			<text x="44" y="352.9955905511812" style="font-family: Helvetica; font-size: 9px;fill: rgb(35%,43%,50%); stroke:none;" transform="translate(0,705) scale(1,-1)">07</text>
+			<rect x="68" y="350.67559055118113" width="3" height="7.800000000000011" style="stroke: none; stroke-linecap: butt; stroke-width: 0; fill: rgb(17%,43%,79%); fill-rule: evenodd;"/>
+			<text x="79" y="354.1015905511812" style="font-family: Helvetica; font-size: 10.3px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,708) scale(1,-1)">Gemini 3.5 Flash</text>
+			<text x="79" y="349.5195905511812" style="font-family: Helvetica; font-size: 5.8px;fill: rgb(35%,43%,50%); stroke:none;" transform="translate(0,699) scale(1,-1)">GOOGLE</text>
+			<path d="M 309.298438,354.101591 L 374.188708,354.101591 Z" style="stroke: rgb(25%,34%,41%); stroke-linecap: butt; stroke-width: 2.0;"/>
+			<path d="M 309.298438,360.101591 L 309.298438,348.101591 Z" style="stroke: rgb(25%,34%,41%); stroke-linecap: butt; stroke-width: 1.8;"/>
+			<path d="M 374.188708,360.101591 L 374.188708,348.101591 Z" style="stroke: rgb(25%,34%,41%); stroke-linecap: butt; stroke-width: 1.8;"/>
+			<circle cx="316.20779454" cy="354.1015905511812" r="5.5" style="stroke: rgb(9%,14%,20%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(17%,43%,79%); fill-rule: evenodd;"/>
+			<text x="574.2374" y="351.1015905511812" style="font-family: Helvetica; font-size: 8.1px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,702) scale(1,-1)">61.2</text>
+			<text x="634.7338" y="351.1015905511812" style="font-family: Helvetica; font-size: 8.1px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,702) scale(1,-1)">140.5</text>
+			<text x="699.7338" y="351.1015905511812" style="font-family: Helvetica; font-size: 8.1px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,702) scale(1,-1)">418.2</text>
+			<text x="784.2374" y="351.1015905511812" style="font-family: Helvetica; font-size: 8.1px;fill: rgb(35%,43%,50%); stroke:none;" transform="translate(0,702) scale(1,-1)">2.3h</text>
+			<text x="44" y="337.1955905511811" style="font-family: Helvetica; font-size: 9px;fill: rgb(35%,43%,50%); stroke:none;" transform="translate(0,674) scale(1,-1)">08</text>
+			<rect x="68" y="334.8755905511811" width="3" height="7.800000000000011" style="stroke: none; stroke-linecap: butt; stroke-width: 0; fill: rgb(5%,54%,51%); fill-rule: evenodd;"/>
+			<text x="79" y="338.3015905511811" style="font-family: Helvetica; font-size: 10.3px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,676) scale(1,-1)">OpenAI o3</text>
+			<text x="79" y="333.7195905511811" style="font-family: Helvetica; font-size: 5.8px;fill: rgb(35%,43%,50%); stroke:none;" transform="translate(0,667) scale(1,-1)">OPENAI</text>
+			<path d="M 311.14915,338.301591 L 350.090549,338.301591 Z" style="stroke: rgb(25%,34%,41%); stroke-linecap: butt; stroke-width: 2.0;"/>
+			<path d="M 311.14915,344.301591 L 311.14915,332.301591 Z" style="stroke: rgb(25%,34%,41%); stroke-linecap: butt; stroke-width: 1.8;"/>
+			<path d="M 350.090549,344.301591 L 350.090549,332.301591 Z" style="stroke: rgb(25%,34%,41%); stroke-linecap: butt; stroke-width: 1.8;"/>
+			<circle cx="320.799491565" cy="338.3015905511811" r="5.5" style="stroke: rgb(9%,14%,20%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(5%,54%,51%); fill-rule: evenodd;"/>
+			<text x="574.2374" y="335.3015905511811" style="font-family: Helvetica; font-size: 8.1px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,670) scale(1,-1)">70.2</text>
+			<text x="634.7338" y="335.3015905511811" style="font-family: Helvetica; font-size: 8.1px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,670) scale(1,-1)">168.2</text>
+			<text x="699.7338" y="335.3015905511811" style="font-family: Helvetica; font-size: 8.1px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,670) scale(1,-1)">182.4</text>
+			<text x="784.2374" y="335.3015905511811" style="font-family: Helvetica; font-size: 8.1px;fill: rgb(35%,43%,50%); stroke:none;" transform="translate(0,670) scale(1,-1)">2.8h</text>
+			<text x="44" y="321.39559055118116" style="font-family: Helvetica; font-size: 9px;fill: rgb(35%,43%,50%); stroke:none;" transform="translate(0,642) scale(1,-1)">09</text>
+			<rect x="68" y="319.07559055118116" width="3" height="7.800000000000011" style="stroke: none; stroke-linecap: butt; stroke-width: 0; fill: rgb(12%,12%,14%); fill-rule: evenodd;"/>
+			<text x="79" y="322.50159055118115" style="font-family: Helvetica; font-size: 10.3px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,645) scale(1,-1)">Grok 4.3</text>
+			<text x="79" y="317.91959055118116" style="font-family: Helvetica; font-size: 5.8px;fill: rgb(35%,43%,50%); stroke:none;" transform="translate(0,635) scale(1,-1)">XAI</text>
+			<path d="M 318.021268,322.501591 L 336.318943,322.501591 Z" style="stroke: rgb(25%,34%,41%); stroke-linecap: butt; stroke-width: 2.0;"/>
+			<path d="M 318.021268,328.501591 L 318.021268,316.501591 Z" style="stroke: rgb(25%,34%,41%); stroke-linecap: butt; stroke-width: 1.8;"/>
+			<path d="M 336.318943,328.501591 L 336.318943,316.501591 Z" style="stroke: rgb(25%,34%,41%); stroke-linecap: butt; stroke-width: 1.8;"/>
+			<circle cx="322.6110261" cy="322.50159055118115" r="5.5" style="stroke: rgb(9%,14%,20%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(12%,12%,14%); fill-rule: evenodd;"/>
+			<text x="574.2374" y="319.50159055118115" style="font-family: Helvetica; font-size: 8.1px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,639) scale(1,-1)">73.7</text>
+			<text x="639.2374" y="319.50159055118115" style="font-family: Helvetica; font-size: 8.1px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,639) scale(1,-1)">89.0</text>
+			<text x="699.7338" y="319.50159055118115" style="font-family: Helvetica; font-size: 8.1px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,639) scale(1,-1)">148.9</text>
+			<text x="784.2374" y="319.50159055118115" style="font-family: Helvetica; font-size: 8.1px;fill: rgb(35%,43%,50%); stroke:none;" transform="translate(0,639) scale(1,-1)">1.5h</text>
+			<text x="44" y="305.5955905511811" style="font-family: Helvetica; font-size: 9px;fill: rgb(35%,43%,50%); stroke:none;" transform="translate(0,611) scale(1,-1)">10</text>
+			<rect x="68" y="303.2755905511811" width="3" height="7.800000000000011" style="stroke: none; stroke-linecap: butt; stroke-width: 0; fill: rgb(17%,43%,79%); fill-rule: evenodd;"/>
+			<text x="79" y="306.7015905511811" style="font-family: Helvetica; font-size: 10.3px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,613) scale(1,-1)">Gemma 4 31B IT</text>
+			<text x="79" y="302.1195905511811" style="font-family: Helvetica; font-size: 5.8px;fill: rgb(35%,43%,50%); stroke:none;" transform="translate(0,604) scale(1,-1)">GOOGLE</text>
+			<path d="M 318.481807,306.701591 L 329.925958,306.701591 Z" style="stroke: rgb(25%,34%,41%); stroke-linecap: butt; stroke-width: 2.0;"/>
+			<path d="M 318.481807,312.701591 L 318.481807,300.701591 Z" style="stroke: rgb(25%,34%,41%); stroke-linecap: butt; stroke-width: 1.8;"/>
+			<path d="M 329.925958,312.701591 L 329.925958,300.701591 Z" style="stroke: rgb(25%,34%,41%); stroke-linecap: butt; stroke-width: 1.8;"/>
+			<circle cx="323.129557125" cy="306.7015905511811" r="5.5" style="stroke: rgb(9%,14%,20%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(17%,43%,79%); fill-rule: evenodd;"/>
+			<text x="574.2374" y="303.7015905511811" style="font-family: Helvetica; font-size: 8.1px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,607) scale(1,-1)">74.8</text>
+			<text x="639.2374" y="303.7015905511811" style="font-family: Helvetica; font-size: 8.1px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,607) scale(1,-1)">79.8</text>
+			<text x="699.7338" y="303.7015905511811" style="font-family: Helvetica; font-size: 8.1px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,607) scale(1,-1)">107.0</text>
+			<text x="784.2374" y="303.7015905511811" style="font-family: Helvetica; font-size: 8.1px;fill: rgb(35%,43%,50%); stroke:none;" transform="translate(0,607) scale(1,-1)">1.3h</text>
+			<text x="44" y="289.79559055118114" style="font-family: Helvetica; font-size: 9px;fill: rgb(35%,43%,50%); stroke:none;" transform="translate(0,579) scale(1,-1)">11</text>
+			<rect x="68" y="287.47559055118114" width="3" height="7.800000000000011" style="stroke: none; stroke-linecap: butt; stroke-width: 0; fill: rgb(94%,35%,15%); fill-rule: evenodd;"/>
+			<text x="79" y="290.90159055118113" style="font-family: Helvetica; font-size: 10.3px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,581) scale(1,-1)">Mistral Small 4</text>
+			<text x="79" y="286.31959055118114" style="font-family: Helvetica; font-size: 5.8px;fill: rgb(35%,43%,50%); stroke:none;" transform="translate(0,572) scale(1,-1)">MISTRAL</text>
+			<path d="M 318.605402,290.901591 L 344.804629,290.901591 Z" style="stroke: rgb(25%,34%,41%); stroke-linecap: butt; stroke-width: 2.0;"/>
+			<path d="M 318.605402,296.901591 L 318.605402,284.901591 Z" style="stroke: rgb(25%,34%,41%); stroke-linecap: butt; stroke-width: 1.8;"/>
+			<path d="M 344.804629,296.901591 L 344.804629,284.901591 Z" style="stroke: rgb(25%,34%,41%); stroke-linecap: butt; stroke-width: 1.8;"/>
+			<circle cx="324.562005855" cy="290.90159055118113" r="5.5" style="stroke: rgb(9%,14%,20%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(94%,35%,15%); fill-rule: evenodd;"/>
+			<text x="574.2374" y="287.90159055118113" style="font-family: Helvetica; font-size: 8.1px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,575) scale(1,-1)">77.6</text>
+			<text x="634.7338" y="287.90159055118113" style="font-family: Helvetica; font-size: 8.1px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,575) scale(1,-1)">158.4</text>
+			<text x="699.7338" y="287.90159055118113" style="font-family: Helvetica; font-size: 8.1px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,575) scale(1,-1)">158.9</text>
+			<text x="784.2374" y="287.90159055118113" style="font-family: Helvetica; font-size: 8.1px;fill: rgb(35%,43%,50%); stroke:none;" transform="translate(0,575) scale(1,-1)">2.6h</text>
+			<text x="44" y="273.9955905511811" style="font-family: Helvetica; font-size: 9px;fill: rgb(35%,43%,50%); stroke:none;" transform="translate(0,547) scale(1,-1)">12</text>
+			<rect x="68" y="271.67559055118113" width="3" height="7.800000000000011" style="stroke: none; stroke-linecap: butt; stroke-width: 0; fill: rgb(70%,35%,0%); fill-rule: evenodd;"/>
+			<text x="79" y="275.1015905511811" style="font-family: Helvetica; font-size: 10.3px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,550) scale(1,-1)">Claude Fable 5</text>
+			<text x="79" y="270.5195905511811" style="font-family: Helvetica; font-size: 5.8px;fill: rgb(35%,43%,50%); stroke:none;" transform="translate(0,541) scale(1,-1)">ANTHROPIC</text>
+			<path d="M 318.200122,275.101591 L 381.910789,275.101591 Z" style="stroke: rgb(25%,34%,41%); stroke-linecap: butt; stroke-width: 2.0;"/>
+			<path d="M 318.200122,281.101591 L 318.200122,269.101591 Z" style="stroke: rgb(25%,34%,41%); stroke-linecap: butt; stroke-width: 1.8;"/>
+			<path d="M 381.910789,281.101591 L 381.910789,269.101591 Z" style="stroke: rgb(25%,34%,41%); stroke-linecap: butt; stroke-width: 1.8;"/>
+			<circle cx="327.573547185" cy="275.1015905511811" r="5.5" style="stroke: rgb(9%,14%,20%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(70%,35%,0%); fill-rule: evenodd;"/>
+			<text x="574.2374" y="272.1015905511811" style="font-family: Helvetica; font-size: 8.1px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,544) scale(1,-1)">83.5</text>
+			<text x="634.7338" y="272.1015905511811" style="font-family: Helvetica; font-size: 8.1px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,544) scale(1,-1)">470.2</text>
+			<text x="695.2302" y="272.1015905511811" style="font-family: Helvetica; font-size: 8.1px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,544) scale(1,-1)">1774.3</text>
+			<text x="784.2374" y="272.1015905511811" style="font-family: Helvetica; font-size: 8.1px;fill: rgb(35%,43%,50%); stroke:none;" transform="translate(0,544) scale(1,-1)">7.8h</text>
+			<text x="44" y="258.1955905511811" style="font-family: Helvetica; font-size: 9px;fill: rgb(35%,43%,50%); stroke:none;" transform="translate(0,516) scale(1,-1)">13</text>
+			<rect x="68" y="255.87559055118112" width="3" height="7.800000000000011" style="stroke: none; stroke-linecap: butt; stroke-width: 0; fill: rgb(94%,35%,15%); fill-rule: evenodd;"/>
+			<text x="79" y="259.3015905511811" style="font-family: Helvetica; font-size: 10.3px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,518) scale(1,-1)">Mistral Medium 3.5</text>
+			<text x="79" y="254.7195905511811" style="font-family: Helvetica; font-size: 5.8px;fill: rgb(35%,43%,50%); stroke:none;" transform="translate(0,509) scale(1,-1)">MISTRAL</text>
+			<path d="M 319.184939,259.301591 L 363.922282,259.301591 Z" style="stroke: rgb(25%,34%,41%); stroke-linecap: butt; stroke-width: 2.0;"/>
+			<path d="M 319.184939,265.301591 L 319.184939,253.301591 Z" style="stroke: rgb(25%,34%,41%); stroke-linecap: butt; stroke-width: 1.8;"/>
+			<path d="M 363.922282,265.301591 L 363.922282,253.301591 Z" style="stroke: rgb(25%,34%,41%); stroke-linecap: butt; stroke-width: 1.8;"/>
+			<circle cx="331.448024325" cy="259.3015905511811" r="5.5" style="stroke: rgb(9%,14%,20%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(94%,35%,15%); fill-rule: evenodd;"/>
+			<text x="574.2374" y="256.3015905511811" style="font-family: Helvetica; font-size: 8.1px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,512) scale(1,-1)">91.1</text>
+			<text x="634.7338" y="256.3015905511811" style="font-family: Helvetica; font-size: 8.1px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,512) scale(1,-1)">111.5</text>
+			<text x="699.7338" y="256.3015905511811" style="font-family: Helvetica; font-size: 8.1px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,512) scale(1,-1)">198.9</text>
+			<text x="784.2374" y="256.3015905511811" style="font-family: Helvetica; font-size: 8.1px;fill: rgb(35%,43%,50%); stroke:none;" transform="translate(0,512) scale(1,-1)">1.9h</text>
+			<text x="44" y="242.39559055118116" style="font-family: Helvetica; font-size: 9px;fill: rgb(35%,43%,50%); stroke:none;" transform="translate(0,484) scale(1,-1)">14</text>
+			<rect x="68" y="240.07559055118116" width="3" height="7.800000000000011" style="stroke: none; stroke-linecap: butt; stroke-width: 0; fill: rgb(35%,29%,83%); fill-rule: evenodd;"/>
+			<text x="79" y="243.50159055118115" style="font-family: Helvetica; font-size: 10.3px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,487) scale(1,-1)">DeepSeek V4.1 Flash</text>
+			<text x="79" y="238.91959055118116" style="font-family: Helvetica; font-size: 5.8px;fill: rgb(35%,43%,50%); stroke:none;" transform="translate(0,477) scale(1,-1)">DEEPSEEK</text>
+			<path d="M 319.382253,243.501591 L 340.493628,243.501591 Z" style="stroke: rgb(25%,34%,41%); stroke-linecap: butt; stroke-width: 2.0;"/>
+			<path d="M 319.382253,249.501591 L 319.382253,237.501591 Z" style="stroke: rgb(25%,34%,41%); stroke-linecap: butt; stroke-width: 1.8;"/>
+			<path d="M 340.493628,249.501591 L 340.493628,237.501591 Z" style="stroke: rgb(25%,34%,41%); stroke-linecap: butt; stroke-width: 1.8;"/>
+			<circle cx="332.02134873" cy="243.50159055118115" r="5.5" style="stroke: rgb(9%,14%,20%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(35%,29%,83%); fill-rule: evenodd;"/>
+			<text x="574.2374" y="240.50159055118115" style="font-family: Helvetica; font-size: 8.1px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,481) scale(1,-1)">92.2</text>
+			<text x="639.2374" y="240.50159055118115" style="font-family: Helvetica; font-size: 8.1px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,481) scale(1,-1)">93.1</text>
+			<text x="699.7338" y="240.50159055118115" style="font-family: Helvetica; font-size: 8.1px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,481) scale(1,-1)">141.0</text>
+			<text x="784.2374" y="240.50159055118115" style="font-family: Helvetica; font-size: 8.1px;fill: rgb(35%,43%,50%); stroke:none;" transform="translate(0,481) scale(1,-1)">1.6h</text>
+			<text x="44" y="226.5955905511811" style="font-family: Helvetica; font-size: 9px;fill: rgb(35%,43%,50%); stroke:none;" transform="translate(0,453) scale(1,-1)">15</text>
+			<rect x="68" y="224.2755905511811" width="3" height="7.800000000000011" style="stroke: none; stroke-linecap: butt; stroke-width: 0; fill: rgb(5%,54%,51%); fill-rule: evenodd;"/>
+			<text x="79" y="227.70159055118108" style="font-family: Helvetica; font-size: 10.3px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,455) scale(1,-1)">GPT-6 Luna</text>
+			<text x="79" y="223.1195905511811" style="font-family: Helvetica; font-size: 5.8px;fill: rgb(35%,43%,50%); stroke:none;" transform="translate(0,446) scale(1,-1)">OPENAI</text>
+			<path d="M 320.777893,227.701591 L 345.176619,227.701591 Z" style="stroke: rgb(25%,34%,41%); stroke-linecap: butt; stroke-width: 2.0;"/>
+			<path d="M 320.777893,233.701591 L 320.777893,221.701591 Z" style="stroke: rgb(25%,34%,41%); stroke-linecap: butt; stroke-width: 1.8;"/>
+			<path d="M 345.176619,233.701591 L 345.176619,221.701591 Z" style="stroke: rgb(25%,34%,41%); stroke-linecap: butt; stroke-width: 1.8;"/>
+			<circle cx="333.42982440000003" cy="227.70159055118108" r="5.5" style="stroke: rgb(9%,14%,20%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(5%,54%,51%); fill-rule: evenodd;"/>
+			<text x="574.2374" y="224.70159055118108" style="font-family: Helvetica; font-size: 8.1px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,449) scale(1,-1)">95.0</text>
+			<text x="634.7338" y="224.70159055118108" style="font-family: Helvetica; font-size: 8.1px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,449) scale(1,-1)">100.7</text>
+			<text x="699.7338" y="224.70159055118108" style="font-family: Helvetica; font-size: 8.1px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,449) scale(1,-1)">145.9</text>
+			<text x="784.2374" y="224.70159055118108" style="font-family: Helvetica; font-size: 8.1px;fill: rgb(35%,43%,50%); stroke:none;" transform="translate(0,449) scale(1,-1)">1.7h</text>
+			<text x="44" y="210.79559055118114" style="font-family: Helvetica; font-size: 9px;fill: rgb(35%,43%,50%); stroke:none;" transform="translate(0,421) scale(1,-1)">16</text>
+			<rect x="68" y="208.47559055118114" width="3" height="7.800000000000011" style="stroke: none; stroke-linecap: butt; stroke-width: 0; fill: rgb(12%,12%,14%); fill-rule: evenodd;"/>
+			<text x="79" y="211.90159055118113" style="font-family: Helvetica; font-size: 10.3px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,423) scale(1,-1)">Grok 4.5</text>
+			<text x="79" y="207.31959055118114" style="font-family: Helvetica; font-size: 5.8px;fill: rgb(35%,43%,50%); stroke:none;" transform="translate(0,414) scale(1,-1)">XAI</text>
+			<path d="M 333.113499,211.901591 L 363.784193,211.901591 Z" style="stroke: rgb(25%,34%,41%); stroke-linecap: butt; stroke-width: 2.0;"/>
+			<path d="M 333.113499,217.901591 L 333.113499,205.901591 Z" style="stroke: rgb(25%,34%,41%); stroke-linecap: butt; stroke-width: 1.8;"/>
+			<path d="M 363.784193,217.901591 L 363.784193,205.901591 Z" style="stroke: rgb(25%,34%,41%); stroke-linecap: butt; stroke-width: 1.8;"/>
+			<circle cx="343.03480383" cy="211.90159055118113" r="5.5" style="stroke: rgb(9%,14%,20%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(12%,12%,14%); fill-rule: evenodd;"/>
+			<text x="569.7338" y="208.90159055118113" style="font-family: Helvetica; font-size: 8.1px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,417) scale(1,-1)">113.8</text>
+			<text x="634.7338" y="208.90159055118113" style="font-family: Helvetica; font-size: 8.1px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,417) scale(1,-1)">153.3</text>
+			<text x="699.7338" y="208.90159055118113" style="font-family: Helvetica; font-size: 8.1px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,417) scale(1,-1)">274.7</text>
+			<text x="784.2374" y="208.90159055118113" style="font-family: Helvetica; font-size: 8.1px;fill: rgb(35%,43%,50%); stroke:none;" transform="translate(0,417) scale(1,-1)">2.6h</text>
+			<text x="44" y="194.99559055118112" style="font-family: Helvetica; font-size: 9px;fill: rgb(35%,43%,50%); stroke:none;" transform="translate(0,389) scale(1,-1)">17</text>
+			<rect x="68" y="192.67559055118113" width="3" height="7.800000000000011" style="stroke: none; stroke-linecap: butt; stroke-width: 0; fill: rgb(17%,43%,79%); fill-rule: evenodd;"/>
+			<text x="79" y="196.10159055118112" style="font-family: Helvetica; font-size: 10.3px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,392) scale(1,-1)">Gemini 3.1 Pro Preview</text>
+			<text x="79" y="191.51959055118112" style="font-family: Helvetica; font-size: 5.8px;fill: rgb(35%,43%,50%); stroke:none;" transform="translate(0,383) scale(1,-1)">GOOGLE</text>
+			<path d="M 322.329221,196.101591 L 424.719236,196.101591 Z" style="stroke: rgb(25%,34%,41%); stroke-linecap: butt; stroke-width: 2.0;"/>
+			<path d="M 322.329221,202.101591 L 322.329221,190.101591 Z" style="stroke: rgb(25%,34%,41%); stroke-linecap: butt; stroke-width: 1.8;"/>
+			<path d="M 424.719236,202.101591 L 424.719236,190.101591 Z" style="stroke: rgb(25%,34%,41%); stroke-linecap: butt; stroke-width: 1.8;"/>
+			<circle cx="343.51514223" cy="196.10159055118112" r="5.5" style="stroke: rgb(9%,14%,20%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(17%,43%,79%); fill-rule: evenodd;"/>
+			<text x="569.7338" y="193.10159055118112" style="font-family: Helvetica; font-size: 8.1px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,386) scale(1,-1)">114.7</text>
+			<text x="634.7338" y="193.10159055118112" style="font-family: Helvetica; font-size: 8.1px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,386) scale(1,-1)">520.2</text>
+			<text x="695.2302" y="193.10159055118112" style="font-family: Helvetica; font-size: 8.1px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,386) scale(1,-1)">2120.4</text>
+			<text x="784.2374" y="193.10159055118112" style="font-family: Helvetica; font-size: 8.1px;fill: rgb(35%,43%,50%); stroke:none;" transform="translate(0,386) scale(1,-1)">8.7h</text>
+			<text x="44" y="179.1955905511811" style="font-family: Helvetica; font-size: 9px;fill: rgb(35%,43%,50%); stroke:none;" transform="translate(0,358) scale(1,-1)">18</text>
+			<rect x="68" y="176.87559055118112" width="3" height="7.800000000000011" style="stroke: none; stroke-linecap: butt; stroke-width: 0; fill: rgb(5%,54%,51%); fill-rule: evenodd;"/>
+			<text x="79" y="180.3015905511811" style="font-family: Helvetica; font-size: 10.3px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,360) scale(1,-1)">GPT-6.1 Sol</text>
+			<text x="79" y="175.7195905511811" style="font-family: Helvetica; font-size: 5.8px;fill: rgb(35%,43%,50%); stroke:none;" transform="translate(0,351) scale(1,-1)">OPENAI</text>
+			<path d="M 355.054001,180.301591 L 396.197961,180.301591 Z" style="stroke: rgb(25%,34%,41%); stroke-linecap: butt; stroke-width: 2.0;"/>
+			<path d="M 355.054001,186.301591 L 355.054001,174.301591 Z" style="stroke: rgb(25%,34%,41%); stroke-linecap: butt; stroke-width: 1.8;"/>
+			<path d="M 396.197961,186.301591 L 396.197961,174.301591 Z" style="stroke: rgb(25%,34%,41%); stroke-linecap: butt; stroke-width: 1.8;"/>
+			<circle cx="373.18770289500003" cy="180.3015905511811" r="5.5" style="stroke: rgb(9%,14%,20%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(5%,54%,51%); fill-rule: evenodd;"/>
+			<text x="569.7338" y="177.3015905511811" style="font-family: Helvetica; font-size: 8.1px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,354) scale(1,-1)">172.9</text>
+			<text x="634.7338" y="177.3015905511811" style="font-family: Helvetica; font-size: 8.1px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,354) scale(1,-1)">175.9</text>
+			<text x="699.7338" y="177.3015905511811" style="font-family: Helvetica; font-size: 8.1px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,354) scale(1,-1)">247.8</text>
+			<text x="784.2374" y="177.3015905511811" style="font-family: Helvetica; font-size: 8.1px;fill: rgb(35%,43%,50%); stroke:none;" transform="translate(0,354) scale(1,-1)">2.9h</text>
+			<text x="44" y="163.3955905511811" style="font-family: Helvetica; font-size: 9px;fill: rgb(35%,43%,50%); stroke:none;" transform="translate(0,326) scale(1,-1)">19</text>
+			<rect x="68" y="161.0755905511811" width="3" height="7.800000000000011" style="stroke: none; stroke-linecap: butt; stroke-width: 0; fill: rgb(35%,29%,83%); fill-rule: evenodd;"/>
+			<text x="79" y="164.5015905511811" style="font-family: Helvetica; font-size: 10.3px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,329) scale(1,-1)">DeepSeek V4 Flash</text>
+			<text x="79" y="159.9195905511811" style="font-family: Helvetica; font-size: 5.8px;fill: rgb(35%,43%,50%); stroke:none;" transform="translate(0,319) scale(1,-1)">DEEPSEEK</text>
+			<path d="M 357.09344,164.501591 L 408.901802,164.501591 Z" style="stroke: rgb(25%,34%,41%); stroke-linecap: butt; stroke-width: 2.0;"/>
+			<path d="M 357.09344,170.501591 L 357.09344,158.501591 Z" style="stroke: rgb(25%,34%,41%); stroke-linecap: butt; stroke-width: 1.8;"/>
+			<path d="M 408.901802,170.501591 L 408.901802,158.501591 Z" style="stroke: rgb(25%,34%,41%); stroke-linecap: butt; stroke-width: 1.8;"/>
+			<circle cx="380.89045959" cy="164.5015905511811" r="5.5" style="stroke: rgb(9%,14%,20%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(35%,29%,83%); fill-rule: evenodd;"/>
+			<text x="569.7338" y="161.5015905511811" style="font-family: Helvetica; font-size: 8.1px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,323) scale(1,-1)">188.0</text>
+			<text x="634.7338" y="161.5015905511811" style="font-family: Helvetica; font-size: 8.1px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,323) scale(1,-1)">227.0</text>
+			<text x="699.7338" y="161.5015905511811" style="font-family: Helvetica; font-size: 8.1px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,323) scale(1,-1)">325.6</text>
+			<text x="784.2374" y="161.5015905511811" style="font-family: Helvetica; font-size: 8.1px;fill: rgb(35%,43%,50%); stroke:none;" transform="translate(0,323) scale(1,-1)">3.8h</text>
+			<text x="44" y="147.59559055118115" style="font-family: Helvetica; font-size: 9px;fill: rgb(35%,43%,50%); stroke:none;" transform="translate(0,295) scale(1,-1)">20</text>
+			<rect x="68" y="145.27559055118115" width="3" height="7.800000000000011" style="stroke: none; stroke-linecap: butt; stroke-width: 0; fill: rgb(35%,29%,83%); fill-rule: evenodd;"/>
+			<text x="79" y="148.70159055118114" style="font-family: Helvetica; font-size: 10.3px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,297) scale(1,-1)">DeepSeek V4 Pro</text>
+			<text x="79" y="144.11959055118115" style="font-family: Helvetica; font-size: 5.8px;fill: rgb(35%,43%,50%); stroke:none;" transform="translate(0,288) scale(1,-1)">DEEPSEEK</text>
+			<path d="M 363.595312,148.701591 L 413.620328,148.701591 Z" style="stroke: rgb(25%,34%,41%); stroke-linecap: butt; stroke-width: 2.0;"/>
+			<path d="M 363.595312,154.701591 L 363.595312,142.701591 Z" style="stroke: rgb(25%,34%,41%); stroke-linecap: butt; stroke-width: 1.8;"/>
+			<path d="M 413.620328,154.701591 L 413.620328,142.701591 Z" style="stroke: rgb(25%,34%,41%); stroke-linecap: butt; stroke-width: 1.8;"/>
+			<circle cx="388.2285951" cy="148.70159055118114" r="5.5" style="stroke: rgb(9%,14%,20%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(35%,29%,83%); fill-rule: evenodd;"/>
+			<text x="569.7338" y="145.70159055118114" style="font-family: Helvetica; font-size: 8.1px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,291) scale(1,-1)">202.4</text>
+			<text x="634.7338" y="145.70159055118114" style="font-family: Helvetica; font-size: 8.1px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,291) scale(1,-1)">244.0</text>
+			<text x="699.7338" y="145.70159055118114" style="font-family: Helvetica; font-size: 8.1px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,291) scale(1,-1)">466.7</text>
+			<text x="784.2374" y="145.70159055118114" style="font-family: Helvetica; font-size: 8.1px;fill: rgb(35%,43%,50%); stroke:none;" transform="translate(0,291) scale(1,-1)">4.1h</text>
+			<text x="44" y="131.79559055118114" style="font-family: Helvetica; font-size: 9px;fill: rgb(35%,43%,50%); stroke:none;" transform="translate(0,263) scale(1,-1)">21</text>
+			<rect x="68" y="129.47559055118114" width="3" height="7.800000000000011" style="stroke: none; stroke-linecap: butt; stroke-width: 0; fill: rgb(5%,54%,51%); fill-rule: evenodd;"/>
+			<text x="79" y="132.90159055118113" style="font-family: Helvetica; font-size: 10.3px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,265) scale(1,-1)">GPT-5.6 Sol</text>
+			<text x="79" y="128.31959055118114" style="font-family: Helvetica; font-size: 5.8px;fill: rgb(35%,43%,50%); stroke:none;" transform="translate(0,256) scale(1,-1)">OPENAI</text>
+			<path d="M 403.936382,132.901591 L 536.869608,132.901591 Z" style="stroke: rgb(25%,34%,41%); stroke-linecap: butt; stroke-width: 2.0;"/>
+			<path d="M 403.936382,138.901591 L 403.936382,126.901591 Z" style="stroke: rgb(25%,34%,41%); stroke-linecap: butt; stroke-width: 1.8;"/>
+			<path d="M 536.869608,138.901591 L 536.869608,126.901591 Z" style="stroke: rgb(25%,34%,41%); stroke-linecap: butt; stroke-width: 1.8;"/>
+			<circle cx="441.59386646999997" cy="132.90159055118113" r="5.5" style="stroke: rgb(9%,14%,20%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(5%,54%,51%); fill-rule: evenodd;"/>
+			<text x="569.7338" y="129.90159055118113" style="font-family: Helvetica; font-size: 8.1px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,259) scale(1,-1)">307.0</text>
+			<text x="634.7338" y="129.90159055118113" style="font-family: Helvetica; font-size: 8.1px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,259) scale(1,-1)">727.6</text>
+			<text x="695.2302" y="129.90159055118113" style="font-family: Helvetica; font-size: 8.1px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,259) scale(1,-1)">2045.4</text>
+			<text x="779.7338" y="129.90159055118113" style="font-family: Helvetica; font-size: 8.1px;fill: rgb(35%,43%,50%); stroke:none;" transform="translate(0,259) scale(1,-1)">12.1h</text>
 			<path d="M 285,109.275591 L 540,109.275591 Z" style="stroke: rgb(9%,19%,30%); stroke-linecap: butt; stroke-width: 1.3;"/>
 			<text x="302.372" y="73.27559055118115" style="font-family: Helvetica; font-size: 8.0px;fill: rgb(9%,19%,30%); stroke:none;" transform="translate(0,146) scale(1,-1)">RESPONSE TIME (SECONDS) - FARTHER LEFT = FASTER</text>
 			<text x="44" y="29.275590551181153" style="font-family: Helvetica; font-size: 7.2px;fill: rgb(35%,43%,50%); stroke:none;" transform="translate(0,58) scale(1,-1)">Time excludes the local queue before dispatch; it includes the API call, generation, and any retries.</text>
-			<text x="44" y="14.275590551181153" style="font-family: Helvetica; font-size: 6.6px;fill: rgb(35%,43%,50%); stroke:none;" transform="translate(0,28) scale(1,-1)">Common panel: 60 exercises (33 Analysis 3, 27 Physics 2), 17 models, 1,020 macro-averaged cells</text>
+			<text x="44" y="14.275590551181153" style="font-family: Helvetica; font-size: 6.6px;fill: rgb(35%,43%,50%); stroke:none;" transform="translate(0,28) scale(1,-1)">Common panel: 60 exercises (33 Analysis 3, 27 Physics 2), 21 models, 1,260 macro-averaged cells</text>
 			<text x="790.826" y="14.275590551181153" style="font-family: Helvetica; font-size: 6.6px;fill: rgb(35%,43%,50%); stroke:none;" transform="translate(0,28) scale(1,-1)">1/4</text>
 		</g>
 	</g>

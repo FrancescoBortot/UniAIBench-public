@@ -37,9 +37,9 @@ def build(*, write: bool = True) -> str:
         "# Evaluated models and pricing", "",
         "This catalog is generated from the versioned",
         "[`analysis/data/model_catalog.json`](../analysis/data/model_catalog.json)",
-        "record used by the paper appendix and website export. It identifies the",
-        "**17 model--mode configurations** in the matched 60-item panel and separates two price concepts:", "",
-        f"- **latest verified API rate:** the standard first-party rate manually checked on **{latest_date}**;",
+        "record used by the current model documentation and website export. It identifies the",
+        "**21 model--mode configurations** in the matched 60-item panel and separates two price concepts:", "",
+        f"- **latest verified API rate:** a recorded first-party rate with its verification date shown per row (latest: **{latest_date}**);",
         f"- **benchmark rate:** the frozen rate used to estimate study costs on **{benchmark_date}**.", "",
         "Prices are in USD per one million tokens and show input before output. They",
         "are not live prices. Cached input, batch, regional, tax, tool, and",
@@ -72,12 +72,13 @@ def build(*, write: bool = True) -> str:
         ]))
 
     lines.extend(["", "## Pricing", "",
-        "| Model | Latest verified standard API rate | Benchmark rate | Official pricing source |",
-        "|---|---|---|---|",
+        "| Model | Latest verified standard API rate | Verification date | Benchmark rate | Official pricing source |",
+        "|---|---|---|---|---|",
     ])
     for model in models:
         lines.append(table_row([
-            model["model"], model["latest_verified_rate"], model["benchmark_rate"],
+            model["model"], model["latest_verified_rate"],
+            display_date(model["latest_price_verification_date"]), model["benchmark_rate"],
             f"[{model['pricing_source_label']}]({model['pricing_source_url']})",
         ]))
 
@@ -90,7 +91,7 @@ def build(*, write: bool = True) -> str:
         "The same values are exposed as a flat analysis input in",
         "[`analysis/tables/token_cost_rates.csv`](../analysis/tables/token_cost_rates.csv),",
         "while per-model observed token and cost summaries are in",
-        "[`analysis/tables/model_token_costs_17x60.csv`](../analysis/tables/model_token_costs_17x60.csv).", "",
+        "[`analysis/tables/model_token_costs_21x60.csv`](../analysis/tables/model_token_costs_21x60.csv).", "",
     ])
     content = "\n".join(lines)
     if write:

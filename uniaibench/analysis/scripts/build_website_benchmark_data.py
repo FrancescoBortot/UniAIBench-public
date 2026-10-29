@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Generate the website's public 17x60 chart data from sanitized CSVs.
+"""Generate the website's public 21x60 chart data from sanitized CSVs.
 
 The generator reads only the aggregate artifacts distributed in
 ``uniaibench/analysis/`` and writes TypeScript data modules to
@@ -27,12 +27,12 @@ CORRECTNESS_TABLES = {
     "analysis": ANALYSIS_DIR / "tables" / "main_ranking_analysis_iii.csv",
     "physics": ANALYSIS_DIR / "tables" / "main_ranking_physics_ii.csv",
 }
-TOKEN_SUMMARY = ANALYSIS_DIR / "tables" / "model_token_costs_17x60.csv"
+TOKEN_SUMMARY = ANALYSIS_DIR / "tables" / "model_token_costs_21x60.csv"
 MODEL_ITEMS = ANALYSIS_DIR / "data" / "model_item_resources.csv"
 CORRECTNESS_ITEMS = ANALYSIS_DIR / "data" / "model_item_scores.csv"
 MODEL_CATALOG = ANALYSIS_DIR / "data" / "model_catalog.json"
-TIME_SUMMARY = ANALYSIS_DIR / "grafici_tempo_risposta_focus" / "tables" / "tempi_modelli_17x60.csv"
-NORMALIZED_TIMES = ANALYSIS_DIR / "grafici_tempo_risposta_focus" / "tables" / "tempi_normalizzati_modello_esercizio_17x60.csv"
+TIME_SUMMARY = ANALYSIS_DIR / "grafici_tempo_risposta_focus" / "tables" / "tempi_modelli_21x60.csv"
+NORMALIZED_TIMES = ANALYSIS_DIR / "grafici_tempo_risposta_focus" / "tables" / "tempi_normalizzati_modello_esercizio_21x60.csv"
 
 PROVIDERS = {
     "openai": "OpenAI",
@@ -147,10 +147,10 @@ def build() -> None:
     model_catalog = json.loads(MODEL_CATALOG.read_text(encoding="utf-8"))
     catalog_models = model_catalog["models"]
 
-    if any(len(rows) != 17 for rows in correctness.values()):
-        raise ValueError("Expected 17 models in every correctness scope")
-    if len(model_items) != 1020 or len(correctness_items) != 1020 or len(normalized_times) != 1020:
-        raise ValueError("Expected exactly 1020 balanced model-item cells")
+    if any(len(rows) != 21 for rows in correctness.values()):
+        raise ValueError("Expected 21 models in every correctness scope")
+    if len(model_items) != 1260 or len(correctness_items) != 1260 or len(normalized_times) != 1260:
+        raise ValueError("Expected exactly 1260 balanced model-item cells")
 
     cell_groups: dict[tuple[str, str], list[dict[str, str]]] = defaultdict(list)
     for row in model_items:
@@ -294,7 +294,7 @@ def build() -> None:
         'export type ActiveModel = Omit<Model, "metrics"> & ModelMetrics;\n',
         "export type ResourceProfile = { costLow: number; costHigh: number; costTotal: number; input: number; visible: number; reasoning: number; unseparated: number; total: number };\n",
         "export type TimeProfile = { mean: number; q1: number; q3: number; p90: number; total: number; tokens: number; intensity: number };\n\n",
-        ts_export("benchmarkSnapshot", {"date": "16 September 2026", "models": 17, "exercises": 60, "analysisExercises": 33, "physicsExercises": 27, "cells": 1020}),
+        ts_export("benchmarkSnapshot", {"date": "15 October 2026", "models": 21, "exercises": 60, "analysisExercises": 33, "physicsExercises": 27, "cells": 1260}),
         ts_export("models", models, "Model[]"),
         ts_export("dimensionProfiles", dimension_profiles, "Record<string, number[]>"),
         ts_export("resourceProfiles", resource_profiles, "Record<string, ResourceProfile>"),

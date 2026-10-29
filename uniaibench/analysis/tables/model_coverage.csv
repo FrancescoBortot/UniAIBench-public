@@ -16,6 +16,10 @@ overall,OpenAI o3,60,60,1.0,60,60,0
 overall,Mistral Medium 3.5,60,60,1.0,60,60,0
 overall,Mistral Small 4,60,60,1.0,60,60,0
 overall,DeepSeek V4.1 Flash,60,60,1.0,60,60,0
+overall,Claude Opus 5.5,60,60,1.0,60,60,0
+overall,Claude Sonnet 5.5,60,60,1.0,60,60,0
+overall,GPT-6.1 Sol,60,60,1.0,60,60,0
+overall,GPT-6 Luna,60,60,1.0,60,60,0
 analysis_3,Claude Fable 5,33,33,1.0,33,39,3
 analysis_3,Claude Haiku 4.5,33,33,1.0,33,33,0
 analysis_3,Claude Sonnet 4.5,33,33,1.0,33,33,0
@@ -33,6 +37,10 @@ analysis_3,OpenAI o3,33,33,1.0,33,33,0
 analysis_3,Mistral Medium 3.5,33,33,1.0,33,33,0
 analysis_3,Mistral Small 4,33,33,1.0,33,33,0
 analysis_3,DeepSeek V4.1 Flash,33,33,1.0,33,33,0
+analysis_3,Claude Opus 5.5,33,33,1.0,33,33,0
+analysis_3,Claude Sonnet 5.5,33,33,1.0,33,33,0
+analysis_3,GPT-6.1 Sol,33,33,1.0,33,33,0
+analysis_3,GPT-6 Luna,33,33,1.0,33,33,0
 physics_2,Claude Fable 5,27,27,1.0,27,39,6
 physics_2,Claude Haiku 4.5,27,27,1.0,27,27,0
 physics_2,Claude Sonnet 4.5,27,27,1.0,27,27,0
@@ -50,3 +58,7 @@ physics_2,OpenAI o3,27,27,1.0,27,27,0
 physics_2,Mistral Medium 3.5,27,27,1.0,27,27,0
 physics_2,Mistral Small 4,27,27,1.0,27,27,0
 physics_2,DeepSeek V4.1 Flash,27,27,1.0,27,27,0
+physics_2,Claude Opus 5.5,27,27,1.0,27,27,0
+physics_2,Claude Sonnet 5.5,27,27,1.0,27,27,0
+physics_2,GPT-6.1 Sol,27,27,1.0,27,27,0
+physics_2,GPT-6 Luna,27,27,1.0,27,27,0

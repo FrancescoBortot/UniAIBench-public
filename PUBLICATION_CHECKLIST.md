@@ -1,6 +1,11 @@
 # Publication checklist
 
-> **Current status (21 September 2026):** all required review and rights checks
+> **Aggregate v1.2 preparation (29 October 2026):** the proposal preserves the
+> established aggregate-only boundary and fixed paper. The required checkboxes
+> below record the original human review; this update does not claim a new
+> human attestation or completed publication.
+
+> **Publication history (21 September 2026):** all required review and rights checks
 > were completed successfully before publication, and UniAIBench v1.0 is
 > publicly available.
 

@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "benchmark_snapshot_date": "2026-09-16",
+  "benchmark_snapshot_date": "2026-10-15",
   "currency": "USD",
   "price_unit": "per 1,000,000 tokens",
-  "scope": "Frozen input and output rates used for the current 17-configuration UniAIBench cost estimates.",
+  "scope": "Frozen input and output rates used for the current 21-configuration UniAIBench cost estimates.",
   "source_boundary": {
     "distributed": "This manifest publishes every applied rate, its public provider reference, and the provenance class used for the frozen value.",
     "withheld": "Operational campaign configurations are not distributed because they contain study-specific execution details outside the public evidence boundary.",
@@ -44,6 +44,28 @@
       "note": "The campaign configuration uses no native reasoning mode."
     },
     {
+      "record_id": "gpt-6.1-sol",
+      "model_id": "gpt-6.1-sol",
+      "model": "GPT-6.1 Sol",
+      "input_usd_per_million": 2.0,
+      "output_usd_per_million": 10.0,
+      "rate_origin_kind": "official_provider_documentation",
+      "official_reference_url": "https://developers.openai.com/api/docs/models/gpt-6.1-sol",
+      "configuration_snapshot_sha256": null,
+      "note": "Reasoning tokens are included in billable output tokens; standard context tier."
+    },
+    {
+      "record_id": "gpt-6-luna",
+      "model_id": "gpt-6-luna",
+      "model": "GPT-6 Luna",
+      "input_usd_per_million": 0.1,
+      "output_usd_per_million": 0.5,
+      "rate_origin_kind": "official_provider_documentation",
+      "official_reference_url": "https://developers.openai.com/api/docs/models/gpt-6-luna",
+      "configuration_snapshot_sha256": null,
+      "note": "Reasoning tokens are included in billable output tokens; standard context tier."
+    },
+    {
       "record_id": "claude-fable-5",
       "model_id": "claude-fable-5",
       "model": "Claude Fable 5",
@@ -75,6 +97,28 @@
       "official_reference_url": "https://platform.claude.com/docs/en/about-claude/pricing",
       "configuration_snapshot_sha256": "e4f31febe7e7ad22fa126b61e9f3b8ca29d10cda877ef29d9933e33deb77af23",
       "note": "Campaign-configured rate; no extended thinking was requested."
+    },
+    {
+      "record_id": "claude-opus-5-5",
+      "model_id": "claude-opus-5-5",
+      "model": "Claude Opus 5.5",
+      "input_usd_per_million": 4.0,
+      "output_usd_per_million": 20.0,
+      "rate_origin_kind": "official_provider_documentation",
+      "official_reference_url": "https://platform.claude.com/docs/en/models/opus-5-5/overview",
+      "configuration_snapshot_sha256": null,
+      "note": "Standard Claude API rate; adaptive-thinking tokens are included in unseparated output."
+    },
+    {
+      "record_id": "claude-sonnet-5-5",
+      "model_id": "claude-sonnet-5-5",
+      "model": "Claude Sonnet 5.5",
+      "input_usd_per_million": 2.0,
+      "output_usd_per_million": 10.0,
+      "rate_origin_kind": "official_provider_documentation",
+      "official_reference_url": "https://platform.claude.com/docs/en/models/sonnet-5-5/overview",
+      "configuration_snapshot_sha256": null,
+      "note": "Standard Claude API rate; adaptive-thinking tokens are included in unseparated output."
     },
     {
       "record_id": "gemini-3.5-flash",
@@ -143,6 +187,17 @@
       "note": "Estimate based on the configured standard input rate; unavailable local cache discounts are not applied."
     },
     {
+      "record_id": "deepseek-v4-1-flash",
+      "model_id": "deepseek-flash",
+      "model": "DeepSeek V4.1 Flash",
+      "input_usd_per_million": 0.3,
+      "output_usd_per_million": 1.2,
+      "rate_origin_kind": "private_campaign_configuration_snapshot",
+      "official_reference_url": "https://api-docs.deepseek.com/quick_start/pricing/",
+      "configuration_snapshot_sha256": "8048c80ca15cebfabab8d0b6c688f6b247df67f0299985ec219e3907fcda1a78",
+      "note": "Conservative peak-rate estimate with uncached input; not an actual invoice. Thinking tokens are included in billed output."
+    },
+    {
       "record_id": "grok-4.5",
       "model_id": "grok-4.5",
       "model": "Grok 4.5",
@@ -163,17 +218,6 @@
       "official_reference_url": "https://docs.x.ai/developers/models/grok-4.3",
       "configuration_snapshot_sha256": "72f55057c52ab2b6c046bfaf25c4b38760bba171fe667cc82cde02e342da559b",
       "note": "Selected total cost uses the provider-reported value; the rate is retained for cross-checking."
-    },
-    {
-      "record_id": "deepseek-v4-1-flash",
-      "model_id": "deepseek-flash",
-      "model": "DeepSeek V4.1 Flash",
-      "input_usd_per_million": 0.3,
-      "output_usd_per_million": 1.2,
-      "rate_origin_kind": "private_campaign_configuration_snapshot",
-      "official_reference_url": "https://api-docs.deepseek.com/quick_start/pricing/",
-      "configuration_snapshot_sha256": "8048c80ca15cebfabab8d0b6c688f6b247df67f0299985ec219e3907fcda1a78",
-      "note": "Conservative peak-rate estimate with uncached input; not an actual invoice. Thinking tokens are included in billed output."
     },
     {
       "record_id": "mistral-medium-3-5",

@@ -56,7 +56,7 @@ You can use it to:
 - adapt the solver, rubric-builder, judge, and adjudicator prompts;
 - inspect a reference multi-provider benchmark harness and configuration model;
 - validate rubric, judgment, and configuration artifacts offline;
-- study the published 17-configuration by 60-exercise matched comparison;
+- study the published 21-configuration by 60-exercise matched comparison;
 - reproduce the public correctness, token, cost, and latency figures;
 - rebuild the scientific paper from its public sources;
 - audit which components are public and which remain in the private archive.
@@ -89,22 +89,22 @@ but they also make individual scores easier to inspect, contest, and reproduce.
 
 ## Current study and release status
 
-This repository represents the **UniAIBench v1.1** aggregate release.
+This repository represents the **UniAIBench v1.2** aggregate release.
 
 | Item | Published study |
 |---|---:|
-| Benchmark snapshot | 16 September 2026 |
+| Benchmark snapshot | 15 October 2026 |
 | Subjects | 2 |
-| Model--mode configurations | 17 |
+| Model--mode configurations | 21 |
 | Common exercises | 60 |
 | Mathematical Analysis III exercises | 33 |
 | General Physics II exercises | 27 |
-| Matched model--exercise cells | 1,020 |
-| Retained responses summarized by those cells | 1,104 |
+| Matched model--exercise cells | 1,260 |
+| Retained responses summarized by those cells | 1,344 |
 
 The accompanying paper remains the fixed **v1.0, 14-configuration by 60-item**
 snapshot dated 14 August 2026. The current repository and website extend the
-same controlled panel to 17 configurations without rewriting that paper.
+same controlled panel to 21 configurations without rewriting that paper.
 
 “Model--mode configuration” is used deliberately: two configurations of the
 same underlying model can differ in reasoning mode, endpoint, or other recorded
@@ -317,7 +317,7 @@ parameters. Human approval remains mandatory when freezing rubrics and deciding
 adjudications.
 
 See [Model selection and operation](benchmark-toolkit/guides/model-selection.md).
-The [evaluated-model catalog](uniaibench/profile/evaluated-models.md) records the 17 current
+The [evaluated-model catalog](uniaibench/profile/evaluated-models.md) records the 21 current
 configurations, technical specifications, reasoning modes, official links, and
 both current and frozen benchmark prices.
 
@@ -344,20 +344,20 @@ settings in the same run directory.
 
 ## Published results
 
-The principal comparison uses the same 60 exercises for all 17 configurations.
-Its 1,020 model--exercise cells summarize 1,104 retained responses because some
+The principal comparison uses the same 60 exercises for all 21 configurations.
+Its 1,260 model--exercise cells summarize 1,344 retained responses because some
 cells contain repeated runs.
 
-The top six configurations by mean rubric score were:
+The top six configurations by mean rubric score are:
 
 | Rank | Configuration | Mean score | 95% item-bootstrap interval |
 |---:|---|---:|---:|
-| 1 | GPT-5.6 Sol | 98.72% | 97.04--99.86% |
-| 2 | Claude Fable 5 | 97.99% | 96.15--99.38% |
-| 3 | DeepSeek V4 Flash | 97.24% | 94.66--99.16% |
-| 4 | DeepSeek V4.1 Flash | 97.23% | 95.10--98.78% |
-| 5 | Gemini 3.1 Pro Preview | 97.05% | 95.11--98.60% |
-| 6 | Gemini 3.5 Flash | 96.95% | 95.10--98.51% |
+| 1 | Claude Opus 5.5 | 99.11% | 98.49--99.61% |
+| 2 | GPT-6.1 Sol | 99.09% | 97.90--99.83% |
+| 3 | GPT-5.6 Sol | 98.72% | 97.04--99.86% |
+| 4 | Claude Sonnet 5.5 | 98.67% | 97.54--99.46% |
+| 5 | GPT-6 Luna | 98.47% | 97.45--99.31% |
+| 6 | Claude Fable 5 | 97.99% | 96.15--99.38% |
 
 ![Overall ranking by mean accuracy across the 60 common exercises, with 95% confidence intervals](uniaibench/analysis/figures/site/01_01_overall_ranking.svg)
 
@@ -487,14 +487,14 @@ the process auditable.
 
 Machine-readable citation metadata are available in
 [`CITATION.cff`](CITATION.cff). Until an archival DOI is available, cite the
-v1.1 repository release and the fixed v1.0 manuscript snapshot:
+v1.2 repository release and the fixed v1.0 manuscript snapshot:
 
 ```bibtex
 @misc{bortot2026uniaibench,
   author  = {Francesco Bortot},
   title   = {UniAIBench: Benchmarking AI Models on Advanced University-Level Analysis III and Physics II Problems},
   year    = {2026},
-  version = {1.1},
+  version = {1.2},
   url     = {https://github.com/FrancescoBortot/UniAIBench-public}
 }
 ```

@@ -1,0 +1,24 @@
+{
+  "schema_version": "1.0",
+  "snapshot": "UniAIBench v1.0, 14 August 2026, 14 configurations by 60 items",
+  "algorithm": "sha256",
+  "files": {
+    "Makefile": "ff1f59f01175112b5d480defd352915b6776873635bff7ae2011d7c9c94cee0a",
+    "README.md": "f95f8cab4ff0edf2dd1f2b8ffcc141ff30f332acf7e1e090b0187ddaa350de45",
+    "benchmark_publication.pdf": "c7cf518b001dd030f239d46b5483fb8fe573d6046da37968866e66a9675189ae",
+    "data/model_item_scores_14x60.csv": "349b358967d3c3a49241d9d059becf415948c79d0c2f1b4763406b0fb7b41d4f",
+    "figures/focused_response_time_charts.pdf": "38a93e6d7e39db90c29787a4707f28423904c0552df6afbff3c90241edde498d",
+    "figures/focused_token_cost_charts.pdf": "47a8d5f789016ccfcc8028c26ee1a69c68407df81f276d127c21bf62ab0c1e27",
+    "figures/item_difficulty.tex": "ca2be9f0ec1f6ddbc2df3d4a8533e351d654bf08aaf9fe3dd1f67d8e02a74dba",
+    "figures/model_technical_specifications.pdf": "1ca1f7a6c305cfc58afde529c96a78f555edd7b8e2dcda0296851d9d466cfdd4",
+    "figures/performance_overview.tex": "2cd0d5957ae36e90f058401b2bc3349a2b28276fb68079897cea1737cfb1efd9",
+    "figures/publication_benchmark_map.tex": "0a856e86f6e16f3869434b1a76f18fb1723b70f9334379a1050b949d77bd3991",
+    "figures/resource_frontiers.tex": "453015eb77d758fd2b0c923c9ca1e1481cb8617019c00d57ddc6303468237a7b",
+    "figures/rubric_anatomy.tex": "9239f3558f6b897d8373ff73aa8c717a8742010d77383c4204d92d1d9f93ab84",
+    "figures/selected_correctness_charts.pdf": "77c2d3d6ee89e3a8b775064814503086857a3469c9fc0f707dd56414871a475e",
+    "figures/subject_contrast.tex": "143178deab610956ed26b7aab79f2c0354c54d795000867fed367eddf613ae53",
+    "figures/token_ablation.tex": "c4ae23c34996e55e5aa31f1ef6cb8f56c9733d79d87d8cbf8bf4c72183aecb33",
+    "main_publication.tex": "b3dd608fb7dee323a967dc6d1dbd961cfbc3ed2945bbc597052602276cd2398a",
+    "scripts/build_item_difficulty_figure.py": "ed38c397413c6d93b62e30910ef0d2e87c4213a61afd87d7f6b0fe3952cb6018"
+  }
+}

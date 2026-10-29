@@ -32,6 +32,17 @@ class PublicTableTests(unittest.TestCase):
                 pricing[row["model"]],
             )
 
+    def test_adaptive_thinking_is_unseparated_billable_output(self) -> None:
+        _, catalog, pricing, _, resources = TABLES.read_and_validate_inputs()
+        rows = [r for r in resources if r["token_semantic_rule"] ==
+                "anthropic_adaptive_output_includes_unseparated_hidden_thinking"]
+        self.assertTrue(rows)
+        for original in rows:
+            row = copy.deepcopy(original)
+            row["visible_output_tokens"] = row["provider_output_tokens"]
+            with self.assertRaisesRegex(RuntimeError, "Invalid unseparated-output"):
+                TABLES.validate_resource_row(row, catalog[row["model"]], pricing[row["model"]])
+
     def test_released_table_inventory_is_complete(self) -> None:
         tracked = {path.name for path in TABLES.TABLE_ROOT.glob("*.csv")}
         self.assertEqual(tracked, TABLES.EXPECTED_TABLES)

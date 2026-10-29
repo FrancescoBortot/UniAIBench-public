@@ -69,8 +69,7 @@ test-publication:
 	$(PYTHON) -m unittest discover -s tests -v
 
 check-analysis:
-	$(PYTHON) $(PAPER)/scripts/build_item_difficulty_figure.py
-	git diff --exit-code -- $(PAPER)/figures/item_difficulty.tex
+	$(PYTHON) $(ANALYSIS)/tools/validate_paper_snapshot.py
 
 check-model-docs:
 	$(PYTHON) $(ANALYSIS)/scripts/build_model_catalog_docs.py --check

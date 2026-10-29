@@ -1,6 +1,34 @@
 # Publication readiness review
 
-> **Current status (21 September 2026):** the publication review was completed
+## Aggregate release v1.2 — prepared 29 October 2026
+
+The current proposal extends the public aggregate study to 21 configurations,
+60 common exercises, 1,260 model--item cells, and 1,344 retained responses.
+The numerical snapshot is dated 15 October 2026. All configurations use the
+same catalog fields, analysis rules, tables, and figure styles.
+
+The existing 1,020 public score cells and resource cells are retained unchanged.
+Extraction admits only the existing public CSV columns. Operational pricing
+references are represented by the same public-manifest pointers as before.
+No source exercises, answers, judgments, completed rubrics, identity maps,
+private paths, credentials, or private Git history are added.
+
+The complete 17-file paper tree is unchanged, including its compiled PDF and
+all supplements. The normal validation gate now checks its exact inventory
+and SHA-256 hashes against `uniaibench/paper_snapshot_sha256.json` without
+rebuilding it. Current catalog generation retains the recorded verification
+date of each price; historical prices are not presented as freshly verified.
+
+The release requires the offline `make check` and `make check-strict` gates,
+byte-for-byte table reproduction, deterministic figure regeneration, and
+comparison with the site's current aggregate measurements. This preparation
+does not itself publish a GitHub release or make a new human rights attestation.
+The original rights confirmation below remains a historical record covering
+the established public/private boundary.
+
+## Original publication review
+
+> **Publication history (21 September 2026):** the publication review was completed
 > successfully before release, and UniAIBench v1.0 is publicly available.
 
 - **Review date:** 12 September 2026

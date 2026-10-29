@@ -1019,3 +1019,243 @@ Mistral Medium 3.5,mistral,physics_2,2026,terzoapp,3,physics_2|2026|terzoapp|E3,
 Mistral Small 4,mistral,physics_2,2026,terzoapp,3,physics_2|2026|terzoapp|E3,1,100.0,,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,,True,False,True
 OpenAI GPT-4.1,openai,physics_2,2026,terzoapp,3,physics_2|2026|terzoapp|E3,1,100.0,,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,,True,False,True
 OpenAI o3,openai,physics_2,2026,terzoapp,3,physics_2|2026|terzoapp|E3,1,100.0,,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,,True,False,True
+Claude Opus 5.5,anthropic,analysis_3,2025,primoapp,1,analysis_3|2025|primoapp|E1,1,99.73684211,,99.73684211,99.73684211,100.0,100.0,100.0,100.0,100.0,100.0,96.42857143,,True,True,False
+Claude Sonnet 5.5,anthropic,analysis_3,2025,primoapp,1,analysis_3|2025|primoapp|E1,1,100.0,,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,,True,True,False
+GPT-6 Luna,openai,analysis_3,2025,primoapp,1,analysis_3|2025|primoapp|E1,1,99.73684211,,99.73684211,99.73684211,100.0,100.0,100.0,100.0,100.0,100.0,96.42857143,,True,True,False
+GPT-6.1 Sol,openai,analysis_3,2025,primoapp,1,analysis_3|2025|primoapp|E1,1,100.0,,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,,True,True,False
+Claude Opus 5.5,anthropic,analysis_3,2025,primoapp,2,analysis_3|2025|primoapp|E2,1,100.0,,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,True,True,False
+Claude Sonnet 5.5,anthropic,analysis_3,2025,primoapp,2,analysis_3|2025|primoapp|E2,1,100.0,,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,True,True,False
+GPT-6 Luna,openai,analysis_3,2025,primoapp,2,analysis_3|2025|primoapp|E2,1,100.0,,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,True,True,False
+GPT-6.1 Sol,openai,analysis_3,2025,primoapp,2,analysis_3|2025|primoapp|E2,1,100.0,,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,True,True,False
+Claude Opus 5.5,anthropic,analysis_3,2025,primoapp,3,analysis_3|2025|primoapp|E3,1,100.0,,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,True,True,False
+Claude Sonnet 5.5,anthropic,analysis_3,2025,primoapp,3,analysis_3|2025|primoapp|E3,1,92.75,,92.75,92.75,95.0,100.0,88.75,86.66666667,100.0,75.0,100.0,100.0,True,True,False
+GPT-6 Luna,openai,analysis_3,2025,primoapp,3,analysis_3|2025|primoapp|E3,1,79.25,,79.25,79.25,77.5,73.33333333,75.0,73.33333333,92.5,68.75,100.0,100.0,True,True,False
+GPT-6.1 Sol,openai,analysis_3,2025,primoapp,3,analysis_3|2025|primoapp|E3,1,95.5,,95.5,95.5,87.5,100.0,100.0,86.66666667,100.0,100.0,100.0,100.0,True,True,False
+Claude Opus 5.5,anthropic,analysis_3,2025,quartoapp,1,analysis_3|2025|quartoapp|E1,1,100.0,,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,,True,True,False
+Claude Sonnet 5.5,anthropic,analysis_3,2025,quartoapp,1,analysis_3|2025|quartoapp|E1,1,99.47368421,,99.47368421,99.47368421,100.0,100.0,100.0,100.0,95.0,100.0,100.0,,True,True,False
+GPT-6 Luna,openai,analysis_3,2025,quartoapp,1,analysis_3|2025|quartoapp|E1,1,100.0,,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,,True,True,False
+GPT-6.1 Sol,openai,analysis_3,2025,quartoapp,1,analysis_3|2025|quartoapp|E1,1,100.0,,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,,True,True,False
+Claude Opus 5.5,anthropic,analysis_3,2025,quartoapp,2,analysis_3|2025|quartoapp|E2,1,100.0,,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,True,True,False
+Claude Sonnet 5.5,anthropic,analysis_3,2025,quartoapp,2,analysis_3|2025|quartoapp|E2,1,99.25,,99.25,99.25,100.0,100.0,100.0,100.0,92.5,100.0,100.0,100.0,True,True,False
+GPT-6 Luna,openai,analysis_3,2025,quartoapp,2,analysis_3|2025|quartoapp|E2,1,98.75,,98.75,98.75,93.75,100.0,100.0,100.0,100.0,100.0,100.0,100.0,True,True,False
+GPT-6.1 Sol,openai,analysis_3,2025,quartoapp,2,analysis_3|2025|quartoapp|E2,1,100.0,,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,True,True,False
+Claude Opus 5.5,anthropic,analysis_3,2025,quartoapp,3,analysis_3|2025|quartoapp|E3,1,97.36842105,,97.36842105,97.36842105,100.0,100.0,87.5,100.0,100.0,100.0,100.0,,True,True,False
+Claude Sonnet 5.5,anthropic,analysis_3,2025,quartoapp,3,analysis_3|2025|quartoapp|E3,1,100.0,,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,,True,True,False
+GPT-6 Luna,openai,analysis_3,2025,quartoapp,3,analysis_3|2025|quartoapp|E3,1,92.63157895,,92.63157895,92.63157895,100.0,100.0,100.0,70.0,85.0,87.5,100.0,,True,True,False
+GPT-6.1 Sol,openai,analysis_3,2025,quartoapp,3,analysis_3|2025|quartoapp|E3,1,100.0,,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,,True,True,False
+Claude Opus 5.5,anthropic,analysis_3,2025,quintoapp,1,analysis_3|2025|quintoapp|E1,1,100.0,,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,,True,True,False
+Claude Sonnet 5.5,anthropic,analysis_3,2025,quintoapp,1,analysis_3|2025|quintoapp|E1,1,99.47368421,,99.47368421,99.47368421,100.0,100.0,100.0,100.0,100.0,100.0,92.85714286,,True,True,False
+GPT-6 Luna,openai,analysis_3,2025,quintoapp,1,analysis_3|2025|quintoapp|E1,1,96.84210526,,96.84210526,96.84210526,85.0,100.0,100.0,100.0,100.0,100.0,100.0,,True,True,False
+GPT-6.1 Sol,openai,analysis_3,2025,quintoapp,1,analysis_3|2025|quintoapp|E1,1,100.0,,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,,True,True,False
+Claude Opus 5.5,anthropic,analysis_3,2025,quintoapp,2,analysis_3|2025|quintoapp|E2,1,98.75,,98.75,98.75,93.75,100.0,100.0,100.0,100.0,100.0,100.0,100.0,True,True,False
+Claude Sonnet 5.5,anthropic,analysis_3,2025,quintoapp,2,analysis_3|2025|quintoapp|E2,1,99.5,,99.5,99.5,100.0,100.0,100.0,100.0,100.0,93.75,100.0,100.0,True,True,False
+GPT-6 Luna,openai,analysis_3,2025,quintoapp,2,analysis_3|2025|quintoapp|E2,1,100.0,,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,True,True,False
+GPT-6.1 Sol,openai,analysis_3,2025,quintoapp,2,analysis_3|2025|quintoapp|E2,1,100.0,,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,True,True,False
+Claude Opus 5.5,anthropic,analysis_3,2025,quintoapp,3,analysis_3|2025|quintoapp|E3,1,100.0,,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,,True,True,False
+Claude Sonnet 5.5,anthropic,analysis_3,2025,quintoapp,3,analysis_3|2025|quintoapp|E3,1,100.0,,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,,True,True,False
+GPT-6 Luna,openai,analysis_3,2025,quintoapp,3,analysis_3|2025|quintoapp|E3,1,100.0,,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,,True,True,False
+GPT-6.1 Sol,openai,analysis_3,2025,quintoapp,3,analysis_3|2025|quintoapp|E3,1,100.0,,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,,True,True,False
+Claude Opus 5.5,anthropic,analysis_3,2025,secondoapp,1,analysis_3|2025|secondoapp|E1,1,100.0,,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,,True,True,False
+Claude Sonnet 5.5,anthropic,analysis_3,2025,secondoapp,1,analysis_3|2025|secondoapp|E1,1,100.0,,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,,True,True,False
+GPT-6 Luna,openai,analysis_3,2025,secondoapp,1,analysis_3|2025|secondoapp|E1,1,100.0,,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,,True,True,False
+GPT-6.1 Sol,openai,analysis_3,2025,secondoapp,1,analysis_3|2025|secondoapp|E1,1,100.0,,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,,True,True,False
+Claude Opus 5.5,anthropic,analysis_3,2025,secondoapp,2,analysis_3|2025|secondoapp|E2,1,100.0,,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,True,True,False
+Claude Sonnet 5.5,anthropic,analysis_3,2025,secondoapp,2,analysis_3|2025|secondoapp|E2,1,100.0,,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,True,True,False
+GPT-6 Luna,openai,analysis_3,2025,secondoapp,2,analysis_3|2025|secondoapp|E2,1,100.0,,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,True,True,False
+GPT-6.1 Sol,openai,analysis_3,2025,secondoapp,2,analysis_3|2025|secondoapp|E2,1,99.5,,99.5,99.5,100.0,100.0,100.0,100.0,100.0,93.75,100.0,100.0,True,True,False
+Claude Opus 5.5,anthropic,analysis_3,2025,secondoapp,3,analysis_3|2025|secondoapp|E3,1,94.5,,94.5,94.5,100.0,100.0,100.0,76.66666667,80.0,100.0,100.0,100.0,True,True,False
+Claude Sonnet 5.5,anthropic,analysis_3,2025,secondoapp,3,analysis_3|2025|secondoapp|E3,1,98.5,,98.5,98.5,100.0,100.0,100.0,95.0,100.0,90.625,100.0,100.0,True,True,False
+GPT-6 Luna,openai,analysis_3,2025,secondoapp,3,analysis_3|2025|secondoapp|E3,1,99.25,,99.25,99.25,100.0,100.0,100.0,95.0,100.0,100.0,100.0,100.0,True,True,False
+GPT-6.1 Sol,openai,analysis_3,2025,secondoapp,3,analysis_3|2025|secondoapp|E3,1,100.0,,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,True,True,False
+Claude Opus 5.5,anthropic,analysis_3,2025,terzoapp,1,analysis_3|2025|terzoapp|E1,1,100.0,,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,True,True,False
+Claude Sonnet 5.5,anthropic,analysis_3,2025,terzoapp,1,analysis_3|2025|terzoapp|E1,1,100.0,,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,True,True,False
+GPT-6 Luna,openai,analysis_3,2025,terzoapp,1,analysis_3|2025|terzoapp|E1,1,100.0,,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,True,True,False
+GPT-6.1 Sol,openai,analysis_3,2025,terzoapp,1,analysis_3|2025|terzoapp|E1,1,100.0,,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,True,True,False
+Claude Opus 5.5,anthropic,analysis_3,2025,terzoapp,2,analysis_3|2025|terzoapp|E2,1,100.0,,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,True,True,False
+Claude Sonnet 5.5,anthropic,analysis_3,2025,terzoapp,2,analysis_3|2025|terzoapp|E2,1,99.25,,99.25,99.25,100.0,100.0,100.0,100.0,100.0,90.625,100.0,100.0,True,True,False
+GPT-6 Luna,openai,analysis_3,2025,terzoapp,2,analysis_3|2025|terzoapp|E2,1,100.0,,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,True,True,False
+GPT-6.1 Sol,openai,analysis_3,2025,terzoapp,2,analysis_3|2025|terzoapp|E2,1,100.0,,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,True,True,False
+Claude Opus 5.5,anthropic,analysis_3,2025,terzoapp,3,analysis_3|2025|terzoapp|E3,1,99.21052632,,99.21052632,99.21052632,100.0,100.0,100.0,100.0,100.0,100.0,89.28571429,,True,True,False
+Claude Sonnet 5.5,anthropic,analysis_3,2025,terzoapp,3,analysis_3|2025|terzoapp|E3,1,100.0,,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,,True,True,False
+GPT-6 Luna,openai,analysis_3,2025,terzoapp,3,analysis_3|2025|terzoapp|E3,1,100.0,,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,,True,True,False
+GPT-6.1 Sol,openai,analysis_3,2025,terzoapp,3,analysis_3|2025|terzoapp|E3,1,100.0,,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,,True,True,False
+Claude Opus 5.5,anthropic,analysis_3,2026,primoapp_tema_a,1,analysis_3|2026|primoapp_tema_a|E1,1,100.0,,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,,True,True,False
+Claude Sonnet 5.5,anthropic,analysis_3,2026,primoapp_tema_a,1,analysis_3|2026|primoapp_tema_a|E1,1,100.0,,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,,True,True,False
+GPT-6 Luna,openai,analysis_3,2026,primoapp_tema_a,1,analysis_3|2026|primoapp_tema_a|E1,1,100.0,,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,,True,True,False
+GPT-6.1 Sol,openai,analysis_3,2026,primoapp_tema_a,1,analysis_3|2026|primoapp_tema_a|E1,1,100.0,,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,,True,True,False
+Claude Opus 5.5,anthropic,analysis_3,2026,primoapp_tema_a,2,analysis_3|2026|primoapp_tema_a|E2,1,99.0,,99.0,99.0,100.0,100.0,100.0,100.0,100.0,87.5,100.0,100.0,True,True,False
+Claude Sonnet 5.5,anthropic,analysis_3,2026,primoapp_tema_a,2,analysis_3|2026|primoapp_tema_a|E2,1,99.0,,99.0,99.0,100.0,100.0,100.0,100.0,100.0,87.5,100.0,100.0,True,True,False
+GPT-6 Luna,openai,analysis_3,2026,primoapp_tema_a,2,analysis_3|2026|primoapp_tema_a|E2,1,99.0,,99.0,99.0,100.0,100.0,100.0,100.0,100.0,87.5,100.0,100.0,True,True,False
+GPT-6.1 Sol,openai,analysis_3,2026,primoapp_tema_a,2,analysis_3|2026|primoapp_tema_a|E2,1,99.0,,99.0,99.0,100.0,100.0,100.0,100.0,100.0,87.5,100.0,100.0,True,True,False
+Claude Opus 5.5,anthropic,analysis_3,2026,primoapp_tema_a,3,analysis_3|2026|primoapp_tema_a|E3,1,98.94736842,,98.94736842,98.94736842,100.0,100.0,100.0,100.0,100.0,87.5,100.0,,True,True,False
+Claude Sonnet 5.5,anthropic,analysis_3,2026,primoapp_tema_a,3,analysis_3|2026|primoapp_tema_a|E3,1,98.94736842,,98.94736842,98.94736842,95.0,100.0,100.0,100.0,100.0,100.0,100.0,,True,True,False
+GPT-6 Luna,openai,analysis_3,2026,primoapp_tema_a,3,analysis_3|2026|primoapp_tema_a|E3,1,100.0,,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,,True,True,False
+GPT-6.1 Sol,openai,analysis_3,2026,primoapp_tema_a,3,analysis_3|2026|primoapp_tema_a|E3,1,100.0,,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,,True,True,False
+Claude Opus 5.5,anthropic,analysis_3,2026,primoapp_tema_b,1,analysis_3|2026|primoapp_tema_b|E1,1,100.0,,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,,True,True,False
+Claude Sonnet 5.5,anthropic,analysis_3,2026,primoapp_tema_b,1,analysis_3|2026|primoapp_tema_b|E1,1,100.0,,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,,True,True,False
+GPT-6 Luna,openai,analysis_3,2026,primoapp_tema_b,1,analysis_3|2026|primoapp_tema_b|E1,1,100.0,,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,,True,True,False
+GPT-6.1 Sol,openai,analysis_3,2026,primoapp_tema_b,1,analysis_3|2026|primoapp_tema_b|E1,1,100.0,,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,,True,True,False
+Claude Opus 5.5,anthropic,analysis_3,2026,primoapp_tema_b,2,analysis_3|2026|primoapp_tema_b|E2,1,99.0,,99.0,99.0,100.0,100.0,100.0,100.0,100.0,87.5,100.0,100.0,True,True,False
+Claude Sonnet 5.5,anthropic,analysis_3,2026,primoapp_tema_b,2,analysis_3|2026|primoapp_tema_b|E2,1,99.0,,99.0,99.0,100.0,100.0,100.0,100.0,100.0,87.5,100.0,100.0,True,True,False
+GPT-6 Luna,openai,analysis_3,2026,primoapp_tema_b,2,analysis_3|2026|primoapp_tema_b|E2,1,100.0,,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,True,True,False
+GPT-6.1 Sol,openai,analysis_3,2026,primoapp_tema_b,2,analysis_3|2026|primoapp_tema_b|E2,1,99.0,,99.0,99.0,100.0,100.0,100.0,100.0,100.0,87.5,100.0,100.0,True,True,False
+Claude Opus 5.5,anthropic,analysis_3,2026,primoapp_tema_b,3,analysis_3|2026|primoapp_tema_b|E3,1,98.94736842,,98.94736842,98.94736842,95.0,100.0,100.0,100.0,100.0,100.0,100.0,,True,True,False
+Claude Sonnet 5.5,anthropic,analysis_3,2026,primoapp_tema_b,3,analysis_3|2026|primoapp_tema_b|E3,1,98.94736842,,98.94736842,98.94736842,100.0,100.0,100.0,100.0,100.0,87.5,100.0,,True,True,False
+GPT-6 Luna,openai,analysis_3,2026,primoapp_tema_b,3,analysis_3|2026|primoapp_tema_b|E3,1,100.0,,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,,True,True,False
+GPT-6.1 Sol,openai,analysis_3,2026,primoapp_tema_b,3,analysis_3|2026|primoapp_tema_b|E3,1,100.0,,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,,True,True,False
+Claude Opus 5.5,anthropic,analysis_3,2026,quartoapp,1,analysis_3|2026|quartoapp|E1,1,100.0,,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,,True,True,False
+Claude Sonnet 5.5,anthropic,analysis_3,2026,quartoapp,1,analysis_3|2026|quartoapp|E1,1,100.0,,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,,True,True,False
+GPT-6 Luna,openai,analysis_3,2026,quartoapp,1,analysis_3|2026|quartoapp|E1,1,100.0,,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,,True,True,False
+GPT-6.1 Sol,openai,analysis_3,2026,quartoapp,1,analysis_3|2026|quartoapp|E1,1,100.0,,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,,True,True,False
+Claude Opus 5.5,anthropic,analysis_3,2026,quartoapp,2,analysis_3|2026|quartoapp|E2,1,100.0,,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,True,True,False
+Claude Sonnet 5.5,anthropic,analysis_3,2026,quartoapp,2,analysis_3|2026|quartoapp|E2,1,100.0,,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,True,True,False
+GPT-6 Luna,openai,analysis_3,2026,quartoapp,2,analysis_3|2026|quartoapp|E2,1,100.0,,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,True,True,False
+GPT-6.1 Sol,openai,analysis_3,2026,quartoapp,2,analysis_3|2026|quartoapp|E2,1,100.0,,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,True,True,False
+Claude Opus 5.5,anthropic,analysis_3,2026,quartoapp,3,analysis_3|2026|quartoapp|E3,1,94.73684211,,94.73684211,94.73684211,100.0,80.0,100.0,86.66666667,100.0,100.0,100.0,,True,True,False
+Claude Sonnet 5.5,anthropic,analysis_3,2026,quartoapp,3,analysis_3|2026|quartoapp|E3,1,94.73684211,,94.73684211,94.73684211,100.0,80.0,100.0,86.66666667,100.0,100.0,100.0,,True,True,False
+GPT-6 Luna,openai,analysis_3,2026,quartoapp,3,analysis_3|2026|quartoapp|E3,1,91.57894737,,91.57894737,91.57894737,85.0,80.0,100.0,86.66666667,100.0,100.0,100.0,,True,True,False
+GPT-6.1 Sol,openai,analysis_3,2026,quartoapp,3,analysis_3|2026|quartoapp|E3,1,100.0,,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,,True,True,False
+Claude Opus 5.5,anthropic,analysis_3,2026,secondoapp_tema_a,1,analysis_3|2026|secondoapp_tema_a|E1,1,100.0,,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,,True,True,False
+Claude Sonnet 5.5,anthropic,analysis_3,2026,secondoapp_tema_a,1,analysis_3|2026|secondoapp_tema_a|E1,1,99.21052632,,99.21052632,99.21052632,100.0,100.0,100.0,100.0,100.0,90.625,100.0,,True,True,False
+GPT-6 Luna,openai,analysis_3,2026,secondoapp_tema_a,1,analysis_3|2026|secondoapp_tema_a|E1,1,100.0,,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,,True,True,False
+GPT-6.1 Sol,openai,analysis_3,2026,secondoapp_tema_a,1,analysis_3|2026|secondoapp_tema_a|E1,1,100.0,,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,,True,True,False
+Claude Opus 5.5,anthropic,analysis_3,2026,secondoapp_tema_a,2,analysis_3|2026|secondoapp_tema_a|E2,1,98.5,,98.5,98.5,92.5,100.0,100.0,100.0,100.0,100.0,100.0,100.0,True,True,False
+Claude Sonnet 5.5,anthropic,analysis_3,2026,secondoapp_tema_a,2,analysis_3|2026|secondoapp_tema_a|E2,1,100.0,,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,True,True,False
+GPT-6 Luna,openai,analysis_3,2026,secondoapp_tema_a,2,analysis_3|2026|secondoapp_tema_a|E2,1,100.0,,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,True,True,False
+GPT-6.1 Sol,openai,analysis_3,2026,secondoapp_tema_a,2,analysis_3|2026|secondoapp_tema_a|E2,1,100.0,,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,True,True,False
+Claude Opus 5.5,anthropic,analysis_3,2026,secondoapp_tema_a,3,analysis_3|2026|secondoapp_tema_a|E3,1,100.0,,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,,True,True,False
+Claude Sonnet 5.5,anthropic,analysis_3,2026,secondoapp_tema_a,3,analysis_3|2026|secondoapp_tema_a|E3,1,100.0,,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,,True,True,False
+GPT-6 Luna,openai,analysis_3,2026,secondoapp_tema_a,3,analysis_3|2026|secondoapp_tema_a|E3,1,98.94736842,,98.94736842,98.94736842,100.0,100.0,100.0,100.0,100.0,87.5,100.0,,True,True,False
+GPT-6.1 Sol,openai,analysis_3,2026,secondoapp_tema_a,3,analysis_3|2026|secondoapp_tema_a|E3,1,100.0,,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,,True,True,False
+Claude Opus 5.5,anthropic,analysis_3,2026,secondoapp_tema_b,1,analysis_3|2026|secondoapp_tema_b|E1,1,100.0,,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,,True,True,False
+Claude Sonnet 5.5,anthropic,analysis_3,2026,secondoapp_tema_b,1,analysis_3|2026|secondoapp_tema_b|E1,1,100.0,,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,,True,True,False
+GPT-6 Luna,openai,analysis_3,2026,secondoapp_tema_b,1,analysis_3|2026|secondoapp_tema_b|E1,1,100.0,,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,,True,True,False
+GPT-6.1 Sol,openai,analysis_3,2026,secondoapp_tema_b,1,analysis_3|2026|secondoapp_tema_b|E1,1,100.0,,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,,True,True,False
+Claude Opus 5.5,anthropic,analysis_3,2026,secondoapp_tema_b,2,analysis_3|2026|secondoapp_tema_b|E2,1,100.0,,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,True,True,False
+Claude Sonnet 5.5,anthropic,analysis_3,2026,secondoapp_tema_b,2,analysis_3|2026|secondoapp_tema_b|E2,1,98.5,,98.5,98.5,92.5,100.0,100.0,100.0,100.0,100.0,100.0,100.0,True,True,False
+GPT-6 Luna,openai,analysis_3,2026,secondoapp_tema_b,2,analysis_3|2026|secondoapp_tema_b|E2,1,100.0,,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,True,True,False
+GPT-6.1 Sol,openai,analysis_3,2026,secondoapp_tema_b,2,analysis_3|2026|secondoapp_tema_b|E2,1,100.0,,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,True,True,False
+Claude Opus 5.5,anthropic,analysis_3,2026,secondoapp_tema_b,3,analysis_3|2026|secondoapp_tema_b|E3,1,100.0,,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,,True,True,False
+Claude Sonnet 5.5,anthropic,analysis_3,2026,secondoapp_tema_b,3,analysis_3|2026|secondoapp_tema_b|E3,1,100.0,,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,,True,True,False
+GPT-6 Luna,openai,analysis_3,2026,secondoapp_tema_b,3,analysis_3|2026|secondoapp_tema_b|E3,1,100.0,,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,,True,True,False
+GPT-6.1 Sol,openai,analysis_3,2026,secondoapp_tema_b,3,analysis_3|2026|secondoapp_tema_b|E3,1,100.0,,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,,True,True,False
+Claude Opus 5.5,anthropic,analysis_3,2026,terzoapp,1,analysis_3|2026|terzoapp|E1,1,100.0,,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,,True,True,False
+Claude Sonnet 5.5,anthropic,analysis_3,2026,terzoapp,1,analysis_3|2026|terzoapp|E1,1,100.0,,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,,True,True,False
+GPT-6 Luna,openai,analysis_3,2026,terzoapp,1,analysis_3|2026|terzoapp|E1,1,100.0,,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,,True,True,False
+GPT-6.1 Sol,openai,analysis_3,2026,terzoapp,1,analysis_3|2026|terzoapp|E1,1,100.0,,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,,True,True,False
+Claude Opus 5.5,anthropic,analysis_3,2026,terzoapp,2,analysis_3|2026|terzoapp|E2,1,100.0,,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,True,True,False
+Claude Sonnet 5.5,anthropic,analysis_3,2026,terzoapp,2,analysis_3|2026|terzoapp|E2,1,100.0,,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,True,True,False
+GPT-6 Luna,openai,analysis_3,2026,terzoapp,2,analysis_3|2026|terzoapp|E2,1,100.0,,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,True,True,False
+GPT-6.1 Sol,openai,analysis_3,2026,terzoapp,2,analysis_3|2026|terzoapp|E2,1,100.0,,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,True,True,False
+Claude Opus 5.5,anthropic,analysis_3,2026,terzoapp,3,analysis_3|2026|terzoapp|E3,1,100.0,,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,,True,True,False
+Claude Sonnet 5.5,anthropic,analysis_3,2026,terzoapp,3,analysis_3|2026|terzoapp|E3,1,100.0,,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,,True,True,False
+GPT-6 Luna,openai,analysis_3,2026,terzoapp,3,analysis_3|2026|terzoapp|E3,1,100.0,,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,,True,True,False
+GPT-6.1 Sol,openai,analysis_3,2026,terzoapp,3,analysis_3|2026|terzoapp|E3,1,100.0,,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,,True,True,False
+Claude Opus 5.5,anthropic,physics_2,2025,primoapp,1,physics_2|2025|primoapp|E1,1,100.0,,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,,True,False,True
+Claude Sonnet 5.5,anthropic,physics_2,2025,primoapp,1,physics_2|2025|primoapp|E1,1,100.0,,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,,True,False,True
+GPT-6 Luna,openai,physics_2,2025,primoapp,1,physics_2|2025|primoapp|E1,1,100.0,,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,,True,False,True
+GPT-6.1 Sol,openai,physics_2,2025,primoapp,1,physics_2|2025|primoapp|E1,1,100.0,,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,,True,False,True
+Claude Opus 5.5,anthropic,physics_2,2025,primoapp,2,physics_2|2025|primoapp|E2,1,99.21052632,,99.21052632,99.21052632,100.0,100.0,100.0,100.0,100.0,90.625,100.0,,True,False,True
+Claude Sonnet 5.5,anthropic,physics_2,2025,primoapp,2,physics_2|2025|primoapp|E2,1,100.0,,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,,True,False,True
+GPT-6 Luna,openai,physics_2,2025,primoapp,2,physics_2|2025|primoapp|E2,1,100.0,,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,,True,False,True
+GPT-6.1 Sol,openai,physics_2,2025,primoapp,2,physics_2|2025|primoapp|E2,1,100.0,,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,,True,False,True
+Claude Opus 5.5,anthropic,physics_2,2025,primoapp,3,physics_2|2025|primoapp|E3,1,100.0,,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,,True,False,True
+Claude Sonnet 5.5,anthropic,physics_2,2025,primoapp,3,physics_2|2025|primoapp|E3,1,92.63157895,,92.63157895,92.63157895,80.0,100.0,100.0,80.0,100.0,100.0,100.0,,True,False,True
+GPT-6 Luna,openai,physics_2,2025,primoapp,3,physics_2|2025|primoapp|E3,1,92.63157895,,92.63157895,92.63157895,80.0,100.0,100.0,80.0,100.0,100.0,100.0,,True,False,True
+GPT-6.1 Sol,openai,physics_2,2025,primoapp,3,physics_2|2025|primoapp|E3,1,100.0,,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,,True,False,True
+Claude Opus 5.5,anthropic,physics_2,2025,quartoapp,1,physics_2|2025|quartoapp|E1,1,100.0,,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,,True,False,True
+Claude Sonnet 5.5,anthropic,physics_2,2025,quartoapp,1,physics_2|2025|quartoapp|E1,1,100.0,,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,,True,False,True
+GPT-6 Luna,openai,physics_2,2025,quartoapp,1,physics_2|2025|quartoapp|E1,1,97.36842105,,97.36842105,97.36842105,100.0,100.0,100.0,90.0,90.0,100.0,100.0,,True,False,True
+GPT-6.1 Sol,openai,physics_2,2025,quartoapp,1,physics_2|2025|quartoapp|E1,1,96.57894737,,96.57894737,96.57894737,100.0,100.0,95.0,90.0,95.0,96.875,100.0,,True,False,True
+Claude Opus 5.5,anthropic,physics_2,2025,quartoapp,2,physics_2|2025|quartoapp|E2,1,100.0,,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,,True,False,True
+Claude Sonnet 5.5,anthropic,physics_2,2025,quartoapp,2,physics_2|2025|quartoapp|E2,1,100.0,,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,,True,False,True
+GPT-6 Luna,openai,physics_2,2025,quartoapp,2,physics_2|2025|quartoapp|E2,1,99.21052632,,99.21052632,99.21052632,100.0,100.0,100.0,100.0,92.5,100.0,100.0,,True,False,True
+GPT-6.1 Sol,openai,physics_2,2025,quartoapp,2,physics_2|2025|quartoapp|E2,1,100.0,,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,,True,False,True
+Claude Opus 5.5,anthropic,physics_2,2025,quartoapp,3,physics_2|2025|quartoapp|E3,1,92.63157895,,92.63157895,92.63157895,100.0,73.33333333,100.0,80.0,100.0,100.0,100.0,,True,False,True
+Claude Sonnet 5.5,anthropic,physics_2,2025,quartoapp,3,physics_2|2025|quartoapp|E3,1,92.63157895,,92.63157895,92.63157895,100.0,73.33333333,100.0,80.0,100.0,100.0,100.0,,True,False,True
+GPT-6 Luna,openai,physics_2,2025,quartoapp,3,physics_2|2025|quartoapp|E3,1,100.0,,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,,True,False,True
+GPT-6.1 Sol,openai,physics_2,2025,quartoapp,3,physics_2|2025|quartoapp|E3,1,100.0,,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,,True,False,True
+Claude Opus 5.5,anthropic,physics_2,2025,quintoapp,1,physics_2|2025|quintoapp|E1,1,100.0,,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,,True,False,True
+Claude Sonnet 5.5,anthropic,physics_2,2025,quintoapp,1,physics_2|2025|quintoapp|E1,1,100.0,,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,,True,False,True
+GPT-6 Luna,openai,physics_2,2025,quintoapp,1,physics_2|2025|quintoapp|E1,1,100.0,,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,,True,False,True
+GPT-6.1 Sol,openai,physics_2,2025,quintoapp,1,physics_2|2025|quintoapp|E1,1,100.0,,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,,True,False,True
+Claude Opus 5.5,anthropic,physics_2,2025,quintoapp,2,physics_2|2025|quintoapp|E2,1,100.0,,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,,True,False,True
+Claude Sonnet 5.5,anthropic,physics_2,2025,quintoapp,2,physics_2|2025|quintoapp|E2,1,99.21052632,,99.21052632,99.21052632,100.0,100.0,100.0,100.0,92.5,100.0,100.0,,True,False,True
+GPT-6 Luna,openai,physics_2,2025,quintoapp,2,physics_2|2025|quintoapp|E2,1,100.0,,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,,True,False,True
+GPT-6.1 Sol,openai,physics_2,2025,quintoapp,2,physics_2|2025|quintoapp|E2,1,100.0,,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,,True,False,True
+Claude Opus 5.5,anthropic,physics_2,2025,quintoapp,3,physics_2|2025|quintoapp|E3,1,92.63157895,,92.63157895,92.63157895,87.5,100.0,100.0,70.0,100.0,100.0,100.0,,True,False,True
+Claude Sonnet 5.5,anthropic,physics_2,2025,quintoapp,3,physics_2|2025|quintoapp|E3,1,92.63157895,,92.63157895,92.63157895,100.0,90.0,100.0,63.33333333,100.0,100.0,100.0,,True,False,True
+GPT-6 Luna,openai,physics_2,2025,quintoapp,3,physics_2|2025|quintoapp|E3,1,90.0,,90.0,90.0,87.5,100.0,100.0,53.33333333,100.0,100.0,100.0,,True,False,True
+GPT-6.1 Sol,openai,physics_2,2025,quintoapp,3,physics_2|2025|quintoapp|E3,1,92.63157895,,92.63157895,92.63157895,87.5,100.0,100.0,70.0,100.0,100.0,100.0,,True,False,True
+Claude Opus 5.5,anthropic,physics_2,2025,secondoapp,1,physics_2|2025|secondoapp|E1,1,100.0,,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,,True,False,True
+Claude Sonnet 5.5,anthropic,physics_2,2025,secondoapp,1,physics_2|2025|secondoapp|E1,1,100.0,,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,,True,False,True
+GPT-6 Luna,openai,physics_2,2025,secondoapp,1,physics_2|2025|secondoapp|E1,1,99.21052632,,99.21052632,99.21052632,100.0,100.0,100.0,100.0,92.5,100.0,100.0,,True,False,True
+GPT-6.1 Sol,openai,physics_2,2025,secondoapp,1,physics_2|2025|secondoapp|E1,1,100.0,,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,,True,False,True
+Claude Opus 5.5,anthropic,physics_2,2025,secondoapp,2,physics_2|2025|secondoapp|E2,1,100.0,,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,,True,False,True
+Claude Sonnet 5.5,anthropic,physics_2,2025,secondoapp,2,physics_2|2025|secondoapp|E2,1,100.0,,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,,True,False,True
+GPT-6 Luna,openai,physics_2,2025,secondoapp,2,physics_2|2025|secondoapp|E2,1,100.0,,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,,True,False,True
+GPT-6.1 Sol,openai,physics_2,2025,secondoapp,2,physics_2|2025|secondoapp|E2,1,100.0,,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,,True,False,True
+Claude Opus 5.5,anthropic,physics_2,2025,secondoapp,3,physics_2|2025|secondoapp|E3,1,98.68421053,,98.68421053,98.68421053,93.75,100.0,100.0,100.0,100.0,100.0,100.0,,True,False,True
+Claude Sonnet 5.5,anthropic,physics_2,2025,secondoapp,3,physics_2|2025|secondoapp|E3,1,100.0,,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,,True,False,True
+GPT-6 Luna,openai,physics_2,2025,secondoapp,3,physics_2|2025|secondoapp|E3,1,100.0,,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,,True,False,True
+GPT-6.1 Sol,openai,physics_2,2025,secondoapp,3,physics_2|2025|secondoapp|E3,1,100.0,,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,,True,False,True
+Claude Opus 5.5,anthropic,physics_2,2025,terzoapp,1,physics_2|2025|terzoapp|E1,1,98.94736842,,98.94736842,98.94736842,100.0,100.0,95.0,100.0,100.0,100.0,100.0,,True,False,True
+Claude Sonnet 5.5,anthropic,physics_2,2025,terzoapp,1,physics_2|2025|terzoapp|E1,1,98.94736842,,98.94736842,98.94736842,100.0,100.0,95.0,100.0,100.0,100.0,100.0,,True,False,True
+GPT-6 Luna,openai,physics_2,2025,terzoapp,1,physics_2|2025|terzoapp|E1,1,98.94736842,,98.94736842,98.94736842,100.0,100.0,95.0,100.0,100.0,100.0,100.0,,True,False,True
+GPT-6.1 Sol,openai,physics_2,2025,terzoapp,1,physics_2|2025|terzoapp|E1,1,98.94736842,,98.94736842,98.94736842,100.0,100.0,95.0,100.0,100.0,100.0,100.0,,True,False,True
+Claude Opus 5.5,anthropic,physics_2,2025,terzoapp,2,physics_2|2025|terzoapp|E2,1,100.0,,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,,True,False,True
+Claude Sonnet 5.5,anthropic,physics_2,2025,terzoapp,2,physics_2|2025|terzoapp|E2,1,99.21052632,,99.21052632,99.21052632,100.0,100.0,100.0,100.0,92.5,100.0,100.0,,True,False,True
+GPT-6 Luna,openai,physics_2,2025,terzoapp,2,physics_2|2025|terzoapp|E2,1,100.0,,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,,True,False,True
+GPT-6.1 Sol,openai,physics_2,2025,terzoapp,2,physics_2|2025|terzoapp|E2,1,100.0,,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,,True,False,True
+Claude Opus 5.5,anthropic,physics_2,2025,terzoapp,3,physics_2|2025|terzoapp|E3,1,100.0,,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,,True,False,True
+Claude Sonnet 5.5,anthropic,physics_2,2025,terzoapp,3,physics_2|2025|terzoapp|E3,1,98.68421053,,98.68421053,98.68421053,100.0,100.0,93.75,100.0,100.0,100.0,100.0,,True,False,True
+GPT-6 Luna,openai,physics_2,2025,terzoapp,3,physics_2|2025|terzoapp|E3,1,89.73684211,,89.73684211,89.73684211,81.25,100.0,100.0,60.0,100.0,100.0,100.0,,True,False,True
+GPT-6.1 Sol,openai,physics_2,2025,terzoapp,3,physics_2|2025|terzoapp|E3,1,100.0,,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,,True,False,True
+Claude Opus 5.5,anthropic,physics_2,2026,primoapp,1,physics_2|2026|primoapp|E1,1,100.0,,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,,True,False,True
+Claude Sonnet 5.5,anthropic,physics_2,2026,primoapp,1,physics_2|2026|primoapp|E1,1,100.0,,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,,True,False,True
+GPT-6 Luna,openai,physics_2,2026,primoapp,1,physics_2|2026|primoapp|E1,1,100.0,,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,,True,False,True
+GPT-6.1 Sol,openai,physics_2,2026,primoapp,1,physics_2|2026|primoapp|E1,1,100.0,,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,,True,False,True
+Claude Opus 5.5,anthropic,physics_2,2026,primoapp,2,physics_2|2026|primoapp|E2,1,87.36842105,,87.36842105,87.36842105,75.0,100.0,100.0,53.33333333,100.0,100.0,100.0,,True,False,True
+Claude Sonnet 5.5,anthropic,physics_2,2026,primoapp,2,physics_2|2026|primoapp|E2,1,72.89473684,,72.89473684,72.89473684,62.5,70.0,100.0,76.66666667,50.0,56.25,75.0,,True,False,True
+GPT-6 Luna,openai,physics_2,2026,primoapp,2,physics_2|2026|primoapp|E2,1,88.94736842,,88.94736842,88.94736842,100.0,100.0,100.0,53.33333333,70.0,93.75,100.0,,True,False,True
+GPT-6.1 Sol,openai,physics_2,2026,primoapp,2,physics_2|2026|primoapp|E2,1,70.0,,70.0,70.0,62.5,80.0,100.0,53.33333333,50.0,50.0,71.42857143,,True,False,True
+Claude Opus 5.5,anthropic,physics_2,2026,primoapp,3,physics_2|2026|primoapp|E3,1,100.0,,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,,True,False,True
+Claude Sonnet 5.5,anthropic,physics_2,2026,primoapp,3,physics_2|2026|primoapp|E3,1,100.0,,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,,True,False,True
+GPT-6 Luna,openai,physics_2,2026,primoapp,3,physics_2|2026|primoapp|E3,1,100.0,,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,,True,False,True
+GPT-6.1 Sol,openai,physics_2,2026,primoapp,3,physics_2|2026|primoapp|E3,1,100.0,,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,,True,False,True
+Claude Opus 5.5,anthropic,physics_2,2026,quartoapp,1,physics_2|2026|quartoapp|E1,1,98.94736842,,98.94736842,98.94736842,100.0,100.0,100.0,100.0,100.0,100.0,85.71428571,,True,False,True
+Claude Sonnet 5.5,anthropic,physics_2,2026,quartoapp,1,physics_2|2026|quartoapp|E1,1,99.21052632,,99.21052632,99.21052632,100.0,100.0,100.0,100.0,92.5,100.0,100.0,,True,False,True
+GPT-6 Luna,openai,physics_2,2026,quartoapp,1,physics_2|2026|quartoapp|E1,1,100.0,,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,,True,False,True
+GPT-6.1 Sol,openai,physics_2,2026,quartoapp,1,physics_2|2026|quartoapp|E1,1,100.0,,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,,True,False,True
+Claude Opus 5.5,anthropic,physics_2,2026,quartoapp,2,physics_2|2026|quartoapp|E2,1,100.0,,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,,True,False,True
+Claude Sonnet 5.5,anthropic,physics_2,2026,quartoapp,2,physics_2|2026|quartoapp|E2,1,100.0,,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,,True,False,True
+GPT-6 Luna,openai,physics_2,2026,quartoapp,2,physics_2|2026|quartoapp|E2,1,98.68421053,,98.68421053,98.68421053,100.0,100.0,100.0,91.66666667,100.0,100.0,100.0,,True,False,True
+GPT-6.1 Sol,openai,physics_2,2026,quartoapp,2,physics_2|2026|quartoapp|E2,1,100.0,,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,,True,False,True
+Claude Opus 5.5,anthropic,physics_2,2026,quartoapp,3,physics_2|2026|quartoapp|E3,1,99.47368421,,99.47368421,99.47368421,100.0,100.0,100.0,100.0,95.0,100.0,100.0,,True,False,True
+Claude Sonnet 5.5,anthropic,physics_2,2026,quartoapp,3,physics_2|2026|quartoapp|E3,1,100.0,,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,,True,False,True
+GPT-6 Luna,openai,physics_2,2026,quartoapp,3,physics_2|2026|quartoapp|E3,1,100.0,,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,,True,False,True
+GPT-6.1 Sol,openai,physics_2,2026,quartoapp,3,physics_2|2026|quartoapp|E3,1,100.0,,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,,True,False,True
+Claude Opus 5.5,anthropic,physics_2,2026,secondoapp,1,physics_2|2026|secondoapp|E1,1,100.0,,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,,True,False,True
+Claude Sonnet 5.5,anthropic,physics_2,2026,secondoapp,1,physics_2|2026|secondoapp|E1,1,100.0,,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,,True,False,True
+GPT-6 Luna,openai,physics_2,2026,secondoapp,1,physics_2|2026|secondoapp|E1,1,98.15789474,,98.15789474,98.15789474,100.0,100.0,93.75,100.0,100.0,93.75,100.0,,True,False,True
+GPT-6.1 Sol,openai,physics_2,2026,secondoapp,1,physics_2|2026|secondoapp|E1,1,100.0,,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,,True,False,True
+Claude Opus 5.5,anthropic,physics_2,2026,secondoapp,2,physics_2|2026|secondoapp|E2,1,100.0,,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,,True,False,True
+Claude Sonnet 5.5,anthropic,physics_2,2026,secondoapp,2,physics_2|2026|secondoapp|E2,1,97.89473684,,97.89473684,97.89473684,100.0,86.66666667,100.0,100.0,100.0,100.0,100.0,,True,False,True
+GPT-6 Luna,openai,physics_2,2026,secondoapp,2,physics_2|2026|secondoapp|E2,1,100.0,,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,,True,False,True
+GPT-6.1 Sol,openai,physics_2,2026,secondoapp,2,physics_2|2026|secondoapp|E2,1,100.0,,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,,True,False,True
+Claude Opus 5.5,anthropic,physics_2,2026,secondoapp,3,physics_2|2026|secondoapp|E3,1,100.0,,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,,True,False,True
+Claude Sonnet 5.5,anthropic,physics_2,2026,secondoapp,3,physics_2|2026|secondoapp|E3,1,100.0,,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,,True,False,True
+GPT-6 Luna,openai,physics_2,2026,secondoapp,3,physics_2|2026|secondoapp|E3,1,99.47368421,,99.47368421,99.47368421,100.0,100.0,100.0,100.0,95.0,100.0,100.0,,True,False,True
+GPT-6.1 Sol,openai,physics_2,2026,secondoapp,3,physics_2|2026|secondoapp|E3,1,100.0,,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,,True,False,True
+Claude Opus 5.5,anthropic,physics_2,2026,terzoapp,1,physics_2|2026|terzoapp|E1,1,100.0,,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,,True,False,True
+Claude Sonnet 5.5,anthropic,physics_2,2026,terzoapp,1,physics_2|2026|terzoapp|E1,1,100.0,,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,,True,False,True
+GPT-6 Luna,openai,physics_2,2026,terzoapp,1,physics_2|2026|terzoapp|E1,1,100.0,,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,,True,False,True
+GPT-6.1 Sol,openai,physics_2,2026,terzoapp,1,physics_2|2026|terzoapp|E1,1,94.21052632,,94.21052632,94.21052632,80.0,100.0,100.0,90.0,100.0,100.0,100.0,,True,False,True
+Claude Opus 5.5,anthropic,physics_2,2026,terzoapp,2,physics_2|2026|terzoapp|E2,1,100.0,,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,,True,False,True
+Claude Sonnet 5.5,anthropic,physics_2,2026,terzoapp,2,physics_2|2026|terzoapp|E2,1,100.0,,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,,True,False,True
+GPT-6 Luna,openai,physics_2,2026,terzoapp,2,physics_2|2026|terzoapp|E2,1,100.0,,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,,True,False,True
+GPT-6.1 Sol,openai,physics_2,2026,terzoapp,2,physics_2|2026|terzoapp|E2,1,100.0,,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,,True,False,True
+Claude Opus 5.5,anthropic,physics_2,2026,terzoapp,3,physics_2|2026|terzoapp|E3,1,100.0,,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,,True,False,True
+Claude Sonnet 5.5,anthropic,physics_2,2026,terzoapp,3,physics_2|2026|terzoapp|E3,1,100.0,,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,,True,False,True
+GPT-6 Luna,openai,physics_2,2026,terzoapp,3,physics_2|2026|terzoapp|E3,1,100.0,,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,,True,False,True
+GPT-6.1 Sol,openai,physics_2,2026,terzoapp,3,physics_2|2026|terzoapp|E3,1,100.0,,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,,True,False,True

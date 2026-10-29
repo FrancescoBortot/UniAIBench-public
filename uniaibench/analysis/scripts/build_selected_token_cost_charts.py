@@ -30,7 +30,7 @@ FIGURES_EN = OUTPUT_DIR / "figures_en"
 PDF_DIR = OUTPUT_DIR / "output" / "pdf"
 RENDERED_IT = OUTPUT_DIR / "output" / "rendered"
 RENDERED_EN = OUTPUT_DIR / "output" / "rendered_en"
-SUMMARY_PATH = ANALYSIS_DIR / "tables" / "model_token_costs_17x60.csv"
+SUMMARY_PATH = ANALYSIS_DIR / "tables" / "model_token_costs_21x60.csv"
 RAW_PATH = ANALYSIS_DIR / "data" / "model_item_resources.csv"
 DEEPSEEK_PATH = ANALYSIS_DIR / "tables" / "deepseek_flash_thinking_vs_no_thinking.csv"
 METHODOLOGY_PATH = ANALYSIS_DIR / "README.md"
@@ -66,7 +66,7 @@ TOKEN_COLORS = {
 TEXT = {
     "it": {
         "pdf_title": "Grafici selezionati - token e costi",
-        "pdf_subject": "Benchmark 17 x 60: token, reasoning e costi",
+        "pdf_subject": "Benchmark 21 x 60: token, reasoning e costi",
         "p1_title": "Classifica del costo medio",
         "p1_sub": "Costo API medio per risposta su 60 esercizi comuni | dall'alto: meno costoso -> piu costoso",
         "how": "COME LEGGERE",
@@ -84,14 +84,14 @@ TEXT = {
         "reasoning": "Reasoning",
         "unseparated": "Output + reasoning non separabili",
         "p2_axis": "TOKEN TOTALI NEL PANEL",
-        "p2_note": "Claude Fable 5 non espone separatamente il thinking: la componente viola resta intenzionalmente non ripartita.",
+        "p2_note": "L'output che include thinking non separato resta intenzionalmente non ripartito nella componente viola.",
         "p3_title": "Variabilita tra gli esercizi",
         "p3_sub": "Distribuzione per cella sui 60 esercizi | linea = min-max; box = Q1-Q3; tratto = mediana",
         "p3_left": "Output fatturabile per risposta",
         "p3_right": "Costo per risposta",
         "p3_note": "La dispersione mostra quanto esercizi diversi cambiano consumo e costo; le repliche sono macro-mediate per cella.",
         "p4_title": "Heatmap del costo per risposta",
-        "p4_sub": "17 modelli x 60 esercizi comuni | colore su scala logaritmica per rendere visibili anche i costi bassi",
+        "p4_sub": "21 modelli x 60 esercizi comuni | colore su scala logaritmica per rendere visibili anche i costi bassi",
         "low": "Costo minore",
         "high": "Costo maggiore",
         "zero": "tariffa configurata = 0",
@@ -109,11 +109,11 @@ TEXT = {
         "p6_left": "Delta token per esercizio",
         "p6_right": "Delta costo per esercizio (USD)",
         "p6_note": "Barra positiva = la versione thinking consuma o costa di piu. Tutti i confronti usano lo stesso esercizio.",
-        "footer": "Panel comune: 60 esercizi, 17 modelli, 1.020 celle macro-mediate",
+        "footer": "Panel comune: 60 esercizi, 21 modelli, 1.260 celle macro-mediate",
     },
     "en": {
         "pdf_title": "Selected token and cost charts",
-        "pdf_subject": "17 x 60 benchmark: tokens, reasoning, and API cost",
+        "pdf_subject": "21 x 60 benchmark: tokens, reasoning, and API cost",
         "p1_title": "Mean cost ranking",
         "p1_sub": "Mean API cost per response across 60 common exercises | top to bottom: cheaper -> more expensive",
         "how": "HOW TO READ",
@@ -131,14 +131,14 @@ TEXT = {
         "reasoning": "Reasoning",
         "unseparated": "Unseparated output + reasoning",
         "p2_axis": "TOTAL TOKENS IN THE PANEL",
-        "p2_note": "Claude Fable 5 does not report hidden thinking separately: the purple component is intentionally left unsplit.",
+        "p2_note": "Output that includes unreported hidden thinking is intentionally left unsplit in the purple component.",
         "p3_title": "Variation across exercises",
         "p3_sub": "Per-cell distribution over 60 exercises | line = min-max; box = Q1-Q3; mark = median",
         "p3_left": "Billable output per response",
         "p3_right": "Cost per response",
         "p3_note": "The spread shows how exercises change usage and cost; repetitions are macro-averaged within each cell.",
         "p4_title": "Cost-per-response heatmap",
-        "p4_sub": "17 models x 60 common exercises | logarithmic color scale keeps low costs visible",
+        "p4_sub": "21 models x 60 common exercises | logarithmic color scale keeps low costs visible",
         "low": "Lower cost",
         "high": "Higher cost",
         "zero": "configured rate = 0",
@@ -156,7 +156,7 @@ TEXT = {
         "p6_left": "Token delta per exercise",
         "p6_right": "Cost delta per exercise (USD)",
         "p6_note": "A positive bar means the thinking version uses more tokens or costs more. Every comparison uses the same exercise.",
-        "footer": "Common panel: 60 exercises, 17 models, 1,020 macro-averaged cells",
+        "footer": "Common panel: 60 exercises, 21 models, 1,260 macro-averaged cells",
     },
 }
 
@@ -723,7 +723,7 @@ def write_analysis(summary: list[dict[str, str]], deepseek: list[dict[str, str]]
     visible_no = sum(float(row["visible_output_tokens_no_thinking"]) for row in deepseek)
     path = OUTPUT_DIR / "ANALISI.md"
     path.write_text(
-        f"""# Analisi grafica - token e costi del panel 17 x 60
+        f"""# Analisi grafica - token e costi del panel 21 x 60
 
 ## Evidenze principali
 
@@ -759,7 +759,7 @@ def main() -> int:
     summary = read_csv(SUMMARY_PATH)
     raw = read_csv(RAW_PATH)
     deepseek = read_csv(DEEPSEEK_PATH)
-    if len(summary) != 17 or len(raw) != 1020 or len(deepseek) != 60:
+    if len(summary) != 21 or len(raw) != 1260 or len(deepseek) != 60:
         raise RuntimeError("Unexpected source dimensions for selected charts")
     outputs = {}
     for lang in ("it", "en"):
@@ -775,7 +775,7 @@ def main() -> int:
             str(path.relative_to(ANALYSIS_DIR)): sha256_file(path)
             for path in (SUMMARY_PATH, RAW_PATH, DEEPSEEK_PATH, METHODOLOGY_PATH)
         },
-        "counts": {"pages_per_pdf": 6, "models": 17, "common_items": 60, "model_item_cells": 1020},
+        "counts": {"pages_per_pdf": 6, "models": 21, "common_items": 60, "model_item_cells": 1260},
         "outputs": {},
     }
     for output in outputs.values():

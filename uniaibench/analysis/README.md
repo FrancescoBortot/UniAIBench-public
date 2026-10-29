@@ -9,7 +9,7 @@ model-answer text, individual judgment, or private identity map.
 - `data/model_item_resources.csv`: aggregate token, time, and reconstructed-cost
   metadata for those cells.
 - `data/model_catalog.json`: canonical model identity, specification, reasoning,
-  and dated pricing metadata used by documentation, paper, and website exports.
+  and dated pricing metadata used by current documentation and website exports.
 - `data/benchmark_pricing_manifest.json`: self-contained frozen rate records,
   public references, and non-reversible fingerprints for withheld campaign
   configurations.
@@ -32,7 +32,7 @@ root, run `make check-tables` to verify every released CSV byte-for-byte,
 `make tables` to rebuild them, and `make figures` to rebuild the tables and
 chart collections in dependency order.
 
-The principal matched panel comprises 17 model configurations and 60 common
+The principal matched panel comprises 21 model configurations and 60 common
 items. Some cells summarize repeated runs; consult `n_responses` rather than
 assuming one response per row. Provider pricing and model availability are
 time-dependent, so the dates and source fields in the resource data and

@@ -17,9 +17,22 @@
     "OpenAI o3",
     "Mistral Medium 3.5",
     "Mistral Small 4",
-    "DeepSeek V4.1 Flash"
+    "DeepSeek V4.1 Flash",
+    "Claude Opus 5.5",
+    "Claude Sonnet 5.5",
+    "GPT-6.1 Sol",
+    "GPT-6 Luna"
   ],
-  "dimensions": ["T1", "T2", "T3", "T4", "T5", "T6", "T7", "T8"],
+  "dimensions": [
+    "T1",
+    "T2",
+    "T3",
+    "T4",
+    "T5",
+    "T6",
+    "T7",
+    "T8"
+  ],
   "expected_common_items": {
     "overall": 60,
     "analysis_3": 33,
@@ -28,7 +41,7 @@
   "ranking": {
     "success_threshold_percent": 60.0,
     "perfect_score_percent": 100.0,
-    "score_tolerance": 1e-8,
+    "score_tolerance": 1e-08,
     "confidence_level": 0.95,
     "bootstrap_resamples": 20000,
     "bootstrap_seed": 20260810

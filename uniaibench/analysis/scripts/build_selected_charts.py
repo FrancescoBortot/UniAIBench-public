@@ -242,8 +242,8 @@ def forest_chart(rows: list[dict[str, str]], title: str, lang: str) -> Drawing:
         add_text(drawing, 42, y - 5, rank_text, 13, MUTED, "Helvetica-Bold")
         accent = provider_color(row["provider"])
         drawing.add(Rect(73, y - 10, 4, 21, fillColor=accent, strokeColor=None))
-        add_text(drawing, 88, y - 2, row["model"], 14, INK, "Helvetica-Bold")
-        add_text(drawing, 88, y - 14, row["provider"].upper(), 8.5, MUTED)
+        add_text(drawing, 88, y + 1, row["model"], min(14, row_gap * 0.54), INK, "Helvetica-Bold")
+        add_text(drawing, 88, y - 8, row["provider"].upper(), min(8.5, row_gap * 0.29), MUTED)
 
         low = float(row["accuracy_ci95_low"])
         mean = float(row["accuracy_mean"])

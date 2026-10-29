@@ -2,11 +2,11 @@
 
 This catalog is generated from the versioned
 [`analysis/data/model_catalog.json`](../analysis/data/model_catalog.json)
-record used by the paper appendix and website export. It identifies the
-**17 model--mode configurations** in the matched 60-item panel and separates two price concepts:
+record used by the current model documentation and website export. It identifies the
+**21 model--mode configurations** in the matched 60-item panel and separates two price concepts:
 
-- **latest verified API rate:** the standard first-party rate manually checked on **16 September 2026**;
-- **benchmark rate:** the frozen rate used to estimate study costs on **16 September 2026**.
+- **latest verified API rate:** a recorded first-party rate with its verification date shown per row (latest: **15 October 2026**);
+- **benchmark rate:** the frozen rate used to estimate study costs on **15 October 2026**.
 
 Prices are in USD per one million tokens and show input before output. They
 are not live prices. Cached input, batch, regional, tax, tool, and
@@ -25,18 +25,22 @@ Each record also keeps an official provider page as a public reference.
 | [GPT-5.6 Sol](https://openai.com/index/gpt-5-6/) | OpenAI | [`gpt-5.6-sol`](https://developers.openai.com/api/docs/models/gpt-5.6-sol) | 9 Jul 2026; GA, preview 26 Jun 2026 | No | Configurable effort; `xhigh` |
 | [OpenAI o3](https://openai.com/index/introducing-o3-and-o4-mini/) | OpenAI | [`o3-2025-04-16`](https://developers.openai.com/api/docs/models/o3) | 16 Apr 2025; dated snapshot | No | Native reasoning; `high` |
 | [OpenAI GPT-4.1](https://openai.com/index/gpt-4-1/) | OpenAI | [`gpt-4.1-2025-04-14`](https://developers.openai.com/api/docs/models/gpt-4.1) | 14 Apr 2025; dated snapshot | No | No native reasoning; `none` |
+| [GPT-6.1 Sol](https://openai.com/index/introducing-gpt-6-1-sol/) | OpenAI | [`gpt-6.1-sol`](https://developers.openai.com/api/docs/models/gpt-6.1-sol) | 29 Sep 2026; GA | No | Configurable effort; `xhigh` |
+| [GPT-6 Luna](https://developers.openai.com/api/docs/models/gpt-6-luna) | OpenAI | [`gpt-6-luna`](https://developers.openai.com/api/docs/models/gpt-6-luna) | 22 Sep 2026; GA | No | Configurable effort; `xhigh` |
 | [Claude Fable 5](https://www.anthropic.com/news/claude-fable-5-mythos-5) | Anthropic | [`claude-fable-5`](https://platform.claude.com/docs/en/about-claude/models/introducing-claude-fable-5-and-claude-mythos-5) | 9 Jun 2026; GA, restored 1 Jul 2026 | No | Adaptive thinking; effort `high` |
 | [Claude Sonnet 4.5](https://www.anthropic.com/news/claude-sonnet-4-5) | Anthropic | [`claude-sonnet-4-5-20250929`](https://platform.claude.com/docs/en/about-claude/models/overview) | 29 Sep 2025; dated snapshot | No | Optional extended thinking; provider default |
 | [Claude Haiku 4.5](https://www.anthropic.com/news/claude-haiku-4-5) | Anthropic | [`claude-haiku-4-5-20251001`](https://platform.claude.com/docs/en/about-claude/models/overview) | 15 Oct 2025; API snapshot 1 Oct 2025 | No | Extended thinking available; not requested |
+| [Claude Opus 5.5](https://www.anthropic.com/news/claude-opus-5-5) | Anthropic | [`claude-opus-5-5`](https://platform.claude.com/docs/en/models/opus-5-5/overview) | 22 Sep 2026; GA | No | Adaptive thinking; effort `high` |
+| [Claude Sonnet 5.5](https://www.anthropic.com/news/claude-sonnet-5-5) | Anthropic | [`claude-sonnet-5-5`](https://platform.claude.com/docs/en/models/sonnet-5-5/overview) | 28 Sep 2026; GA | No | Adaptive thinking; effort `high` |
 | [Gemini 3.5 Flash](https://deepmind.google/models/model-cards/gemini-3-5-flash/) | Google | [`gemini-3.5-flash`](https://ai.google.dev/gemini-api/docs/models/gemini-3.5-flash) | 19 May 2026; GA | No | Native thinking; `high` |
 | [Gemini 3.1 Pro Preview](https://deepmind.google/models/gemini/pro/) | Google | [`gemini-3.1-pro-preview`](https://ai.google.dev/gemini-api/docs/models/gemini-3.1-pro-preview) | 19 Feb 2026; public preview | No | Native thinking; `high` |
 | [Gemma 4 31B IT](https://ai.google.dev/gemma/docs/core/model_card_4) | Google | [`gemma-4-31b-it`](https://ai.google.dev/gemma/docs/core/gemma_on_gemini_api) | 31 Mar 2026; API 2 Apr 2026 | Yes | Thinking available; disabled |
 | [DeepSeek V4 Flash](https://api-docs.deepseek.com/news/news260424/) | DeepSeek | [`deepseek-v4-flash, thinking`](https://api-docs.deepseek.com/api/create-chat-completion) | 24 Apr 2026; V4 preview | Yes | Thinking enabled; `high` |
 | [DeepSeek V4 Flash (no thinking)](https://api-docs.deepseek.com/news/news260424/) | DeepSeek | [`deepseek-v4-flash, no thinking`](https://api-docs.deepseek.com/guides/thinking_mode) | 24 Apr 2026; same weights | Yes | Thinking disabled |
 | [DeepSeek V4 Pro](https://api-docs.deepseek.com/news/news260424/) | DeepSeek | [`deepseek-v4-pro`](https://api-docs.deepseek.com/api/create-chat-completion) | 24 Apr 2026; V4 preview | Yes | Thinking enabled; `high` |
+| [DeepSeek V4.1 Flash](https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash) | DeepSeek | [`deepseek-flash`](https://api-docs.deepseek.com/guides/thinking_mode) | 10 Sep 2026; API observed 16 Sep 2026 | Yes | Dual-mode reasoning; thinking `high` |
 | [Grok 4.5](https://x.ai/news/grok-4-5) | xAI | [`grok-4.5`](https://docs.x.ai/developers/models/grok-4.5) | 16 Jul 2026; public launch | No | Configurable reasoning; `high` |
 | [Grok 4.3](https://x.ai/news/grok-amazon-bedrock) | xAI | [`grok-4.3`](https://docs.x.ai/developers/models/grok-4.3) | By 6 May 2026; earliest dated official use identified | No | Configurable reasoning; `high` |
-| [DeepSeek V4.1 Flash](https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash) | DeepSeek | [`deepseek-flash`](https://api-docs.deepseek.com/guides/thinking_mode) | 10 Sep 2026; API observed 16 Sep 2026 | Yes | Dual-mode reasoning; thinking `high` |
 | [Mistral Medium 3.5](https://docs.mistral.ai/getting-started/models/models_overview/) | Mistral | [`mistral-medium-3-5`](https://docs.mistral.ai/api/) | API snapshot observed 13 Sep 2026 | No | Configurable reasoning effort; `high` |
 | [Mistral Small 4](https://docs.mistral.ai/getting-started/models/models_overview/) | Mistral | [`mistral-small-2603`](https://docs.mistral.ai/api/) | API snapshot observed 13 Sep 2026 | No | Configurable reasoning effort; `high` |
 
@@ -49,42 +53,50 @@ The two DeepSeek V4 Flash rows are distinct benchmark configurations of the same
 | GPT-5.6 Sol | Not disclosed | Closed frontier flagship; architecture undisclosed | 1,050,000 | 128,000 | 16 Feb 2026 knowledge |
 | OpenAI o3 | Not disclosed | Closed o-series reasoning model; architecture undisclosed | 200,000 | 100,000 | 1 Jun 2024 knowledge |
 | OpenAI GPT-4.1 | Not disclosed | Closed general-purpose non-reasoning model | 1,047,576 | 32,768 | 1 Jun 2024 knowledge |
+| GPT-6.1 Sol | Not disclosed | Closed Sol-tier reasoning model; architecture undisclosed | 1,050,000 | 128,000 | 30 Apr 2026 knowledge |
+| GPT-6 Luna | Not disclosed | Closed efficient reasoning model; architecture undisclosed | 1,050,000 | 128,000 | 18 May 2026 knowledge |
 | Claude Fable 5 | Not disclosed | Closed Mythos-class safeguarded model | 1,000,000 | 128,000 | Jan 2026 reliable/training |
 | Claude Sonnet 4.5 | Not disclosed | Closed Sonnet-tier hybrid reasoning model | 200,000 | 64,000 | Not disclosed |
 | Claude Haiku 4.5 | Not disclosed | Closed small and low-latency tier | 200,000 | 64,000 | Feb/Jul 2025 reliable/training |
+| Claude Opus 5.5 | Not disclosed | Closed Opus-tier hybrid reasoning model | 1,000,000 | 128,000 | Jun 2026 reliable/training |
+| Claude Sonnet 5.5 | Not disclosed | Closed Sonnet-tier hybrid reasoning model | 1,000,000 | 128,000 | Jun 2026 reliable/training |
 | Gemini 3.5 Flash | Not disclosed | Closed multimodal Flash-tier model | 1,048,576 | 65,536 | Jan 2025 knowledge |
 | Gemini 3.1 Pro Preview | Not disclosed | Closed multimodal Pro-tier model | 1,048,576 | 65,536 | Jan 2025 knowledge |
 | Gemma 4 31B IT | 30.7B total; dense; 60 layers; about 550M vision encoder | Dense decoder-only transformer; hybrid local/global attention | 256,000 | Not specified | Jan 2025 training |
 | DeepSeek V4 Flash | 284B total; 13B active per token | Mixture-of-Experts; DeepSeek Sparse Attention | 1,000,000 | 384,000 | Not disclosed |
 | DeepSeek V4 Flash (no thinking) | 284B total; 13B active per token | Mixture-of-Experts; DeepSeek Sparse Attention | 1,000,000 | 384,000 | Not disclosed |
 | DeepSeek V4 Pro | 1.6T total; 49B active per token | Mixture-of-Experts; DeepSeek Sparse Attention | 1,000,000 | 384,000 | Not disclosed |
+| DeepSeek V4.1 Flash | 552B backbone + 196B conditional memory; 8B / 16B active in prefill / decode | Multimodal Mixture-of-Experts; causal encoder-decoder; Compressed Sparse Attention 2 | 1,000,000 | 384,000 | Not disclosed |
 | Grok 4.5 | Not disclosed | Closed frontier model; architecture undisclosed | 500,000 | Not specified | 1 Feb 2026 knowledge |
 | Grok 4.3 | Not disclosed | Closed general-purpose model; architecture undisclosed | 1,000,000 | Not specified | Not disclosed |
-| DeepSeek V4.1 Flash | 552B backbone + 196B conditional memory; 8B / 16B active in prefill / decode | Multimodal Mixture-of-Experts; causal encoder-decoder; Compressed Sparse Attention 2 | 1,000,000 | 384,000 | Not disclosed |
 | Mistral Medium 3.5 | Not disclosed | Closed Medium-tier model; architecture undisclosed | 256,000 | Not specified | Not disclosed |
 | Mistral Small 4 | Not disclosed | Closed Small-tier model; architecture undisclosed | 256,000 | Not specified | Not disclosed |
 
 ## Pricing
 
-| Model | Latest verified standard API rate | Benchmark rate | Official pricing source |
-|---|---|---|---|
-| GPT-5.6 Sol | Input $4; cached input $0.40; output $20; promotional rate, higher long-context rates apply | Input $5; output $30 | [OpenAI](https://developers.openai.com/api/docs/models/gpt-5.6-sol) |
-| OpenAI o3 | Input $2; cached input $0.50; output $8 | Input $2; output $8 | [OpenAI](https://developers.openai.com/api/docs/models/o3) |
-| OpenAI GPT-4.1 | Input $2; cached input $0.50; output $8 | Input $2; output $8 | [OpenAI](https://developers.openai.com/api/docs/models/gpt-4.1) |
-| Claude Fable 5 | Input $10; output $50 | Input $10; output $50 | [Anthropic](https://platform.claude.com/docs/en/about-claude/pricing) |
-| Claude Sonnet 4.5 | Input $3; output $15 | Input $3; output $15 | [Anthropic](https://platform.claude.com/docs/en/about-claude/pricing) |
-| Claude Haiku 4.5 | Input $1; output $5 | Input $1; output $5 | [Anthropic](https://platform.claude.com/docs/en/about-claude/pricing) |
-| Gemini 3.5 Flash | Input $1.50; cached input $0.15; output $9 | Input $1.50; output $9 | [Google](https://ai.google.dev/gemini-api/docs/pricing) |
-| Gemini 3.1 Pro Preview | Input $2; output $12; over 200k: $4 / $18 | Input $2; output $12 | [Google](https://ai.google.dev/gemini-api/docs/pricing) |
-| Gemma 4 31B IT | Free tier $0; paid tier unavailable | Input $0; output $0 | [Google](https://ai.google.dev/gemini-api/docs/pricing) |
-| DeepSeek V4 Flash | Off-peak $0.22 / $0.66; peak $0.44 / $1.32 | Input $0.14; output $0.28 | [DeepSeek](https://api-docs.deepseek.com/quick_start/pricing/) |
-| DeepSeek V4 Flash (no thinking) | Off-peak $0.22 / $0.66; peak $0.44 / $1.32 | Input $0.14; output $0.28 | [DeepSeek](https://api-docs.deepseek.com/quick_start/pricing/) |
-| DeepSeek V4 Pro | Off-peak $0.66 / $1.98; peak $1.32 / $3.96 | Input $0.435; output $0.87 | [DeepSeek](https://api-docs.deepseek.com/quick_start/pricing/) |
-| Grok 4.5 | Input $2; cached input $0.30; output $6; over 200k: $4 / $12 | Input $2; output $6 | [xAI](https://docs.x.ai/developers/models/grok-4.5) |
-| Grok 4.3 | Input $1.25; cached input $0.20; output $2.50; over 200k: $2.50 / $5 | Input $1.25; output $2.50 | [xAI](https://docs.x.ai/developers/models/grok-4.3) |
-| DeepSeek V4.1 Flash | Off-peak input $0.15; output $0.60; peak input $0.30; output $1.20 | Input $0.30; output $1.20 | [DeepSeek](https://api-docs.deepseek.com/quick_start/pricing/) |
-| Mistral Medium 3.5 | Input $1.50; output $7.50 | Input $1.50; output $7.50 | [Mistral](https://docs.mistral.ai/getting-started/models/models_overview/) |
-| Mistral Small 4 | Input $0.15; output $0.60 | Input $0.15; output $0.60 | [Mistral](https://docs.mistral.ai/getting-started/models/models_overview/) |
+| Model | Latest verified standard API rate | Verification date | Benchmark rate | Official pricing source |
+|---|---|---|---|---|
+| GPT-5.6 Sol | Input $4; cached input $0.40; output $20; promotional rate, higher long-context rates apply | 16 September 2026 | Input $5; output $30 | [OpenAI](https://developers.openai.com/api/docs/models/gpt-5.6-sol) |
+| OpenAI o3 | Input $2; cached input $0.50; output $8 | 16 September 2026 | Input $2; output $8 | [OpenAI](https://developers.openai.com/api/docs/models/o3) |
+| OpenAI GPT-4.1 | Input $2; cached input $0.50; output $8 | 16 September 2026 | Input $2; output $8 | [OpenAI](https://developers.openai.com/api/docs/models/gpt-4.1) |
+| GPT-6.1 Sol | Input $2; cached input $0.10; output $10 | 15 October 2026 | Input $2; output $10 | [OpenAI](https://developers.openai.com/api/docs/models/gpt-6.1-sol) |
+| GPT-6 Luna | Input $0.10; cached input $0.01; output $0.50 | 15 October 2026 | Input $0.1; output $0.5 | [OpenAI](https://developers.openai.com/api/docs/models/gpt-6-luna) |
+| Claude Fable 5 | Input $10; output $50 | 16 September 2026 | Input $10; output $50 | [Anthropic](https://platform.claude.com/docs/en/about-claude/pricing) |
+| Claude Sonnet 4.5 | Input $3; output $15 | 16 September 2026 | Input $3; output $15 | [Anthropic](https://platform.claude.com/docs/en/about-claude/pricing) |
+| Claude Haiku 4.5 | Input $1; output $5 | 16 September 2026 | Input $1; output $5 | [Anthropic](https://platform.claude.com/docs/en/about-claude/pricing) |
+| Claude Opus 5.5 | Input $4; cache read $0.20; output $20 | 15 October 2026 | Input $4; output $20 | [Anthropic](https://platform.claude.com/docs/en/models/opus-5-5/overview) |
+| Claude Sonnet 5.5 | Input $2; cache read $0.10; output $10 | 15 October 2026 | Input $2; output $10 | [Anthropic](https://platform.claude.com/docs/en/models/sonnet-5-5/overview) |
+| Gemini 3.5 Flash | Input $1.50; cached input $0.15; output $9 | 16 September 2026 | Input $1.50; output $9 | [Google](https://ai.google.dev/gemini-api/docs/pricing) |
+| Gemini 3.1 Pro Preview | Input $2; output $12; over 200k: $4 / $18 | 16 September 2026 | Input $2; output $12 | [Google](https://ai.google.dev/gemini-api/docs/pricing) |
+| Gemma 4 31B IT | Free tier $0; paid tier unavailable | 16 September 2026 | Input $0; output $0 | [Google](https://ai.google.dev/gemini-api/docs/pricing) |
+| DeepSeek V4 Flash | Off-peak $0.22 / $0.66; peak $0.44 / $1.32 | 16 September 2026 | Input $0.14; output $0.28 | [DeepSeek](https://api-docs.deepseek.com/quick_start/pricing/) |
+| DeepSeek V4 Flash (no thinking) | Off-peak $0.22 / $0.66; peak $0.44 / $1.32 | 16 September 2026 | Input $0.14; output $0.28 | [DeepSeek](https://api-docs.deepseek.com/quick_start/pricing/) |
+| DeepSeek V4 Pro | Off-peak $0.66 / $1.98; peak $1.32 / $3.96 | 16 September 2026 | Input $0.435; output $0.87 | [DeepSeek](https://api-docs.deepseek.com/quick_start/pricing/) |
+| DeepSeek V4.1 Flash | Off-peak input $0.15; output $0.60; peak input $0.30; output $1.20 | 16 September 2026 | Input $0.30; output $1.20 | [DeepSeek](https://api-docs.deepseek.com/quick_start/pricing/) |
+| Grok 4.5 | Input $2; cached input $0.30; output $6; over 200k: $4 / $12 | 16 September 2026 | Input $2; output $6 | [xAI](https://docs.x.ai/developers/models/grok-4.5) |
+| Grok 4.3 | Input $1.25; cached input $0.20; output $2.50; over 200k: $2.50 / $5 | 16 September 2026 | Input $1.25; output $2.50 | [xAI](https://docs.x.ai/developers/models/grok-4.3) |
+| Mistral Medium 3.5 | Input $1.50; output $7.50 | 16 September 2026 | Input $1.50; output $7.50 | [Mistral](https://docs.mistral.ai/getting-started/models/models_overview/) |
+| Mistral Small 4 | Input $0.15; output $0.60 | 16 September 2026 | Input $0.15; output $0.60 | [Mistral](https://docs.mistral.ai/getting-started/models/models_overview/) |
 
 For DeepSeek, the current-rate pairs are cache-miss input / output and vary by time of day.
 Gemma's zero benchmark rate was explicitly configured for the campaign and is not a universal market price.
@@ -95,4 +107,4 @@ The canonical frozen-rate records are in
 The same values are exposed as a flat analysis input in
 [`analysis/tables/token_cost_rates.csv`](../analysis/tables/token_cost_rates.csv),
 while per-model observed token and cost summaries are in
-[`analysis/tables/model_token_costs_17x60.csv`](../analysis/tables/model_token_costs_17x60.csv).
+[`analysis/tables/model_token_costs_21x60.csv`](../analysis/tables/model_token_costs_21x60.csv).

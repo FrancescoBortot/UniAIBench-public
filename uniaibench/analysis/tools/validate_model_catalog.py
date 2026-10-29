@@ -6,6 +6,7 @@ from __future__ import annotations
 import csv
 import json
 import re
+from datetime import date
 from decimal import Decimal, InvalidOperation
 from pathlib import Path
 
@@ -16,8 +17,8 @@ PRICING_MANIFEST = ROOT / "analysis" / "data" / "benchmark_pricing_manifest.json
 RESOURCES = ROOT / "analysis" / "data" / "model_item_resources.csv"
 RANKING = ROOT / "analysis" / "tables" / "main_ranking_overall.csv"
 RATES = ROOT / "analysis" / "tables" / "token_cost_rates.csv"
-MODEL_TOKEN_COSTS = ROOT / "analysis" / "tables" / "model_token_costs_17x60.csv"
-QUALITY_TOKEN_COST = ROOT / "analysis" / "tables" / "quality_token_cost_17x60.csv"
+MODEL_TOKEN_COSTS = ROOT / "analysis" / "tables" / "model_token_costs_21x60.csv"
+QUALITY_TOKEN_COST = ROOT / "analysis" / "tables" / "quality_token_cost_21x60.csv"
 MANIFEST_REPO_PATH = "uniaibench/analysis/data/benchmark_pricing_manifest.json"
 PUBLIC_SOURCE_KIND = "public_pricing_manifest_record"
 PRIVATE_SOURCE_KIND = "private_campaign_configuration_snapshot"
@@ -48,6 +49,7 @@ REQUIRED_MODEL_FIELDS = {
     "pricing_source_url", "benchmark_input_usd_per_million",
     "benchmark_output_usd_per_million", "benchmark_price_source_kind",
     "benchmark_price_source",
+    "latest_price_verification_date",
 }
 
 
@@ -96,8 +98,8 @@ def load_pricing_manifest(catalog: dict[str, object]) -> dict[str, dict[str, obj
         raise ValueError("pricing manifest must document its public/private source boundary")
 
     rates = payload.get("rates")
-    if not isinstance(rates, list) or len(rates) != 17:
-        raise ValueError("benchmark_pricing_manifest.json must contain exactly 17 rates")
+    if not isinstance(rates, list) or len(rates) != 21:
+        raise ValueError("benchmark_pricing_manifest.json must contain exactly 21 rates")
 
     records: dict[str, dict[str, object]] = {}
     model_ids: list[str] = []
@@ -153,8 +155,8 @@ def load_pricing_manifest(catalog: dict[str, object]) -> dict[str, dict[str, obj
 def main() -> int:
     catalog = json.loads(CATALOG.read_text(encoding="utf-8"))
     models = catalog.get("models")
-    if not isinstance(models, list) or len(models) != 17:
-        raise ValueError("model_catalog.json must contain exactly 17 configurations")
+    if not isinstance(models, list) or len(models) != 21:
+        raise ValueError("model_catalog.json must contain exactly 21 configurations")
     manifest = load_pricing_manifest(catalog)
     manifest_by_model_id = {str(record["model_id"]): record for record in manifest.values()}
 
@@ -167,9 +169,11 @@ def main() -> int:
 
     model_by_name: dict[str, dict[str, object]] = {}
     for model in models:
-        missing = REQUIRED_MODEL_FIELDS - model.keys()
-        if missing:
-            raise ValueError(f"{model.get('model', '<unknown>')}: missing fields {sorted(missing)}")
+        if set(model) != REQUIRED_MODEL_FIELDS:
+            raise ValueError(f"{model.get('model', '<unknown>')}: fields do not match the public catalog contract")
+        recorded_date = date.fromisoformat(model["latest_price_verification_date"])
+        if recorded_date > date.fromisoformat(catalog["latest_price_verification_date"]):
+            raise ValueError(f"{model['model']}: rate verification date exceeds the catalog date")
         for field in ("model_url", "api_url", "pricing_source_url"):
             if not str(model[field]).startswith("https://"):
                 raise ValueError(f"{model['model']}: {field} must use HTTPS")
@@ -204,8 +208,8 @@ def main() -> int:
     rate_header, rates = read_csv(RATES)
     if rate_header != RATE_COLUMNS:
         raise ValueError(f"token_cost_rates.csv: expected columns {RATE_COLUMNS}")
-    if len(rates) != 17:
-        raise ValueError("token_cost_rates.csv must contain exactly 17 rows")
+    if len(rates) != 21:
+        raise ValueError("token_cost_rates.csv must contain exactly 21 rows")
     rate_by_model = {row["model"]: row for row in rates}
     if len(rate_by_model) != len(rates) or set(names) != set(rate_by_model):
         raise ValueError("model catalog and frozen-rate table contain different or duplicate model sets")
@@ -225,8 +229,8 @@ def main() -> int:
                 raise ValueError(f"{model['model']}: rate table and manifest {side} rates differ")
 
     _, resources = read_csv(RESOURCES)
-    if len(resources) != 1020:
-        raise ValueError("model_item_resources.csv must contain exactly 1020 matched model-item rows")
+    if len(resources) != 1260:
+        raise ValueError("model_item_resources.csv must contain exactly 1260 matched model-item rows")
     if {row["model"] for row in resources} != set(names):
         raise ValueError("resource panel and model catalog contain different model sets")
     for index, row in enumerate(resources, start=2):
@@ -245,8 +249,8 @@ def main() -> int:
 
     _, token_summaries = read_csv(MODEL_TOKEN_COSTS)
     token_summary_by_model = {row["model"]: row for row in token_summaries}
-    if len(token_summaries) != 17 or len(token_summary_by_model) != 17 or set(token_summary_by_model) != set(names):
-        raise ValueError("model_token_costs_17x60.csv must contain one row per model")
+    if len(token_summaries) != 21 or len(token_summary_by_model) != 21 or set(token_summary_by_model) != set(names):
+        raise ValueError("model_token_costs_21x60.csv must contain one row per model")
     for model_name, row in token_summary_by_model.items():
         model = model_by_name[model_name]
         record = manifest_by_model_id[str(model["id"])]
@@ -262,8 +266,8 @@ def main() -> int:
 
     _, quality_rows = read_csv(QUALITY_TOKEN_COST)
     quality_by_model = {row["model"]: row for row in quality_rows}
-    if len(quality_rows) != 17 or len(quality_by_model) != 17 or set(quality_by_model) != set(names):
-        raise ValueError("quality_token_cost_17x60.csv must contain one row per model")
+    if len(quality_rows) != 21 or len(quality_by_model) != 21 or set(quality_by_model) != set(names):
+        raise ValueError("quality_token_cost_21x60.csv must contain one row per model")
     for model_name, row in quality_by_model.items():
         if row["price_source_kind"] != PUBLIC_SOURCE_KIND:
             raise ValueError(f"{model_name}: quality summary source_kind does not point to the public manifest")
@@ -277,7 +281,7 @@ def main() -> int:
             raise ValueError(f"{path.name}: contains a private configuration name")
 
     print(
-        "OK: 17 model records, 17 frozen rates, 1020 resource rows, and "
+        "OK: 21 model records, 21 frozen rates, 1260 resource rows, and "
         "both cost summaries resolve to the public pricing manifest"
     )
     return 0

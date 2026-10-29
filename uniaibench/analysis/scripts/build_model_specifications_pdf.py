@@ -13,7 +13,7 @@ rl_config.invariant = 1
 
 
 ROOT = Path(__file__).resolve().parents[2]
-OUTPUT = ROOT / "analysis" / "output" / "model_technical_specifications_17x60.pdf"
+OUTPUT = ROOT / "analysis" / "output" / "model_technical_specifications_21x60.pdf"
 
 INK = colors.HexColor("#172431")
 NAVY = colors.HexColor("#17324D")
@@ -40,8 +40,8 @@ CATALOG = ROOT / "analysis" / "data" / "model_catalog.json"
 def load_catalog() -> dict[str, object]:
     payload = json.loads(CATALOG.read_text(encoding="utf-8"))
     rows = payload.get("models")
-    if not isinstance(rows, list) or len(rows) != 17:
-        raise ValueError("model_catalog.json must contain exactly 17 model configurations")
+    if not isinstance(rows, list) or len(rows) != 21:
+        raise ValueError("model_catalog.json must contain exactly 21 model configurations")
     return payload
 
 
@@ -129,7 +129,7 @@ def build_pdf():
     story = [
         para("Technical specifications of the evaluated models", title_style),
         para(
-            "A priori comparison of the 17 benchmark configurations. No benchmark outcome is included. "
+            "A priori comparison of the 21 benchmark configurations. No benchmark outcome is included. "
             "Token limits and model status refer to first-party documentation available on "
             f"{CATALOG_DATA['technical_snapshot_date']}.",
             subtitle_style,

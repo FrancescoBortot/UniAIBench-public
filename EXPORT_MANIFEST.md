@@ -5,12 +5,12 @@ private UniAIBench research archive. It has an independent Git history.
 
 ## Included: the concrete study
 
-- a machine-readable UniAIBench v1.1 study manifest with a separate fixed v1.0 paper snapshot;
+- a machine-readable UniAIBench v1.2 study manifest with a separate fixed v1.0 paper snapshot;
 - aggregate result panels, tables, eight selected English website figures,
   and all programs used to create the public paper and website chart families;
 - a versioned public analysis configuration and byte-for-byte table
   regeneration check;
-- the dated 17-configuration model catalog and pricing record;
+- the dated 21-configuration model catalog and pricing record;
 - unchanged v1.0 manuscript source and compiled paper;
 - study provenance and an explicit mapping from the generic method to the
   concrete implementation;
